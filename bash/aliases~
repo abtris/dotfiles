@@ -2,11 +2,11 @@
 
 # Utility
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='vim ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="vim ~/bin/dotfiles/bash/env"
+alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="mate ~/bin/dotfiles/bash/env"
 
 # Quicker cd
-#alias cg='cd /Library/Ruby/Gems/1.8/gems/'
+alias cg='cd /Library/Ruby/Gems/1.8/gems/'
 function cr() {
  cd ~/repos/$*
 }
@@ -121,27 +121,27 @@ function ct() {
 }
 
 # TextMate
-#alias et="mate"
-#alias ett="mate ."
-#alias etr="mate app config lib db schema public spec test vendor/gems vendor/plugins Rakefile Capfile Vladfile Todofile README stories merb slices tasks features &"
+alias et="mate"
+alias ett="mate ."
+alias etr="mate app config lib db schema public spec test vendor/gems vendor/plugins Rakefile Capfile Vladfile Todofile README stories merb slices tasks features &"
 
 # Ruby
-#alias r="rake"
+alias r="rake"
 
-#function markdown() { 
-#/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html 
-#}
+function markdown() { 
+/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html 
+}
 
 # Rails
-#alias mr='mongrel_rails start'
-#alias ms='mongrel_rails stop'
-#alias rp='touch tmp/restart.txt'
-#alias sc='./script/console'
-#alias sg='./script/generate'
-#alias sp='./script/plugin'
-#alias ss='./script/server'
-#alias tl='tail -f log/*.log'
-#alias ts='thin start'
+alias mr='mongrel_rails start'
+alias ms='mongrel_rails stop'
+alias rp='touch tmp/restart.txt'
+alias sc='./script/console'
+alias sg='./script/generate'
+alias sp='./script/plugin'
+alias ss='./script/server'
+alias tl='tail -f log/*.log'
+alias ts='thin start'
 
 # TDD / BDD
 
@@ -169,9 +169,9 @@ function wav2mp3() {
 
 # XCode
 # Analyze release build
-#alias sx="xcodebuild clean && ~/src/checker-0.146/scan-build -k -V xcodebuild"
+alias sx="xcodebuild clean && ~/src/checker-0.146/scan-build -k -V xcodebuild"
 # Analyze test build
-#alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
+alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
 # Call with -target Foo
 function sxx() { 
   xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $* 
