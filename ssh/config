@@ -1,0 +1,67 @@
+Host dzogchen
+User root
+HostName dzogchen.cz 
+
+Host andrea
+User prskavec
+Hostname andrea.vc.cvut.cz
+
+Host devel
+Hostname vap01.devel.lmc.cz
+IdentityFile id_dsa
+
+Host devel-app
+Hostname app0204.devel.lmc.cz
+IdentityFile id_dsa
+
+Host deploy
+Hostname vap03.deploy.lmc.cz
+IdentityFile id_dsa
+
+Host deploy-app
+Hostname app0401.deploy.lmc.cz
+IdentityFile id_dsa
+
+Host preprod
+Hostname ap0208.preprod.lmc.cz
+IdentityFile id_dsa
+
+Host preprod-app
+Hostname app0404.preprod.lmc.cz
+IdentityFile id_dsa
+
+Host prod-app
+Hostname app0610.prod.lmc.cz
+IdentityFile id_dsa
+
+Host prod1
+Hostname ap0210.prod.lmc.cz
+IdentityFile id_dsa
+
+Host prod2
+Hostname ap0308.prod.lmc.cz
+IdentityFile id_dsa
+
+Host prod3
+Hostname ap0410.prod.lmc.cz
+IdentityFile id_dsa
+
+Host hudson
+User root
+Hostname prgbuild.int.lmc.cz
+IdentityFile id_dsa
+
+Host onrea
+User root
+Hostname sandbox-onrea.int.lmc.cz
+
+Host svn
+User prskavecl
+Hostname ap03.int.lmc.cz
+IdentityFile id_dsa
+
+Host php
+User ahutacz
+Hostname 66.147.240.158
+IdentityFile id_dsa
+
