@@ -1,4 +1,4 @@
 
 # Set PATH, CDPATH, EDITOR, etc.
-EDITOR = vim
+export EDITOR = vim
 

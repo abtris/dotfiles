@@ -1,3 +1,4 @@
 
-
 # Set PATH, CDPATH, EDITOR, etc.
+EDITOR = vim
+
