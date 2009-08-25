@@ -6,7 +6,6 @@ merge = meld
 debug = true
 [extensions]
 color =
-convert =
 hgext.fetch =
 hgext.keyword =
 keyword=/usr/share/python-support/mercurial-common/hgext/keyword.py
