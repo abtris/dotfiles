@@ -21,7 +21,7 @@ function cdc() {
     cd $1; ls 
 }
 alias cls='clear; ls'
-alias h='history'
+alias hi='history'
 alias l.='ls -d .[^.]*'
 alias l='ls -lhGt'  # -l long listing, most recent first
                     # -G color
