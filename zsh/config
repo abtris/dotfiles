@@ -5,6 +5,8 @@ PROMPT='
 %n@%M:%~ %{$fg_bold[black]%}$(vcprompt)
 → %{$reset_color%}'
 
+#PROMPT=$'%{\e[0;32m%}[%{\e[0m%}%n%{\e[0;32m%}@%{\e[0m%}%m%{\e[0;32m%}][%{\e[0m%}%~%{\e[0;32m%}]%{\e[0m%}%# '
+
 # Set RPROMPT to have info show up on the right, too.
 
 #############################
