@@ -10,6 +10,7 @@ convert =
 hgext.fetch =
 hgext.keyword =
 keyword=/usr/share/python-support/mercurial-common/hgext/keyword.py
+hgchangelog = ~/bin/dotfiles/hg/hgchangelog.py
 [keyword]
 **.php =
 **.xml =
@@ -23,3 +24,5 @@ Source = {root}/{file},v
 Date = {date|utcdate}
 Id = {file|basename},v {node|short} {date|utcdate} {author|user}
 Revision = {node|short}
+[changelog]
+filename = CHANGES
