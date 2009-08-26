@@ -61,10 +61,20 @@ alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
 # Mercurial hg
-function new-hg() {
-    ssh hg@example.com "hg init $1"
-    hg clone ssh://hg@example.com/$1
+#function new-hg() {
+#    ssh hg@example.com "hg init $1"
+#    hg clone ssh://hg@example.com/$1
+#}
+
+# HG
+alias unhg="find . -name '.hg' -exec rm -rf {} \;"
+alias h='hg status'
+alias ha='hg add'
+
+function hc() {
+  hg commit -m "$1"
 }
+
 
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
@@ -112,8 +122,9 @@ function new-git() {
 
 # Text editing
 # Emacs
-alias em="open -a Emacs"
-alias emm="open -a Emacs ."
+#alias em="open -a Emacs"
+#alias emm="open -a Emacs ."
+
 # Regenerate TAGS file from file arguments
 function ct() {
   rm -f TAGS
@@ -145,14 +156,14 @@ function ct() {
 
 # TDD / BDD
 
-alias aa='autotest'
-alias aaf='autotest -f' # Don't run all at start
-alias aas="./script/autospec"
+#alias aa='autotest'
+#alias aaf='autotest -f' # Don't run all at start
+#alias aas="./script/autospec"
 
 # Setup a tunnel
-function haproxyssh() { 
-  ssh -L7997:127.0.0.1:7997 deploy@$1.com 
-}
+#function haproxyssh() { 
+#  ssh -L7997:127.0.0.1:7997 deploy@$1.com 
+#}
 
 # Syntax check Javascript
 function jsc() { 
@@ -173,19 +184,19 @@ function wav2mp3() {
 # Analyze test build
 #alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
 # Call with -target Foo
-function sxx() { 
-  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $* 
-}
+#function sxx() { 
+#  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $* 
+#}
 
-alias ox="open *.xcodeproj"
+#alias ox="open *.xcodeproj"
 
 # Nginx
-function nginx_stop() {
-    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
-}
-function nginx_start() {
-    sudo /opt/nginx/sbin/nginx
-}
+#function nginx_stop() {
+#    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
+#}
+#function nginx_start() {
+#    sudo /opt/nginx/sbin/nginx
+#}
 
 # TaskPaper
 function new-tp() {

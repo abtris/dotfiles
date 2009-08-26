@@ -21,7 +21,7 @@ function cdc() {
     cd $1; ls 
 }
 alias cls='clear; ls'
-alias h='history'
+alias hi='history'
 alias l.='ls -d .[^.]*'
 alias l='ls -lhGt'  # -l long listing, most recent first
                     # -G color
@@ -65,6 +65,16 @@ alias tm='top -o vsize' # memory
 #    ssh hg@example.com "hg init $1"
 #    hg clone ssh://hg@example.com/$1
 #}
+
+# HG
+alias unhg="find . -name '.hg' -exec rm -rf {} \;"
+alias h='hg status'
+alias ha='hg add'
+
+function hc() {
+  hg commit -m "$1"
+}
+
 
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
