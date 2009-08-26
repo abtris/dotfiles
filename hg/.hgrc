@@ -13,6 +13,8 @@ keyword=/usr/share/python-support/mercurial-common/hgext/keyword.py
 [keyword]
 **.php =
 **.xml =
+**.sh =
+**.css =
 [keywordmaps]
 RCSFile = {file|basename},v
 Author = {author|user}
