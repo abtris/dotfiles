@@ -72,11 +72,14 @@ alias h='hg status'
 alias ha='hg add'
 alias hp='hg push'
 alias hd='hg diff'
+
 function hc() {
   hg commit -m "$1"
 }
 
-
+function hr() {
+  hg remove "$*"
+}
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'
