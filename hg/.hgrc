@@ -23,3 +23,14 @@ Source = {root}/{file},v
 Date = {date|utcdate}
 Id = {file|basename},v {node|short} {date|utcdate} {author|user}
 Revision = {node|short}
+[color]
+status.modified = magenta bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = blue bold
+status.ignored = black bold
+[alias]
+# short log
+llog = log --limit 10
+
