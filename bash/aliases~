@@ -70,7 +70,7 @@ alias tm='top -o vsize' # memory
 alias unhg="find . -name '.hg' -exec rm -rf {} \;"
 alias h='hg status'
 alias ha='hg add'
-
+alias hp='hg push'
 function hc() {
   hg commit -m "$1"
 }
