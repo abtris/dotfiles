@@ -46,9 +46,9 @@ function zipr() {
   zip -r $1.zip $1
 }
 
-# Finder
-alias o='open . &'
-alias ff='open -a Firefox'
+# Nautilus
+alias o='nautilus .'
+#alias ff='open -a Firefox'
 
 # General code
 
