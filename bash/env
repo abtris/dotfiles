@@ -1,4 +1,4 @@
 
 # Set PATH, CDPATH, EDITOR, etc.
-export EDITOR = vim
+export EDITOR='scite'
 
