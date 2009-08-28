@@ -76,6 +76,8 @@ alias h='hg status'
 alias ha='hg add'
 alias hp='hg push'
 alias hd='hg diff'
+alias hl='hg log --style compact'
+alias ht='hg log --style compact -vpr tip'
 
 function hc() {
   hg commit -m "$1"
