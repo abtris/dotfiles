@@ -4,11 +4,13 @@
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="scite ~/bin/dotfiles/bash/env"
-
+# LMC
+alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
+alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 # Quicker cd
 #alias cg='cd /Library/Ruby/Gems/1.8/gems/'
 function cr() {
- cd ~/repos/$*
+ cd ~/bin/dotfiles/$*
 }
 
 # Common -- Some are from Damian Conway
