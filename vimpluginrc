@@ -1,0 +1,5 @@
+"disable menubar and Toolbar
+set go-=m
+set go-=T
+"disable swap file
+set noswf
