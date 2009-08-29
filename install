@@ -11,6 +11,9 @@ ls -s ~/bin/dotfiles/.conkyrc ~/.conkyrc
 ls -s ~/bin/dotfiles/.vimrc ~/.vimrc
 ls -s ~/bin/dotfiles/.vimpluginrc ~/.vimpluginrc
 ls -s ~/bin/dotfiles/.nanorc ~/.nanorc
+# gnome terminal profile
+ls -s ~/bin/dotfiles/gnome-terminal/Profile0 ~/.gconf/apps/gnome-terminal/profiles
+
 # change shell
 csh -s /bin/zsh
 # install vcpprompt

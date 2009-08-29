@@ -1,4 +1,5 @@
 
 # Set PATH, CDPATH, EDITOR, etc.
 export EDITOR='scite'
-
+# CTRL+D
+export STTY="eof '^D'"
