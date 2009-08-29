@@ -2,7 +2,7 @@ set nocompatible " Disable Vi compatibility
 " ===== Appearance =====
 set guioptions-=T        " Hide toolbars
 set guioptions-=m        " Hide menu
-set guifont=Monospace\ 8 " Use nice font
+set guifont=Monospace\ 12 " Use nice font
 set number               " Show line numbers
 
 " Highlight traling whitespace
@@ -25,8 +25,17 @@ set autoindent   " Copy indent from current line when starting a new line
 set smartindent  " Do smart autoindenting when staring a new line
 set expandtab    " Insert spaces instead of <Tab>
 set smarttab     " A <BS> will delete a 'shiftwidth' worth of spaces at the start of the line
-set tabstop=2    " Number of spaces that a <Tab> counts for
-set shiftwidth=2 " Number of spaces to use for each step of  (auto)indent
+set tabstop=4    " Number of spaces that a <Tab> counts for
+set shiftwidth=4 " Number of spaces to use for each step of  (auto)indent
+" === From satrapa http://www.kit.tul.cz/~satrapa/docs/vim/konfig.htm
+"set exrc
+set history=1000
+set backspace=2
+set nojoinspaces
+set ruler
+set showcmd
+set showmatch
+"set background=dark
 " Select just pasted text
 nmap gp `[v`]
 " ===== Search =====
@@ -46,30 +55,7 @@ set wildmenu
 set wildmode=longest:full,full 
 
 
-
-map <A-1> :b1<CR>
-map <A-2> :b2<CR>
-map <A-3> :b3<CR>
-map <A-4> :b4<CR>
-map <A-5> :b5<CR>
-map <A-6> :b6<CR>
-map <A-7> :b7<CR>
-map <A-8> :b8<CR>
-map <A-9> :b9<CR>
-map <A-0> :b10<CR>
-map <C-Tab> :bn<CR>
-map <S-C-Tab> :bp<CR>
-
-imap <A-1> <Esc>:b1<CR>
-imap <A-2> <Esc>:b2<CR>
-imap <A-3> <Esc>:b3<CR>
-imap <A-4> <Esc>:b4<CR>
-imap <A-5> <Esc>:b5<CR>
-imap <A-6> <Esc>:b6<CR>
-imap <A-7> <Esc>:b7<CR>
-imap <A-8> <Esc>:b8<CR>
-imap <A-9> <Esc>:b9<CR>
-imap <A-0> <Esc>:b10<CR>
-imap <C-Tab> <Esc>:bn<CR>
-imap <S-C-Tab> <Esc>:bp<CR> 
-
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1
