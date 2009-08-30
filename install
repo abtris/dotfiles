@@ -1,10 +1,10 @@
 # INSTALL
-sudo apt-get install mc
-sudo apt-get install vim
-sudo apt-get install zsh
+sudo apt-get install mc vim vim-gnome zsh
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 ln -s ~/bin/dotfiles/zshrc ~/.zshrc
+# make dir (default not exists)
+mkdir ~/.ssh
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
 ln -s ~/bin/dotfiles/.SciTEUser.properties ~/.SciTEUser.properties
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
@@ -14,10 +14,12 @@ ls -s ~/bin/dotfiles/.conkyrc ~/.conkyrc
 ls -s ~/bin/dotfiles/.vimrc ~/.vimrc
 ls -s ~/bin/dotfiles/.vimpluginrc ~/.vimpluginrc
 ls -s ~/bin/dotfiles/.nanorc ~/.nanorc
-# gnome terminal profile
+# gnome terminal profile:
 ls -s ~/bin/dotfiles/gnome-terminal/Profile0 ~/.gconf/apps/gnome-terminal/profiles
-
 # change shell
 csh -s /bin/zsh
 # install vcpprompt
 sh ~/bin/dotfiles/bin/vcprompt-install
+# reload configuration and run zsh
+source ~/.zshrc
+zsh

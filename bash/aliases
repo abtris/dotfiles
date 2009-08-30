@@ -2,16 +2,17 @@
 
 # Utility
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='gvim "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+#alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ea='gvim ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="gvim ~/bin/dotfiles/bash/env"
 # LMC
 alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 # Quicker cd
-#alias cg='cd /Library/Ruby/Gems/1.8/gems/'
-function cr() {
- cd ~/bin/dotfiles/$*
-}
+alias cr='cd ~/bin/dotfiles'
+
+# Aptitude
+alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
@@ -146,6 +147,12 @@ function ct() {
 function sc() {
   scite $*
 }
+
+
+function v() {
+ gvim -p --remote-tab-silent $1 
+}
+
 
 
 # TextMate
