@@ -3,3 +3,5 @@
 export EDITOR='scite'
 # CTRL+D
 export STTY="eof '^D'"
+# PATH
+export PATH=~/bin:$PATH
