@@ -1,4 +1,7 @@
 # INSTALL
+sudo apt-get install mc
+sudo apt-get install vim
+sudo apt-get install zsh
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 ln -s ~/bin/dotfiles/zshrc ~/.zshrc

@@ -2,13 +2,15 @@
 
 # Utility
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='vim ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="vim ~/bin/dotfiles/bash/env"
-
+alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="scite ~/bin/dotfiles/bash/env"
+# LMC
+alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
+alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 # Quicker cd
 #alias cg='cd /Library/Ruby/Gems/1.8/gems/'
 function cr() {
- cd ~/repos/$*
+ cd ~/bin/dotfiles/$*
 }
 
 # Common -- Some are from Damian Conway
@@ -30,6 +32,7 @@ alias ll='ls -lhG'  # -l long listing, human readable, no group info
 alias lt='ls -lt' # sort with recently modified first
 alias md='mkdir -p'
 alias s='cd ..'   # up one dir
+alias sb='cd -'   # back to last dir
 
 function take() { 
     mkdir -p "$1"
@@ -45,9 +48,9 @@ function zipr() {
   zip -r $1.zip $1
 }
 
-# Finder
-alias o='open . &'
-alias ff='open -a Firefox'
+# Nautilus
+alias o='nautilus .'
+#alias ff='open -a Firefox'
 
 # General code
 
@@ -66,12 +69,15 @@ alias tm='top -o vsize' # memory
 #    hg clone ssh://hg@example.com/$1
 #}
 
+
 # HG
 alias unhg="find . -name '.hg' -exec rm -rf {} \;"
 alias h='hg status'
 alias ha='hg add'
 alias hp='hg push'
 alias hd='hg diff'
+alias hl='hg log --style compact'
+alias ht='hg log --style compact -vpr tip'
 
 function hc() {
   hg commit -m "$1"
@@ -99,7 +105,7 @@ alias gp='git push'
 alias gst='git status'
 alias gt='git status'
 alias g='git status'
-alias eg='mate .git/config'
+alias eg='scite .git/config'
 # Git clone from GitHub
 function gch() {
   git clone git://github.com/$USER/$1.git
@@ -134,6 +140,13 @@ function ct() {
   rm -f TAGS
   etags --append --output=TAGS $*
 }
+
+
+# Scite
+function sc() {
+  scite $*
+}
+
 
 # TextMate
 #alias et="mate"

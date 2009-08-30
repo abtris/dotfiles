@@ -2,8 +2,8 @@
 
 # Utility
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="scite ~/bin/dotfiles/bash/env"
+alias ea='gvim "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="gvim ~/bin/dotfiles/bash/env"
 # LMC
 alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
