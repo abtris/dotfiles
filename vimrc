@@ -21,6 +21,9 @@ set tabpagemax=1000 " Set maximum number of pages opened by the -p command line
                      " argument to a sane value
 set directory=/tmp  " Set central directory for swap files
 
+
+set t_Co=256
+
 " ===== Editing =====
 set nowrap       " Disable line wrapping
 set textwidth=80 " Set maximum width of text being inserted
