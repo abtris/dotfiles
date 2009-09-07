@@ -1,7 +1,0 @@
-
-# Set PATH, CDPATH, EDITOR, etc.
-export EDITOR='gvim'
-# CTRL+D
-export STTY="eof '^D'"
-# PATH
-export PATH=~/bin:$PATH

@@ -82,16 +82,21 @@ alias tm='top -o vsize' # memory
 # HG
 alias unhg="find . -name '.hg' -exec rm -rf {} \;"
 alias h='hg status'
-alias ha='hg add'
 alias hp='hg push'
+alias hpf='hg push -f'
 alias hd='hg diff'
 alias hl='hg log --style compact | tac'
 alias ht='hg log --style compact -vpr tip'
 
+# hg add
+function ha() {
+    hg add "$*"
+}
+# hg commit
 function hc() {
   hg commit -m "$1"
 }
-
+# hg remove
 function hr() {
   hg remove "$*"
 }
