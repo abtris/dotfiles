@@ -46,6 +46,10 @@ Host prod3
 Hostname ap0410.prod.lmc.cz
 IdentityFile id_dsa
 
+Host sb
+Hostname sb01.int.lmc.cz
+IdentityFile id_dsa
+
 Host hudson
 User root
 Hostname prgbuild.int.lmc.cz
