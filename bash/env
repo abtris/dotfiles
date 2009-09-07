@@ -1,6 +1,6 @@
 
 # Set PATH, CDPATH, EDITOR, etc.
-export EDITOR='gvim'
+export EDITOR='vim'
 # CTRL+D
 export STTY="eof '^D'"
 # PATH

@@ -15,6 +15,7 @@ alias cr='cd ~/bin/dotfiles'
 alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
 function key() {
+    # keyserver.ubuntu.com
     sudo gpg --keyserver hkp://subkeys.pgp.net --recv-keys $1
     sudo gpg --export --armor $1 |  sudo apt-key add -
 }
@@ -157,7 +158,8 @@ function sc() {
 
 
 function v() {
- gvim -p --remote-tab-silent $1 
+ # gvim -p --remote-tab-silent $1 
+ vim -p --remote-tab-silent $1
 }
 
 
