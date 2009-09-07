@@ -29,9 +29,6 @@ esac
 
 #autoload -U ~/.zsh/functions/*(:t)
 
-set t_Co=256
-syntax on 
-
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000

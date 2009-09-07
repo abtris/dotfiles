@@ -12,7 +12,7 @@ set number               " Show line numbers
 autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
 autocmd InsertEnter * match TrailingWhitespace /some nonsense/
 autocmd InsertLeave * match TrailingWhitespace /\s\+$/
-colorscheme wombat     " Use nice color scheme
+colorscheme desert256     " Use nice color scheme
 " ===== Behavior =====
 let mapleader = "," " Map leader to more reachable key
 set confirm         " Show confirmation messages
