@@ -14,6 +14,13 @@ alias cr='cd ~/bin/dotfiles'
 # Aptitude
 alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
+function key() {
+    sudo gpg --keyserver hkp://subkeys.pgp.net --recv-keys $1
+    sudo gpg --export --armor $1 |  sudo apt-key add -
+}
+
+
+
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
