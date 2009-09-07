@@ -10,6 +10,7 @@ alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o
 alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
+alias cs='cd ~/src'
 
 # Aptitude
 alias au='sudo aptitude update && sudo aptitude safe-upgrade'
