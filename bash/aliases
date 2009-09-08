@@ -5,6 +5,7 @@ alias reload='source ~/bin/dotfiles/bash/aliases'
 #alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ea='v ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="v ~/bin/dotfiles/bash/env"
+alias eh="sudo vim /etc/hosts"
 # LMC
 alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
@@ -40,7 +41,6 @@ alias l='ls -lhGt'  # -l long listing, most recent first
 alias lh="ls -lh"
 alias ll='ls -lhG'  # -l long listing, human readable, no group info
 alias lt='ls -lt' # sort with recently modified first
-alias md='mkdir -p'
 alias s='cd ..'   # up one dir
 alias sb='cd -'   # back to last dir
 

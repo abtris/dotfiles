@@ -22,10 +22,10 @@
 	<entry name="custom_command" mtime="1251589114" type="string">
 		<stringvalue></stringvalue>
 	</entry>
-	<entry name="palette" mtime="1252305589" type="string">
-		<stringvalue>#000000000000:#EDEDEDEDEDED:#333333333333:#CDCDCDCD0000:#00000000CDCD:#CDCD0000CDCD:#0000CDCDCDCD:#FAFAEBEBD7D7:#FFFFFFFFFFFF:#CACAE2E2FBFB:#0000FFFF0000:#FFFFFFFF0000:#00000000FFFF:#FFFF0000FFFF:#0000FFFFFFFF:#FFFFFFFFFFFF</stringvalue>
+	<entry name="palette" mtime="1252335725" type="string">
+		<stringvalue>#2E2E34343636:#CCCC00000000:#4E4E9A9A0606:#C4C4A0A00000:#34346565A4A4:#757550507B7B:#060698209A9A:#D3D3D7D7CFCF:#555557575353:#EFEF29292929:#8A8AE2E23434:#FCFCE9E94F4F:#72729F9FCFCF:#ADAD7F7FA8A8:#3434E2E2E2E2:#EEEEEEEEECEC</stringvalue>
 	</entry>
-	<entry name="use_theme_colors" mtime="1252305589" type="bool" value="false"/>
+	<entry name="use_theme_colors" mtime="1252335721" type="bool" value="true"/>
 	<entry name="title_mode" mtime="1251589114" type="string">
 		<stringvalue>replace</stringvalue>
 	</entry>
