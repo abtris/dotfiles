@@ -84,9 +84,10 @@ alias tm='top -o vsize' # memory
 alias unhg="find . -name '.hg' -exec rm -rf {} \;"
 alias h='hg status'
 alias hp='hg push'
+alias hl='hg pull'
 alias hpf='hg push -f'
 alias hd='hg diff'
-alias hl='hg log --style compact | tac'
+alias lh='hg log --style compact | tac'
 alias ht='hg log --style compact -vpr tip'
 
 # hg add
@@ -121,6 +122,7 @@ alias gst='git status'
 alias gt='git status'
 alias g='git status'
 alias eg='scite .git/config'
+alias lg='git log'
 # Git clone from GitHub
 function gch() {
   git clone git://github.com/$USER/$1.git
