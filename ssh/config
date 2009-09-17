@@ -7,46 +7,57 @@ User prskavec
 Hostname andrea.vc.cvut.cz
 
 Host devel
+User prskavecl
 Hostname vap01.devel.lmc.cz
 IdentityFile id_dsa
 
 Host devel-app
+User prskavecl
 Hostname app0204.devel.lmc.cz
 IdentityFile id_dsa
 
 Host deploy
+User prskavecl
 Hostname vap03.deploy.lmc.cz
 IdentityFile id_dsa
 
 Host deploy-app
+User prskavecl
 Hostname app0401.deploy.lmc.cz
 IdentityFile id_dsa
 
 Host preprod
+User prskavecl
 Hostname ap0208.preprod.lmc.cz
 IdentityFile id_dsa
 
 Host preprod-app
+User prskavecl
 Hostname app0404.preprod.lmc.cz
 IdentityFile id_dsa
 
 Host prod-app
+User prskavecl
 Hostname app0610.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod1
+User prskavecl
 Hostname ap0210.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod2
+User prskavecl
 Hostname ap0308.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod3
+User prskavecl
 Hostname ap0410.prod.lmc.cz
 IdentityFile id_dsa
 
 Host sb
+User prskavecl
 Hostname sb01.int.lmc.cz
 IdentityFile id_dsa
 
