@@ -113,13 +113,12 @@ function gg() {
     git commit -v -a -m "$*"
 }
 alias gco='git checkout'
-alias gd='git diff'
+alias gd='git diff --cached'
 alias gdm='git diff master'
 alias gl='git pull'
 alias gnp="git-notpushed"
 alias gp='git push'
-alias gst='git status'
-alias gt='git status'
+alias gs='git show'
 alias g='git status'
 alias eg='scite .git/config'
 alias lg='git log'
