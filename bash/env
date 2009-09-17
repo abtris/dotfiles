@@ -4,4 +4,4 @@ export EDITOR='vim'
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin:$PATH:/usr/local/zend/bin;~/bin/dotfiles/bin
+export PATH=~/bin:$PATH:/usr/local/zend/bin:~/bin/dotfiles/bin
