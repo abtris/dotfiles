@@ -1,12 +1,12 @@
 # INSTALL
-sudo apt-get install mc vim vim-gnome zsh
+sudo apt-get install mc vim zsh
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 ln -s ~/bin/dotfiles/zshrc ~/.zshrc
 # make dir (default not exists)
 mkdir ~/.ssh
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
-ln -s ~/bin/dotfiles/.SciTEUser.properties ~/.SciTEUser.properties
+ln -s ~/bin/dotfiles/SciTEUser.properties ~/.SciTEUser.properties
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
 ls -s ~/bin/dotfiles/.vim ~/.vim
 ls -s ~/bin/dotfiles/.conky ~/.conky
