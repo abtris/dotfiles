@@ -2,12 +2,10 @@
 
 # Download, compile, and copy the vcprompt command to ~/bin.
 #
-# AUTHOR: Geoffrey Grosenbach
-#         July 27 2009
 
 mkdir -p ~/src
 cd ~/src
-hg clone http://vc.gerg.ca/hg/vcprompt/
+hg clone https://abtris@bitbucket.org/abtris/vcprompt/
 cd vcprompt
 make
 cp vcprompt ~/bin/vcprompt
