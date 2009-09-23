@@ -122,6 +122,11 @@ alias gs='git show'
 alias g='git status'
 alias eg='scite .git/config'
 alias lg='git log'
+
+alias gsf='git svn fetch'
+alias gsr='git svn rebase'
+alias gsd='git svn dcommit'
+
 # Git clone from GitHub
 function gch() {
   git clone git://github.com/$USER/$1.git
