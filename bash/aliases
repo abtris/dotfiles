@@ -122,7 +122,7 @@ alias gs='git show'
 alias g='git status'
 alias eg='scite .git/config'
 alias lg='git log'
-
+alias lgp='git log --pretty=oneline'
 alias gsf='git svn fetch'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
