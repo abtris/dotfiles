@@ -61,6 +61,17 @@ set wildmenu
 set wildmode=longest:full,full 
 
 
+filetype plugin on
+au FileType php set omnifunc=phpcomplete#CompletePHP
+
+" You might also find this useful
+" PHP Generated Code Highlights (HTML & SQL)                                              
+
+let php_sql_query=1                                                                                        
+let php_htmlInStrings=1
+
+
+
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
