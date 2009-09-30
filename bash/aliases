@@ -59,7 +59,7 @@ function zipr() {
 }
 
 # Nautilus
-alias o='nautilus .'
+alias o='pcmanfm . &'
 #alias ff='open -a Firefox'
 
 # General code
