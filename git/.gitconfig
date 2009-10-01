@@ -4,3 +4,8 @@
 [user]
 	name = Ladislav Prskavec
 	email = ladislav.prskavec@gmail.com
+[alias]
+	ci = commit
+        changes=diff --name-status -r
+        diffstat=diff --stat -r
+        
