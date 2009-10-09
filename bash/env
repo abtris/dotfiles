@@ -4,4 +4,6 @@ export EDITOR='vim'
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin:$PATH:/usr/local/zend/bin:~/bin/dotfiles/bin
+export PATH=~/bin:$PATH:/usr/local/zend/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools
+
+export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.16
