@@ -12,7 +12,7 @@ alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ 
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
 alias cs='cd ~/src'
-
+alias cz='cd ~/zend-ws'
 # Aptitude
 alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 

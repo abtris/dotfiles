@@ -13,6 +13,8 @@
     lg = log -p
     changes=diff --name-status -r
     diffstat=diff --stat -r
+    upstream = log --oneline master..origin/master
+    pending = log --oneline origin/master..master
 [color]
     ui = auto
 [color "branch"]
@@ -28,3 +30,5 @@
     added = yellow
     changed = green
     untracked = cyan        
+[diff "doc"]
+	textconv = antiword
