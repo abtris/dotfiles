@@ -74,6 +74,9 @@ function pless() {
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
+# SVN
+alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
+
 # Mercurial hg
 #function new-hg() {
 #    ssh hg@example.com "hg init $1"
