@@ -1,0 +1,48 @@
+## ~/.mutt/muttrc
+set from=ladislav.prskavec@gmail.com
+set realname="Ladislav Prskavec"
+set reverse_name=yes
+set reverse_realname=no
+set imap_user = 'ladislav.prskavec@gmail.com'
+set spoolfile = imaps://imap.gmail.com:993/INBOX
+#set sendmail="/usr/sbin/ssmtp -C$HOME/.mutt/ssmtp.conf"
+set smtp_url="smtp://ladislav.prskavec@smtp.gmail.com:587/"
+set folder = "imaps://imap.gmail.com:993"
+#set record=+sent-mail-`date +%Y`
+set record="+[Gmail]/Sent Mail"
+set postponed="+[Gmail]/Drafts"
+# previously do:  mkdir -p ~/.mutt/cache/{headers,bodies}
+set header_cache="~/.mutt/cache/headers"
+set message_cachedir="~/.mutt/cache/bodies"
+set certificate_file=~/.mutt/certificates 
+set move=no
+set delete=yes 
+set edit_hdrs
+set include
+set reply_to
+set abort_nosubject=no
+alternates '(username|altusername)([-+].*)?@.*'
+set hdr_format="%4C %Z %{%m/%d} %-15.15F (%4c) %s" # format of the index
+
+hdr_order From: Date: User-Agent: X-Mailer To: Cc: Reply-To: Subject:
+ignore *
+unignore From: Date: User-Agent: X-Mailer To: Cc: Reply-To: Subject:
+my_hdr Reply-To:
+
+# setup gmail filters to apply the corresp. labels:
+mailboxes ! =ml-lug-list =ml-lug-org =[Gmail]/Drafts "=[Gmail]/All Mail"
+
+set editor="vim"
+set alias_file=~/.mutt/mail_aliases
+source ~/.mutt/mail_aliases
+
+send-hook . 'set realname="Ladislav Prskavec"'
+## hack to make  $reverse_name and 'my_hdr From:' work ok (eg mlists)
+send-hook . 'set from=ladislav.prskavec@gmail.com'
+send-hook . 'unmy_hdr From:'
+###
+#send-hook . 'set signature=~/.signature'
+
+#send-hook lug-list 'set record=+sent-lug-list'
+#send-hook lug-.+@lugmen.org.ar 'my_hdr From: JuanJo seC <username+mlist@gmail.com>
+#subscribe lug-.+@lugmen.org.ar
