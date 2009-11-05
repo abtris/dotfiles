@@ -4,8 +4,8 @@ set guioptions-=T        " Hide toolbars
 set guioptions-=m        " Hide menu
 set guifont=Monospace\ 12 " Use nice font
 set guiheadroom=0 
-set guioptions-=M 
-
+set guioptions-=M
+set cursorline cursorcolumn " Cursor highlight
 set number               " Show line numbers
 
 " Highlight traling whitespace
