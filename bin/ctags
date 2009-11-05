@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /path/to/framework/library
-exec ctags-exuberant -f ~/.vim/mytags/framework \
+cd ~/src/ZendFramework-1.9.3-minimal/library
+exec /usr/bin/ctags-exuberant -f ~/.vim/mytags/framework \
 -h ".php" -R \
 --exclude="\.svn" \
 --totals=yes \

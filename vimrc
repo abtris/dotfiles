@@ -7,6 +7,9 @@ set guiheadroom=0
 set guioptions-=M
 set cursorline cursorcolumn " Cursor highlight
 set number               " Show line numbers
+" Highlight long lines
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.*/
 
 " Highlight traling whitespace
 autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
@@ -25,7 +28,7 @@ set directory=/tmp  " Set central directory for swap files
 set t_Co=256
 
 " ===== Editing =====
-set nowrap       " Disable line wrapping
+"set nowrap       " Disable line wrapping
 set textwidth=80 " Set maximum width of text being inserted
 set autoindent   " Copy indent from current line when starting a new line
 set smartindent  " Do smart autoindenting when staring a new line
@@ -65,9 +68,9 @@ filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " You might also find this useful
-" PHP Generated Code Highlights (HTML & SQL)                                              
+" PHP Generated Code Highlights (HTML & SQL)
 
-let php_sql_query=1                                                                                        
+let php_sql_query=1
 let php_htmlInStrings=1
 
 
