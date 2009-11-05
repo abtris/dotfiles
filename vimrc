@@ -79,3 +79,9 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1
+
+" run file with PHP CLI (CTRL-M)
+:autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+"
+" " PHP parser check (CTRL-L)
+:autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
