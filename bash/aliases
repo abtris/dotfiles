@@ -10,7 +10,7 @@ alias eh="sudo vim /etc/hosts"
 alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mdp="sudo sshfs prskavecl@ap0208.preprod.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
-alias mnb="sudo sshfs abtris@10.1.2.136:/ /media/netbook/ -o uid=0,gid=33,allow_other"
+alias mnb="sudo sshfs abtris@10.1.2.14:/ /media/netbook/ -o uid=0,gid=33,allow_other"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
 alias cs='cd ~/src'
@@ -120,7 +120,7 @@ function gg() {
 alias gco='git checkout'
 alias gd='git diff --cached'
 alias gdm='git diff master'
-alias gl='git pull'
+alias gl='git reset --hard && git pull'
 alias gnp="git-notpushed"
 alias gp='git push'
 alias gs='git show'
