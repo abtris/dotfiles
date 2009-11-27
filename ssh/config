@@ -80,3 +80,7 @@ User ahutacz
 Hostname 66.147.240.158
 IdentityFile id_dsa
 
+Host brain
+User root
+Hostname 88.86.118.212
+
