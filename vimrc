@@ -51,6 +51,10 @@ nmap gp `[v`]
 set hlsearch  " Highlight all matches for the last used search pattern
 set incsearch " Display search results incrementally
 
+" == PHP man pages 
+" pear install doc.php.net/pman
+set keywordprg=pman
+
 filetype plugin indent on 
 if &t_Co > 2 || has("gui_running")
   syntax on
