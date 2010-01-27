@@ -84,3 +84,8 @@ Host brain
 User root
 Hostname 88.86.118.212
 
+host gitolite
+     user git
+     hostname 192.168.56.101
+     port 22
+     identityfile ~/.ssh/admin

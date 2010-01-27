@@ -29,6 +29,8 @@ function key() {
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
+alias lt="ls -lt" # sort time desc
+alias ltr="lt -r"
 alias c='clear'
 alias cdd='cd -'  # goto last dir cd'ed from
 alias cl='clear; l'
