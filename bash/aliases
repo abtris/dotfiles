@@ -11,10 +11,17 @@ alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o
 alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mdp="sudo sshfs prskavecl@ap0208.preprod.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
 alias mnb="sudo sshfs abtris@10.1.2.14:/ /media/netbook/ -o uid=0,gid=33,allow_other"
+alias rpmrepo="cadaver http://yumrepo.prod.lmc.cz/lmc/apps-deploy/"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
-alias cs='cd ~/src'
+#alias cs='cd ~/src'
 alias cz='cd ~/zend-ws'
+
+function cs() {
+    cd ~/src
+    cd "$1"
+}
+
 # Aptitude
 alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
