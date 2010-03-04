@@ -1,0 +1,37 @@
+# This is a Mercurial configuration file.
+[ui]
+username = Ladislav Prskavec <ladislav@prskavec.net>
+editor = vim
+merge = meld
+debug = true
+[extensions]
+color =
+convert =
+rebase = 
+hgext.fetch =
+hgext.keyword =
+keyword=/usr/share/python-support/mercurial-common/hgext/keyword.py
+[keyword]
+**.php =
+**.xml =
+**.sh =
+**.css =
+[keywordmaps]
+RCSFile = {file|basename},v
+Author = {author|user}
+Header = {root}/{file},v {node|short} {date|utcdate} {author|user}
+Source = {root}/{file},v
+Date = {date|utcdate}
+Id = {file|basename},v {node|short} {date|utcdate} {author|user}
+Revision = {node|short}
+[color]
+status.modified = magenta bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = blue bold
+status.ignored = black bold
+[alias]
+# short log
+llog = log --limit 10
+

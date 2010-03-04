@@ -1,0 +1,3 @@
+[keybindings]
+split_horiz = <Ctrl><Shift>H
+split_vert = <Ctrl><Shift>O
