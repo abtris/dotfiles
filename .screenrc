@@ -1,0 +1,3 @@
+caption always "%3n %t%? @%u%?%? [%h]%?%=%c"
+hardstatus alwaysignore
+hardstatus alwayslastline '%{bW}%-w%{.wB}%n %t%{-}%+w %=%{.w}'
