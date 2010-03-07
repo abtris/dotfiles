@@ -86,7 +86,7 @@ alias tm='top -o vsize' # memory
 
 # SVN
 alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
-alias sa="svn status | grep '^?' | while read file; do x=${file:8:}; svn add '$x'; done;"
+#alias sa="svn status | grep '^?' | while read file; do x=${file:8:}; svn add '$x'; done;"
 
 # Mercurial hg
 #function new-hg() {
