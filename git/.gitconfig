@@ -39,3 +39,5 @@
 [diff]
 #	external = /home/prskavecl/bin/dotfiles/bin/diffmeld
 #   external = /home/prskavecl/bin/dotfiles/bin/diffuse
+[core]
+	excludesfile = /home/prskavecl/.gitignore

@@ -11,6 +11,8 @@ rebase =
 hgext.fetch =
 hgext.keyword =
 keyword=/usr/share/python-support/mercurial-common/hgext/keyword.py
+hgext.bookmarks =
+hggit = 
 [keyword]
 **.php =
 **.xml =
