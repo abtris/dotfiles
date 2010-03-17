@@ -89,3 +89,9 @@ host gitolite
      hostname 192.168.56.101
      port 22
      identityfile ~/.ssh/admin
+
+
+Host test
+User hudson
+Hostname 10.1.1.60
+IdentityFile id_dsa
