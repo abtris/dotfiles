@@ -1,0 +1,1 @@
+Soubory abbrev.properties a SciTEUser.properties (v linuxu přejmenujte na .SciTEUser.properties) zkopírujte do svého profilu, ostatní soubory do adresáře se SciTE.

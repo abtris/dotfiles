@@ -1,0 +1,99 @@
+Infinity
+NaN
+undefined
+decodeURI(string) Decodes an encoded URI
+decodeURIComponent(string) Decodes an encoded URI component
+encodeURI(string) Encodes a string as a URI
+encodeURIComponent(string) Encodes a string as a URI component
+escape(string) Encodes a string
+eval(string) Evaluates a string and executes it as if it was script code
+isFinite(number) Checks if a value is a finite number
+isNaN(number) Checks if a value is not a number
+parseFloat(string) Parses a string and returns a floating point number
+parseInt(string, [radix]) Parses a string and returns an integer
+unescape(string) Decodes a string encoded by escape()
+Math.E
+Math.LN2
+Math.LN10
+Math.LOG2E
+Math.LOG10E
+Math.PI
+Math.SQRT1_2
+Math.SQRT2
+Math.abs(x) Returns the absolute value of a number
+Math.acos(x) Returns the arccosine of a number
+Math.asin(x) Returns the arcsine of a number
+Math.atan(x) Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians
+Math.atan2(y, x) Returns the angle theta of an (x,y) point as a numeric value between -PI and PI radians
+Math.ceil(x) Returns the value of a number rounded upwards to the nearest integer
+Math.cos(x) Returns the cosine of a number
+Math.exp(x) Returns the value of Ex
+Math.floor(x) Returns the value of a number rounded downwards to the nearest integer
+Math.log(x) Returns the natural logarithm (base E) of a number
+Math.max(x, y) Returns the number with the highest value of x and y
+Math.min(x, y) Returns the number with the lowest value of x and y
+Math.pow(x, y) Returns the value of x to the power of y
+Math.random() Returns a random number between 0 and 1
+Math.round(x) Rounds a number to the nearest integer
+Math.sin(x) Returns the sine of a number
+Math.sqrt(x) Returns the square root of a number
+Math.tan(x) Returns the tangent of an angle
+Math.toSource() Represents the source code of an object
+Math.valueOf() Returns the primitive value of a Math object
+document.childNodes
+document.doctype
+document.documentElement
+document.domConfig
+document.firstChild
+document.lastChild
+document.nodeName
+document.nodeType
+document.nodeValue
+document.close() Closes an output stream opened with the document.open() method, and displays the collected data
+document.createAttribute(name) Creates an attribute node with the specified name, and returns the new Attr object
+document.createCDATASection(data) Creates a CDATA section node
+document.createComment(data) Creates a comment node
+document.createDocumentFragment() Creates an empty DocumentFragment object, and returns it
+document.createElement(name) Creates an element node
+document.createTextNode(text) Creates a text node
+document.getElementById(id) Returns the element that has an ID attribute with the given value. If no such element exists, it returns null
+document.getElementsByTagName(tagname) Returns a NodeList of all elements with a specified name
+document.open([mimetype, [replace]]) Opens a stream to collect the output from any document.write() or document.writeln() methods
+document.write(s, ...) Writes HTML expressions or JavaScript code to a document
+document.writeln(s, ...) Identical to the write() method, with the addition of writing a new line character after each expression
+location.hash
+location.host
+location.hostname
+location.href
+location.pathname
+location.port
+location.protocol
+location.search
+location.assign(url) Loads a new document
+location.reload() Reloads the current document
+location.replace(url) Replaces the current document with a new one
+window.closed
+window.length
+window.name
+window.opener
+window.parent
+window.self
+window.top
+window.alert(message) Displays an alert box with a message and an OK button
+window.blur() Removes focus from the current window
+window.clearInterval(id) Cancels a timeout set with setInterval()
+window.clearTimeout(id) Cancels a timeout set with setTimeout()
+window.close() Closes the current window
+window.confirm(message) Displays a dialog box with a message and an OK and a Cancel button
+window.focus() Sets focus to the current window
+window.moveBy(x, y) Moves a window relative to its current position
+window.moveTo(x, y) Moves a window to the specified position
+window.open([url, [name, [specs, [replace]]]]) Opens a new browser window
+window.print() Prints the contents of the current window
+window.prompt(message, default) Displays a dialog box that prompts the user for input
+window.resizeBy(width, height) Resizes a window by the specified pixels
+window.resizeTo(width, height) Resizes a window to the specified width and height
+window.scrollBy(x, y) Scrolls the content by the specified number of pixels
+window.scrollTo(x, y) Scrolls the content to the specified coordinates
+window.setInterval(fn, milisec) Evaluates an expression at specified intervals
+window.setTimeout(fn, milisec) Evaluates an expression after a specified number of milliseconds
