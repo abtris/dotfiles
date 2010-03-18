@@ -13,7 +13,7 @@ IdentityFile id_dsa
 
 Host devel-app
 User prskavecl
-Hostname app0204.devel.lmc.cz
+Hostname app01.devel.lmc.cz
 IdentityFile id_dsa
 
 Host deploy
