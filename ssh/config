@@ -43,7 +43,7 @@ IdentityFile id_dsa
 
 Host prod1
 User prskavecl
-Hostname ap0210.prod.lmc.cz
+Hostname ap0305.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod2
@@ -54,6 +54,11 @@ IdentityFile id_dsa
 Host prod3
 User prskavecl
 Hostname ap0410.prod.lmc.cz
+IdentityFile id_dsa
+
+Host prod4
+User prskavcl
+Hostname ap0403.prod.lmc.cz
 IdentityFile id_dsa
 
 Host sb
