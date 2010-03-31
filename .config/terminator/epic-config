@@ -1,0 +1,17 @@
+[global_config]
+[keybindings]
+  split_horiz = <Ctrl><Shift>H
+  split_vert = <Ctrl><Shift>O
+[profiles]
+  [[default]]
+    use_system_font = False
+    font = Droid Sans Mono 12
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
