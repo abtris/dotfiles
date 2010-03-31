@@ -57,7 +57,7 @@ Hostname ap0410.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod4
-User prskavcl
+User prskavecl
 Hostname ap0403.prod.lmc.cz
 IdentityFile id_dsa
 
