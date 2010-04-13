@@ -79,7 +79,7 @@ au BufRead,BufNewFile *.php		set indentexpr= | set smartindent
 
 " {{{ .phps files handled like .php
 
-au BufRead,BufNewFile *.phps		set filetype=php
+au BufRead,BufNewFile *.phtml		set filetype=php
 
 " }}}
 
