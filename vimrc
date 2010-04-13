@@ -1,91 +1,134 @@
-set nocompatible " Disable Vi compatibility
-" ===== Appearance =====
-set guioptions-=T        " Hide toolbars
-set guioptions-=m        " Hide menu
-set guifont=Monospace\ 12 " Use nice font
-set guiheadroom=0 
-set guioptions-=M
-set cursorline cursorcolumn " Cursor highlight
-set number               " Show line numbers
-" Highlight long lines
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.*/
-
-" Highlight traling whitespace
-autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
-autocmd InsertEnter * match TrailingWhitespace /some nonsense/
-autocmd InsertLeave * match TrailingWhitespace /\s\+$/
-colorscheme desert256     " Use nice color scheme
-" ===== Behavior =====
-let mapleader = "," " Map leader to more reachable key
-set confirm         " Show confirmation messages
-set wildmenu        " Show autocomplete menu for commands
-set tabpagemax=1000 " Set maximum number of pages opened by the -p command line
-                     " argument to a sane value
-set directory=/tmp  " Set central directory for swap files
-
-
-set t_Co=256
-
-" ===== Editing =====
-"set nowrap       " Disable line wrapping
-set textwidth=80 " Set maximum width of text being inserted
-set autoindent   " Copy indent from current line when starting a new line
-set smartindent  " Do smart autoindenting when staring a new line
-set expandtab    " Insert spaces instead of <Tab>
-set smarttab     " A <BS> will delete a 'shiftwidth' worth of spaces at the start of the line
-set tabstop=4    " Number of spaces that a <Tab> counts for
-set shiftwidth=4 " Number of spaces to use for each step of  (auto)indent
-" === From satrapa http://www.kit.tul.cz/~satrapa/docs/vim/konfig.htm
-"set exrc
-set history=1000
-set backspace=2
-set nojoinspaces
-set ruler
-set showcmd
-set showmatch
-"set background=dark
-" Select just pasted text
-nmap gp `[v`]
-" ===== Search =====
-set hlsearch  " Highlight all matches for the last used search pattern
-set incsearch " Display search results incrementally
-
-" == PHP man pages 
-" pear install doc.php.net/pman
-set keywordprg=pman
-
-filetype plugin indent on 
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif 
-set backup
-set backupdir=~/.vim/backup,.,~/ 
-set incsearch 
-set wildchar=<Tab>
-set wildmenu
-set wildmode=longest:full,full 
-
-
-filetype plugin on
-au FileType php set omnifunc=phpcomplete#CompletePHP
-
-" You might also find this useful
-" PHP Generated Code Highlights (HTML & SQL)
-
-let php_sql_query=1
-let php_htmlInStrings=1
-
-
-
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1
-
-" run file with PHP CLI (CTRL-M)
-:autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+" .vimrc by Tobias Schlitt <toby@php.net>.
+" No copyright, feel free to use this, as you like, as long as you keep some
+" credits.
+" 
+" General VIM settings file. Optimized for coding PHP can be found in 
+" ~/vim/ftdetect/php.vim.
 "
-" " PHP parser check (CTRL-L)
-:autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
+" v1.1pl1
+"
+" Changelog:
+" 
+" v1.1:
+" --------------
+"  - Added versioning and changelog
+"  - Added auto-completion using <TAB>
+"  - Added auto-reload command, when .vimrc changes
+"  - Deactivated <CTRL>-p => "pear package" in favor of 
+"  - Mapped <CTRL>-p => "run through CLI"
+"  - Added fold markers for better overview
+"  - Added for mapping for wrapping visual selections into chars (like '/(/...)
+"  - Added scrolljump=5 and scrolloff=3 for better moving around with folds
+"  - Added mapping <CTRL>-h to search for the word under the cursor (should be
+"    a funcion) using phpm
+"  - Replaced map/imap with noremap/inoremap for clearer mappings
+"
+" v1.1pl1:
+" --------------
+"  - Fixed issue with <CTRL>-p for running PHP CLI (missing <cr>)
+"  - Remapped PHP compile check to ; (in command mode only)
+"
+" v1.2:
+" -----
+"  - Remapped PHP compile check to . (in command mode only)
+"  - Mapped ; to (add ; at the end of line, when missing - command mode only)
+"  - Added make facilities (:make, jump to error).
+"  - Added setting for not highlighting every search result (nohlsearch).
+"  - Added laststatus=2 (tipp by Derick)
+"  - Tip by Jakob (UG): Visual, <z>, <f> == foldmarkers for area
+"  - Moved PHP specific settings to .vim/ftdetect/php.vim
+"  - Activated sourcing of ftplugins
+"  - Added file type setting for .phps files
+"  - Created PDV (phpDocumentor for VIM) and added mapping (ATTENTION! BC
+"    break!)
+"  - Fixed bug with cover char mapping of "" in visual mode
+"  - Added possible alternatives for other coding standards
+"
+"  - Replace grepprg to remove SVN results
+"  - Add mapping for VIM7 spell checks to <F5>
+"  - Added autocommand to highlight the current line in insert mode.
+"  - Added skeleton file to be read for new PHP files.
+
+" Source local settings
+" source ~/.vimlocalrc
+
+" Set new grep command, which ignores SVN!
+" TODO: Add this to SVN
+set grepprg=/usr/bin/vimgrep\ $*\ /dev/null
+
+" Map <F5> to turn spelling on (VIM 7.0+)
+map <F5> :setlocal spell! spelllang=en_us<cr>
+" Map <F6> to turn spelling (de) on (VIM 7.0+)
+map <F6> :setlocal spell! spelllang=de<cr>
+
+" Highlight current line in insert mode.
+autocmd InsertLeave * se nocul
+autocmd InsertEnter * se cul 
+
+" Reads the skeleton php file
+" Note: The normal command afterwards deletes an ugly pending line and moves
+" the cursor to the middle of the file.
+autocmd BufNewFile *.php 0r ~/.vim/skeleton.php | normal GddOAOAa
+
+" Reads the skeleton txt file
+autocmd BufNewFile *.txt 0r ~/.vim/skeleton.txt | normal GddOAOAOAOAOAOAOAOAOA
+
+" Disable phpsyntax based indenting for .php files {{{
+au BufRead,BufNewFile *.php		set indentexpr= | set smartindent
+" }}}
+
+" {{{ .phps files handled like .php
+
+au BufRead,BufNewFile *.phps		set filetype=php
+
+" }}}
+
+" {{{  Settings   
+
+" Use filetype plugins, e.g. for PHP
+filetype plugin on
+filetype indent on
+
+" Show nice info in ruler
+set ruler
+set laststatus=2
+
+" Set standard setting for PEAR coding standards
+set tabstop=4
+set shiftwidth=4
+
+" Show line numbers by default
+set number
+
+" Enable folding by fold markers
+set foldmethod=marker 
+
+" Autoclose folds, when moving out of them
+set foldclose=all
+
+" Use incremental searching
+set incsearch
+
+" Do not highlight search results
+set nohlsearch
+
+" Jump 5 lines when running out of the screen
+set scrolljump=5
+
+" Indicate jump out of the screen when 3 lines before end of the screen
+set scrolloff=3
+
+" Repair wired terminal/vim settings
+set backspace=start,eol,indent
+
+" Allow file inline modelines to provide settings
+set modeline
+
+" MovingThroughCamelCaseWords
+nnoremap <silent><C-Left>  :<C-u>cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+nnoremap <silent><C-Right> :<C-u>cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+inoremap <silent><C-Left>  <C-o>:cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+inoremap <silent><C-Right> <C-o>:cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR> 
+
+" }}}
+
