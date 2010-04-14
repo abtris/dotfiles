@@ -125,7 +125,7 @@ func! InsertTabWrapper()
 endfunction
 
 " Remap the tab key to select action with InsertTabWrapper
-inoremap <buffer> <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <buffer> <C-k> <c-r>=InsertTabWrapper()<cr>
 
 " }}} Autocompletion using the TAB key
 
