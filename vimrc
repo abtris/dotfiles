@@ -59,7 +59,7 @@ set grepprg=/usr/bin/vimgrep\ $*\ /dev/null
 " Map <F5> to turn spelling on (VIM 7.0+)
 map <F5> :setlocal spell! spelllang=en_us<cr>
 " Map <F6> to turn spelling (de) on (VIM 7.0+)
-map <F6> :setlocal spell! spelllang=de<cr>
+map <F6> :setlocal spell! spelllang=cs<cr>
 
 " Highlight current line in insert mode.
 autocmd InsertLeave * se nocul
