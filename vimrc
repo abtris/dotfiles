@@ -101,10 +101,10 @@ set shiftwidth=4
 set number
 
 " Enable folding by fold markers
-set foldmethod=marker 
+"set foldmethod=marker 
 
 " Autoclose folds, when moving out of them
-set foldclose=all
+"set foldclose=all
 
 " Use incremental searching
 set incsearch

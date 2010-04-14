@@ -80,7 +80,7 @@ inoremap  { {<CR>}<C-O>O
 inoremap <buffer> [ []<LEFT>
 
 " Standard mapping after PEAR coding standard
-inoremap <buffer> ( (  )<LEFT><LEFT>
+inoremap <buffer> ( ()<LEFT><LEFT>
 
 " Maybe this way in other coding standards
 " inoremap ( ( )<LEFT><LEFT> 
