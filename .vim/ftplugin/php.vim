@@ -77,13 +77,15 @@ vnoremap <buffer> <C-c> :call PhpUnComment()<CR>
 " Maybe this way in other coding standards
 inoremap  { {<CR>}<C-O>O
 
-inoremap <buffer> [ []<LEFT>
+" inoremap <buffer> [ []<LEFT>
 
 " Standard mapping after PEAR coding standard
-inoremap <buffer> ( ()<LEFT><LEFT>
+"inoremap <buffer> ( ()<LEFT><LEFT>
 
 " Maybe this way in other coding standards
 " inoremap ( ( )<LEFT><LEFT> 
+
+
 
 inoremap <buffer> " ""<LEFT>
 inoremap <buffer> ' ''<LEFT>
