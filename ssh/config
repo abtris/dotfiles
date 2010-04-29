@@ -28,7 +28,7 @@ IdentityFile id_dsa
 
 Host preprod
 User prskavecl
-Hostname ap0208.preprod.lmc.cz
+Hostname vap02.preprod.lmc.cz
 IdentityFile id_dsa
 
 Host preprod-app
