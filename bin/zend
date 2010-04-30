@@ -1,0 +1,3 @@
+#!/bin/bash
+export GDK_NATIVE_WINDOWS=1
+/usr/local/Zend/ZendStudio-7.0.2/ZendStudio '$@'
