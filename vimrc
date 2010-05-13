@@ -137,3 +137,5 @@ inoremap <silent><C-Right> <C-o>:cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\
 :autocmd FileType php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 " PHP parser check (CTRL-L)
 :autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
+
+colorscheme darktango
