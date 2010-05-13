@@ -107,7 +107,7 @@ inoremap <buffer> ' ''<LEFT>
 
 " The completion dictionary is provided by Rasmus:
 " http://lerdorf.com/funclist.txt
-setlocal dictionary-=/home/dotxp/funclist.txt dictionary+=/home/dotxp/funclist.txt
+setlocal dictionary-=~/funclist.txt dictionary+=~/funclist.txt
 " Use the dictionary completion
 setlocal complete-=k complete+=k
 
