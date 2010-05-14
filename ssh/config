@@ -103,3 +103,5 @@ IdentityFile id_dsa
 Host formax
 User prskavecl
 Hostname test.formax.cz
+IdentityFile id_dsa
+
