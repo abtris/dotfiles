@@ -139,3 +139,5 @@ inoremap <silent><C-Right> <C-o>:cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\
 :autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 
 colorscheme darktango
+
+:nmap <silent> <F7> :NERDTreeToggle<CR>

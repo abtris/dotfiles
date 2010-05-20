@@ -75,6 +75,9 @@ alias o='pcmanfm . &'
 
 # General code
 
+alias checkphp="find . -name '.php' -exec php -l {} \;"
+
+
 # From Chris Wanstrath
 function pless() { 
     pygmentize $1 | less -r 
