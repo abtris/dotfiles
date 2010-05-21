@@ -4,7 +4,7 @@ export EDITOR='vim'
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin:$PATH:/usr/local/zend/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools:~/bin/WebIDE-PHP/bin:/opt/local/bin:/sw/bin
+export PATH=~/bin:$PATH:/usr/local/zend/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools:~/bin/WebIDE-PHP/bin:/opt/local/bin:/sw/bin:/usr/local/mysql/bin
 export GDK_NATIVE_WINDOWS=true
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 export JDK_HOME=/usr/lib/jvm/java-6-sun
