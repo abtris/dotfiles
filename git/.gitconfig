@@ -15,7 +15,7 @@
     diffstat=diff --stat -r
     upstream = log --oneline master..origin/master
 	pending = log --oneline origin/master..master	
-    myworklog = log --author=Ladislav --since=1.month --pretty='%h %ad %an %s'
+    myworklog = log --author=Ladislav --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
 	worklog = log --pretty='%h %ad %an %s'
 	worklogexport = log --pretty='%ḧ́|%at|%an|%s'
 [color]
