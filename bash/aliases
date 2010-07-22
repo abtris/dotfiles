@@ -89,7 +89,8 @@ alias tm='top -o vsize' # memory
 
 # SVN
 alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
-alias sa = "svn st | awk '{print $2 }' | xargs svn add"
+alias sa="svn st | awk '{print $2 }' | xargs svn add"
+alias s="svn st"
 
 # Mercurial hg
 #function new-hg() {
