@@ -1,3 +1,4 @@
 .hg/*
 *~
 .mutt/cache
+.vim/plugin/.swp
