@@ -1,6 +1,6 @@
 # Command Enhancements
 
-# Utility
+alias mysql='mysql -u root -p -h 127.0.0.1'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 #alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ea='v ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
