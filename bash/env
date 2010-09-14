@@ -1,4 +1,4 @@
-
+export ORACLE_HOME=/opt/instantclient_11_2
 # Set PATH, CDPATH, EDITOR, etc.
 export EDITOR='vim'
 # CTRL+D
