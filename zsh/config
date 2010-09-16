@@ -11,16 +11,16 @@ zstyle ':completion:*' insert-tab pending
 
 
 #PROMPT='
-#%{\e[0;32m%}%n{%{\e[0m%}@%M:%~ %{$fg_bold[black]%}$(vcprompt.py)
+#%{\e[0;32m%}%n{%{\e[0m%}@%M:%~ %{$fg_bold[black]%}$(vcprompt)
 #→ %{$reset_color%}'
 
 if [[ `whoami` = root ]] then
 # root prompt
-PROMPT=$'%{\e[0;31m%}%n@%m:%{\e[0m%}%~ %{$fg_bold[black]%}$(vcprompt.py)
+PROMPT=$'%{\e[0;31m%}%n@%m:%{\e[0m%}%~ %{$fg_bold[black]%}$(vcprompt)
 → %{\e[0m%}%'
 else
 # user prompt
-PROMPT=$'%{\e[0m%}%n@%m:%{\e[0m%}%~ %{$fg_bold[black]%}$(vcprompt.py)
+PROMPT=$'%{\e[0m%}%n@%m:%{\e[0m%}%~ %{$fg_bold[black]%}$(vcprompt)
 → %{\e[0m%}%'
 fi
 
