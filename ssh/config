@@ -75,6 +75,10 @@ Host onrea
 User root
 Hostname sandbox-onrea.int.lmc.cz
 
+Host ap01
+User prskavecl
+Hostname ap01.int.lmc.cz
+
 Host svn
 User prskavecl
 Hostname ap03.int.lmc.cz
