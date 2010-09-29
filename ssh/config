@@ -109,3 +109,7 @@ User prskavecl
 Hostname test.formax.cz
 IdentityFile id_dsa
 
+Host fotoparta
+User root
+Hostname fotoparta.cz
+IdentityFile id_dsa
