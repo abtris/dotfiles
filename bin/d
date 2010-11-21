@@ -1,0 +1,11 @@
+if [ -d .svn ]
+then
+echo "SVN"
+svn diff
+fi
+
+if [ -d .git ]
+then
+echo "GIT"
+git diff
+fi
