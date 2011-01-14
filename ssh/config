@@ -1,6 +1,7 @@
 Host dzogchen
 User root
-HostName dzogchen.cz 
+HostName dzogchen.cz
+IdentityFile id_dsa
 
 Host andrea
 User prskavec

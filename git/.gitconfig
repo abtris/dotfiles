@@ -10,7 +10,8 @@
     br = branch
     co = checkout
     df = diff
-    lg = log -p
+	lg = log -p
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     changes=diff --name-status -r
     diffstat=diff --stat -r
     upstream = log --oneline master..origin/master
@@ -44,3 +45,4 @@
 #   external = /home/prskavecl/bin/dotfiles/bin/diffuse
 [core]
 	excludesfile = /home/prskavecl/.gitignore
+	quotepath = false
