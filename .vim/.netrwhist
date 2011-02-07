@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/prskavecl/src/BrainSourz/tests'
-let g:netrw_dirhist_2='/home/prskavecl/src/fast'
-let g:netrw_dirhist_3='/home/prskavecl/src'
-let g:netrw_dirhist_4='/home/prskavecl/src/memorizer'
-let g:netrw_dirhist_5='/home/prskavecl/bin/dotfiles'
-let g:netrw_dirhist_6='/home/prskavecl/src/memorizer'
-let g:netrw_dirhist_7='/home/prskavecl/src/BrainSourz/tests'
-let g:netrw_dirhist_8='/tmp/test'
-let g:netrw_dirhist_9='/home/prskavecl/src/BrainSourz/application/configs/data'
+let g:netrw_dirhist_cnt =0
