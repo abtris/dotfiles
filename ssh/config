@@ -12,6 +12,11 @@ User prskavecl
 Hostname vap01.devel.lmc.cz
 IdentityFile id_dsa
 
+Host git
+User prskavecl
+Hostname ap03-test.int.lmc.cz
+IdentityFile id_dsa
+
 Host devel-app
 User prskavecl
 Hostname app01.devel.lmc.cz
