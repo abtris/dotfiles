@@ -67,6 +67,11 @@ User prskavecl
 Hostname ap0403.prod.lmc.cz
 IdentityFile id_dsa
 
+Host prod5
+User prskavecl
+Hostname ap0903.prod.lmc.cz
+IdentityFile id_dsa
+
 Host sb
 User prskavecl
 Hostname sb01.int.lmc.cz
