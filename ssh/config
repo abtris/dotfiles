@@ -12,6 +12,11 @@ User prskavecl
 Hostname vap01.devel.lmc.cz
 IdentityFile id_dsa
 
+Host devel2
+User prskavecl
+Hostname vap11.devel.lmc.cz
+IdentityFile id_dsa
+
 Host git
 User prskavecl
 Hostname ap03-test.int.lmc.cz
@@ -27,6 +32,11 @@ User prskavecl
 Hostname vap03.deploy.lmc.cz
 IdentityFile id_dsa
 
+Host deploy2
+User prskavecl
+Hostname vap12.deploy.lmc.cz
+IdentityFile id_dsa
+
 Host deploy-app
 User prskavecl
 Hostname app0401.deploy.lmc.cz
@@ -36,6 +46,12 @@ Host preprod
 User prskavecl
 Hostname vap02.preprod.lmc.cz
 IdentityFile id_dsa
+
+Host preprod2
+User prskavecl
+Hostname vap13.preprod.lmc.cz
+IdentityFile id_dsa
+
 
 Host preprod-app
 User prskavecl
