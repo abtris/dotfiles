@@ -40,7 +40,9 @@ BWHITE='\e[47m'
 
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
-
+if [[ `uname` = Linux ]] then
+    PS1="\n\u@\h:\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n→ "
+else 
     PS1="\n\u@\h:\w \[$EBLACK\]\$(vcprompt.py)\[$NO_COLOR\] \n→ "
-
+fi
 
