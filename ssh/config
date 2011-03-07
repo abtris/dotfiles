@@ -39,7 +39,7 @@ IdentityFile id_dsa
 
 Host deploy-app
 User prskavecl
-Hostname app0401.deploy.lmc.cz
+Hostname app01.deploy.lmc.cz
 IdentityFile id_dsa
 
 Host preprod
