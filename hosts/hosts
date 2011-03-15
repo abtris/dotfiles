@@ -8,5 +8,68 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-127.0.0.1  www.jobs.cz www.topjobs.sk
+# 10.0.3.189 preprod
+# 10.0.3.181 devel
+# 10.0.3.183, 133 deploy
+10.0.32.12 dbregistred_user dbadmin-lmc dbanketa_live dbsupport dbibanners dbaccess dboperational dbphp_pattern db01.deploy.lmc.cz dbjobs_sessions dbjobs dbpd dbprace_sessions dbvpv dbprace dbvlp dbadminy dbjd dbg2counter dbbrigady dbmaoo dbssoserver dbzendadmin
+10.0.36.12 dbosobnosti
 
+# 10.0.3.131 deploy
+# 10.0.3.133 devel
+10.0.36.12 dbozona
+127.0.0.1 jobs.cz www.jobs.cz absolvent.jobs.cz financie.topjobs.sk www.topjobs.sk topjobs.sk absolvent.topjobs.sk www.hotjobs.cz www.topjob.sk fmcg.topjobs.sk
+127.0.0.1 w.jobs.cz onrea.com www.onrea.com www.praca.sk praca.sk prace.cz www.prace.cz ozona.topjobs.sk g2-ankety.jobs.cz brigady.jobs.cz
+127.0.0.1 brigady.prace.cz brigady.topjobs.sk absolvent09.jobs.cz absolvent09.topjobs.sk financie.topjobs.sk spolu.prace.cz
+127.0.0.1 live.topjobs.sk nas.jobs.cz nas.topjobs.sk ozp.prace.cz dictionary.lmc.cz w.prace.cz ww.prace.cz ozp.prace.cz zps.prace.cz www.ozp.prace.cz
+127.0.0.1 www.zps.prace.cz spolu.prace.cz burzaprace.sk it.jobs.cz it.topjobs.sk telco.topjobs.sk job.cz ads.lmc.cz burzaprace.azet.sk www.medical.jobs.cz
+127.0.0.1 medical.jobs.cz international.jobs.cz internationaljobs.cz www.international.jobs.cz www.internationaljobs.cz
+127.0.0.1 pda.jobs.cz wap.jobs.cz mobil.jobs.cz media.jobs.cz www.media.jobs.cz
+127.0.0.1 preview.lmc.cz abl.jobs.cz www.abl.jobs.cz
+127.0.0.1 sciencejobs.cz www.dobrovolnictvi.jobs.cz dobrovolnictvi.jobs.cz
+10.0.0.21 ozona.jobs.cz
+#10.0.0.33 vpv.lmc.cz
+#10.0.0.33 ads.lmc.cz
+#10.0.2.132 - preprod
+#10.0.2.135 - devel
+#10.0.2.142 - deploy
+10.0.36.17 tcsearch tcdsearch tcg2vpv_muj tcpdsearch tcg2vpvmuj tclang
+tcsso
+
+# 10.0.2.208 - deploy
+# 172.16.0.11 - devel
+# 10.0.2.203 - preprod
+10.0.32.10 tcrouter
+
+#devel 10.0.0.13
+#deploy 10.0.0.23
+#preprod 10.0.0.13
+#10.0.0.23 access.lmc.cz
+
+#devel 10.0.0.35
+#deploy 10.0.0.25
+#preprod 10.0.0.15
+#10.0.0.35 asmt.jobs.cz asmt.topjobs.sk asmt.prace.cz
+#10.0.0.24 poradna.topjobs.sk
+# vap06
+#10.0.0.21 unicreditbank.jobs.cz poradna-prace.jobs.cz poradna.jobs.cz poradna.topjobs.sk
+
+10.0.32.1 memc memc02 memc03 memc.devel.lmc.cz
+
+#devel 10.0.0.33
+#deploy 10.0.0.23
+#10.0.0.23 g2.lmc.cz
+
+#devel 10.0.0.31
+10.0.0.31 muj.jobs.cz
+
+
+# deploy 10.0.0.22
+# devel 10.0.0.32
+10.0.0.32 moje.prace.cz poradna.prace.cz
+
+#10.0.0.23 sso.lmc.cz
+
+10.0.0.23 presentation.lmc.cz
+
+10.0.32.14 wsmuj
+10.0.0.26 fast fesrch
