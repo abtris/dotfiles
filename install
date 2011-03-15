@@ -1,5 +1,5 @@
 # INSTALL
-sudo apt-get install mc vim zsh
+sudo apt-get install mc vim zsh mercurial
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 ln -s ~/bin/dotfiles/zshrc ~/.zshrc
@@ -14,6 +14,8 @@ ls -s ~/bin/dotfiles/.conkyrc ~/.conkyrc
 ls -s ~/bin/dotfiles/.vimrc ~/.vimrc
 ls -s ~/bin/dotfiles/.vimpluginrc ~/.vimpluginrc
 ls -s ~/bin/dotfiles/.nanorc ~/.nanorc
+sudo rm /etc/hosts
+sudo ln -s ~/bin/dotfiles/hosts/hosts /etc/hosts
 # gnome terminal profile:
 ls -s ~/bin/dotfiles/gnome-terminal/Profile0 ~/.gconf/apps/gnome-terminal/profiles
 # change shell
