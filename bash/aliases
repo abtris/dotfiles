@@ -311,3 +311,6 @@ function __rm_single_file(){
     fi
 }
 
+
+# ZSH
+alias dh='dirs -v'
