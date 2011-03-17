@@ -44,5 +44,7 @@
 #	external = ~/bin/dotfiles/bin/diffmeld
 #   external = /home/prskavecl/bin/dotfiles/bin/diffuse
 [core]
-	excludesfile = /home/prskavecl/.gitignore
+	excludesfile = /Users/prskavecl/.gitignore
 	quotepath = false
+[instaweb]
+	httpd=webrick
