@@ -1,6 +1,6 @@
 export ORACLE_HOME=/opt/instantclient_11_2
 # Set PATH, CDPATH, EDITOR, etc.
-export EDITOR='mate'
+export EDITOR='mate -w'
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
