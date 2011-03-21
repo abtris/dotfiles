@@ -128,6 +128,7 @@ function hr() {
 }
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias m='git checkout master'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'
@@ -144,7 +145,7 @@ alias gnp="git-notpushed"
 alias gp='git push'
 alias gs='git show'
 alias b='git branch -av'
-alias g='git status'
+alias g='git status -sb'
 alias eg='scite .git/config'
 #alias lg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative'
 alias lg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'

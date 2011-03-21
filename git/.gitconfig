@@ -4,6 +4,8 @@
 [user]
 	name = Ladislav Prskavec
 	email = ladislav.prskavec@gmail.com
+[rerere]
+	enabled = 1
 [alias]
     st = status
     ci = commit
