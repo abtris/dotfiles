@@ -133,9 +133,6 @@ alias m='git checkout master'
 function gg() { 
     git commit -v
 }
-function gc() {
-    git checkout "$*"
-}
 alias gd='git diff --cached'
 alias gdm='git diff master'
 alias gl='git pull'
