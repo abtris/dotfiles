@@ -1,6 +1,11 @@
 export ORACLE_HOME=/opt/instantclient_11_2
 # Set PATH, CDPATH, EDITOR, etc.
-export EDITOR='mate -w'
+SYSTEM=`uname`
+if [ "$SYSTEM"=='Linux' ]; then
+	export EDITOR='vim'
+else
+	export EDITOR='mate -w'
+fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
