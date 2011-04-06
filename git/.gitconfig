@@ -18,6 +18,9 @@
     myworklog = log --author=Ladislav --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
 	worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
 	worklogexport = log --pretty='%ḧ́|%at|%an|%s'
+	up = pull --rebase
+	wu = log --stat origin..@{0}
+	wup = log -p origin..@{0}
 [color]
     ui = auto
 [color "branch"]
