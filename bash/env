@@ -1,7 +1,6 @@
 export ORACLE_HOME=/opt/instantclient_11_2
 # Set PATH, CDPATH, EDITOR, etc.
 SYSTEM=`uname`
-echo $SYSTEM
 if [[ $SYSTEM == *Linux* ]] 
 then
 	export EDITOR='vim'
