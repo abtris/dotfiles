@@ -11,7 +11,7 @@ ff02::2 ip6-allrouters
 # 10.0.3.189 preprod
 # 10.0.3.181 devel
 # 10.0.3.183, 133 deploy
-10.0.32.12 dbregistred_user dbadmin-lmc dbanketa_live dbsupport dbibanners dbaccess dboperational dbphp_pattern db01.deploy.lmc.cz dbjobs_sessions dbjobs dbpd dbprace_sessions dbvpv dbprace dbvlp dbadminy dbjd dbg2counter dbbrigady dbmaoo dbssoserver dbzendadmin
+10.0.36.12 dbregistred_user dbadmin-lmc dbanketa_live dbsupport dbibanners dbaccess dboperational dbphp_pattern db01.deploy.lmc.cz dbjobs_sessions dbjobs dbpd dbprace_sessions dbvpv dbprace dbvlp dbadminy dbjd dbg2counter dbbrigady dbmaoo dbssoserver dbzendadmin
 10.0.36.12 dbosobnosti
 
 # 10.0.3.131 deploy
@@ -32,8 +32,7 @@ ff02::2 ip6-allrouters
 #10.0.2.132 - preprod
 #10.0.2.135 - devel
 #10.0.2.142 - deploy
-10.0.36.17 tcsearch tcdsearch tcg2vpv_muj tcpdsearch tcg2vpvmuj tclang
-tcsso
+10.0.2.142 tcsearch tcdsearch tcg2vpv_muj tcpdsearch tcg2vpvmuj tclang tcsso
 
 # 10.0.2.208 - deploy
 # 172.16.0.11 - devel
@@ -65,7 +64,7 @@ tcsso
 
 # deploy 10.0.0.22
 # devel 10.0.0.32
-10.0.0.32 moje.prace.cz poradna.prace.cz
+10.0.0.22 moje.prace.cz poradna.prace.cz
 
 #10.0.0.23 sso.lmc.cz
 
