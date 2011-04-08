@@ -141,7 +141,7 @@ alias glr='git pull --rebase'
 alias gnp="git-notpushed"
 alias gp='git push'
 alias gs='git show'
-alias b='git branch -av'
+alias b='git branch -avv'
 alias g='git status -sb'
 alias eg='scite .git/config'
 alias lg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
