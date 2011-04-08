@@ -29,8 +29,7 @@ alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
 function key() {
     # keyserver.ubuntu.com
-    sudo gpg --keyserver hkp://subkeys.pgp.net --recv-keys $1
-    sudo gpg --export --armor $1 |  sudo apt-key add -
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $1
 }
 
 
