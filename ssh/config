@@ -95,7 +95,7 @@ IdentityFile id_dsa
 
 Host hudson
 User root
-Hostname prgbuild.int.lmc.cz
+Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
 
 Host onrea
