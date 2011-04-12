@@ -94,7 +94,7 @@ Hostname sb01.int.lmc.cz
 IdentityFile id_dsa
 
 Host hudson
-User root
+User prskavecl
 Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
 
