@@ -32,7 +32,9 @@ ff02::2 ip6-allrouters
 #10.0.2.132 - preprod
 #10.0.2.135 - devel
 #10.0.2.142 - deploy
-10.0.2.142 tcsearch tcdsearch tcg2vpv_muj tcpdsearch tcg2vpvmuj tclang tcsso
+
+# deploy
+10.0.0.28 tcsearch tcdsearch tcg2vpv_muj tcpdsearch tcg2vpvmuj tclang tcsso
 
 # 10.0.2.208 - deploy
 # 172.16.0.11 - devel
@@ -52,7 +54,10 @@ ff02::2 ip6-allrouters
 # vap06
 #10.0.0.21 unicreditbank.jobs.cz poradna-prace.jobs.cz poradna.jobs.cz poradna.topjobs.sk
 
-10.0.32.1 memc memc02 memc03 memc.devel.lmc.cz
+# devel
+#10.0.32.1 memc 
+# deploy
+10.0.36.1 memc
 
 #devel 10.0.0.33
 #deploy 10.0.0.23
