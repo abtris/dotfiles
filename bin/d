@@ -1,11 +1,11 @@
 if [ -d .svn ]
 then
-echo "SVN"
+#echo "SVN"
 svn diff
 fi
 
 if [ -d .git ]
 then
-echo "GIT"
-git diff
+#echo "GIT"
+git diff --word-diff
 fi
