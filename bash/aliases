@@ -24,7 +24,10 @@ function cs() {
     cd ~/Sites
     cd "$1"
 }
-
+# Dig
+function digall() {
+	dig -t ANY $1
+}
 # Aptitude
 alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
