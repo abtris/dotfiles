@@ -51,9 +51,11 @@
 	quotepath = false
 [instaweb]
 	httpd=webrick
-[url "https://github.com/"]
+[url "https://github.com/abtris/"]
 	insteadOf = "gh:"
 [url "ssh://git@git.int.lmc.cz/"]
 	insteadOf = "lmc:"
 [receive]
 	denyNonFastForwards = true
+[push]
+	default = upstream

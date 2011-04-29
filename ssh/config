@@ -55,7 +55,7 @@ IdentityFile id_dsa
 
 Host preprod-app
 User prskavecl
-Hostname app0404.preprod.lmc.cz
+Hostname app01.preprod.lmc.cz
 IdentityFile id_dsa
 
 Host prod-app
