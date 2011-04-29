@@ -2,3 +2,4 @@
 *~
 .mutt/cache
 .vim/plugin/.swp
+*.swp
