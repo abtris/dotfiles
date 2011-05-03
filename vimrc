@@ -138,6 +138,14 @@ inoremap <silent><C-Right> <C-o>:cal search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\
 " PHP parser check (CTRL-L)
 :autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 
-colorscheme darktango
+
+if has('gui_running')
+        set background=light
+else
+	    let g:solarized_termcolors=256
+        set background=dark
+endif
+
+colorscheme solarized
 
 :nmap <silent> <F7> :NERDTreeToggle<CR>
