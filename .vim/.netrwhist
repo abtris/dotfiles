@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/prskavecl/bin/dotfiles/zsh'
 let g:netrw_dirhist_2='/home/prskavecl/bin/dotfiles'
 let g:netrw_dirhist_3='/home/prskavecl/Sites/build'
 let g:netrw_dirhist_4='/Users/prskavecl/Sites/BrainSourz'
 let g:netrw_dirhist_5='/Users/prskavecl/bin/dotfiles'
+let g:netrw_dirhist_6='/Users/prskavecl/zend-ws/admin.int.lmc.cz'
