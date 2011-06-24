@@ -58,4 +58,4 @@
 [receive]
 	denyNonFastForwards = true
 [push]
-	default = upstream
+	default = matching

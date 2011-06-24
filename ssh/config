@@ -98,6 +98,11 @@ User prskavecl
 Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
 
+Host hudsonqa
+User prskavecl
+Hostname hudsonqa.int.lmc.cz
+IdentityFile id_dsa
+
 Host onrea
 User root
 Hostname sandbox-onrea.int.lmc.cz
@@ -140,3 +145,8 @@ Host fotoparta
 User root
 Hostname fotoparta.cz
 IdentityFile id_dsa
+
+
+Host github.com
+	StrictHostKeyChecking no
+
