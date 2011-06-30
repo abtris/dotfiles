@@ -46,7 +46,7 @@
 #	external = ~/bin/dotfiles/bin/diffmeld
 #	external = ~/bin/dotfiles/bin/gitdiff
 #   external = /home/prskavecl/bin/dotfiles/bin/diffuse
-    external = ~/bin/dotfiles/bin/opendiff-git
+#    external = ~/bin/dotfiles/bin/opendiff-git
 [core]
 	excludesfile = /Users/prskavecl/.gitignore
 	quotepath = false
@@ -62,3 +62,6 @@
 	default = matching
 [merge]
 	tool = opendiff
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = false
