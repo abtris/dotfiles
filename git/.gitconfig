@@ -61,7 +61,7 @@
 [push]
 	default = matching
 [merge]
-	tool = opendiff
+	tool = diffmerge
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = false
