@@ -50,6 +50,7 @@
 [core]
 	excludesfile = /Users/prskavecl/.gitignore
 	quotepath = false
+	autocrlf=input 
 [instaweb]
 	httpd=webrick
 [url "https://github.com/abtris/"]
