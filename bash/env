@@ -18,3 +18,7 @@ export STTY="eof '^D'"
 # PATH
 export PATH=~/bin:$PATH:/opt/local/bin:/usr/local/zend/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools:~/bin/WebIDE-PHP/bin:/opt/local/bin:/sw/bin:/usr/local/mysql/bin:~/bin/dotfiles/bin:/Applications/MAMP/Library/bin/:/usr/local/sbin
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
