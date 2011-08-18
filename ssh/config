@@ -7,14 +7,14 @@ Host andrea
 User prskavec
 Hostname andrea.vc.cvut.cz
 
-Host devel
-User prskavecl
-Hostname vap11.devel.lmc.cz
-IdentityFile id_dsa
-
 Host git
 User prskavecl
 Hostname ap03-test.int.lmc.cz
+IdentityFile id_dsa
+
+Host devel
+User prskavecl
+Hostname vap11.devel.lmc.cz
 IdentityFile id_dsa
 
 Host devel-app
@@ -23,11 +23,6 @@ Hostname app01.devel.lmc.cz
 IdentityFile id_dsa
 
 Host deploy
-User prskavecl
-Hostname vap03.deploy.lmc.cz
-IdentityFile id_dsa
-
-Host deploy2
 User prskavecl
 Hostname vap12.deploy.lmc.cz
 IdentityFile id_dsa
@@ -39,14 +34,13 @@ IdentityFile id_dsa
 
 Host preprod
 User prskavecl
-Hostname vap02.preprod.lmc.cz
+Hostname vap06.preprod.lmc.cz
 IdentityFile id_dsa
 
 Host preprod2
 User prskavecl
-Hostname vap13.preprod.lmc.cz
+Hostname vap08.preprod.lmc.cz
 IdentityFile id_dsa
-
 
 Host preprod-app
 User prskavecl
@@ -60,27 +54,22 @@ IdentityFile id_dsa
 
 Host prod1
 User prskavecl
-Hostname ap0305.prod.lmc.cz
+Hostname ap0903.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod2
 User prskavecl
-Hostname ap0308.prod.lmc.cz
+Hostname vap14.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod3
 User prskavecl
-Hostname ap0410.prod.lmc.cz
+Hostname vap15.prod.lmc.cz
 IdentityFile id_dsa
 
 Host prod4
 User prskavecl
-Hostname ap0403.prod.lmc.cz
-IdentityFile id_dsa
-
-Host prod5
-User prskavecl
-Hostname ap0903.prod.lmc.cz
+Hostname ap01.prod.lmc.cz
 IdentityFile id_dsa
 
 Host sb
