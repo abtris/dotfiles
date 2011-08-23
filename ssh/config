@@ -11,94 +11,113 @@ Host git
 User prskavecl
 Hostname ap03-test.int.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host devel
 User prskavecl
 Hostname vap11.devel.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host devel-app
 User prskavecl
 Hostname app01.devel.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host deploy
 User prskavecl
 Hostname vap12.deploy.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host deploy-app
 User prskavecl
 Hostname app01.deploy.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host preprod
 User prskavecl
 Hostname vap06.preprod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host preprod2
 User prskavecl
 Hostname vap08.preprod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host preprod-app
 User prskavecl
 Hostname app01.preprod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host prod-app
 User prskavecl
 Hostname app0610.prod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host prod1
 User prskavecl
 Hostname ap0903.prod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host prod2
 User prskavecl
 Hostname vap14.prod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host prod3
 User prskavecl
 Hostname vap15.prod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host prod4
 User prskavecl
 Hostname ap01.prod.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host sb
 User prskavecl
 Hostname sb01.int.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host hudson
 User prskavecl
 Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host hudsonqa
 User prskavecl
 Hostname hudsonqa.int.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host onrea
 User root
 Hostname sandbox-onrea.int.lmc.cz
+ForwardAgent yes
 
 Host ap01
 User prskavecl
 Hostname ap01.int.lmc.cz
+ForwardAgent yes
 
 Host svn
 User prskavecl
 Hostname ap03.int.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host php
 User ahutacz
@@ -108,17 +127,13 @@ IdentityFile id_dsa
 Host brain
 User root
 Hostname 88.86.118.212
-
-host gitolite
-user git
-hostname 192.168.56.101
-port 22
-identityfile ~/.ssh/admin
+ForwardAgent yes
 
 Host test
 User hudson
 Hostname 10.1.1.60
 IdentityFile id_dsa
+ForwardAgent yes
 
 Host formax
 User prskavecl
@@ -132,5 +147,5 @@ IdentityFile id_dsa
 
 
 Host github.com
-	StrictHostKeyChecking no
-
+StrictHostKeyChecking no
+ForwardAgent yes
