@@ -60,7 +60,7 @@
 [receive]
 	denyNonFastForwards = true
 [push]
-	default = matching
+	default = tracking
 [merge]
 	tool = diffmerge
 [mergetool "diffmerge"]
@@ -72,3 +72,4 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+	
