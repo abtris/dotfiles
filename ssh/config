@@ -149,3 +149,13 @@ IdentityFile id_dsa
 Host github.com
 StrictHostKeyChecking no
 ForwardAgent yes
+
+Host default
+HostName 127.0.0.1
+User vagrant
+Port 2222
+UserKnownHostsFile /dev/null
+StrictHostKeyChecking no
+PasswordAuthentication no
+IdentityFile /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant
+IdentitiesOnly yes
