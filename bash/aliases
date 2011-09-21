@@ -146,6 +146,7 @@ alias gnp="git-notpushed"
 alias gp='git push'
 alias gs='git show'
 alias b='git branch -avv'
+alias bl='git branch -v'
 alias g='git status -sb'
 alias eg='scite .git/config'
 alias lg='git log --graph --topo-order --pretty=format:"%Cred%h%Creset -%C(yellow)%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset %C(bold red)%d%Creset" --abbrev-commit --date=relative'
@@ -159,6 +160,12 @@ function gch() {
   git clone git://github.com/$USER/$1.git
 }
 
+# Make feature branch
+function issue() {
+  git checkout release/rc/11.9.30/rc1
+  git checkout -b $1
+  git push -u origin $1:personal/prskavecl/$1
+}
 # Setup a tracking branch from [remote] [branch_name]
 function gbt() { 
   git branch --track $2 $1/$2 && git checkout $2 
