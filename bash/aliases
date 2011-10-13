@@ -143,7 +143,7 @@ alias gh='git checkout gh-pages'
 function gg() { 
     git commit -v
 }
-alias gd='git diff --cached'
+alias gd='GIT_PAGER='' git diff'
 alias gdm='git diff master'
 alias gl='git pull'
 alias glr='git pull --rebase'
@@ -167,7 +167,7 @@ function gch() {
 
 # Make feature branch
 function issue() {
-  git checkout release/rc/11.9.30/rc1
+  git checkout release/rc/11.10.10/rc1
   git checkout -b $1
   git push -u origin $1:personal/prskavecl/$1
 }
