@@ -32,3 +32,4 @@ source ~/bin/dotfiles/zsh/env
 
 # Customize to your needs...
 export PATH=/Users/prskavecl/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin:/opt/local/bin:/usr/local/zend/bin:/Users/prskavecl/bin/dotfiles/bin:/Users/prskavecl/bin/android-sdk-linux_x86-1.5_r3/tools:/Users/prskavecl/bin/WebIDE-PHP/bin:/opt/local/bin:/sw/bin:/usr/local/mysql/bin:/Users/prskavecl/bin/dotfiles/bin:/Applications/MAMP/Library/bin/:/usr/local/sbin
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
