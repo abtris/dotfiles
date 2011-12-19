@@ -153,7 +153,7 @@ alias gs='git show'
 alias b='git branch -avv'
 alias bl='git branch -v'
 alias g='git status -sb'
-alias eg='scite .git/config'
+alias eg='vim .git/config'
 alias lg='git log --graph --topo-order --pretty=format:"%Cred%h%Creset -%C(yellow)%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset %C(bold red)%d%Creset" --abbrev-commit --date=relative'
 alias lgp='git log --pretty=oneline'
 alias gsf='git svn fetch'
@@ -162,14 +162,14 @@ alias gsd='git svn dcommit'
 
 # Git clone from GitHub
 function gch() {
-  git clone git://github.com/$USER/$1.git
+  git clone git://github.com/abtris/i$1.git
 }
 
 # Make feature branch
 function issue() {
   git checkout release/rc/12.1.10/rc1 
   git checkout -b $1
-  git push -u origin $1:personal/prskavecl/$1
+  git push -u origin $1:personal/$USER/$1
 }
 # Setup a tracking branch from [remote] [branch_name]
 function gbt() { 
