@@ -18,7 +18,7 @@ alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
 #alias cs='cd ~/src'
-alias cz='cd ~/zend-ws'
+#alias cz='cd ~/zend-ws'
 
 
 function xsltdictionary() {
