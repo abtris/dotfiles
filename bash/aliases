@@ -20,9 +20,9 @@ alias cr='cd ~/bin/dotfiles'
 #alias cs='cd ~/src'
 alias cz='cd ~/zend-ws'
 
-function cs() {
-    cd ~/Sites
-    cd "$1"
+
+function xsltdictionary() {
+   wget "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary" -o /tmp/xsltlog
 }
 # Dig
 function digall() {
@@ -134,7 +134,7 @@ function hr() {
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias m='git checkout master'
 
-function checkout() {
+function gco() {
     git checkout $1
 }
 
@@ -145,7 +145,7 @@ function gg() {
 }
 alias gd='GIT_PAGER='' git diff'
 alias gdm='git diff master'
-alias gl='git pull'
+alias gl='git pull --ff'
 alias glr='git pull --rebase'
 alias gnp="git-notpushed"
 alias gp='git push'
@@ -167,7 +167,7 @@ function gch() {
 
 # Make feature branch
 function issue() {
-  git checkout release/rc/11.12.20/rc1
+  git checkout release/rc/12.1.10/rc1 
   git checkout -b $1
   git push -u origin $1:personal/prskavecl/$1
 }
@@ -328,3 +328,9 @@ function __rm_single_file(){
 
 # ZSH
 alias dh='dirs -v'
+
+# CSV
+function showCsv() {
+  cat $1 | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S
+}
+
