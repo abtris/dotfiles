@@ -39,13 +39,7 @@ ForwardAgent yes
 
 Host preprod
 User prskavecl
-Hostname vap06.preprod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host preprod2
-User prskavecl
-Hostname vap08.preprod.lmc.cz
+Hostname vap13.preprod.lmc.cz 
 IdentityFile id_dsa
 ForwardAgent yes
 

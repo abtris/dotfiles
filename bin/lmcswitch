@@ -1,0 +1,59 @@
+#!/usr/bin/php
+<?php
+
+function writeln($msg, $error = FALSE) {
+	$msg = $msg . "\n";
+	if ($error) {
+		die($msg);
+	} else {
+		echo $msg;
+	}
+}
+
+$environments = array('devel', 'dev2', 'dev3', 'deploy','preprod','prod','off');
+
+if (isset($argv[1])) {
+	$switch = strtolower($argv[1]);
+	if (!in_array($switch, $environments)) {
+		writeln('Invalid environment "' . $switch . '"', TRUE);
+	}
+} else {
+	writeln('Missing environment name (' . implode(', ', $environments) . ')', TRUE);
+}
+
+$hostsFile = '/etc/hosts';
+
+// backup file
+if (@!copy($hostsFile, $hostsFile . '.bak')) {
+	writeln('Failed to create backup of ' . $hostsFile, TRUE);
+}
+
+$content = file($hostsFile);
+$lmc = FALSE;
+$env = FALSE;
+
+foreach($content as &$line) {
+	$line = trim($line);
+
+	// lmc start
+	if ($line === '#### LMC ####') {
+		$lmc = TRUE;
+	} elseif ($line === '#### /LMC ####') {
+		$lmc = FALSE;
+	} elseif ($lmc) {
+		if (strlen($line) == 0) {
+			$env = FALSE;
+		} elseif (preg_match('/^## (' .implode('|', $environments) . ')$/i', $line, $m)) {
+			$env = strtolower($m[1]);
+		} elseif ($env) {
+			$line = ($env == $switch ? '' : '#') . ltrim($line, '#');
+		}
+	}
+}
+
+if (@file_put_contents($hostsFile, implode("\n", $content) . "\n")) {
+	system('dscacheutil -flushcache');
+	writeln('Switched to ' . strtoupper($switch));
+} else {
+	writeln($hostsFile . ' save failed', TRUE);
+}

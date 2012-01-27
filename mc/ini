@@ -92,7 +92,7 @@ mcview_eof=
 
 [Layout]
 equal_split=1
-first_panel_size=118
+first_panel_size=103
 message_visible=1
 keybar_visible=1
 xterm_title=1
