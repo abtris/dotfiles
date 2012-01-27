@@ -18,6 +18,9 @@ alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
 
+function switch() {
+  sudo lmcswitch $1
+}
 
 function xsltdictionary() {
    wget "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary" -o /tmp/xsltlog

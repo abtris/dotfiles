@@ -24,7 +24,7 @@ if (isset($argv[1])) {
 $hostsFile = '/etc/hosts';
 
 // backup file
-if (@!copy($hostsFile, $hostsFile . '.bak')) {
+if (!copy($hostsFile, '/tmp/' . basename($hostsFile) . '.bak')) {
 	writeln('Failed to create backup of ' . $hostsFile, TRUE);
 }
 
