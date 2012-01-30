@@ -48,6 +48,9 @@ foreach($content as &$line) {
 		} elseif ($env) {
 			$line = ($env == $switch ? '' : '#') . ltrim($line, '#');
 		}
+		if (preg_match('/(\.jobs\.cz|\.prace\.cz|\.hotjobs\.cz)/i', $line, $m)) {
+			$line = ($switch!='off' ? '' : '#') . ltrim($line, '#');
+		}			
 	}
 }
 
