@@ -3,6 +3,12 @@ User root
 HostName dzogchen.cz
 IdentityFile id_dsa
 
+Host adato
+User root
+Port 2222
+HostName adato.cz
+IdentityFile id_dsa
+
 Host andrea
 User prskavec
 Hostname andrea.vc.cvut.cz
