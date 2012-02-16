@@ -1,0 +1,21 @@
+# Links:
+#
+# * http://aperiodic.net/screen/quick_reference
+# * http://polishlinux.org/howtos/screen-tips-tricks/
+# * http://www.pixelbeat.org/lkdb/screen.html
+
+startup_message off
+
+autodetach on
+defscrollback 10000
+
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+#hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
+hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+
+# Bind escape combo to Ctrl-w
+escape ^Ww
+# Bind screen lists key to SPACE
+bind ' ' windowlist -b
