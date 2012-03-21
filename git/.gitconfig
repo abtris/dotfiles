@@ -57,8 +57,6 @@
 	insteadOf = "gh:"
 [url "ssh://git@git.int.lmc.cz/"]
 	insteadOf = "lmc:"
-[receive]
-	denyNonFastForwards = true
 [push]
 	default = tracking
 [merge]
