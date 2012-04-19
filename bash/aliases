@@ -22,6 +22,10 @@ function switch() {
   sudo lmcswitch $1
 }
 
+function marked() {
+  open -a Marked $1
+}
+
 function xsltdictionary() {
    wget "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary" -o /tmp/xsltlog
 }
@@ -163,7 +167,7 @@ alias gsd='git svn dcommit'
 
 # Git clone from GitHub
 function gch() {
-  git clone git://github.com/abtris/i$1.git
+  git clone git://github.com/abtris/$1.git
 }
 
 # Make feature branch

@@ -1,6 +1,6 @@
-Host virtualcouch
+Host test
 User root
-Hostname 195.140.252.41
+Hostname dev.lecturer.cz
 IdentityFile id_dsa
 
 Host dzogchen
@@ -62,7 +62,7 @@ ForwardAgent yes
 
 Host prod-app
 User prskavecl
-Hostname app0610.prod.lmc.cz
+Hostname app01.prod.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
