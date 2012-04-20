@@ -55,8 +55,8 @@ function set_system_preferences () {
   ## System Preferences > Sound
 
     ### Select an alert sound: Uh Oh
-    if [ -f $HOME/dotfiles/mac/sounds/Uh.aiff ]; then
-      cp $HOME/dotfiles/mac/sounds/Uh.aiff $HOME/Library/Sounds/Uh.aiff
+    if [ -f $HOME/bin/dotfiles/mac/sounds/Uh.aiff ]; then
+      cp $HOME/bin/dotfiles/mac/sounds/Uh.aiff $HOME/Library/Sounds/Uh.aiff
       /usr/bin/defaults write com.apple.systemsound 'com.apple.sound.beep.sound' -string "~/Library/Sounds/Uh.aiff"
     fi
 
