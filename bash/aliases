@@ -172,7 +172,6 @@ function gch() {
 
 # Make feature branch
 function issue() {
-  git checkout release/rc/12.2.20/rc1 
   git checkout -b $1
   git push -u origin $1:personal/$USER/$1
 }
