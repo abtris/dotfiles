@@ -16,7 +16,8 @@ if (isset($argv[1])) {
 	$switch = strtolower($argv[1]);
 	if (!in_array($switch, $environments)) {
 		writeln('Invalid environment "' . $switch . '"', TRUE);
-	}
+	} 
+	file_put_contents(getenv("HOME") . "/.lmcenv", "$switch");	
 } else {
 	writeln('Missing environment name (' . implode(', ', $environments) . ')', TRUE);
 }
