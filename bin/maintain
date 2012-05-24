@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+$local = exec("git branch | xargs $1");
+$lines = explode(" ", $local);
+$limit = strtotime("-2 week");
+
+$exclude = array("*", "master");
+foreach ($exclude as $i) {
+	$k = array_search($i, $lines);
+	unset($lines[$k]);
+}
+$k = 0;
+foreach ($lines as $line) {
+	$output[$k]['name'] = $line;
+	$output[$k]['time'] = exec('git log '.$line.' --pretty=format:"%at" -1');
+	if ($limit>$output[$k]['time']) {		
+		echo "This branch should be deleted $line\n";
+		exec("git branch -d $line");
+	}
+	$k++;
+}
+
+
