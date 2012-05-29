@@ -9,10 +9,10 @@ HostName dzogchen.cz
 IdentityFile id_dsa
 
 Host adato
-User root
+User root 
 Port 2222
 HostName adato.cz
-IdentityFile id_dsa
+IdentityFile id_rsa
 
 Host andrea
 User prskavec
