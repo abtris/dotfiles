@@ -27,7 +27,7 @@ function marked() {
 }
 
 function xsltdictionary() {
-   wget "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary" -o /tmp/xsltlog
+  curl "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary" 
 }
 # Dig
 function digall() {
