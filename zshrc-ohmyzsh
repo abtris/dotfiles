@@ -29,6 +29,7 @@ plugins=(git textmate ruby brew osx svn cap gem heroku vagrant abtris knife bund
 source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
+source ~/Sites/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Customize to your needs...
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm

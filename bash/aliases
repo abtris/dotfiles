@@ -1,5 +1,6 @@
 # Command Enhancements
 
+alias rake='noglob rake'
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias mysql='mysql -u root -p -h 127.0.0.1'
