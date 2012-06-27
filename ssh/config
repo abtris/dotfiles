@@ -38,7 +38,7 @@ ForwardAgent yes
 
 Host devel
 User prskavecl
-Hostname vap11.devel.lmc.cz
+Hostname ap01.devel.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
