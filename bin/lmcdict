@@ -17,9 +17,9 @@ if ($res !== TRUE) {
 $zip->extractTo($basePath);
 
 $extractedPath = $basePath . '/aedit';
-copy($extractedPath . '/public/www.jobs.cz/vocab_cz.js', '/srv/www/beta.jobs.cz/current/www/js/vocab_cz.js');
-copy($extractedPath . '/internal/www.jobs.cz/Dictionary2Cz.class.php', '/srv/www/beta.jobs.cz/current/lib/Dictionary2Cz.class.php');
-copy($extractedPath . '/internal/www.jobs.cz/Dictionary2Cz.xml', '/srv/www/beta.jobs.cz/current/lib/Dictionary2Cz.xml');
+copy($extractedPath . '/public/www.jobs.cz/vocab_cz.js', '/srv/www/www.jobs.cz/current/www/js/vocab_cz.js');
+copy($extractedPath . '/internal/www.jobs.cz/Dictionary2Cz.class.php', '/srv/www/www.jobs.cz/current/lib/Dictionary2Cz.class.php');
+copy($extractedPath . '/internal/www.jobs.cz/Dictionary2Cz.xml', '/srv/www/www.jobs.cz/current/lib/Dictionary2Cz.xml');
 rrmdir($extractedPath);
 unlink($archivePath);
 

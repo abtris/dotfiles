@@ -12,9 +12,9 @@ alias ee="v ~/bin/dotfiles/bash/env"
 alias eh="sudo vim /etc/hosts"
 alias csub='cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 # LMC
-alias md="sudo sshfs prskavecl@vap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
-alias mdd="sudo sshfs prskavecl@vap03.deploy.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
-alias mdp="sudo sshfs prskavecl@ap0208.preprod.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o uid=0,gid=33,allow_other"
+alias md="sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/courses/ /srv/dynamic/courses/"
+alias mdd="sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/courses/ /srv/dynamic/courses/"
+alias mdp="sudo sshfs prskavecl@ap0208.preprod.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o allow_other"
 alias mnb="sudo sshfs abtris@10.1.2.14:/ /media/netbook/ -o uid=0,gid=33,allow_other"
 alias rpmrepo="cadaver http://yumrepo.prod.lmc.cz/lmc/apps-deploy/"
 alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
