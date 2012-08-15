@@ -1,4 +1,4 @@
-#
+#w
 ##
 # Host Database
 #
@@ -14,36 +14,31 @@ fe80::1%lo0	localhost
 
 # VHX START
 127.0.0.1 admin.lmc.cz
-127.0.0.1 a
-127.0.0.1 angular.dev
-127.0.0.1 dzogchen.dev
-#127.0.0.1 jobs.cz
-#127.0.0.1 www.jobs.cz
+127.0.0.1 jobs.cz
+127.0.0.1 www.jobs.cz
 127.0.0.1 job.cz
-#127.0.0.1 ijobs.cz
-#127.0.0.1 logistika.jobs.cz
-#127.0.0.1 science.jobs.cz
-#127.0.0.1 farmacie.jobs.cz
-#127.0.0.1 www.logistika.jobs.cz
-#127.0.0.1 www.science.jobs.cz
-#127.0.0.1 www.farmacie.jobs.cz
-#127.0.0.1 brigady.jobs.cz
-#127.0.0.1 logistikajobs.cz
-#127.0.0.1 www.logistikajobs.cz
-#127.0.0.1 dobrovolnictvi.jobs.cz
-#127.0.0.1 absolvent.jobs.cz
-#127.0.0.1 absolventijobs.cz
-#127.0.0.1 www.absolventijobs.cz
-127.0.0.1 nette.dev
-#127.0.0.1 prace.cz
-#127.0.0.1 www.prace.cz
-#127.0.0.1 w.prace.cz
-#127.0.0.1 ozp.prace.cz
-#127.0.0.1 brigady.prace.cz
-#127.0.0.1 spolu.prace.cz
-127.0.0.1 stream3.dev
+127.0.0.1 ijobs.cz
+127.0.0.1 logistika.jobs.cz
+127.0.0.1 science.jobs.cz
+127.0.0.1 farmacie.jobs.cz
+127.0.0.1 www.logistika.jobs.cz
+127.0.0.1 www.science.jobs.cz
+127.0.0.1 www.farmacie.jobs.cz
+127.0.0.1 brigady.jobs.cz
+127.0.0.1 logistikajobs.cz
+127.0.0.1 www.logistikajobs.cz
+127.0.0.1 dobrovolnictvi.jobs.cz
+127.0.0.1 absolvent.jobs.cz
+127.0.0.1 absolventijobs.cz
+127.0.0.1 www.absolventijobs.cz
+127.0.0.1 a
+127.0.0.1 prace.cz
+127.0.0.1 www.prace.cz
+127.0.0.1 w.prace.cz
+127.0.0.1 ozp.prace.cz
+127.0.0.1 brigady.prace.cz
+127.0.0.1 spolu.prace.cz
 127.0.0.1 dictionary.lmc.cz
-127.0.0.1 d3.dev
 127.0.0.1 beta.vysokeskoly.cz
 # VHX STOP
 
@@ -71,15 +66,15 @@ fe80::1%lo0	localhost
 #10.0.50.11 memc
 
 ## DEVEL
-#10.0.32.12 couchdb01
-#10.0.32.4  couchdb02
-#10.0.0.38  fesrchjd
-#10.0.32.16 searchjd01
-#10.0.32.12 dbzendadmin dbhcm dbcourses
-#10.0.32.4 memc
-#10.0.32.19 wsmuj
-#10.0.32.7 mq1 mq2
-#10.0.0.33 presentation.lmc.cz
+10.0.32.12 couchdb01
+10.0.32.4  couchdb02
+10.0.0.38  fesrchjd
+10.0.32.16 searchjd01
+10.0.32.12 dbzendadmin dbhcm
+10.0.32.4 memc
+10.0.32.19 wsmuj
+10.0.32.7 mq1 mq2
+10.0.0.33 presentation.lmc.cz
 
 ## DEPLOY
 #10.0.36.12 couchdb01
@@ -99,6 +94,10 @@ fe80::1%lo0	localhost
 
 
 #### /LMC ####
+
+
+
+
 
 
 

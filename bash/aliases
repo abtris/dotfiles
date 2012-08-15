@@ -1,7 +1,8 @@
 # Command Enhancements
 
-alias rake='noglob rake'
+#alias rake='noglob rake'
 alias lessc='/usr/local/bin/lessc'
+alias awk='gawk'
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias mysql='mysql -u root -p -h 127.0.0.1'
@@ -139,7 +140,7 @@ function hr() {
   hg remove "$*"
 }
 # Git
-alias ungit="find . -name '.git' -exec rm -rf {} \;"
+# alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias m='git checkout master'
 
 function gco() {

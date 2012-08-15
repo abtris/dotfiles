@@ -26,10 +26,16 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git textmate ruby brew osx svn cap gem heroku vagrant abtris knife bundler mercurial redis-cli sublime)
 
+# Rbenv https://github.com/sstephenson/rbenv/#section_2.2
+export PATH="$HOME/.rbenv/bin:$PATH"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+source ~/Sites/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
-source ~/Sites/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it
 __git_files () { 
@@ -38,3 +44,6 @@ __git_files () {
 
 # Customize to your needs...
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+[[ -s $HOME/nvm/nvm.sh ]] && source $HOME/nvm/nvm.sh
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
