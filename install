@@ -1,5 +1,5 @@
-# INSTALL
-sudo apt-get install mc vim zsh mercurial
+# INSTALL MacOS X
+brew install mc vim zsh mercurial git
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 ln -s ~/bin/dotfiles/zshrc ~/.zshrc
@@ -7,17 +7,16 @@ ln -s ~/bin/dotfiles/zshrc ~/.zshrc
 mkdir ~/.ssh
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
 ln -s ~/bin/dotfiles/SciTEUser.properties ~/.SciTEUser.properties
+# iterm2 settings
+ln -s ~/bin/dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
 ls -s ~/bin/dotfiles/.vim ~/.vim
-ls -s ~/bin/dotfiles/.conky ~/.conky
-ls -s ~/bin/dotfiles/.conkyrc ~/.conkyrc
 ls -s ~/bin/dotfiles/.vimrc ~/.vimrc
 ls -s ~/bin/dotfiles/.vimpluginrc ~/.vimpluginrc
-ls -s ~/bin/dotfiles/.nanorc ~/.nanorc
 sudo rm /etc/hosts
 sudo ln -s ~/bin/dotfiles/hosts/hosts /etc/hosts
 # gnome terminal profile:
-ls -s ~/bin/dotfiles/gnome-terminal/Profile0 ~/.gconf/apps/gnome-terminal/profiles
+# ls -s ~/bin/dotfiles/gnome-terminal/Profile0 ~/.gconf/apps/gnome-terminal/profiles
 # change shell
 csh -s /bin/zsh
 # install vcpprompt
