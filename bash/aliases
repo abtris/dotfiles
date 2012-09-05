@@ -2,6 +2,7 @@
 
 #alias rake='noglob rake'
 alias lessc='/usr/local/bin/lessc'
+alias oldhome='cd /Volumes/500HD/Users/prskavecl'
 alias awk='gawk'
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
