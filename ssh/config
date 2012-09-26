@@ -3,15 +3,26 @@ User root
 Hostname dev.lecturer.cz
 IdentityFile id_dsa
 
+Host test.dzogchen.cz
+User root
+Hostname test.dzogchen.cz
+IdentityFile id_rsa
+
 Host dzogchen
 User root
 HostName dzogchen.cz
 IdentityFile id_dsa
 
-Host adato
+Host nabu
 User root 
 Port 2222
 HostName adato.cz
+IdentityFile id_rsa
+
+Host kabu
+User root
+Port 2222
+Hostname 80.79.23.87
 IdentityFile id_rsa
 
 Host andrea
