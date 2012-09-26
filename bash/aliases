@@ -79,7 +79,6 @@ function take() {
     cd "$1" 
 }
 
-alias e='exit'
 alias k9="killall -9"
 function killnamed () { 
     ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill 
