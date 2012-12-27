@@ -157,6 +157,7 @@ alias ga='git add'
 alias gca="git commit -a -m"
 alias gdm='git diff master'
 alias gl='git pull --ff'
+alias glup='git pull upstream master'
 alias glr='git pull --rebase'
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 alias gnp="git-notpushed"

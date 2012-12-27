@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git textmate ruby brew osx svn cap gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails)
+plugins=(autojump git textmate ruby brew osx svn cap gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails)
 
 # Rbenv https://github.com/sstephenson/rbenv/#section_2.2
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -45,5 +45,8 @@ __git_files () {
 # Customize to your needs...
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -s $HOME/nvm/nvm.sh ]] && source $HOME/nvm/nvm.sh
-
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

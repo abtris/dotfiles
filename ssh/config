@@ -1,3 +1,10 @@
+Host wp
+User root
+Port 2222
+Hostname 195.140.252.117
+IdentityFile id_rsa
+ForwardAgent yes
+
 Host test
 User root
 Hostname dev.lecturer.cz
@@ -10,7 +17,7 @@ IdentityFile id_rsa
 
 Host dzogchen
 User root
-HostName dzogchen.cz
+HostName 212.24.146.193
 IdentityFile id_dsa
 
 Host nabu
@@ -19,10 +26,16 @@ Port 2222
 HostName adato.cz
 IdentityFile id_rsa
 
+Host babu
+Port 2222
+User root
+Hostname 195.140.253.89
+IdentityFile id_rsa
+
 Host kabu
 User root
 Port 2222
-Hostname 80.79.23.87
+Hostname kabu.adato.cz
 IdentityFile id_rsa
 
 Host andrea
@@ -61,7 +74,7 @@ ForwardAgent yes
 
 Host deploy
 User prskavecl
-Hostname vap12.deploy.lmc.cz
+Hostname ap01.deploy.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
@@ -73,7 +86,7 @@ ForwardAgent yes
 
 Host preprod
 User prskavecl
-Hostname vap13.preprod.lmc.cz 
+Hostname ap01.preprod.lmc.cz 
 IdentityFile id_dsa
 ForwardAgent yes
 
@@ -91,25 +104,25 @@ ForwardAgent yes
 
 Host prod1
 User prskavecl
-Hostname ap0903.prod.lmc.cz
+Hostname ap01.prod.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
 Host prod2
 User prskavecl
-Hostname vap14.prod.lmc.cz
+Hostname ap02.prod.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
 Host prod3
 User prskavecl
-Hostname vap15.prod.lmc.cz
+Hostname ap03.prod.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
 Host prod4
 User prskavecl
-Hostname ap01.prod.lmc.cz
+Hostname ap04.prod.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
