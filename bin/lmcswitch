@@ -49,7 +49,7 @@ foreach($content as &$line) {
 		} elseif ($env) {
 			$line = ($env == $switch ? '' : '#') . ltrim($line, '#');
 		}
-		if (preg_match('/(\.?jobs\.cz|\.?prace\.cz|\.?hotjobs\.cz|kurzy\.?lmc\.cz)/i', $line, $m)) {
+		if (preg_match('/(\.?jobs\.cz|\.?prace\.cz|\.?hotjobs\.cz|(admin|kurzy|edu|dictionary)\.?lmc\.cz)/i', $line, $m)) {
 			$line = ($switch!='off' ? '' : '#') . ltrim($line, '#');
 		}
 	}
