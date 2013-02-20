@@ -147,7 +147,7 @@ function gco() {
     git checkout $1
 }
 
-alias gh='git checkout gh-pages'
+alias ghp='git checkout gh-pages'
 # Commit pending changes and quote all args as message
 function gg() { 
     git commit -v
@@ -180,6 +180,7 @@ function gch() {
 
 # Make feature branch
 function issue() {
+  git checkout Start_13.04
   git checkout -b $1
   git push -u origin $1:personal/$USER/$1
 }
