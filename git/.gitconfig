@@ -1,81 +1,75 @@
 [user]
-	name = Ladislav Prskavec
-	email = ladislav.prskavec@gmail.com
+  name = Ladislav Prskavec
+  email = ladislav@prskavec.net
 [rerere]
-	enabled = 1
+  enabled = 1
 [alias]
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-	lg = log -p
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    changes=diff --name-status -r
-    diffstat=diff --stat -r
-    upstream = log --oneline master --not origin/master
-	pending = log --oneline origin/master --not master	
-    myworklog = log --author=Ladislav --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
-	worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
-	worklogexport = log --pretty='%h|%at|%an|%s'
-	up = pull --rebase
-	wu = log --stat origin..@{0}
-	wup = log -p origin..@{0}
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  changes=diff --name-status -r
+  diffstat=diff --stat -r
+  upstream = log --oneline master --not origin/master
+  pending = log --oneline origin/master --not master  
+  myworklog = log --author=prskavecl --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
+  worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
+  worklogexport = log --pretty='%h|%at|%an|%s'
+  up = pull --rebase
+  wu = log --stat origin..@{0}
+  wup = log -p origin..@{0}
 [color]
-    ui = auto
+  ui = auto
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan        
+  added = yellow
+  changed = green
+  untracked = cyan        
 [diff "doc"]
-	textconv = antiword
-[giggle]
-	compact-mode = true
-	main-window-maximized = true
-	main-window-geometry = 1100x892+392+119
-[diff]
-#	external = ~/bin/dotfiles/bin/diffmeld
-#	external = ~/bin/dotfiles/bin/gitdiff
-#   external = /home/prskavecl/bin/dotfiles/bin/diffuse
-#    external = ~/bin/dotfiles/bin/opendiff-git
+  textconv = antiword
 [core]
-	excludesfile = /Users/prskavecl/.gitignore
-	quotepath = false
-	autocrlf=input 
+  excludesfile = /Users/prskavecl/.gitignore
+  quotepath = false
+  autocrlf=input 
+  pager = less -r
 [instaweb]
-	httpd=webrick
+  httpd=webrick
 [url "https://github.com/abtris/"]
-	insteadOf = "gh:"
+  insteadOf = "gh:"
 [url "ssh://git@git.int.lmc.cz/"]
-	insteadOf = "lmc:"
+  insteadOf = "lmc:"
 [push]
-	default = tracking
-[merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = false
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[diff]
-	tool = Kaleidoscope
-	
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  default = tracking
 [github]
-	user = abtris
+  user = abtris
+[browser "gitscm"]
+  cmd = /bin/sh -c 'open http://git-scm.com/docs/$(basename $1 .html)' --
+[help]
+  browser = gitscm
+[branch]
+  autosetuprebase = always
+[difftool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode = false
+[difftool]
+  prompt = false
+[diff]
+  tool = kdiff3
+[mergetool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode = false
+[mergetool]
+  keepBackup = false
+[merge]
+  tool = kdiff3

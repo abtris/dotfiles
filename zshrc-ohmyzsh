@@ -27,7 +27,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(autojump git textmate ruby brew osx svn cap gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails)
 
 # Rbenv https://github.com/sstephenson/rbenv/#section_2.2
-export PATH="/usr/local/php5/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/php5/bin:$HOME/.rbenv/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 

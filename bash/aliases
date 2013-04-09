@@ -4,6 +4,7 @@
 alias lessc='/usr/local/bin/lessc'
 alias oldhome='cd /Volumes/500HD/Users/prskavecl'
 alias awk='gawk'
+alias subl="$HOME/bin/subl -n"
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias mysql='mysql -u root -p -h 127.0.0.1'
@@ -180,7 +181,7 @@ function gch() {
 
 # Make feature branch
 function issue() {
-  git checkout Start_13.04
+  git checkout Start_13.08
   git checkout -b $1
   git push -u origin $1:personal/$USER/$1
 }
