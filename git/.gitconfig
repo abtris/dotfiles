@@ -36,8 +36,6 @@
   added = yellow
   changed = green
   untracked = cyan        
-[diff "doc"]
-  textconv = antiword
 [core]
   excludesfile = /Users/prskavecl/.gitignore
   quotepath = false
@@ -73,3 +71,9 @@
   keepBackup = false
 [merge]
   tool = kdiff3
+[diff "word"]
+  binary = true
+  textconv = strings
+[diff "odt"]
+  binary = true
+  textconv = ~/bin/dotfiles/bin/odt-to-txt
