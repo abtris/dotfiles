@@ -40,7 +40,6 @@
   excludesfile = /Users/prskavecl/.gitignore
   quotepath = false
   autocrlf=input 
-  pager = less -r
 [instaweb]
   httpd=webrick
 [url "https://github.com/abtris/"]
