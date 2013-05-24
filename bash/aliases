@@ -15,10 +15,8 @@ alias ee="v ~/bin/dotfiles/bash/env"
 alias eh="sudo vim /etc/hosts"
 alias csub='cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 # LMC
-alias md="sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/courses/ /srv/dynamic/courses/"
-alias mdd="sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/courses/ /srv/dynamic/courses/"
-alias mdp="sudo sshfs prskavecl@ap0208.preprod.lmc.cz:/srv/dynamic/ /srv/dynamic/ -o allow_other"
-alias mnb="sudo sshfs abtris@10.1.2.14:/ /media/netbook/ -o uid=0,gid=33,allow_other"
+alias md="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/"
+alias mdd="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/ /srv/dynamic/"
 alias rpmrepo="cadaver http://yumrepo.prod.lmc.cz/lmc/apps-deploy/"
 alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 # Quicker cd
@@ -181,10 +179,13 @@ function gch() {
 
 # Make feature branch
 function issue() {
-  git checkout Start_13.08
+  GIT_TAG=$(git for-each-ref refs/tags --sort=-authordate --format='%(refname)' --count=1)
+  echo 'checkouted to TAG: ' $GIT_TAG
+  git checkout $GIT_TAG
   git checkout -b $1
   git push -u origin $1:personal/$USER/$1
 }
+
 # Setup a tracking branch from [remote] [branch_name]
 function gbt() { 
   git branch --track $2 $1/$2 && git checkout $2 
