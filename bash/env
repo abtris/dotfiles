@@ -19,7 +19,7 @@ fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin/dotfiles/bin:~/bin:$PATH:/usr/local/php5/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools:/opt/local/bin:/sw/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin
+export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools:/opt/local/bin:/sw/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/zend-ws

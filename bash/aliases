@@ -141,6 +141,10 @@ function hr() {
 # Git
 # alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias m='git checkout master'
+# Git http://stackoverflow.com/questions/501407/is-there-a-git-merge-dry-run-option
+function gm() {
+    git merge --no-commit --no-ff $1
+}
 
 function gco() {
     git checkout $1
