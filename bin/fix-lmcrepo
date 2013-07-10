@@ -9,12 +9,12 @@ cm="$GIT_COMMITTER_EMAIL"
 
 if [ "$GIT_COMMITTER_EMAIL" = "ladislav@prskavec.net" ]
 then
-    cn="Ladislav Prskavec"
+    cn="prskavecl"
     cm="ladislav.prskavec@lmc.eu"
 fi
 if [ "$GIT_AUTHOR_EMAIL" = "ladislav@prskavec.net" ]
 then
-    an="Ladislav Prskavec"
+    an="prskavecl"
     am="ladislav.prskavec@lmc.eu"
 fi
 
