@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump gitfast textmate ruby brew osx svn cap gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails bower tmux zeus)
+plugins=(autojump gitfast textmate ruby brew osx svn gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails bower zeus capistrano rvm search-history history)
 
 # Rbenv https://github.com/sstephenson/rbenv/#section_2.2
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/php5/bin:$HOME/.rbenv/bin:$PATH"
