@@ -1,3 +1,12 @@
+ControlMaster auto
+ControlPath /tmp/%r@%h:%p
+ControlPersist yes
+
+Host docker
+User root
+Hostname 80.79.29.147
+IdentityFile id_dsa
+
 Host wp
 User root
 Port 2222

@@ -142,7 +142,7 @@ function hr() {
 # alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias m='git checkout master'
 # Git http://stackoverflow.com/questions/501407/is-there-a-git-merge-dry-run-option
-function gm() {
+function gmerge() {
     git merge --no-commit --no-ff $1
 }
 
@@ -175,6 +175,12 @@ alias lgp='git log --pretty=oneline'
 alias gsf='git svn fetch'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
+
+function deleteGitTag() {
+   git tag -d $1
+   git push origin :refs/tags/$1
+}
+
 
 # Git clone from GitHub
 function gch() {
