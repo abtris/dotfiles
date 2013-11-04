@@ -10,7 +10,7 @@ function writeln($msg, $error = FALSE) {
 	}
 }
 
-$environments = array('devel', 'dev2', 'dev3', 'deploy','preprod','prod','off');
+$environments = array('devel', 'dev1', 'dev2', 'dev3', 'deploy','preprod','prod','off');
 
 if (isset($argv[1])) {
 	$switch = strtolower($argv[1]);

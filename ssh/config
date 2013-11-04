@@ -1,6 +1,8 @@
 ControlMaster auto
 ControlPath /tmp/%r@%h:%p
 ControlPersist yes
+ServerAliveInterval 120
+TCPKeepAlive no
 
 Host docker
 User root
