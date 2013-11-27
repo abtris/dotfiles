@@ -4,6 +4,10 @@ ControlPersist yes
 ServerAliveInterval 120
 TCPKeepAlive no
 
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+
 Host docker
 User root
 Hostname 80.79.29.147
@@ -53,9 +57,9 @@ Host andrea
 User prskavec
 Hostname andrea.vc.cvut.cz
 
-Host git
+Host hudson-test
 User prskavecl
-Hostname ap03-test.int.lmc.cz
+Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
 
