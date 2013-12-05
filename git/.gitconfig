@@ -37,7 +37,7 @@
   changed = green
   untracked = cyan        
 [core]
-  excludesfile = /Users/prskavecl/.gitignore
+	excludesfile = /Users/prskavecl/.gitignore
   quotepath = false
   autocrlf=input 
 	trustctime = false

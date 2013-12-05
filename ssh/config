@@ -215,3 +215,8 @@ StrictHostKeyChecking no
 PasswordAuthentication no
 IdentityFile /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant
 IdentitiesOnly yes
+
+Host heroku.ladislav@apiary.io
+  HostName heroku.com
+  IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@apiary.io"
+  IdentitiesOnly yes
