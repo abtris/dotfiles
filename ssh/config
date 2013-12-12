@@ -3,6 +3,7 @@ ControlPath /tmp/%r@%h:%p
 ControlPersist yes
 ServerAliveInterval 120
 TCPKeepAlive no
+LogLevel=quiet
 
 Host *
     StrictHostKeyChecking no
@@ -62,6 +63,10 @@ User prskavecl
 Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
 ForwardAgent yes
+
+Host jenkins
+User prskavecl
+Hostname jenkins.mgmt.lmc.cz
 
 Host dev3
 User prskavecl
@@ -219,4 +224,9 @@ IdentitiesOnly yes
 Host heroku.ladislav@apiary.io
   HostName heroku.com
   IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@apiary.io"
+  IdentitiesOnly yes
+
+Host heroku.ladislav@prskavec.net
+  HostName heroku.com
+  IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@prskavec.net"
   IdentitiesOnly yes
