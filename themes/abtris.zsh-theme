@@ -1,33 +1,22 @@
-autoload -U colors && colors
+# ZSH Theme - Preview: http://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
+local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-autoload -Uz vcs_info
+local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
+local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
+local lmcenv='%{$fg[red]%}‹`cat ~/.lmcenv`›%{$reset_color%}'
+local rvm_ruby=''
+if which rvm-prompt &> /dev/null; then
+  rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
+else
+  if which rbenv &> /dev/null; then
+    rvm_ruby='%{$fg[red]%}‹$(rbenv version | sed -e "s/ (set.*$//")›%{$reset_color%}'
+  fi
+fi
+local git_branch='$(vcprompt)%{$reset_color%}'
 
-zstyle ':vcs_info:*' stagedstr '%F{green}●'
-zstyle ':vcs_info:*' unstagedstr '%F{yellow}●'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
-zstyle ':vcs_info:*' enable git svn
+PROMPT="╭─${user_host} ${current_dir} ${lmcenv} ${git_branch}
+╰─%B$%b "
+RPS1="${return_code}"
 
-git_user() {
-    if [ -d .git ]; then
-        git-info | grep email | tail -n 1 | awk -F= '{ print $2}'
-    fi
-}
-
-theme_precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ' [%b%c%u%B%F{green}]'
-    } else {
-        zstyle ':vcs_info:*' formats ' [%b%c%u%B%F{red}●%F{green}]'
-    }
-    
-    vcs_info
-}
-
-setopt prompt_subst
-PROMPT='%B%F{blue}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} [`node -v`] %B%F{red}[`cat ~/.lmcenv`] %B%F{yellow}$(git_user) %{$reset_color%}% 
-%B$%b '
-
-autoload -U add-zsh-hook
-add-zsh-hook precmd  theme_precmd
-
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
+ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
