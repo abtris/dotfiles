@@ -1,17 +1,17 @@
-ControlMaster auto
-ControlPath /tmp/%r@%h:%p
-ControlPersist yes
-ServerAliveInterval 120
-TCPKeepAlive no
-LogLevel=quiet
+#ControlMaster auto
+#ControlPath /tmp/%r@%h:%p
+#ControlPersist yes
+#ServerAliveInterval 120
+#TCPKeepAlive no
+#LogLevel=quiet
 
-Host *
-    StrictHostKeyChecking no
-    UserKnownHostsFile=/dev/null
+#Host *
+#    StrictHostKeyChecking no
+#    UserKnownHostsFile=/dev/null
 
-Host docker
+Host vps
 User root
-Hostname 80.79.29.147
+Hostname 37.205.9.29
 IdentityFile id_dsa
 
 Host wp
@@ -62,6 +62,11 @@ Host hudson-test
 User prskavecl
 Hostname hudson-test.int.lmc.cz
 IdentityFile id_dsa
+ForwardAgent yes
+
+Host git
+User prskavecl
+Hostname gitint.mgmt.lmc.cz
 ForwardAgent yes
 
 Host jenkins
@@ -221,12 +226,12 @@ PasswordAuthentication no
 IdentityFile /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant
 IdentitiesOnly yes
 
-Host heroku.ladislav@apiary.io
+Host heroku.apiary
   HostName heroku.com
   IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@apiary.io"
   IdentitiesOnly yes
 
-Host heroku.ladislav@prskavec.net
+Host heroku.personal
   HostName heroku.com
   IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@prskavec.net"
   IdentitiesOnly yes
