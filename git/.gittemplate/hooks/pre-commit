@@ -61,7 +61,7 @@ git diff-index --cached --full-index --diff-filter=ACM $against |while read -r l
     out="red"
   elif [ "${ext}" = "coffee" ] || [ "${she}" = "coffee" ]; then
     # coffeelint unfortunately uses STDOUT for errors, so paint all red
-    cmd="coffeelint --stdin"
+    cmd="coffeelint --quiet --stdin"
     out="red"
   elif [ "${ext}" = "py" ] || [ "${she}" = "python" ]; then
     tmp="${TMPDIR:-/tmp}/${$}.${ext}"
@@ -82,7 +82,8 @@ git diff-index --cached --full-index --diff-filter=ACM $against |while read -r l
   elif [ "${ext}" = "json" ]; then
     cmd="jsonlint"
   elif [ "${ext}" = "yaml" ] || [ "${ext}" = "yml" ]; then
-    cmd="js-yaml ${pth}"
+    tmp="${TMPDIR:-/tmp}/${$}.${ext}"
+    cmd="js-yaml ${tmp}"
   fi
 
   if [ -n "${cmd}" ]; then
