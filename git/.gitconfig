@@ -43,7 +43,7 @@
 	trustctime = false
 [instaweb]
   httpd=webrick
-[url "https://github.com/abtris/"]
+[url "git@github.com:abtris/"]
   insteadOf = "gh:"
 [url "ssh://git@git.int.lmc.cz/"]
   insteadOf = "lmc:"
