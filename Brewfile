@@ -20,12 +20,14 @@ install git-extras
 install glib
 install gmp4
 install go
+install heroku-toolbelt
 install htop-osx
 install jq
 install libffi
 install libgpg-error
 install libksba
 install libmpc08
+install libnet
 install libpng
 install libssh2
 install libtool
@@ -38,6 +40,7 @@ install mysql
 install openssl
 install ossp-uuid
 install pcre
+install phantomjs
 install pkg-config
 install postgresql
 install ppl011
@@ -45,7 +48,9 @@ install readline
 install redis
 install ruby-build
 install s-lang
+install sqlite
 install ssh-copy-id
+install tcptraceroute
 install tig
 install tree
 install vim
