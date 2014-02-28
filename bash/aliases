@@ -9,11 +9,10 @@ alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias mysql='mysql -u root -p -h 127.0.0.1'
 alias reload='source ~/bin/dotfiles/bash/aliases'
-#alias ea='scite "-language=Shell" ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ea='v ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="v ~/bin/dotfiles/bash/env"
-alias eh="sudo vim /etc/hosts"
-alias csub='cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
+alias ea='subl ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="subl ~/bin/dotfiles/bash/env"
+alias eh="sudo subl /etc/hosts"
+alias csub='cd ~/Library/Application\ Support/Sublime\ Text/Packages/User'
 # LMC
 alias md="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/"
 alias mdd="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/ /srv/dynamic/"
@@ -21,6 +20,11 @@ alias rpmrepo="cadaver http://yumrepo.prod.lmc.cz/lmc/apps-deploy/"
 alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
+alias cs='cd ~/Sites'
+
+function topten() {
+	history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+}
 
 function switch() {
   sudo lmcswitch $1
@@ -234,7 +238,7 @@ function sc() {
 
 
 function v() {
- vim -p $1
+ subl $1
 }
 
 

@@ -21,6 +21,7 @@
   up = pull --rebase
   wu = log --stat origin..@{0}
   wup = log -p origin..@{0}
+	showtrackedignored = ls-files -i --exclude-standard
 [color]
   ui = auto
 [color "branch"]
@@ -37,7 +38,7 @@
   changed = green
   untracked = cyan        
 [core]
-	excludesfile = /Users/prskavecl/.gitignore
+	excludesfile = /Users/abtris/.gitignore
   quotepath = false
   autocrlf=input 
 	trustctime = false
@@ -79,3 +80,6 @@
   textconv = ~/bin/dotfiles/bin/odt-to-txt
 [init]
 	templatedir = ~/.gittemplate
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
