@@ -24,12 +24,12 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump gitfast textmate ruby brew osx svn gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails docker bower zeus capistrano rvm search-history history)
+plugins=(autojump gitfast textmate ruby brew osx svn gem heroku vagrant abtris knife bundler mercurial redis-cli sublime rails docker bower zeus capistrano rvm search-history history hk)
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/php5/bin:$HOME/.rbenv/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export GOPATH=/usr/local/Cellar/go/1.1.2
+export GOPATH=/usr/local/Cellar/go/1.3
 source ~/Sites/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
@@ -37,15 +37,18 @@ source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
 
 # http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it
-__git_files () { 
-	    _wanted files expl 'local files' _files     
+__git_files () {
+	    _wanted files expl 'local files' _files
 }
 
 # Customize to your needs...
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -s $HOME/nvm/nvm.sh ]] && source $HOME/nvm/nvm.sh
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+eval "$(rbenv init -)"
+
+# added by travis gem
+[ -f /Users/abtris/.travis/travis.sh ] && source /Users/abtris/.travis/travis.sh

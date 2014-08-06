@@ -9,10 +9,10 @@ alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias mysql='mysql -u root -p -h 127.0.0.1'
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='subl ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="subl ~/bin/dotfiles/bash/env"
-alias eh="sudo subl /etc/hosts"
-alias csub='cd ~/Library/Application\ Support/Sublime\ Text/Packages/User'
+alias ea='atom ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="atom ~/bin/dotfiles/bash/env"
+alias eh="sudo atom /etc/hosts"
+alias csub='cd ~/Library/Application\ Support/Sublime\ Text/P:qages/User'
 # LMC
 alias md="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/"
 alias mdd="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/ /srv/dynamic/"
@@ -21,6 +21,10 @@ alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
 alias cs='cd ~/Sites'
+
+function e() {
+	atom $1
+}
 
 function topten() {
 	history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
@@ -35,7 +39,7 @@ function marked() {
 }
 
 function xsltdictionary() {
-  curl "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary" 
+  curl "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary"
 }
 # Dig
 function digall() {
@@ -63,8 +67,8 @@ alias ltr="lt -r"
 alias c='clear'
 alias cdd='cd -'  # goto last dir cd'ed from
 alias cl='clear; l'
-function cdc() { 
-    cd $1; ls 
+function cdc() {
+    cd $1; ls
 }
 alias cls='clear; ls'
 alias hi='history'
@@ -77,14 +81,14 @@ alias lt='ls -lt' # sort with recently modified first
 alias s='cd ..'   # up one dir
 alias sb='cd -'   # back to last dir
 
-function take() { 
+function take() {
     mkdir -p "$1"
-    cd "$1" 
+    cd "$1"
 }
 
 alias k9="killall -9"
-function killnamed () { 
-    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill 
+function killnamed () {
+    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
 }
 function zipr() {
   zip -r $1.zip $1
@@ -100,8 +104,8 @@ alias checkphp="find . -name '.php' -exec php -l {} \;"
 
 
 # From Chris Wanstrath
-function pless() { 
-    pygmentize $1 | less -r 
+function pless() {
+    pygmentize $1 | less -r
 }
 
 # Processes
@@ -154,9 +158,20 @@ function gco() {
     git checkout $1
 }
 
+function gac() {
+	git clone $1
+	DIR=`echo $1 | cut -d'/' -f 2 | cut -d '.' -f 1`
+	echo "cd $DIR"
+	cd $DIR
+	if [[ $1 =~ git@github.com:apiaryio ]]; then
+		git config user.name "Ladislav Prskavec"
+		git config user.email "ladislav@apiary.io"
+	fi
+}
+
 alias ghp='git checkout gh-pages'
 # Commit pending changes and quote all args as message
-function gg() { 
+function gg() {
     git commit -v
 }
 alias gd='git diff | mate'
@@ -201,13 +216,13 @@ function issue() {
 }
 
 # Setup a tracking branch from [remote] [branch_name]
-function gbt() { 
-  git branch --track $2 $1/$2 && git checkout $2 
+function gbt() {
+  git branch --track $2 $1/$2 && git checkout $2
 }
 # Quickly clobber a file and checkout
-function grf() { 
+function grf() {
   rm $1
-  git checkout $1 
+  git checkout $1
 }
 # Call from inside an initialized Git repo, with the name of the repo.
 function new-git() {
@@ -251,8 +266,8 @@ alias ett="mate ."
 # Ruby
 #alias r="rake"
 
-function markdown() { 
-/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html 
+function markdown() {
+/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html
 }
 
 # Rails
@@ -273,20 +288,20 @@ function markdown() {
 #alias aas="./script/autospec"
 
 # Setup a tunnel
-#function haproxyssh() { 
-#  ssh -L7997:127.0.0.1:7997 deploy@$1.com 
+#function haproxyssh() {
+#  ssh -L7997:127.0.0.1:7997 deploy@$1.com
 #}
 
 # Syntax check Javascript
-function jsc() { 
-  jsl -conf /etc/jsl/jsl.conf -process $1 
+function jsc() {
+  jsl -conf /etc/jsl/jsl.conf -process $1
 }
 
-function aiff2mp3() { 
-  lame -h -V 0 $1.aif $1.mp3 
+function aiff2mp3() {
+  lame -h -V 0 $1.aif $1.mp3
 }
-function wav2mp3() { 
-  lame -h -V 0 $1.wav $1.mp3 
+function wav2mp3() {
+  lame -h -V 0 $1.wav $1.mp3
 }
 
 
@@ -296,8 +311,8 @@ function wav2mp3() {
 # Analyze test build
 #alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
 # Call with -target Foo
-#function sxx() { 
-#  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $* 
+#function sxx() {
+#  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $*
 #}
 
 #alias ox="open *.xcodeproj"
@@ -362,4 +377,3 @@ alias dh='dirs -v'
 function showCsv() {
   cat $1 | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S
 }
-

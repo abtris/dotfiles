@@ -14,6 +14,20 @@ User root
 Hostname 37.205.9.29
 IdentityFile id_dsa
 
+Host click2stream
+User ec2-user
+Port 22
+Hostname ec2-54-234-98-53.compute-1.amazonaws.com
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
+Host harvester
+User ubuntu
+Port 22
+Hostname 54.88.164.115
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
 Host wp
 User root
 Port 2222

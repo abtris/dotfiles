@@ -3,3 +3,5 @@
 .DS_Store
 *.sublime-workspace
 abtris-TODO.md
+node_modules
+.vagrant

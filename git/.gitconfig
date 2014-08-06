@@ -42,6 +42,7 @@
   quotepath = false
   autocrlf=input 
 	trustctime = false
+	editor = atom --wait
 [instaweb]
   httpd=webrick
 [url "git@github.com:abtris/"]

@@ -1,7 +1,6 @@
-export ORACLE_HOME=/opt/instantclient_11_2
 # Set PATH, CDPATH, EDITOR, etc.
 SYSTEM=`uname`
-if [[ $SYSTEM == *Linux* ]] 
+if [[ $SYSTEM == *Linux* ]]
 then
 	export EDITOR='vim'
     export GDK_NATIVE_WINDOWS=true
@@ -19,10 +18,12 @@ fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:~/bin/android-sdk-linux_x86-1.5_r3/tools:/opt/local/bin:/sw/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
+export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/opt/go/libexec/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release/:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/zend-ws
 export HOMEBREW_GITHUB_API_TOKEN=140e5207216f981199e51a8b49c96947afa9c956
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export CHROME_BIN="/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app"
+
+export APIARY_USE_NFS=1
