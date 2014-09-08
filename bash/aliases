@@ -23,7 +23,11 @@ alias cr='cd ~/bin/dotfiles'
 alias cs='cd ~/Sites'
 
 function e() {
-	atom $1
+	subl $1
+}
+
+function gitcleanup() {
+	git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 }
 
 function topten() {
