@@ -2,18 +2,18 @@
 SYSTEM=`uname`
 if [[ $SYSTEM == *Linux* ]]
 then
-	export EDITOR='vim'
-    export GDK_NATIVE_WINDOWS=true
-	export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24/
-	export JDK_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24/
+  export EDITOR='vim'
+  export GDK_NATIVE_WINDOWS=true
+  export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24/
+  export JDK_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24/
 else
-	export EDITOR='vim'
-    export LESSEDIT='mate -l %lm %f'
-	export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/
-	export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/
-	if [ -f `brew --prefix`/etc/autojump ]; then
-	  . `brew --prefix`/etc/autojump
-	fi
+  export EDITOR='vim'
+  export LESSEDIT='mate -l %lm %f'
+  export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/
+  export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/
+  if [ -f `brew --prefix`/etc/autojump ]; then
+    . `brew --prefix`/etc/autojump
+  fi
 fi
 # CTRL+D
 export STTY="eof '^D'"

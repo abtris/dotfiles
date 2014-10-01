@@ -36,13 +36,12 @@
 [color "status"]
   added = yellow
   changed = green
-  untracked = cyan        
+  untracked = cyan
 [core]
 	excludesfile = /Users/abtris/.gitignore
   quotepath = false
-  autocrlf=input 
+  autocrlf=input
 	trustctime = false
-	editor = atom --wait
 [instaweb]
   httpd=webrick
 [url "git@github.com:abtris/"]
