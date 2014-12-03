@@ -24,6 +24,5 @@ export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export CDPATH=$HOME/Sites:$HOME/zend-ws
 export HOMEBREW_GITHUB_API_TOKEN=140e5207216f981199e51a8b49c96947afa9c956
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export CHROME_BIN="/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app"
 
 export APIARY_USE_NFS=1

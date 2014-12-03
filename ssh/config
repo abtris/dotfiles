@@ -40,9 +40,9 @@ User root
 Hostname dev.lecturer.cz
 IdentityFile id_dsa
 
-Host test.dzogchen.cz
+Host dzogchen.cz
 User root
-Hostname test.dzogchen.cz
+Hostname dzogchen.cz
 IdentityFile id_rsa
 
 Host dzogchen

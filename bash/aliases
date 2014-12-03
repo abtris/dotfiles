@@ -198,6 +198,9 @@ alias gsf='git svn fetch'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
+alias last="git for-each-ref --sort=-committerdate refs/heads/ | head | cut -d ' ' -f 2 | cut -c 19-"
+
+
 function deleteGitTag() {
    git tag -d $1
    git push origin :refs/tags/$1
