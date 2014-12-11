@@ -24,5 +24,5 @@ export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 export CDPATH=$HOME/Sites:$HOME/zend-ws
 export HOMEBREW_GITHUB_API_TOKEN=140e5207216f981199e51a8b49c96947afa9c956
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_25`
 export APIARY_USE_NFS=1

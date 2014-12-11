@@ -174,8 +174,8 @@ function gac() {
 
 alias ghp='git checkout gh-pages'
 # Commit pending changes and quote all args as message
-function gg() {
-    git commit -v
+function gc() {
+	git commit -v
 }
 alias gd='git diff | mate'
 alias ga='git add'
