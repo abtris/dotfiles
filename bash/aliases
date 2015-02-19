@@ -26,6 +26,10 @@ function e() {
 	subl $1
 }
 
+function docker-ip() {
+	boot2docker ip 2> /dev/null
+}
+
 function gitcleanup() {
 	git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 }

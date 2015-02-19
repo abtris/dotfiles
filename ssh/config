@@ -209,6 +209,11 @@ User root
 Hostname 88.86.118.212
 ForwardAgent yes
 
+Host busybookapp.com
+User root
+Hostname 88.86.118.212
+ForwardAgent yes
+
 Host test
 User hudson
 Hostname 10.1.1.60
