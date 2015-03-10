@@ -21,6 +21,20 @@ Hostname ec2-54-234-98-53.compute-1.amazonaws.com
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 
+Host sinopia2
+User core
+Port 22
+Hostname ec2-54-158-91-125.compute-1.amazonaws.com
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
+Host sinopia 
+User ubuntu
+Port 22
+Hostname 107.21.200.55
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
 Host harvester
 User ubuntu
 Port 22
@@ -71,133 +85,6 @@ IdentityFile id_rsa
 Host andrea
 User prskavec
 Hostname andrea.vc.cvut.cz
-
-Host hudson-test
-User prskavecl
-Hostname hudson-test.int.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host git
-User prskavecl
-Hostname gitint.mgmt.lmc.cz
-ForwardAgent yes
-
-Host jenkins
-User prskavecl
-Hostname jenkins.mgmt.lmc.cz
-
-Host dev3
-User prskavecl
-Hostname ap01.dev3.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host dev3-app
-User prskavecl
-Hostname app01.dev3.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host devel
-User prskavecl
-Hostname ap01.devel.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host devel-app
-User prskavecl
-Hostname app01.devel.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host deploy
-User prskavecl
-Hostname ap01.deploy.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host deploy-app
-User prskavecl
-Hostname app01.deploy.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host preprod
-User prskavecl
-Hostname ap01.preprod.lmc.cz 
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host preprod-app
-User prskavecl
-Hostname app01.preprod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host prod-app
-User prskavecl
-Hostname app01.prod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host prod1
-User prskavecl
-Hostname ap01.prod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host prod2
-User prskavecl
-Hostname ap02.prod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host prod3
-User prskavecl
-Hostname ap03.prod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host prod4
-User prskavecl
-Hostname ap04.prod.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host sb
-User prskavecl
-Hostname sb01.int.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host hudson
-User prskavecl
-Hostname hudson-test.int.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host hudsonqa
-User prskavecl
-Hostname hudsonqa.int.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host onrea
-User root
-Hostname sandbox-onrea.int.lmc.cz
-ForwardAgent yes
-
-Host ap01
-User prskavecl
-Hostname ap01.int.lmc.cz
-ForwardAgent yes
-
-Host svn
-User prskavecl
-Hostname ap03.int.lmc.cz
-IdentityFile id_dsa
-ForwardAgent yes
 
 Host php
 User ahutacz

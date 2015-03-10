@@ -8,3 +8,6 @@ export ARCHFLAGS="-arch x86_64"
 
 # added by travis gem
 [ -f /Users/abtris/.travis/travis.sh ] && source /Users/abtris/.travis/travis.sh
+
+export NVM_DIR="/Users/abtris/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
