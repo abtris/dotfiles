@@ -1,0 +1,34 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"Better CoffeeScript",
+		"CoffeeCompile",
+		"Dockerfile Syntax Highlighting",
+		"GoSublime",
+		"Hayaku - tools for writing CSS faster",
+		"Markdown Extended",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Open Finder",
+		"Package Control",
+		"Pretty JSON",
+		"ReactJS",
+		"ReactJS Snippets",
+		"RuboCop",
+		"SideBarEnhancements",
+		"Smart Match",
+		"Stylus",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-coffeelint",
+		"SublimeLinter-rubocop",
+		"SyncedSideBar",
+		"Theme - Afterglow",
+		"TrailingSpaces"
+	]
+}

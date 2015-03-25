@@ -28,6 +28,13 @@ Hostname ec2-54-158-91-125.compute-1.amazonaws.com
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 
+Host sinopia-test
+User ubuntu
+Port 22
+Hostname 54.158.100.15
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
 Host sinopia 
 User ubuntu
 Port 22

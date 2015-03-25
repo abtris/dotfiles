@@ -1,0 +1,22 @@
+{
+	"color_inactive_tabs": true,
+	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Inconsolata",
+	"font_size": 20,
+	"gutter": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage",
+		"SideBarEnhancements",
+		"Markdown",
+		"AdvancedNewFile"
+	],
+	"remember_open_files": false,
+	"status_bar_brighter": true,
+	"tab_size": 2,
+	"tabs_medium": true,
+	"theme": "Afterglow.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
