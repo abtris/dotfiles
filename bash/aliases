@@ -22,6 +22,10 @@ alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 alias cr='cd ~/bin/dotfiles'
 alias cs='cd ~/Sites'
 
+function gpr() {
+	hub pull-request
+}
+
 function e() {
 	subl $1
 }

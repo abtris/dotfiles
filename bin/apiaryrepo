@@ -1,2 +1,3 @@
 git config user.name "Ladislav Prskavec"
 git config user.email "ladislav@apiary.io"
+git config user.signingkey 681BEE6F
