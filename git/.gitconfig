@@ -1,6 +1,7 @@
 [user]
   name = Ladislav Prskavec
   email = ladislav@prskavec.net
+  signingkey = 40BC089C
 [rerere]
   enabled = 1
 [alias]
