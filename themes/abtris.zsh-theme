@@ -3,7 +3,8 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
-local nvm='%{$fg[red]%}‹`nvm_ls 'current'`›%{$reset_color%}'
+local nvm='%{$fg[yellow]%}‹`nvm_ls 'current'`›%{$reset_color%}'
+local npm='%{$fg[yellow]%}‹`npm -v`›%{$reset_color%}'
 local rvm_ruby=''
 if which rvm-prompt &> /dev/null; then
   rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
@@ -14,7 +15,7 @@ else
 fi
 local git_branch='$(vcprompt)%{$reset_color%}'
 
-PROMPT="╭─${user_host} ${current_dir} ${nvm} ${git_branch}
+PROMPT="╭─${user_host} ${current_dir} ${nvm} ${npm} ${git_branch}
 ╰─%B$%b "
 RPS1="${return_code}"
 
