@@ -18,7 +18,7 @@ fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/opt/go/libexec/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release/:$PATH
+export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/opt/go/bin/bin/:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release/:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/zend-ws
