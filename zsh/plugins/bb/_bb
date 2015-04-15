@@ -19,6 +19,17 @@ __gh() {
         '--help[Show help message and exit.]'
 }
 
+__hip() {
+    local -a subcommands
+    subcommands=(
+      'last_errors'
+      'post'
+    )
+    _describe -t commands 'bb hip' subcommands
+    _arguments \
+        '--help[Show help message and exit.]'
+}
+
 __t() {
   local curcontext="$curcontext" state line
   typeset -A opt_args
@@ -52,6 +63,12 @@ __t() {
           '--column[Column to migrate from]' \
           '--column-to[Column to migrate to]'
           ;;
+        (schedule-list)
+          _arguments \
+          '---label[Assign a label to the newly-created card. For now, label must be a color name.]' \
+          '--owner[Whom to assign a created work card]' \
+          '--story-list[Name of the list that should be converted to cards]'
+          ;;
       esac
     ;;
   esac
@@ -74,12 +91,13 @@ if (( CURRENT == 1 )); then
     return
 fi
 
-
 local -a _command_args
 case "$words[1]" in
     gh)
        __gh ;;
     t)
        __t ;;
+    hip)
+      __hip ;;
 esac
 
