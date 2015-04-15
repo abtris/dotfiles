@@ -20,18 +20,41 @@ __gh() {
 }
 
 __t() {
-    local -a subcommands
-    subcommands=(
-      'curcard:Open current doing card in browser'
-      'migrate-label:Usage:: bb t migrate-label --label="Product:...'
-      'next:Takes the top card from To Do queue, moves it...'
-      'next-week:Create new columns on the :term:`Work Board`:...'
-      'schedule-list:Usage:: bb t schedule-list...'
-      'verify:Looks through a checklists on :term:`Story`,...'
-    )
-    _describe -t commands 'bb t' subcommands
-    _arguments \
-        '--help[Show help message and exit.]'
+  local curcontext="$curcontext" state line
+  typeset -A opt_args
+
+  _arguments -C \
+    ':commands:->command' \
+    '*::options:->options'
+
+  case $state in
+    (command)
+      local -a subcommands
+      subcommands=(
+        'curcard:Open current doing card in browser'
+        'migrate-label:Usage:: bb t migrate-label --label="Product:...'
+        'next:Takes the top card from To Do queue, moves it...'
+        'next-week:Create new columns on the :term:`Work Board`:...'
+        'schedule-list:Usage:: bb t schedule-list...'
+        'verify:Looks through a checklists on :term:`Story`,...'
+      )
+      _describe -t commands 'bb t' subcommands
+      _arguments \
+          '--help[Show help message and exit.]'
+    ;;
+    (options)
+      case $line[1] in
+        (migrate-label)
+          _arguments \
+          '---label[Label to migrate away]' \
+          '--board[Board to migrate from]' \
+          '--board-to[Board to migrate to]' \
+          '--column[Column to migrate from]' \
+          '--column-to[Column to migrate to]'
+          ;;
+      esac
+    ;;
+  esac
 }
 
 local -a _1st_arguments
