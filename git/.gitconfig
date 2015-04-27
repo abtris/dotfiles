@@ -22,7 +22,9 @@
   up = pull --rebase
   wu = log --stat origin..@{0}
   wup = log -p origin..@{0}
-	showtrackedignored = ls-files -i --exclude-standard
+  showtrackedignored = ls-files -i --exclude-standard
+  cif = !git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')
+  rbi = rebase -i --autosquash 
 [color]
   ui = auto
 [color "branch"]
