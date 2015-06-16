@@ -26,6 +26,10 @@ function gpr() {
 	hub pull-request
 }
 
+function hb() {
+	hub browse
+}
+
 function e() {
 	subl $1
 }

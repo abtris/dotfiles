@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+date_default_timezone_set('Europe/Prague');
 $local = exec("git branch | xargs $1");
 $lines = explode(" ", $local);
 $limit = strtotime("-2 week");
@@ -14,7 +15,7 @@ $k = 0;
 foreach ($lines as $line) {
 	$output[$k]['name'] = $line;
 	$output[$k]['time'] = exec('git log '.$line.' --pretty=format:"%at" -1');
-	if ($limit>$output[$k]['time']) {		
+	if ($limit>$output[$k]['time']) {
 		echo "This branch should be deleted $line\n";
     if ($force=="--force") {
       exec("git branch -D $line");
