@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -n "$1" ]; then
+  git clone --bare git@github.com:apiaryio/$1.git
+  cd $1.git
+  git push --mirror ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/$1
+fi
