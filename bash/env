@@ -18,12 +18,19 @@ fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/opt/go/bin/bin/:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release/:$PATH
+export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release/:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/zend-ws
-export GOPATH=/usr/local/opt/go/bin
 export HOMEBREW_GITHUB_API_TOKEN=140e5207216f981199e51a8b49c96947afa9c956
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_25`
-export DOCKER_HOST=tcp://localhost:4243
+export NPM_TOKEN=yqr2a2cZoixVWPfTcgRNk8aR+eskHd5OrNryvRrcRXs3w3dK4f/HPBfG+TqrMqP6
+
+export PATH="$HOME/.gobrew/bin:$PATH"
+export GOPATH="/Users/abtris/go"
+eval "$(gobrew init -)"
+
+export DOCKER_CERT_PATH=/Users/abtris/.docker/machine/machines/default
+export DOCKER_HOST=tcp://192.168.99.100:2376
+export DOCKER_TLS_VERIFY=1
