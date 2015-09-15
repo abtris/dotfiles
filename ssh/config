@@ -9,45 +9,36 @@
 #    StrictHostKeyChecking no
 #    UserKnownHostsFile=/dev/null
 
+Host git-codecommit.us-east-1.amazonaws.com
+User APKAJYBG27EOU3LRKWPA
+IdentityFile ~/.ssh/ladislav_apiary
+
 Host vps
 User root
 Hostname 37.205.9.29
 IdentityFile id_dsa
 
-Host click2stream
+Host apiary-mail
+User lada
+Port 22
+Hostname 52.4.176.38
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
+Host apiary-docker
 User ec2-user
 Port 22
-Hostname ec2-54-234-98-53.compute-1.amazonaws.com
+Hostname 52.7.216.142
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 
-Host sinopia2
-User core
-Port 22
-Hostname ec2-54-158-91-125.compute-1.amazonaws.com
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host sinopia-test
-User ubuntu
-Port 22
-Hostname 54.158.100.15
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host sinopia 
+Host apiary-sinopia
 User ubuntu
 Port 22
 Hostname 107.21.200.55
 ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
+IdentityFile ~/.ssh/ladislav_apiary
 
-Host harvester
-User ubuntu
-Port 22
-Hostname 54.88.164.115
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
 
 Host wp
 User root
