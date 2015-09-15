@@ -52,3 +52,7 @@ eval "$(rbenv init -)"
 
 # added by travis gem
 [ -f /Users/abtris/.travis/travis.sh ] && source /Users/abtris/.travis/travis.sh
+export PATH="$HOME/.gobrew/bin:$PATH"
+eval "$(gobrew init -)"
+export PATH="$HOME/.gobrew/bin:$PATH"
+eval "$(gobrew init -)"
