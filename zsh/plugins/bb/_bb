@@ -80,6 +80,7 @@ _1st_arguments=(
   "hip":"Handle HipChat-related tasks and..."
   "init":"Initialize application for usage."
   "stage":"Deploy current branch to staging"
+  "production":"Deploy master to production"
   "t":"Handle Trello-related actions and..."
   "version":"Version"
 )
