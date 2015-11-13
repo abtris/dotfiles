@@ -18,7 +18,7 @@ fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release/:$PATH
+export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/zend-ws
@@ -31,3 +31,4 @@ export PATH="$HOME/.gobrew/bin:$PATH"
 export GOPATH="/Users/abtris/go"
 eval "$(gobrew init -)"
 eval "$(docker-machine env dev)"
+export DOCKER_MACHINE_IP=$(docker-machine ip dev)
