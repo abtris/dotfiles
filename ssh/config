@@ -23,14 +23,14 @@ User lada
 Port 22
 Hostname 52.4.176.38
 ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
+IdentityFile ~/.ssh/ladislav_apiary
 
 Host apiary-docker
 User ec2-user
 Port 22
 Hostname 52.7.216.142
 ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
+IdentityFile ~/.ssh/ladislav_apiary
 
 Host apiary-sinopia
 User ubuntu
@@ -39,6 +39,12 @@ Hostname 107.21.200.55
 ForwardAgent yes
 IdentityFile ~/.ssh/ladislav_apiary
 
+Host apiary-npm-registry
+User ubuntu
+Port 22
+Hostname 54.172.248.165
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
 
 Host wp
 User root
