@@ -42,7 +42,21 @@ IdentityFile ~/.ssh/ladislav_apiary
 Host apiary-npm-registry
 User ubuntu
 Port 22
-Hostname 54.172.248.165
+Hostname 54.208.155.5
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
+Host ecs1
+User ec2-user
+Port 22
+Hostname 52.91.85.150
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
+Host ecs2
+User ec2-user
+Port 22
+Hostname 52.91.9.222
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 

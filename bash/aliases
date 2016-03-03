@@ -22,7 +22,7 @@ alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 alias cr='cd ~/bin/dotfiles'
 alias cs='cd ~/Sites'
 
-alias ds='eval "$(docker-machine env dev)"'
+alias ds='eval "$(docker-machine env default)"'
 
 function gpr() {
 	hub pull-request
@@ -37,7 +37,9 @@ function project_aware_subl {
     subl ${*:-${project_file:-.}}
 }
 
-alias e="project_aware_subl"
+function e() {
+  atom $1
+}
 
 function hkill() {
   APPNAME=$1
@@ -128,6 +130,9 @@ alias o='pcmanfm . &'
 
 alias checkphp="find . -name '.php' -exec php -l {} \;"
 
+genpass() {
+  p=$(openssl rand -base64 24); while ! [[ "$p" =~ ^[a-zA-Z0-9]+$ ]]; do p=$(openssl rand -base64 24); done; echo $p;
+}
 
 # From Chris Wanstrath
 function pless() {
