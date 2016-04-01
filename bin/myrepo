@@ -1,0 +1,3 @@
+git config user.name "Ladislav Prskavec"
+git config user.email "ladislav@prskavec.net"
+git config user.signingkey 40BC089C

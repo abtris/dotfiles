@@ -1,7 +1,5 @@
 [user]
-  name = Ladislav Prskavec
-  email = ladislav@prskavec.net
-  signingkey = 40BC089C
+	useconfigonly = true
 [rerere]
   enabled = 1
 [alias]
@@ -15,7 +13,7 @@
   changes=diff --name-status -r
   diffstat=diff --stat -r
   upstream = log --oneline master --not origin/master
-  pending = log --oneline origin/master --not master  
+  pending = log --oneline origin/master --not master
   myworklog = log --author=prskavecl --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
   worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
   worklogexport = log --pretty='%h|%at|%an|%s'
@@ -24,7 +22,7 @@
   wup = log -p origin..@{0}
   showtrackedignored = ls-files -i --exclude-standard
   cif = !git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')
-  rbi = rebase -i --autosquash 
+  rbi = rebase -i --autosquash
 [color]
   ui = auto
 [color "branch"]
