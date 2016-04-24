@@ -23,6 +23,7 @@
   showtrackedignored = ls-files -i --exclude-standard
   cif = !git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')
   rbi = rebase -i --autosquash
+  start = !git init && git commit --allow-empty -m \"Initial commit\"
 [color]
   ui = auto
 [color "branch"]
@@ -44,6 +45,7 @@
   autocrlf=input
 	trustctime = false
 	pager = diff-so-fancy | less --tabs=1,5 -R
+	editor = atom --wait
 [instaweb]
   httpd=webrick
 [url "git@github.com:abtris/"]
@@ -73,7 +75,8 @@
 [mergetool]
   keepBackup = false
 [merge]
-  tool = kdiff3
+	tool = vimdiff
+	conflictstyle = diff3
 [diff "word"]
   binary = true
   textconv = strings
@@ -96,3 +99,5 @@
 	required = true
 [gc]
 	auto = 0
+[commit]
+	gpgsign = true

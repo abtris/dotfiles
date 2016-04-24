@@ -53,6 +53,13 @@ Hostname 52.91.85.150
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 
+Host apiary-github
+User admin
+Port 122
+Hostname 52.87.213.167
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
 Host ecs2
 User ec2-user
 Port 22
@@ -83,7 +90,7 @@ HostName 212.24.146.193
 IdentityFile id_dsa
 
 Host nabu
-User root 
+User root
 Port 2222
 HostName adato.cz
 IdentityFile id_rsa

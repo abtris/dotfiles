@@ -29,6 +29,12 @@ export NPM_TOKEN=yqr2a2cZoixVWPfTcgRNk8aR+eskHd5OrNryvRrcRXs3w3dK4f/HPBfG+TqrMqP
 
 export PATH="$HOME/.gobrew/bin:$PATH"
 export GOPATH="/Users/abtris/go"
+export GOROOT="/Users/abtris/go"
 eval "$(gobrew init -)"
-eval "$(docker-machine env dev)"
-export DOCKER_MACHINE_IP=$(docker-machine ip dev)
+#source $HOME/.dvm/dvm.sh
+#eval "$(docker-machine env default)"
+#export DOCKER_MACHINE_IP=$(docker-machine ip default)
+#export DOCKER_VNC_PASSWORD=123456
+export DOCKER_NETWORK_INTERFACE="192.168.64.2"
+export RUN_NATIVE_DOCKER=1
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
