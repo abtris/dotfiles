@@ -32,13 +32,6 @@ Hostname 52.7.216.142
 ForwardAgent yes
 IdentityFile ~/.ssh/ladislav_apiary
 
-Host apiary-sinopia
-User ubuntu
-Port 22
-Hostname 107.21.200.55
-ForwardAgent yes
-IdentityFile ~/.ssh/ladislav_apiary
-
 Host apiary-npm-registry
 User ubuntu
 Port 22

@@ -1,5 +1,6 @@
 *~
 .idea/
+.nvmrc
 .DS_Store
 *.sublime-workspace
 abtris-TODO.md

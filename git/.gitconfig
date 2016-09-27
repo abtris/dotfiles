@@ -69,6 +69,7 @@
   prompt = false
 [diff]
   tool = kdiff3
+	compactionHeuristic = true
 [mergetool "kdiff3"]
   path = /usr/local/bin/kdiff3
   trustExitCode = false

@@ -18,7 +18,7 @@ fi
 # CTRL+D
 export STTY="eof '^D'"
 # PATH
-export PATH=~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/Users/abtris/Sites/redsnow/ext/snowcrash/build/out/Release:$PATH
+export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/zend-ws
@@ -27,14 +27,23 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_25`
 export NPM_TOKEN=yqr2a2cZoixVWPfTcgRNk8aR+eskHd5OrNryvRrcRXs3w3dK4f/HPBfG+TqrMqP6
 
-export PATH="$HOME/.gobrew/bin:$PATH"
-export GOPATH="/Users/abtris/go"
-export GOROOT="/Users/abtris/go"
-eval "$(gobrew init -)"
-#source $HOME/.dvm/dvm.sh
-#eval "$(docker-machine env default)"
+# https://gist.github.com/vsouza/77e6b20520d07652ed7d
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 #export DOCKER_MACHINE_IP=$(docker-machine ip default)
 #export DOCKER_VNC_PASSWORD=123456
 export DOCKER_NETWORK_INTERFACE="192.168.64.2"
 export RUN_NATIVE_DOCKER=1
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
