@@ -15,7 +15,17 @@ else
 fi
 local git_branch='$(vcprompt)%{$reset_color%}'
 
-PROMPT="╭─${user_host} ${current_dir} ${nvm} ${npm} ${git_branch}
+local git_modules_text=''
+if [[ -f .gitmodules ]]; then
+  local git_modules='$(grep path .gitmodules | sed "s/.*= //")'
+  if [[ -z $git_modules ]]; then
+    git_modules_text=""
+  else
+    git_modules_text="[git:modules: ${git_modules}]"
+  fi
+fi
+
+PROMPT="╭─${user_host} ${current_dir} ${nvm} ${npm} ${git_branch} ${git_modules_text}
 ╰─%B$%b "
 RPS1="${return_code}"
 
