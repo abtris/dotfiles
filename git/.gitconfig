@@ -44,8 +44,6 @@
   quotepath = false
   autocrlf=input
 	trustctime = false
-	pager = diff-so-fancy | less --tabs=1,5 -R
-	editor = atom --wait
 [instaweb]
   httpd=webrick
 [url "git@github.com:abtris/"]
@@ -70,6 +68,7 @@
 [diff]
   tool = kdiff3
 	compactionHeuristic = true
+	indentHeuristic = true
 [mergetool "kdiff3"]
   path = /usr/local/bin/kdiff3
   trustExitCode = false

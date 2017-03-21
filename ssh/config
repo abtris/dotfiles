@@ -16,7 +16,7 @@ IdentityFile ~/.ssh/ladislav_apiary
 Host vps
 User root
 Hostname 37.205.9.29
-IdentityFile id_dsa
+IdentityFile ~/.ssh/identity
 
 Host apiary-mail
 User lada
@@ -60,6 +60,13 @@ Hostname 52.91.9.222
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 
+Host apiary-test
+User ec2-user
+Port 22
+Hostname 54.166.168.185
+ForwardAgent yes
+IdentityFile ~/.ssh/amazon-lada.pem
+
 Host wp
 User root
 Port 2222
@@ -75,12 +82,8 @@ IdentityFile id_dsa
 Host dzogchen.cz
 User root
 Hostname dzogchen.cz
-IdentityFile id_rsa
-
-Host dzogchen
-User root
-HostName 212.24.146.193
 IdentityFile id_dsa
+
 
 Host nabu
 User root
@@ -159,3 +162,7 @@ Host heroku.personal
   HostName heroku.com
   IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@prskavec.net"
   IdentitiesOnly yes
+
+# Added by Kryptonite
+Host *
+	PKCS11Provider /usr/local/lib/kr-pkcs11.so

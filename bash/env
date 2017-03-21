@@ -21,8 +21,8 @@ export STTY="eof '^D'"
 export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
-export CDPATH=$HOME/Sites:$HOME/zend-ws
-export HOMEBREW_GITHUB_API_TOKEN=140e5207216f981199e51a8b49c96947afa9c956
+export CDPATH=$HOME/Sites
+export HOMEBREW_GITHUB_API_TOKEN=17bd28cd3b4878c1965449d888b4be269985ee9b
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_25`
 export NPM_TOKEN=yqr2a2cZoixVWPfTcgRNk8aR+eskHd5OrNryvRrcRXs3w3dK4f/HPBfG+TqrMqP6
@@ -35,9 +35,10 @@ export PATH=$PATH:$GOROOT/bin
 
 #export DOCKER_MACHINE_IP=$(docker-machine ip default)
 #export DOCKER_VNC_PASSWORD=123456
-export DOCKER_NETWORK_INTERFACE="192.168.64.2"
+#export DOCKER_NETWORK_INTERFACE="192.168.64.2"
 export RUN_NATIVE_DOCKER=1
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export JENKINS_HOME="/opt/jenkins"
 
 autoload -U add-zsh-hook
 

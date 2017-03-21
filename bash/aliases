@@ -20,6 +20,7 @@ alias rpmrepo="cadaver http://yumrepo.prod.lmc.cz/lmc/apps-deploy/"
 alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
+alias cdj='cd ~/Dropbox\ \(Personal\)/Apps/Deckset/jenkins/'
 alias cs='cd ~/Sites'
 
 alias ds='eval "$(docker-machine env default)"'
@@ -38,7 +39,7 @@ function project_aware_subl {
 }
 
 function e() {
-  atom $1
+  subl $1
 }
 
 function hkill() {
@@ -226,7 +227,7 @@ alias gsf='git svn fetch'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
-alias last="git for-each-ref --sort=-committerdate refs/heads/ | head | cut -d ' ' -f 2 | cut -c 19-"
+alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
 
 
 function deleteGitTag() {
