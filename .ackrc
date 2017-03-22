@@ -5,7 +5,10 @@
 --type-set=nib=.xib
 --type-set=plist=.plist
 --type-set=tmstuff=.tmproj,.tm_build_errors
+--ignore-directory=is:node_modules
+--ignore-directory=is:bower_components
+--type-set=sass:ext:scss,sass
+--type-set=markdown:ext:md,markdown
 --nonib
 --notmstuff
 --noxcode
-

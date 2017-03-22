@@ -19,6 +19,7 @@ export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites
 
+
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
@@ -26,3 +27,4 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export JENKINS_HOME="/opt/jenkins"
