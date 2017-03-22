@@ -38,7 +38,7 @@ function project_aware_subl {
 }
 
 function e() {
-  atom $1
+  subl $1
 }
 
 function hkill() {
