@@ -28,3 +28,5 @@ export PATH=$PATH:$GOROOT/bin
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export JENKINS_HOME="/opt/jenkins"
+
+source /keybase/private/abtris/env
