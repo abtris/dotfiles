@@ -4,13 +4,9 @@ if [[ $SYSTEM == *Linux* ]]
 then
   export EDITOR='vim'
   export GDK_NATIVE_WINDOWS=true
-  export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24/
-  export JDK_HOME=/usr/lib/jvm/java-6-sun-1.6.0.24/
 else
   export EDITOR='vim'
   export LESSEDIT='mate -l %lm %f'
-  export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/
-  export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/
   if [ -f `brew --prefix`/etc/autojump ]; then
     . `brew --prefix`/etc/autojump
   fi
@@ -22,10 +18,7 @@ export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/do
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites
-export HOMEBREW_GITHUB_API_TOKEN=17bd28cd3b4878c1965449d888b4be269985ee9b
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_25`
-export NPM_TOKEN=yqr2a2cZoixVWPfTcgRNk8aR+eskHd5OrNryvRrcRXs3w3dK4f/HPBfG+TqrMqP6
+
 
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
@@ -33,18 +26,7 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-#export DOCKER_MACHINE_IP=$(docker-machine ip default)
-#export DOCKER_VNC_PASSWORD=123456
-#export DOCKER_NETWORK_INTERFACE="192.168.64.2"
-export RUN_NATIVE_DOCKER=1
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export JENKINS_HOME="/opt/jenkins"
 
-autoload -U add-zsh-hook
-
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
+source /keybase/private/abtris/env

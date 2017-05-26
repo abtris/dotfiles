@@ -29,7 +29,8 @@ plugins=(aws bb autojump gitfast textmate ruby brew osx svn gem heroku vagrant a
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/php5/bin:$HOME/.rbenv/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-source ~/Sites/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# brew install zsh-syntax-highlighting
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
