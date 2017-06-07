@@ -65,7 +65,7 @@ function switch() {
 }
 
 function marked() {
-  open -a Marked $1
+  open -a "/Applications/Marked 2.app" $1
 }
 
 function xsltdictionary() {
