@@ -2,16 +2,14 @@
 
 #alias rake='noglob rake'
 alias lessc='/usr/local/bin/lessc'
-alias oldhome='cd /Volumes/500HD/Users/prskavecl'
 alias awk='gawk'
 alias subl="$HOME/bin/subl -n"
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
-alias mysql='mysql -u root -p -h 127.0.0.1'
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='subl ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="subl ~/bin/dotfiles/bash/env"
-alias eh="sudo subl /etc/hosts"
+alias ea='code ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="code ~/bin/dotfiles/bash/env"
+alias eh="sudo code /etc/hosts"
 alias csub='cd "/Users/abtris/Library/Application Support/Sublime Text 3/Packages/User"'
 # LMC
 alias md="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/"
@@ -39,7 +37,7 @@ function project_aware_subl {
 }
 
 function e() {
-  subl $1
+  code $1
 }
 
 function hkill() {
