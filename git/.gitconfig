@@ -44,6 +44,7 @@
   quotepath = false
   autocrlf=input
 	trustctime = false
+	askpass = git-gui--askpass
 [instaweb]
   httpd=webrick
 [url "git@github.com:abtris/"]
@@ -101,3 +102,5 @@
 	auto = 0
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
