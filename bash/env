@@ -5,8 +5,7 @@ then
   export EDITOR='vim'
   export GDK_NATIVE_WINDOWS=true
 else
-  export EDITOR='vim'
-  export LESSEDIT='mate -l %lm %f'
+  export EDITOR='code'
   if [ -f `brew --prefix`/etc/autojump ]; then
     . `brew --prefix`/etc/autojump
   fi

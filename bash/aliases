@@ -9,8 +9,8 @@ alias pwdc='pwd | pbcopy'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='code ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="code ~/bin/dotfiles/bash/env"
-alias eh="sudo code /etc/hosts"
-alias csub='cd "/Users/abtris/Library/Application Support/Sublime Text 3/Packages/User"'
+alias eh="sudo -e ~/bin/dotfiles/hosts/hosts"
+alias csub='cd "~/Library/Application Support/Sublime Text 3/Packages/User"'
 # LMC
 alias md="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/"
 alias mdd="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/ /srv/dynamic/"

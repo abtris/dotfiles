@@ -5,6 +5,8 @@
       "window.openFilesInNewWindow": "off",
       "window.zoomLevel": 1,
       "files.associations": {
-            "**/bin/dotfiles/bash/*": "shellscript"
-      }
+            "**/bin/dotfiles/bash/*": "shellscript",
+            "**/bin/dotfiles/hosts/*": "shellscript"
+      },
+      "workbench.colorTheme": "Atom One Dark"
 }
