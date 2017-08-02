@@ -2,11 +2,13 @@
 {
       "editor.fontSize": 14,
       "editor.tabSize": 2,
-      "window.openFilesInNewWindow": "off",
+      "window.openFilesInNewWindow": false,
       "window.zoomLevel": 1,
+      "editor.tabCompletion": true, 
       "files.associations": {
             "**/bin/dotfiles/bash/*": "shellscript",
             "**/bin/dotfiles/hosts/*": "shellscript"
       },
-      "workbench.colorTheme": "Atom One Dark"
+      "workbench.colorTheme": "Atom One Dark",
+      "extensions.ignoreRecommendations": false
 }

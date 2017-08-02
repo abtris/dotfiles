@@ -45,6 +45,7 @@
   autocrlf=input
 	trustctime = false
 	askpass = git-gui--askpass
+	editor = code --wait
 [instaweb]
   httpd=webrick
 [url "git@github.com:abtris/"]
