@@ -5,6 +5,7 @@
       "window.openFilesInNewWindow": false,
       "window.zoomLevel": 1,
       "editor.tabCompletion": true, 
+      "files.insertFinalNewline": true,
       "files.associations": {
             "**/bin/dotfiles/bash/*": "shellscript",
             "**/bin/dotfiles/hosts/*": "shellscript"
