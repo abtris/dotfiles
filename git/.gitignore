@@ -7,3 +7,4 @@ abtris-TODO.md
 node_modules
 .vagrant
 .vscode
+*.iml
