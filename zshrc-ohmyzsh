@@ -37,18 +37,17 @@ source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
 
 # http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it
-__git_files () {
-	    _wanted files expl 'local files' _files
-}
+#__git_files () {
+#	    _wanted files expl 'local files' _files
+#}
 
 # Customize to your needs...
-[[ -s $HOME/nvm/nvm.sh ]] && source $HOME/nvm/nvm.sh
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # added by travis gem
 [ -f /Users/abtris/.travis/travis.sh ] && source /Users/abtris/.travis/travis.sh

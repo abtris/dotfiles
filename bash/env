@@ -6,14 +6,9 @@ then
   export GDK_NATIVE_WINDOWS=true
 else
   export EDITOR='code'
-  if [ -f `brew --prefix`/etc/autojump ]; then
-    . `brew --prefix`/etc/autojump
-  fi
 fi
-# CTRL+D
-export STTY="eof '^D'"
 # PATH
-export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/php5/bin:~/bin/dotfiles/bin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites
@@ -22,8 +17,7 @@ export CDPATH=$HOME/Sites
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export JENKINS_HOME="/opt/jenkins"

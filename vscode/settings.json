@@ -3,8 +3,10 @@
       "editor.fontSize": 14,
       "editor.tabSize": 2,
       "window.openFilesInNewWindow": false,
-      "window.zoomLevel": 1,
+      "window.zoomLevel": 0,
       "editor.tabCompletion": true, 
+      "window.nativeTabs": true, 
+      "files.insertFinalNewline": true,
       "files.associations": {
             "**/bin/dotfiles/bash/*": "shellscript",
             "**/bin/dotfiles/hosts/*": "shellscript"
