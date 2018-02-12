@@ -62,20 +62,6 @@
   browser = gitscm
 [branch]
   autosetuprebase = always
-[difftool "kdiff3"]
-  path = /usr/local/bin/kdiff3
-  trustExitCode = false
-[difftool]
-  prompt = false
-[diff]
-  tool = kdiff3
-	compactionHeuristic = true
-	indentHeuristic = true
-[mergetool "kdiff3"]
-  path = /usr/local/bin/kdiff3
-  trustExitCode = false
-[mergetool]
-  keepBackup = false
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
@@ -105,3 +91,9 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
