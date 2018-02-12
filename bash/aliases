@@ -66,23 +66,17 @@ function marked() {
   open -a "/Applications/Marked 2.app" $1
 }
 
-function xsltdictionary() {
-  curl "http://tcxslt.$1.lmc.cz:8080/XSLT/cli?note=autoinstalace&modul=lmc_dictionary&domain=lmc_dictionary"
-}
 # Dig
 function digall() {
 	dig -t ANY $1
 }
-# Aptitude
-alias au='sudo aptitude update && sudo aptitude safe-upgrade'
 
 function key() {
     # keyserver.ubuntu.com
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $1
 }
 
-
-pman () {
+function pman () {
     man -t "${1}" | open -f -a /Applications/Preview.app
 }
 
@@ -121,21 +115,12 @@ function zipr() {
   zip -r $1.zip $1
 }
 
-# Nautilus
-alias o='pcmanfm . &'
-#alias ff='open -a Firefox'
-
 # General code
 
 alias checkphp="find . -name '.php' -exec php -l {} \;"
 
-genpass() {
+function genpass() {
   p=$(openssl rand -base64 24); while ! [[ "$p" =~ ^[a-zA-Z0-9]+$ ]]; do p=$(openssl rand -base64 24); done; echo $p;
-}
-
-# From Chris Wanstrath
-function pless() {
-    pygmentize $1 | less -r
 }
 
 # Processes
@@ -144,38 +129,7 @@ alias tm='top -o vsize' # memory
 
 # SVN
 alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
-alias sa="svn st | awk '{print $2 }' | xargs svn add"
-alias s="svn st"
 
-# Mercurial hg
-#function new-hg() {
-#    ssh hg@example.com "hg init $1"
-#    hg clone ssh://hg@example.com/$1
-#}
-
-
-# HG
-alias unhg="find . -name '.hg' -exec rm -rf {} \;"
-alias h='hg status'
-alias hp='hg push'
-alias hl='hg pull'
-alias hpf='hg push -f'
-alias hd='hg diff'
-alias lh='hg log --style compact | tac'
-alias ht='hg log --style compact -vpr tip'
-
-# hg add
-function ha() {
-    hg add "$*"
-}
-# hg commit
-function hc() {
-  hg commit -m "$1"
-}
-# hg remove
-function hr() {
-  hg remove "$*"
-}
 # Git
 # alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias m='git checkout master'
@@ -239,169 +193,12 @@ function gch() {
   git clone git://github.com/abtris/$1.git
 }
 
-# Make feature branch
-function issue() {
-  GIT_TAG=$(git for-each-ref refs/tags --sort=-authordate --format='%(refname)' --count=1)
-  echo 'checkouted to TAG: ' $GIT_TAG
-  git checkout $GIT_TAG
-  git checkout -b $1
-  git push -u origin $1:personal/$USER/$1
-}
-
 # Setup a tracking branch from [remote] [branch_name]
 function gbt() {
   git branch --track $2 $1/$2 && git checkout $2
 }
-# Quickly clobber a file and checkout
-function grf() {
-  rm $1
-  git checkout $1
-}
-# Call from inside an initialized Git repo, with the name of the repo.
-function new-git() {
-  ssh git@example.com "mkdir $1.git && cd $1.git && git --bare init"
-  git remote add origin git@example.com:$1.git
-  git push origin master
-  git config branch.master.remote origin
-  git config branch.master.merge refs/heads/master
-  git config push.default current
-}
-
-# Text editing
-# Emacs
-#alias em="open -a Emacs"
-#alias emm="open -a Emacs ."
-
-# Regenerate TAGS file from file arguments
-function ct() {
-  rm -f TAGS
-  etags --append --output=TAGS $*
-}
-
 
 # Scite
-function sc() {
-  scite $*
-}
-
-
-function v() {
- subl $1
-}
-
-
-
-# TextMate
-alias et="mate"
-alias ett="mate ."
-#alias etr="mate app config lib db schema public spec test vendor/gems vendor/plugins Rakefile Capfile Vladfile Todofile README stories merb slices tasks features &"
-
-# Ruby
-#alias r="rake"
-
-function markdown() {
-/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html
-}
-
-# Rails
-#alias mr='mongrel_rails start'
-#alias ms='mongrel_rails stop'
-#alias rp='touch tmp/restart.txt'
-#alias sc='./script/console'
-#alias sg='./script/generate'
-#alias sp='./script/plugin'
-#alias ss='./script/server'
-#alias tl='tail -f log/*.log'
-#alias ts='thin start'
-
-# TDD / BDD
-
-#alias aa='autotest'
-#alias aaf='autotest -f' # Don't run all at start
-#alias aas="./script/autospec"
-
-# Setup a tunnel
-#function haproxyssh() {
-#  ssh -L7997:127.0.0.1:7997 deploy@$1.com
-#}
-
-# Syntax check Javascript
-function jsc() {
-  jsl -conf /etc/jsl/jsl.conf -process $1
-}
-
-function aiff2mp3() {
-  lame -h -V 0 $1.aif $1.mp3
-}
-function wav2mp3() {
-  lame -h -V 0 $1.wav $1.mp3
-}
-
-
-# XCode
-# Analyze release build
-#alias sx="xcodebuild clean && ~/src/checker-0.146/scan-build -k -V xcodebuild"
-# Analyze test build
-#alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
-# Call with -target Foo
-#function sxx() {
-#  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $*
-#}
-
-#alias ox="open *.xcodeproj"
-
-# Nginx
-#function nginx_stop() {
-#    ps ax | grep nginx | cut -d " " -f 1 | xargs sudo kill -9
-#}
-#function nginx_start() {
-#    sudo /opt/nginx/sbin/nginx
-#}
-
-# TaskPaper
-function new-tp() {
-    touch $1.taskpaper
-    open $1.taskpaper
-}
-
-
-# From http://github.com/suztomo/dotfiles
-function rmf(){
-    for file in $*
-    do
-        __rm_single_file $file
-    done
-}
-
-function __rm_single_file(){
-    if ! [ -d ~/.Trash/ ]
-    then
-        command /bin/mkdir ~/.Trash
-    fi
-
-    if ! [ $# -eq 1 ]
-    then
-        echo "__rm_single_file: 1 argument required but $# passed."
-        exit
-    fi
-
-    if [ -e $1 ]
-    then
-        BASENAME=`basename $1`
-        NAME=$BASENAME
-        COUNT=0
-        while [ -e ~/.Trash/$NAME ]
-        do
-            COUNT=$(($COUNT+1))
-            NAME="$BASENAME.$COUNT"
-        done
-
-        command /bin/mv $1 ~/.Trash/$NAME
-    else
-        echo "No such file or directory: $file"
-    fi
-}
-
 
 # ZSH
 alias dh='dirs -v'
