@@ -1,9 +1,9 @@
 // Place your settings in this file to overwrite the default settings
 {
-      "editor.fontSize": 14,
+      "editor.fontSize": 16,
       "editor.tabSize": 2,
       "window.openFilesInNewWindow": false,
-      "window.zoomLevel": 0,
+      "window.zoomLevel": 1,
       "editor.tabCompletion": true, 
       "window.nativeTabs": true, 
       "files.insertFinalNewline": true,
@@ -12,5 +12,9 @@
             "**/bin/dotfiles/hosts/*": "shellscript"
       },
       "workbench.colorTheme": "Atom One Dark",
-      "extensions.ignoreRecommendations": false
+      "extensions.ignoreRecommendations": false,
+      "sublimeTextKeymap.promptV3Features": true,
+      "editor.multiCursorModifier": "ctrlCmd",
+      "editor.snippetSuggestions": "top",
+      "editor.formatOnPaste": true
 }
