@@ -47,7 +47,10 @@ source ~/bin/dotfiles/zsh/env
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # added by travis gem
 [ -f /Users/abtris/.travis/travis.sh ] && source /Users/abtris/.travis/travis.sh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault

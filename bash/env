@@ -19,7 +19,7 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export JENKINS_HOME="/opt/jenkins"
 
 source /keybase/private/abtris/env

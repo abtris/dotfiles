@@ -4,9 +4,10 @@
       "editor.tabSize": 2,
       "window.openFilesInNewWindow": false,
       "window.zoomLevel": 1,
-      "editor.tabCompletion": true, 
-      "window.nativeTabs": true, 
+      "editor.tabCompletion": true,
+      "window.nativeTabs": true,
       "files.insertFinalNewline": true,
+      "files.trimTrailingWhitespace": true,
       "files.associations": {
             "**/bin/dotfiles/bash/*": "shellscript",
             "**/bin/dotfiles/hosts/*": "shellscript"
@@ -16,5 +17,8 @@
       "sublimeTextKeymap.promptV3Features": true,
       "editor.multiCursorModifier": "ctrlCmd",
       "editor.snippetSuggestions": "top",
-      "editor.formatOnPaste": true
+      "editor.formatOnPaste": true,
+      "[ruby]": {
+      "editor.formatOnSave": true
+      }
 }

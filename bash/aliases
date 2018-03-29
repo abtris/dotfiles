@@ -1,6 +1,8 @@
 # Command Enhancements
 
 #alias rake='noglob rake'
+# alias python='python3'
+# alias pip='pip3'
 alias lessc='/usr/local/bin/lessc'
 alias awk='gawk'
 alias subl="$HOME/bin/subl -n"

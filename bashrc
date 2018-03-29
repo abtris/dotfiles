@@ -11,3 +11,5 @@ export ARCHFLAGS="-arch x86_64"
 
 export NVM_DIR="/Users/abtris/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+complete -C /usr/local/bin/vault vault
