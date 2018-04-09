@@ -11,7 +11,7 @@ fi
 export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
-export CDPATH=$HOME/Sites
+export CDPATH=$HOME/Sites:$HOME/go/src
 
 
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
