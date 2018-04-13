@@ -20,5 +20,6 @@
       "editor.formatOnPaste": true,
       "[ruby]": {
       "editor.formatOnSave": true
-      }
+      },
+      "go.gocodeAutoBuild": true
 }
