@@ -21,5 +21,17 @@
       "[ruby]": {
       "editor.formatOnSave": true
       },
-      "go.gocodeAutoBuild": true
+      "go.gocodeAutoBuild": true,
+      "sync.gist": "aa27f88f7c55fe13efb26a6ecc5ed113",
+      "sync.lastUpload": "2018-05-24T06:21:24.235Z",
+      "sync.autoDownload": false,
+      "sync.autoUpload": false,
+      "sync.lastDownload": "",
+      "sync.forceDownload": false,
+      "sync.host": "",
+      "sync.pathPrefix": "",
+      "sync.quietSync": false,
+      "sync.askGistName": false,
+      "sync.removeExtensions": true,
+      "sync.syncExtensions": true
 }

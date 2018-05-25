@@ -25,6 +25,8 @@ alias cs='cd ~/Sites'
 
 alias ds='eval "$(docker-machine env default)"'
 
+alias fixbrew='sudo chown -R $(whoami) /usr/local/bin /usr/local/lib'
+
 function gpr() {
 	hub pull-request
 }
@@ -82,6 +84,11 @@ function pman () {
     man -t "${1}" | open -f -a /Applications/Preview.app
 }
 
+# AWS
+
+function getIp () {
+  aws ec2 describe-instances --filters "Name=tag:Name,Values=${1}" | jq .Reservations[].Instances[].PublicIpAddress
+}
 
 # Common -- Some are from Damian Conway
 alias a='ls -A' # -A all except literal . ..
