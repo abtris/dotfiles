@@ -23,7 +23,7 @@ alias cr='cd ~/bin/dotfiles'
 alias cdj='cd ~/Dropbox\ \(Personal\)/Apps/Deckset/jenkins/'
 alias cs='cd ~/Sites'
 
-alias ds='eval "$(docker-machine env default)"'
+alias ecr='eval $(aws ecr get-login --no-include-email)'
 
 alias fixbrew='sudo chown -R $(whoami) /usr/local/bin /usr/local/lib'
 
@@ -38,6 +38,10 @@ function hb() {
 function project_aware_subl {
     project_file=$(ls *.sublime-project 2>/dev/null | head -n 1)
     subl ${*:-${project_file:-.}}
+}
+# https://superuser.com/questions/42843/finding-the-process-that-is-using-a-certain-port-in-linux/42849#42849
+function whoseport {
+  lsof -i tcp:$1
 }
 
 function e() {
