@@ -56,3 +56,10 @@ eval "$(rbenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

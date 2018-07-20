@@ -6,6 +6,8 @@
 # Can be 'installed globally' as of Git 1.7.1 using init.templatedir
 #
 # Copyright 2013, kvz (http://twitter.com/kvz)
+# Adding https://github.com/awslabs/git-secrets
+git secrets --pre_commit_hook -- "$@"
 
 set -o pipefail
 set -o errexit
