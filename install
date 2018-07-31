@@ -12,6 +12,7 @@ ln -s ~/bin/dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/co
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
 ln -s ~/bin/dotfiles/git/.gitignore ~/.gitignore
 ln -s ~/bin/dotfiles/git/.gittemplate ~/.gittemplate
+ln -s ~/bin/dotfiles/git/.git-commit-template.txt ~/.git-commit-template.txt
 ls -s ~/bin/dotfiles/.hgignore ~/.hgignore
 ls -s ~/bin/dotfiles/.vim ~/.vim
 ls -s ~/bin/dotfiles/.vimrc ~/.vimrc

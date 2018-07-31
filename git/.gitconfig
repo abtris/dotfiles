@@ -89,6 +89,8 @@
 	auto = 0
 [commit]
 	gpgsign = true
+  template = ~/.git-commit-template.txt
+  cleanup = strip
 [gpg]
 	program = /usr/local/bin/gpg
 [diff]
