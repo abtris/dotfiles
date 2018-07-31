@@ -33,5 +33,19 @@
       "sync.quietSync": false,
       "sync.askGistName": false,
       "sync.removeExtensions": true,
-      "sync.syncExtensions": true
+      "sync.syncExtensions": true,
+      "gitlens.keymap": "alternate",
+      "gitlens.advanced.messages": {
+            "suppressShowKeyBindingsNotice": true
+      },
+      "cSpell.userWords": [
+            "Observability",
+            "downsampling",
+            "idempotency",
+            "mentorship",
+            "oncall",
+            "stateful",
+            "timeframe",
+            "webhook"
+      ]
 }
