@@ -53,7 +53,7 @@
 [url "ssh://git@git.int.lmc.cz/"]
   insteadOf = "lmc:"
 [push]
-	default = simple
+    default = current
 [github]
   user = abtris
 [browser "gitscm"]
