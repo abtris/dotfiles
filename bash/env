@@ -8,7 +8,7 @@ else
   export EDITOR='code'
 fi
 # PATH
-export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:/Users/abtris/Library/Python/3.7/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export CDPATH=$HOME/Sites:$HOME/go/src

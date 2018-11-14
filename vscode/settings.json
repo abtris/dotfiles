@@ -3,7 +3,7 @@
       "editor.fontSize": 16,
       "editor.tabSize": 2,
       "window.openFilesInNewWindow": false,
-      "window.zoomLevel": 1,
+      "window.zoomLevel": 0,
       "editor.tabCompletion": true,
       "window.nativeTabs": true,
       "files.insertFinalNewline": true,
@@ -49,5 +49,7 @@
             "timeframe",
             "webhook"
       ],
-      "breadcrumbs.enabled": true
+      "breadcrumbs.enabled": true,
+      "editor.renderControlCharacters": true,
+      "editor.renderWhitespace": "all"
 }
