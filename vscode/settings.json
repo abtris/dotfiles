@@ -40,6 +40,7 @@
             "suppressShowKeyBindingsNotice": true
       },
       "cSpell.userWords": [
+            "Heroku",
             "Observability",
             "downsampling",
             "idempotency",
