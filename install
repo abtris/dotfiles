@@ -1,5 +1,112 @@
+#!/bin/bash
+set -e
 # INSTALL MacOS X
-brew install mc vim zsh git tmux
+if test ! $(which gcc); then
+  echo "Installing command line developer tools..."
+  xcode-select --install
+fi
+
+if test ! $(which brew); then
+  echo "Installing Homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "Updating Homebrew..."
+brew update
+
+tools=(
+  ack
+  awscli
+  bash
+  cabextract
+  ccat
+  colordiff
+  consul
+  dnsmasq
+  ffmpeg
+  freetype
+  gawk
+  git
+  git-secrets
+  go
+  goreleaser
+  graphviz
+  heroku
+  heroku-node
+  hub
+  hugo
+  jq
+  jsonnet
+  mas
+  mc
+  mongodb
+  mplayer
+  node
+  opencv
+  openssl
+  packer
+  pandoc
+  python
+  r
+  rbenv
+  redis
+  sqlite
+  terraform
+  thefuck
+  tig
+  tldr
+  tmux
+  toxiproxy
+  tree
+  vault
+  vcprompt
+  vim
+  wget
+  z
+  zsh
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+echo "Installing tools..."
+brew install ${tools[@]}
+
+apps=(
+  iterm2
+  launchrocket
+  visual-studio-code
+)
+
+echo "Installing apps..."
+brew cask install ${apps[@]}
+
+echo "Cleaning Homebrew..."
+brew cleanup
+
+
+apps_ids=(
+  453114608 # JSON Helper (1.07)
+  603117688 # CCMenu (14.0)
+  488536386 # Location Helper (1.02)
+  890031187 # Marked 2 (2.5.27)
+  425424353 # The Unarchiver (4.0.0)
+  407963104 # Pixelmator (3.7.5)
+  1290358394 # Cardhop (1.1.6)
+  1289197285 # MindNode (5.2.2)
+  880001334 # Reeder (3.2.1)
+  688211836 # EasyRes (1.1.1)
+  1091189122 # Bear (1.6.6)
+  1179623856 # Pastebot (2.1.4)
+  803453959 # Slack (3.3.3)
+  1384080005 # Tweetbot (3.2)
+  512617038 # Snappy (2.0.1)
+  568494494 # Pocket (1.8.1)
+  457622435 # Yoink (3.5.2)
+)
+
+echo "Installing apps from Mac App Store..."
+mas install ${apps_ids[@]}
+
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 ln -s ~/bin/dotfiles/zshrc-ohmyzsh ~/.zshrc
