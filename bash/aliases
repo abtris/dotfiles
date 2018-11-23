@@ -44,6 +44,10 @@ function whoseport {
   lsof -i tcp:$1
 }
 
+function j() {
+  z $1
+}
+
 function e() {
   code $1
 }
