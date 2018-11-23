@@ -16,6 +16,7 @@ brew update
 
 tools=(
   ack
+  ansible
   awscli
   bash
   cabextract
@@ -27,30 +28,42 @@ tools=(
   freetype
   gawk
   git
+  git-extras
   git-secrets
   go
   goreleaser
   graphviz
   heroku
   heroku-node
+  htop
   hub
   hugo
   jq
   jsonnet
+  kompose
+  kubernetes-cli
+  kubernetes-helm
   mas
   mc
   mongodb
+  mosh
   mplayer
   node
+  netcat
   opencv
   openssl
   packer
   pandoc
+  pipenv
+  protobuf
   python
   r
   rbenv
+  ruby-build
   redis
+  siege
   sqlite
+  telnet
   terraform
   thefuck
   tig
@@ -61,6 +74,7 @@ tools=(
   vault
   vcprompt
   vim
+  wercker-cli
   wget
   z
   zsh
