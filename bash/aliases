@@ -5,6 +5,7 @@
 # alias pip='pip3'
 alias lessc='/usr/local/bin/lessc'
 alias awk='gawk'
+alias k='kubectl'
 alias subl="$HOME/bin/subl -n"
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
