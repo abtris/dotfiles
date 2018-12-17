@@ -5,7 +5,13 @@
 # alias pip='pip3'
 alias lessc='/usr/local/bin/lessc'
 alias awk='gawk'
+# k8s section
 alias k='kubectl'
+alias kgp='kubectl get pods -o wide --all-namespaces=true'
+alias kgn='kubectl get nodes -o wide --all-namespaces=true'
+alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
+alias ks='kube-shell'
+
 alias subl="$HOME/bin/subl -n"
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
