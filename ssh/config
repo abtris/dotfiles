@@ -162,7 +162,3 @@ Host heroku.personal
   HostName heroku.com
   IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@prskavec.net"
   IdentitiesOnly yes
-
-# Added by Kryptonite
-Host *
-	PKCS11Provider /usr/local/lib/kr-pkcs11.so

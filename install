@@ -14,6 +14,8 @@ fi
 echo "Updating Homebrew..."
 brew update
 
+brew tap wercker/wercker
+
 tools=(
   ack
   ansible
@@ -33,8 +35,6 @@ tools=(
   go
   goreleaser
   graphviz
-  heroku
-  heroku-node
   htop
   hub
   hugo
@@ -47,6 +47,7 @@ tools=(
   mc
   mongodb
   mosh
+  heroku/brew/heroku
   mplayer
   node
   netcat
@@ -69,7 +70,6 @@ tools=(
   tig
   tldr
   tmux
-  toxiproxy
   tree
   vault
   vcprompt
