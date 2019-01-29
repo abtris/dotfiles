@@ -204,6 +204,14 @@ alias ghp='git checkout gh-pages'
 function gc() {
 	git commit -v
 }
+
+function getGitBranch() {
+  echo `git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+}
+
+alias gpull='git pull origin `getGitBranch`'
+alias gpush='git push origin `getGitBranch`'
+
 alias gd='git diff | mate'
 alias ga='git add'
 alias gca="git commit -a -m"
