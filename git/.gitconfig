@@ -92,7 +92,7 @@
   template = ~/.git-commit-template.txt
   cleanup = strip
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [diff]
   tool = icdiff
 [difftool]

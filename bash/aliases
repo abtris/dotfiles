@@ -5,6 +5,10 @@
 # alias pip='pip3'
 alias lessc='/usr/local/bin/lessc'
 alias awk='gawk'
+# VPN
+alias vpnstop='brew services stop vpnconnect'
+alias vpnls='brew services list'
+alias vpn='brew services start vpnconnect'
 # k8s section
 alias k='kubectl'
 alias kgp='kubectl get pods -o wide --all-namespaces=true'
