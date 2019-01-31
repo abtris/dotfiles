@@ -10,10 +10,9 @@
 #::1             localhost
 #fe80::1%lo0	localhost
 
-127.0.0.1 apiary.dev static.apiary.dev app.apiary.dev client.apiary.dev login.apiary.dev payments.apiary.dev jsapi.apiary.dev api.apiary.dev hooks.apiary.dev apiary-mock.dev apiary-proxy.dev mongo.apiary.dev
 
-
-
+127.0.0.1    apiary.test static.apiary.test apiary-mock.test apiary-proxy.test
+::1          apiary.test static.apiary.test apiary-mock.test apiary-proxy.test
 
 
 

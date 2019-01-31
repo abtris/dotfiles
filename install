@@ -89,6 +89,7 @@ apps=(
   iterm2
   launchrocket
   visual-studio-code
+  aerial
 )
 
 echo "Installing apps..."
