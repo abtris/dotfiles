@@ -210,7 +210,7 @@ function getGitBranch() {
 }
 
 alias gpull='git pull origin `getGitBranch`'
-alias gpush='git push origin `getGitBranch`'
+alias gpush='git push --set-upstream origin `getGitBranch`'
 
 alias gd='git diff | mate'
 alias ga='git add'
