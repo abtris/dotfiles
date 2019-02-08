@@ -33,7 +33,7 @@ tools=(
   git-extras
   git-secrets
   go
-  goreleaser
+  goreleaser/tap/goreleaser
   graphviz
   htop
   hub
