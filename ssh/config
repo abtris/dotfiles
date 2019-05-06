@@ -9,6 +9,12 @@
 #    StrictHostKeyChecking no
 #    UserKnownHostsFile=/dev/null
 
+Host bitbucket.oci.oraclecorp.com
+Port 7999
+User git
+ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+IdentityFile ~/.ssh/id_rsa
+
 Host git-codecommit.us-east-1.amazonaws.com
 User APKAJYBG27EOU3LRKWPA
 IdentityFile ~/.ssh/ladislav_apiary
@@ -33,9 +39,9 @@ ForwardAgent yes
 IdentityFile ~/.ssh/ladislav_apiary
 
 Host apiary-npm-registry
-User ubuntu
+User ec2-user
 Port 22
-Hostname 54.208.155.5
+Hostname 35.173.134.153
 ForwardAgent yes
 IdentityFile ~/.ssh/amazon-lada.pem
 
