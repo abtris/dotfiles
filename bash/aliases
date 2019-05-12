@@ -5,6 +5,7 @@
 # alias pip='pip3'
 alias lessc='/usr/local/bin/lessc'
 alias awk='gawk'
+alias cat='bat --paging=never --style=plain'
 # VPN
 alias vpnstop='brew services stop vpnconnect'
 alias vpnstart='brew services start vpnconnect'

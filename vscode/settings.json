@@ -3,7 +3,7 @@
       "editor.fontSize": 16,
       "editor.tabSize": 2,
       "window.openFilesInNewWindow": false,
-      "window.zoomLevel": 0,
+      "window.zoomLevel": 2,
       "editor.tabCompletion": true,
       "window.nativeTabs": true,
       "files.insertFinalNewline": true,
@@ -18,10 +18,13 @@
       "sublimeTextKeymap.promptV3Features": true,
       "editor.multiCursorModifier": "ctrlCmd",
       "editor.snippetSuggestions": "top",
-      "editor.formatOnPaste": true,
+      "editor.formatOnPaste": false,
       "[ruby]": {
       "editor.formatOnSave": true
       },
+      "formattingToggle.activateFor": [
+            "formatOnSave"
+      ],
       "go.gocodeAutoBuild": true,
       "sync.gist": "aa27f88f7c55fe13efb26a6ecc5ed113",
       "sync.lastUpload": "2018-08-15T09:01:33.678Z",
@@ -54,5 +57,8 @@
       ],
       "breadcrumbs.enabled": true,
       "editor.renderControlCharacters": true,
-      "editor.renderWhitespace": "all"
+      "editor.renderWhitespace": "all",
+      "editor.formatOnSave": true,
+      "editor.formatOnType": false,
+      "go.useLanguageServer": true
 }

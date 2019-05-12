@@ -21,6 +21,7 @@ tools=(
   ansible
   awscli
   bash
+  bat
   cabextract
   ccat
   colordiff
@@ -43,6 +44,7 @@ tools=(
   kompose
   kubernetes-cli
   kubernetes-helm
+  lnav
   mas
   mc
   mongodb
