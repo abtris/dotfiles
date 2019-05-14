@@ -17,11 +17,10 @@
       "extensions.ignoreRecommendations": false,
       "sublimeTextKeymap.promptV3Features": true,
       "editor.multiCursorModifier": "ctrlCmd",
-      "editor.snippetSuggestions": "top",
-      "editor.formatOnPaste": false,
-      "[ruby]": {
-      "editor.formatOnSave": true
-      },
+      "editor.snippetSuggestions": "bottom",
+      "editor.formatOnPaste": true,
+      "editor.formatOnSave": true,
+      "editor.renderControlCharacters": true,
       "formattingToggle.activateFor": [
             "formatOnSave"
       ],
@@ -38,10 +37,13 @@
       "sync.askGistName": false,
       "sync.removeExtensions": true,
       "sync.syncExtensions": true,
-      "gitlens.keymap": "alternate",
+      // GitLens
       "gitlens.advanced.messages": {
             "suppressShowKeyBindingsNotice": true
       },
+      "gitlens.keymap": "alternate",
+      "gitlens.views.fileHistory.enabled": true,
+      "gitlens.views.lineHistory.enabled": true,
       "cSpell.userWords": [
             "Heroku",
             "Kubernetes",
@@ -58,7 +60,26 @@
       "breadcrumbs.enabled": true,
       "editor.renderControlCharacters": true,
       "editor.renderWhitespace": "all",
-      "editor.formatOnSave": true,
-      "editor.formatOnType": false,
-      "go.useLanguageServer": true
+      "editor.renderLineHighlight": "all",
+      "go.useLanguageServer": true,
+      // Terminal
+      "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+      "terminal.integrated.fontSize": 15,
+      "terminal.external.osxExec": "iTerm.app",
+      // Prettier
+      "prettier.eslintIntegration": true,
+      "prettier.singleQuote": true,
+      "prettier.trailingComma": "es5",
+      // Lang specific settings
+      "[markdown]": {
+            "editor.wordWrap": "wordWrapColumn",
+            "editor.wordWrapColumn": 80,
+            "editor.quickSuggestions": false
+      },
+      "[javascript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[json]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
 }
