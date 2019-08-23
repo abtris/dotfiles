@@ -15,6 +15,35 @@ User git
 ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
 IdentityFile ~/.ssh/id_rsa
 
+Host apiary-polls-api-test
+User lprskave
+ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+Port 22
+Hostname 144.25.36.240
+PKCS11Provider /usr/local/Cellar/opensc/0.19.0/lib/opensc-pkcs11.so
+
+
+Host            apiary-bastion-dev
+User            lprskave
+Port            22
+Hostname        172.16.104.198
+ProxyCommand    ssh oci-bastion-dev -W %h:%p
+ForwardAgent    yes
+
+Host            oci-bastion-dev
+User            lprskave
+Port            22
+HostName        vcn10.ob.us-ashburn-1.oci.oraclecloud.com
+ForwardAgent    yes
+
+
+# service Hosts - to connect directly from my machine
+Host            10.0.*
+User            lprskave
+Port            22
+ProxyCommand    ssh apiary-bastion-dev -W %h:%p
+
+
 Host git-codecommit.us-east-1.amazonaws.com
 User APKAJYBG27EOU3LRKWPA
 IdentityFile ~/.ssh/ladislav_apiary
@@ -29,6 +58,12 @@ User lada
 Port 22
 Hostname 52.4.176.38
 ForwardAgent yes
+IdentityFile ~/.ssh/ladislav_apiary
+
+Host sre-playground
+User opc
+Port 22
+Hostname 129.146.46.101
 IdentityFile ~/.ssh/ladislav_apiary
 
 Host apiary-docker
