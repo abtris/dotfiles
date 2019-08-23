@@ -17,6 +17,7 @@ export KUBE_EDITOR=vim
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+export GOPROXY=https://proxy.golang.org
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 export PATH="/usr/local/bin:$PATH"
