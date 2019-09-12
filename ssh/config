@@ -1,14 +1,3 @@
-#ControlMaster auto
-#ControlPath /tmp/%r@%h:%p
-#ControlPersist yes
-#ServerAliveInterval 120
-#TCPKeepAlive no
-#LogLevel=quiet
-
-#Host *
-#    StrictHostKeyChecking no
-#    UserKnownHostsFile=/dev/null
-
 Host bitbucket.oci.oraclecorp.com
 Port 7999
 User git
@@ -44,8 +33,10 @@ Port            22
 ProxyCommand    ssh apiary-bastion-dev -W %h:%p
 
 
-Host git-codecommit.us-east-1.amazonaws.com
-User APKAJYBG27EOU3LRKWPA
+Host sre-playground
+User opc
+Port 22
+Hostname 129.146.46.101
 IdentityFile ~/.ssh/ladislav_apiary
 
 Host vps
@@ -53,146 +44,14 @@ User root
 Hostname 37.205.9.29
 IdentityFile ~/.ssh/identity
 
-Host apiary-mail
-User lada
-Port 22
-Hostname 52.4.176.38
-ForwardAgent yes
-IdentityFile ~/.ssh/ladislav_apiary
-
-Host sre-playground
-User opc
-Port 22
-Hostname 129.146.46.101
-IdentityFile ~/.ssh/ladislav_apiary
-
-Host apiary-docker
-User ec2-user
-Port 22
-Hostname 52.7.216.142
-ForwardAgent yes
-IdentityFile ~/.ssh/ladislav_apiary
-
-Host apiary-npm-registry
-User ec2-user
-Port 22
-Hostname 35.173.134.153
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host ecs1
-User ec2-user
-Port 22
-Hostname 52.91.85.150
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host apiary-github
-User admin
-Port 122
-Hostname 52.87.213.167
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host ecs2
-User ec2-user
-Port 22
-Hostname 52.91.9.222
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host apiary-test
-User ec2-user
-Port 22
-Hostname 54.166.168.185
-ForwardAgent yes
-IdentityFile ~/.ssh/amazon-lada.pem
-
-Host wp
-User root
-Port 2222
-Hostname 195.140.252.117
-IdentityFile id_rsa
-ForwardAgent yes
-
-Host test
-User root
-Hostname dev.lecturer.cz
-IdentityFile id_dsa
-
 Host dzogchen.cz
 User root
 Hostname dzogchen.cz
 IdentityFile id_dsa
 
-
-Host nabu
-User root
-Port 2222
-HostName adato.cz
-IdentityFile id_rsa
-
-Host babu
-Port 2222
-User root
-Hostname 195.140.253.89
-IdentityFile id_rsa
-
-Host kabu
-User root
-Port 2222
-Hostname kabu.adato.cz
-IdentityFile id_rsa
-
 Host andrea
 User prskavec
 Hostname andrea.vc.cvut.cz
-
-Host php
-User ahutacz
-Hostname 66.147.240.158
-IdentityFile id_dsa
-
-Host brain
-User root
-Hostname 88.86.118.212
-ForwardAgent yes
-
-Host busybookapp.com
-User root
-Hostname 88.86.118.212
-ForwardAgent yes
-
-Host test
-User hudson
-Hostname 10.1.1.60
-IdentityFile id_dsa
-ForwardAgent yes
-
-Host formax
-User prskavecl
-Hostname test.formax.cz
-IdentityFile id_dsa
-
-Host fotoparta
-User root
-Hostname fotoparta.cz
-IdentityFile id_dsa
-
-
-Host github.com
-StrictHostKeyChecking no
-ForwardAgent yes
-
-Host default
-HostName 127.0.0.1
-User vagrant
-Port 2222
-UserKnownHostsFile /dev/null
-StrictHostKeyChecking no
-PasswordAuthentication no
-IdentityFile /Library/Ruby/Gems/1.8/gems/vagrant-0.8.6/keys/vagrant
-IdentitiesOnly yes
 
 Host heroku.apiary
   HostName heroku.com
