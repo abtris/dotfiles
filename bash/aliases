@@ -18,6 +18,15 @@ alias kgn='kubectl get nodes -o wide --all-namespaces=true'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias ks='kube-shell'
 
+# Yubikey handler
+reload-ssh() {
+   ssh-add -e /usr/local/lib/opensc-pkcs11_hack.so >> /dev/null
+   if [ $? -gt 0 ]; then
+       echo "Failed to remove previous card"
+   fi
+   ssh-add -s /usr/local/lib/opensc-pkcs11_hack.so
+}
+
 # https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-context-and-configuration
 # kubectl config set-context CONTEXT_NAME -- namespace=NAMESPACE_NAME
 function ksc() {
@@ -73,6 +82,10 @@ function whoseport {
 
 function j() {
   z $1
+}
+
+function ed() {
+  code `git rev-parse --show-toplevel`
 }
 
 function e() {
