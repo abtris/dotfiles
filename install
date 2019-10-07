@@ -17,7 +17,6 @@ brew update
 brew tap wercker/wercker
 
 tools=(
-  ack
   ansible
   awscli
   bash
@@ -69,6 +68,7 @@ tools=(
   sqlite
   telnet
   terraform
+  the_silver_searcher
   thefuck
   tig
   tldr
