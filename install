@@ -27,6 +27,7 @@ tools=(
   colordiff
   consul
   dnsmasq
+  fzf
   ffmpeg
   freetype
   gawk
