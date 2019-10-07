@@ -80,8 +80,10 @@ function whoseport {
   lsof -i tcp:$1
 }
 
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 function j() {
-  z $1
+  DIR=`find ~/Sites -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf -1 -q "$1"`
+  cd ~/Sites/${DIR}
 }
 
 function ed() {
@@ -112,14 +114,6 @@ function gitcleanup() {
 
 function topten() {
 	history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
-}
-
-function switch() {
-  sudo lmcswitch $1
-}
-
-function marked() {
-  open -a "/Applications/Marked 2.app" $1
 }
 
 # Dig
