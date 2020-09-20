@@ -14,8 +14,6 @@ fi
 echo "Updating Homebrew..."
 brew update
 
-brew tap wercker/wercker
-
 tools=(
   ansible
   awscli
@@ -31,13 +29,13 @@ tools=(
   freetype
   gawk
   git
+  gh
   git-extras
   git-secrets
   go
   goreleaser/tap/goreleaser
   graphviz
   htop
-  hub
   hugo
   jq
   jsonnet
@@ -77,7 +75,6 @@ tools=(
   vault
   vcprompt
   vim
-  wercker-cli
   wget
   z
   zsh

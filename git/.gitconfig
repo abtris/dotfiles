@@ -52,6 +52,8 @@
   insteadOf = "gh:"
 [url "ssh://git@git.int.lmc.cz/"]
   insteadOf = "lmc:"
+[url "ssh://git@bitbucket.oci.oraclecorp.com:7999/"]
+  insteadOf = https://bitbucket.oci.oraclecorp.com/scm/
 [push]
     default = simple
 [github]

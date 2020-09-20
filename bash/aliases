@@ -20,6 +20,15 @@ alias kgn='kubectl get nodes -o wide --all-namespaces=true'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias ks='kube-shell'
 
+function now() {
+  echo "$(date +'%Y-%m-%d')"
+  return 0
+}
+
+# alias ssh='/usr/local/bin/ssh'
+# alias ssh-agent='/usr/local/bin/ssh-agent'
+# alias ssh-add='/usr/local/bin/ssh-add'
+
 # Yubikey handler
 reload-ssh() {
    ssh-add -e /usr/local/lib/opensc-pkcs11_hack.so >> /dev/null
@@ -66,11 +75,15 @@ alias ecr='eval $(aws ecr get-login --no-include-email)'
 alias fixbrew='sudo chown -R $(whoami) /usr/local/bin /usr/local/lib'
 
 function gpr() {
-	hub pull-request
+	gh pr create --fill
+}
+
+function ghl() {
+  gh pr list
 }
 
 function hb() {
-	hub browse
+	gh pr view --web
 }
 
 function project_aware_subl {

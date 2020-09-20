@@ -1,64 +1,67 @@
+#Host github.com
+  #ProxyCommand nc -X connect -x www-proxy.us.oracle.com:80 %h %p
+
 Host bitbucket.oci.oraclecorp.com
-Port 7999
-User git
-ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
-IdentityFile ~/.ssh/id_rsa
-
-Host apiary-polls-api-test
-User lprskave
-ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
-Port 22
-Hostname 144.25.36.240
-PKCS11Provider /usr/local/Cellar/opensc/0.19.0/lib/opensc-pkcs11.so
-
-
-Host            apiary-bastion-dev
-User            lprskave
-Port            22
-Hostname        172.16.104.198
-ProxyCommand    ssh oci-bastion-dev -W %h:%p
-ForwardAgent    yes
-
-Host            oci-bastion-dev
-User            lprskave
-Port            22
-HostName        vcn10.ob.us-ashburn-1.oci.oraclecloud.com
-ForwardAgent    yes
-
-
-# service Hosts - to connect directly from my machine
-Host            10.0.*
-User            lprskave
-Port            22
-ProxyCommand    ssh apiary-bastion-dev -W %h:%p
-
+  Port 7999
+  User git
+  ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+  IdentityFile ~/.ssh/id_rsa
 
 Host sre-playground
-User opc
-Port 22
-Hostname 129.146.46.101
-IdentityFile ~/.ssh/ladislav_apiary
+  User opc
+  Port 22
+  Hostname 129.146.46.101
+  IdentityFile ~/.ssh/ladislav_apiary
+
+
+Host apiary-vault-0
+  User opc
+  Port 22
+  Hostname 129.146.85.114
+  IdentityFile ~/.ssh/ladislav_apiary
+
+Host apiary-vault-1
+  User opc
+  Port 22
+  Hostname 129.146.75.146
+  IdentityFile ~/.ssh/ladislav_apiary
+
+Host apiary-vault-2
+  User opc
+  Port 22
+  Hostname 129.146.178.94
+  IdentityFile ~/.ssh/ladislav_apiary
 
 Host vps
-User root
-Hostname 37.205.9.29
-IdentityFile ~/.ssh/identity
+  User root
+  #Port 1022
+  Hostname 37.205.9.29
+  IdentityFile ~/.ssh/identity
 
-Host dzogchen.cz
-User root
-Hostname dzogchen.cz
-IdentityFile id_dsa
+Host 192.168.229.74
+  ProxyCommand ssh vcn19.ob.us-ashburn-1.oci.oraclecloud.com -W %h:%p
+  Compression yes
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath ~/.ssh/produs-ashburn-1%r@%h:%p
+  ControlPersist 60
 
-Host andrea
-User prskavec
-Hostname andrea.vc.cvut.cz
+Host 192.168.213.90
+  ProxyCommand ssh vcn15.ob.us-ashburn-1.oci.oraclecloud.com -W %h:%p
+  Compression yes
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath ~/.ssh/stagingus-ashburn-1%r@%h:%p
+  ControlPersist 60
 
-Host heroku.apiary
-  HostName heroku.com
-  IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@apiary.io"
-  IdentitiesOnly yes
+Host vcn1.ob.ap-chiyoda-1.oci.oraclecloud8.com
+  User lprskave
 
-Host heroku.personal
-  HostName heroku.com
-  IdentityFile "/Users/prskavecl/.ssh/identity.heroku.ladislav@prskavec.net"
-  IdentitiesOnly yes
+
+
+# OCI hosts
+Host *
+  User lprskave
+Include ssh_configs/config
+Include apiary-ssh-config/*.conf
+Include apigw-ssh-config/*.conf
