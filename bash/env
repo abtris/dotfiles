@@ -8,7 +8,7 @@ else
   export EDITOR='code'
 fi
 # PATH
-export PATH=/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:/Users/abtris/Library/Python/3.7/bin:/usr/local/Cellar/gettext/0.20.2/bin:$PATH
+export PATH=~/.local/bin:/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:/Users/abtris/Library/Python/3.7/bin:/usr/local/Cellar/gettext/0.20.2/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
@@ -21,7 +21,6 @@ export GOPROXY=https://proxy.golang.org,direct
 export GOPRIVATE=*.oraclecorp.com
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$HOME/.cargo/bin
 
-export PATH="/usr/local/bin:$PATH"
 export JENKINS_HOME="/opt/jenkins"
 
 # Catalina change path for Keybase
