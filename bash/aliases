@@ -13,6 +13,7 @@ alias vpnstop='brew services stop vpnconnect'
 alias vpnstart='brew services start vpnconnect'
 alias vpnls='brew services list'
 alias vpn='brew services restart vpnconnect'
+alias stop-scan="sudo /usr/local/McAfee/AntiMalware/VSControl stopoas"
 # k8s section
 alias k='kubectl'
 alias kgp='kubectl get pods -o wide --all-namespaces=true'
