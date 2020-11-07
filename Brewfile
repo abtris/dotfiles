@@ -1,235 +1,142 @@
-
-tap 'caskroom/cask'
-
-# Core Homebrew
-brew 'ack'
-brew 'adns'
-brew 'ansible'
-brew 'aom'
-brew 'autoconf'
-brew 'awscli'
-brew 'bash'
-brew 'bat'
-brew 'bdw-gc'
-brew 'boost'
-brew 'cabextract'
-brew 'cairo'
-brew 'ccat'
-brew 'ceres-solver'
-brew 'cmake'
-brew 'colordiff'
-brew 'consul'
-brew 'coreutils'
-brew 'dav1d'
-brew 'dep'
-brew 'dnsmasq'
-brew 'eigen'
-brew 'exercism'
-brew 'ffmpeg'
-brew 'flac'
-brew 'fn'
-brew 'fontconfig'
-brew 'freetype'
-brew 'frei0r'
-brew 'fribidi'
-brew 'fzf'
-brew 'gawk'
-brew 'gcc'
-brew 'gd'
-brew 'gdbm'
-brew 'gettext'
-brew 'gflags'
-brew 'gh'
-brew 'giflib'
-brew 'git'
-brew 'git-extras'
-brew 'git-secrets'
-brew 'glib'
-brew 'glog'
-brew 'gmp'
-brew 'gnu-sed'
-brew 'gnupg'
-brew 'gnupg@1.4'
-brew 'gnutls'
-brew 'go'
-brew 'gobject-introspection'
-brew 'goji'
-brew 'gopass'
-brew 'goreleaser'
-brew 'gox'
-brew 'graphite2'
-brew 'graphviz'
-brew 'gts'
-brew 'guile'
-brew 'harfbuzz'
-brew 'hdf5'
-brew 'helm'
-brew 'heroku'
-brew 'heroku-node'
-brew 'htop'
-brew 'httpie'
-brew 'hub'
-brew 'hugo'
-brew 'icu4c'
-brew 'ilmbase'
-brew 'imlib2'
-brew 'ipcalc'
-brew 'isl'
-brew 'jasper'
-brew 'jpeg'
-brew 'jq'
-brew 'jsonnet'
-brew 'jx'
-brew 'kompose'
-brew 'kubernetes-cli'
-brew 'kubernetes-helm'
-brew 'lame'
-brew 'ldns'
-brew 'leptonica'
-brew 'libass'
-brew 'libassuan'
-brew 'libbluray'
-brew 'libcaca'
-brew 'libcbor'
-brew 'libevent'
-brew 'libffi'
-brew 'libfido2'
-brew 'libgcrypt'
-brew 'libgpg-error'
-brew 'libidn2'
-brew 'libksba'
-brew 'libmpc'
-brew 'libogg'
-brew 'libpng'
-brew 'libsamplerate'
-brew 'libsndfile'
-brew 'libsoxr'
-brew 'libssh2'
-brew 'libtasn1'
-brew 'libtiff'
-brew 'libtool'
-brew 'libunistring'
-brew 'libusb'
-brew 'libvidstab'
-brew 'libvorbis'
-brew 'libvpx'
-brew 'libyaml'
-brew 'libzip'
-brew 'little-cms2'
-brew 'llvm'
-brew 'lua'
-brew 'luarocks'
-brew 'lzo'
-brew 'mas'
-brew 'maven'
-brew 'md5sha1sum'
-brew 'metis'
-brew 'midnight-commander'
-brew 'mongodb@3.4'
-brew 'mosh'
-brew 'mpfr'
-brew 'mplayer'
-brew 'ncurses'
-brew 'netcdf'
-brew 'netpbm'
-brew 'nettle'
-brew 'node'
-brew 'npth'
-brew 'numpy'
-brew 'ob3-service-onboarding'
-brew 'ocproxy'
-brew 'oniguruma'
-brew 'openblas'
-brew 'openconnect'
-brew 'opencore-amr'
-brew 'opencv'
-brew 'openexr'
-brew 'openjdk'
-brew 'openjpeg'
-brew 'opensc'
-brew 'openssl@1.1'
-brew 'operator-sdk'
-brew 'opus'
-brew 'p11-kit'
-brew 'packer'
-brew 'pandoc'
-brew 'pango'
-brew 'pcre'
-brew 'pcre2'
-brew 'perl'
-brew 'pinentry'
-brew 'pinentry-mac'
-brew 'pipenv'
-brew 'pixman'
-brew 'pkg-config'
-brew 'protobuf'
-brew 'pulumi'
-brew 'pyqt'
-brew 'python@2'
-brew 'python@3.8'
-brew 'qt'
-brew 'r'
-brew 'rav1e'
-brew 'rbenv'
-brew 'readline'
-brew 'redis'
-brew 'richgo'
-brew 'rtmpdump'
-brew 'rubberband'
-brew 'ruby'
-brew 'ruby-build'
-brew 's-lang'
-brew 'sdl2'
-brew 'siege'
-brew 'sip'
-brew 'snappy'
-brew 'speex'
-brew 'sqlite'
-brew 'srt'
-brew 'sshfs'
-brew 'stoken'
-brew 'suite-sparse'
-brew 'swig'
-brew 'szip'
-brew 'tbb'
-brew 'telnet'
-brew 'terminal-notifier'
-brew 'terraform'
-brew 'tesseract'
-brew 'the_silver_searcher'
-brew 'thefuck'
-brew 'theora'
-brew 'tig'
-brew 'tinygo'
-brew 'tldr'
-brew 'tmux'
-brew 'trash'
-brew 'tree'
-brew 'unbound'
-brew 'utf8proc'
-brew 'v8@3.15'
-brew 'vault'
-brew 'vcprompt'
-brew 'vim'
-brew 'vpnconnect'
-brew 'vtk'
-brew 'webp'
-brew 'wercker-cli'
-brew 'wget'
-brew 'x264'
-brew 'x265'
-brew 'xvid'
-brew 'xz'
-brew 'z'
-brew 'zsh'
-brew 'zsh-autosuggestions'
-brew 'zsh-syntax-highlighting'
-
-# Cask Apps
-cask 'adoptopenjdk8'
-cask 'aerial'
-cask 'iterm2'
-cask 'osxfuse'
-cask 'visual-studio-code'
-cask 'xquartz'
-
+tap "adoptopenjdk/openjdk"
+tap "datawire/blackbird"
+tap "goreleaser/tap"
+tap "hashicorp/tap"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "jenkins-x/jx"
+tap "kylef/formulae"
+tap "kyoh86/tap"
+tap "secedge/ob3-onboarding", "ssh://git@bitbucket.oci.oraclecorp.com:7999/secedge/bastion-agent.git"
+tap "shopify/shopify"
+tap "tinygo-org/tools"
+tap "wercker/wercker"
+cask "osxfuse"
+brew "ack"
+brew "gettext"
+brew "ansible"
+brew "awscli"
+brew "bash"
+brew "bat"
+brew "cabextract"
+brew "freetype"
+brew "ccat"
+brew "gflags"
+brew "glog"
+brew "colordiff"
+brew "consul"
+brew "coreutils", link: false
+brew "go"
+brew "dnsmasq", restart_service: true
+brew "exercism"
+brew "ffmpeg"
+brew "fn"
+brew "fzf"
+brew "gawk"
+brew "gh"
+brew "git"
+brew "git-extras"
+brew "git-secrets"
+brew "gnu-sed"
+brew "gnupg", link: false
+brew "gnupg@1.4"
+brew "gopass"
+brew "goreleaser"
+brew "graphviz"
+brew "helm"
+brew "htop"
+brew "httpie"
+brew "hub"
+brew "hugo"
+brew "imlib2"
+brew "ipcalc"
+brew "jq"
+brew "jsonnet"
+brew "kompose"
+brew "kubernetes-cli"
+brew "lua"
+brew "luarocks"
+brew "mas"
+brew "maven"
+brew "md5sha1sum"
+brew "midnight-commander"
+brew "mosh"
+brew "mplayer"
+brew "node"
+brew "openconnect"
+brew "opencv"
+brew "opensc", link: false
+brew "operator-sdk"
+brew "packer"
+brew "pandoc"
+brew "pinentry-mac"
+brew "pipenv"
+brew "pipx"
+brew "pulumi"
+brew "r"
+brew "rbenv"
+brew "redis", restart_service: true
+brew "siege"
+brew "telnet"
+brew "terraform", link: false
+brew "tfenv"
+brew "the_silver_searcher"
+brew "thefuck"
+brew "tig"
+brew "tldr"
+brew "tmux"
+brew "tree"
+brew "v8@3.15"
+brew "vault"
+brew "vcprompt"
+brew "vim"
+brew "vpnconnect", restart_service: true
+brew "wget"
+brew "youtube-dl"
+brew "z"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "hashicorp/tap/waypoint"
+brew "heroku/brew/heroku"
+brew "jenkins-x/jx/jx"
+brew "kylef/formulae/goji"
+brew "kyoh86/tap/richgo"
+brew "secedge/ob3-onboarding/ob3-service-onboarding"
+brew "tinygo-org/tools/tinygo"
+brew "wercker/wercker/wercker-cli"
+cask "adoptopenjdk8"
+cask "aerial"
+cask "edex-ui"
+cask "iterm2"
+cask "visual-studio-code"
+cask "xquartz"
+mas "Bear", id: 1091189122
+mas "Cardhop", id: 1290358394
+mas "CCMenu", id: 603117688
+mas "EasyRes", id: 688211836
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Jettison", id: 447430809
+mas "JSON Helper", id: 453114608
+mas "Keynote", id: 409183694
+mas "Location Helper", id: 488536386
+mas "Marked 2", id: 890031187
+mas "MindNode", id: 1289197285
+mas "NetSpot", id: 514951692
+mas "Notability", id: 736189492
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator", id: 407963104
+mas "Pocket", id: 568494494
+mas "Reeder", id: 1449412482
+mas "Slack", id: 803453959
+mas "Snappy", id: 512617038
+mas "The Unarchiver", id: 425424353
+mas "Trello", id: 1278508951
+mas "Tweetbot", id: 1384080005
+mas "Xcode", id: 497799835
+mas "Yoink", id: 457622435
