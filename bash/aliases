@@ -216,7 +216,13 @@ alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
 
 # Git
 # alias ungit="find . -name '.git' -exec rm -rf {} \;"
-alias m='git checkout master'
+
+# Switch to master/main
+function m() {
+  DEFAULT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+  git checkout $DEFAULT_BRANCH
+}
+
 # Git http://stackoverflow.com/questions/501407/is-there-a-git-merge-dry-run-option
 function gmerge() {
     git merge --no-commit --no-ff $1
