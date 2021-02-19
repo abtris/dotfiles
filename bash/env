@@ -1,33 +1,40 @@
 # Set PATH, CDPATH, EDITOR, etc.
 SYSTEM=`uname`
+
 if [[ $SYSTEM == *Linux* ]]
 then
   export EDITOR='vim'
   export GDK_NATIVE_WINDOWS=true
 else
   export EDITOR='code'
+  if [[ "$(uname -m)" == "arm64" ]]; then
+    export EDITOR='code-insiders'
+  fi
 fi
 # PATH
-export PATH=~/.local/bin:/usr/local/bin:~/bin/dotfiles/bin:~/bin:/usr/local/share/npm/bin:/Users/abtris/Library/Python/3.7/bin:/usr/local/Cellar/gettext/0.20.2/bin:$PATH
-export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+export PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:$PATH
+# export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export KUBE_EDITOR=vim
 
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
+if [[ "$(uname -m)" == "arm64" ]]; then
+  export GOROOT=/opt/homebrew/Cellar/go/HEAD-33d72fd/libexec
+fi
 export GOPROXY=https://proxy.golang.org,direct
 export GOPRIVATE=*.oraclecorp.com
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$HOME/.cargo/bin
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-export JENKINS_HOME="/opt/jenkins"
+# export JENKINS_HOME="/opt/jenkins"
 
 # Catalina change path for Keybase
-source /Volumes/Keybase/private/abtris/env
-
+# source /Volumes/Keybase/private/abtris/env
+source "/Volumes/Keybase (abtris)/private/abtris/env"
 
 # JIRA -  https://github.com/kylef/goji
 export GOJI_BASE_URL=https://jira.oraclecorp.com/jira/
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
+

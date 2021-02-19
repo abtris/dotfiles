@@ -24,9 +24,9 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws bb z gitfast ruby brew osx svn gem heroku abtris bundler redis-cli docker rvm search-history history)
+plugins=(aws bb z gitfast ruby brew osx gem abtris bundler redis-cli docker history)
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/php5/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.rbenv/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # brew install zsh-syntax-highlighting
@@ -36,7 +36,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
 # brew install zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# M1
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it
 #__git_files () {
@@ -44,22 +46,18 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 #}
 
 # Customize to your needs...
-[[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+if [[ "$(uname -m)" == "arm64" ]]; then
+  export PATH="/opt/homebrew/opt/openldap/bin:$PATH"
+  export PATH="/opt/homebrew/opt/openldap/sbin:$PATH"
+  export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+  export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+fi
 
 eval "$(rbenv init -)"
-
-# added by travis gem
-[ -f /Users/abtris/.travis/travis.sh ] && source /Users/abtris/.travis/travis.sh
+# eval "$(pyenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/abtris/.nvm/versions/node/v6.14.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

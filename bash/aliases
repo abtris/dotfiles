@@ -1,10 +1,11 @@
 # Command Enhancements
 
 #alias rake='noglob rake'
-# alias python='python3'
-# alias pip='pip3'
-alias lessc='/usr/local/bin/lessc'
-alias awk='gawk'
+alias python='python3'
+alias pip='pip3'
+# alias lessc='/usr/local/bin/lessc'
+# M1 not work
+# alias awk='gawk'
 # https://github.com/ggreer/the_silver_searcher
 alias ack='ag'
 alias cat='bat --paging=never --style=plain'
@@ -57,8 +58,8 @@ alias subl="$HOME/bin/subl -n"
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias reload='source ~/bin/dotfiles/bash/aliases'
-alias ea='code ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
-alias ee="code ~/bin/dotfiles/bash/env"
+alias ea='e ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
+alias ee="e ~/bin/dotfiles/bash/env"
 alias eh="sudo -e ~/bin/dotfiles/hosts/hosts"
 alias csub='cd "~/Library/Application Support/Sublime Text 3/Packages/User"'
 # LMC
@@ -107,7 +108,7 @@ function ed() {
 }
 
 function e() {
-  code $1
+  code-insiders $1
 }
 
 function gotest() {
@@ -219,7 +220,7 @@ alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
 
 # Switch to master/main
 function m() {
-  DEFAULT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+  DEFAULT_BRANCH=`git branch --no-color | grep -e "^. ma" | tr -d ' *'`
   git checkout $DEFAULT_BRANCH
 }
 
