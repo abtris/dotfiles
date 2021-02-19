@@ -18,65 +18,33 @@ tools=(
   ansible
   awscli
   bash
-  bat
-  cabextract
-  ccat
-  colordiff
-  consul
+  curl
   dnsmasq
-  fzf
-  ffmpeg
-  freetype
-  gawk
+  gettext
   git
-  gh
-  git-extras
-  git-secrets
   go
-  goreleaser/tap/goreleaser
-  graphviz
-  htop
+  font-fira-code
   hugo
+  httpie
   jq
   jsonnet
-  kompose
-  kubernetes-cli
-  kubernetes-helm
-  lnav
   mas
-  mc
-  mongodb
-  mosh
-  heroku/brew/heroku
-  mplayer
-  node
   netcat
-  opencv
+  node
+  nvm
   openssl
-  packer
-  pandoc
   pipenv
-  protobuf
   python
-  r
+  qnapi
   rbenv
-  ruby-build
   redis
-  siege
   sqlite
   telnet
   terraform
-  the_silver_searcher
   thefuck
-  tig
-  tldr
-  tmux
   tree
-  vault
-  vcprompt
   vim
   wget
-  z
   zsh
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -87,69 +55,40 @@ brew install ${tools[@]}
 
 apps=(
   iterm2
-  launchrocket
   visual-studio-code
-  aerial
 )
-
-echo "Installing apps..."
-brew cask install ${apps[@]}
 
 echo "Cleaning Homebrew..."
 brew cleanup
 
-
 apps_ids=(
-  453114608 # JSON Helper (1.07)
-  603117688 # CCMenu (14.0)
-  488536386 # Location Helper (1.02)
-  890031187 # Marked 2 (2.5.27)
-  425424353 # The Unarchiver (4.0.0)
-  407963104 # Pixelmator (3.7.5)
-  1290358394 # Cardhop (1.1.6)
-  1289197285 # MindNode (5.2.2)
-  880001334 # Reeder (3.2.1)
-  688211836 # EasyRes (1.1.1)
-  1091189122 # Bear (1.6.6)
-  1179623856 # Pastebot (2.1.4)
-  803453959 # Slack (3.3.3)
-  1384080005 # Tweetbot (3.2)
-  512617038 # Snappy (2.0.1)
-  568494494 # Pocket (1.8.1)
-  457622435 # Yoink (3.5.2)
+  946399090 # Telegram Lite (2.2.0)
+  1278508951 # Trello (2.11.7)
+  406056744 # Evernote (7.14)
+  595191960 # CopyClip (1.9.6)
+  1091189122 # Bear (1.7.16)
+  803453959 # Slack (4.9.0)
+  568494494 # Pocket (1.8.5)
+  1147396723 # WhatsApp (2.2037.6)
+  1289197285 # MindNode (7.3.3)
+
 )
 
 echo "Installing apps from Mac App Store..."
 mas install ${apps_ids[@]}
 
 # make symlinks
-ln -s ~/bin/dotfiles/bashrc ~/.bashrc
+ln -s ~/bin/dotfiles/profile ~/.profile
 ln -s ~/bin/dotfiles/zshrc-ohmyzsh ~/.zshrc
 # make dir (default not exists)
 mkdir ~/.ssh
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
-ln -s ~/bin/dotfiles/SciTEUser.properties ~/.SciTEUser.properties
 # iterm2 settings
-ln -s ~/bin/dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
 ln -s ~/bin/dotfiles/git/.gitignore ~/.gitignore
 ln -s ~/bin/dotfiles/git/.gittemplate ~/.gittemplate
 ln -s ~/bin/dotfiles/git/.git-commit-template.txt ~/.git-commit-template.txt
-ls -s ~/bin/dotfiles/.hgignore ~/.hgignore
-ls -s ~/bin/dotfiles/.vim ~/.vim
-ls -s ~/bin/dotfiles/.vimrc ~/.vimrc
-ls -s ~/bin/dotfiles/.vimpluginrc ~/.vimpluginrc
-ls -s ~/bin/dotfiles/.tmux ~/.tmux
-ls -s ~/bin/dotfiles/.tldrrc ~/.tldrrc
-ls -s ~/bin/dotfiles/.screenrc ~/.screenrc
-ls -s ~/bin/dotfiles/.ackrc ~/.ackrc
-ls -s ~/bin/dotfiles/.gemrc ~/.gemrc
-# javascript config
-ls -s ~/bin/dotfiles/coffeelint.json ~/coffeelint.json
 # change shell
 csh -s /bin/zsh
-# install vcpprompt
-# sh ~/bin/dotfiles/bin/vcprompt-install
-# reload configuration and run zsh
-source ~/.zshrc
+source ~/.profile
 zsh

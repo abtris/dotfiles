@@ -10,34 +10,13 @@ install brew-cask
 
 # Install Casks
 
-cask install adium
-cask install bartender
-cask install caffeine
 cask install dash
 cask install dropbox
 cask install evernote
-cask install fantastical
 cask install firefox
 cask install flux
-cask install gitx
 cask install google-chrome
-cask install hipchat
-cask install imageoptim
-cask install launchbar
-cask install league-of-legends
-cask install mactracker
-cask install macvim
-cask install mindnode-pro
-cask install omnifocus
-cask install opera
 cask install skype
 cask install steam
-cask install sublime-text
-cask install textmate
-cask install totalfinder
-cask install trailer
-cask install transmit
-cask install vagrant
-cask install virtualbox
 cask install vlc
-cask install xscope
+

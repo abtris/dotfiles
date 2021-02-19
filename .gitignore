@@ -1,8 +1,0 @@
-.hg/*
-*~
-.mutt/cache
-.vim/plugin/.swp
-*.swp
-.vim/.netrwhist
-.DS_Store
-*.sublime-project
