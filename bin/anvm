@@ -1,0 +1,40 @@
+#! /bin/bash
+
+# credits to Corvax
+
+anvm () {
+	if [[ ! -f package.json ]]
+	then
+		echo "No package.json found in current directory"
+		return 1
+	fi
+	local NVM_VERSION_DIR
+	local NODE_VERSION=$(cat package.json | jq '.engines.node' | tr -d '"')
+	if [[ -n "$NODE_VERSION" ]]
+	then
+		echo "Found engines.node in package.json: ${NODE_VERSION}"
+		if ! [[ "$NODE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+		then
+			NODE_VERSION=$(curl --silent --get --data-urlencode "range=${NODE_VERSION}" https://semver.herokuapp.com/node/resolve)
+		fi
+		NVM_VERSION="v$NODE_VERSION"
+		echo "Installing npm ${NVM_VERSION}"
+		nvm install $NVM_VERSION &> /dev/null
+	else
+		echo "No engine.node in package.json"
+	fi
+	local NPM_VERSION=$(cat package.json | jq '.engines.npm' | tr -d '"')
+	if [[ -n "$NPM_VERSION" ]]
+	then
+		echo "Found engines.npm in package.json: ${NPM_VERSION}"
+		if ! [[ "$NPM_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+		then
+			NPM_VERSION=$(curl --silent --get --data-urlencode "range=${NPM_VERSION}" https://semver.herokuapp.com/npm/resolve)
+		fi
+		echo "Installing npm ${NPM_VERSION}"
+		npm install npm@$NPM_VERSION -g &> /dev/null
+	else
+		echo "No engine.npm in package.json"
+	fi
+	return 0
+}

@@ -1,0 +1,15 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    // {
+    //     "key": "ctrl+1",
+    //     "command": "workbench.action.terminal.focus"
+    // }
+    {
+        "key": "f6",
+        "command": "workbench.action.navigateEditorGroups"
+    },
+    {
+        "key": "ctrl+cmd+s",
+        "command": "openInGitTower.open",
+    }
+]

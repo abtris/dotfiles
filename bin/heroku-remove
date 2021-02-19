@@ -1,5 +1,0 @@
-#!/bin/bash
-if [ -n "$1" ]; then
-  heroku apps:join --app $1
-  heroku apps:destroy --app $1 --confirm $1
-fi
