@@ -1,4 +1,5 @@
 # Command Enhancements
+ARCH=`uname -m`
 
 #alias rake='noglob rake'
 alias python='python3'
@@ -108,7 +109,11 @@ function ed() {
 }
 
 function e() {
-  code-insiders $1
+  if [[ $ARCH == "arm64" ]]; then
+    code-insiders $1
+  else
+    code $1
+  fi
 }
 
 function gotest() {
