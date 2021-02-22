@@ -1,12 +1,15 @@
-# Command Enhancements
+# Detect arch (using m1 apple and i386 macs)
 ARCH=`uname -m`
 
 #alias rake='noglob rake'
 alias python='python3'
 alias pip='pip3'
 # alias lessc='/usr/local/bin/lessc'
-# M1 not work
-# alias awk='gawk'
+if [[ $ARCH == "arm64" ]]; then
+  # M1 gawk not work, system awk works
+else
+  alias awk='gawk'
+fi
 # https://github.com/ggreer/the_silver_searcher
 alias ack='ag'
 alias cat='bat --paging=never --style=plain'
@@ -55,22 +58,15 @@ function kuc() {
   kubectl config use-context $1
 }
 
-alias subl="$HOME/bin/subl -n"
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='e ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="e ~/bin/dotfiles/bash/env"
 alias eh="sudo -e ~/bin/dotfiles/hosts/hosts"
-alias csub='cd "~/Library/Application Support/Sublime Text 3/Packages/User"'
-# LMC
-alias md="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.devel.lmc.cz:/srv/dynamic/ /srv/dynamic/"
-alias mdd="sudo sshfs -o allow_other,uid=70,gid=70 prskavecl@ap01.dev3.lmc.cz:/srv/dynamic/ /srv/dynamic/"
-alias rpmrepo="cadaver http://yumrepo.prod.lmc.cz/lmc/apps-deploy/"
-alias sqlrepo="cadaver http://sqlrepo.prod.lmc.cz/webdav-sql/"
+
 # Quicker cd
 alias cr='cd ~/bin/dotfiles'
-alias cdj='cd ~/Dropbox\ \(Personal\)/Apps/Deckset/jenkins/'
 alias cs='cd ~/Sites'
 
 alias ecr='eval $(aws ecr get-login --no-include-email)'
