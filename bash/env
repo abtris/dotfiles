@@ -1,5 +1,6 @@
 # Set PATH, CDPATH, EDITOR, etc.
 SYSTEM=`uname`
+# Detect arch (using m1 apple and i386 macs)
 ARCH=`uname -m`
 
 if [[ $SYSTEM == *Linux* ]]
@@ -21,14 +22,14 @@ export KUBE_EDITOR=vim
 
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
-if [[ "$(uname -m)" == "arm64" ]]; then
+if [[ $ARCH == "arm64" ]]; then
   export GOROOT=/opt/homebrew/Cellar/go/HEAD-33d72fd/libexec
+else
+  export GOROOT=/usr/local/opt/go/libexec
 fi
 export GOPROXY=https://proxy.golang.org,direct
 export GOPRIVATE=*.oraclecorp.com
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
-
-# export JENKINS_HOME="/opt/jenkins"
 
 # Catalina change path for Keybase
 # source /Volumes/Keybase/private/abtris/env
@@ -38,4 +39,3 @@ source "/Volumes/Keybase (abtris)/private/abtris/env"
 export GOJI_BASE_URL=https://jira.oraclecorp.com/jira/
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
-

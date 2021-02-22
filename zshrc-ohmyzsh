@@ -1,5 +1,6 @@
-# Path to your oh-my-zsh configuration.
+# Detect arch (using m1 apple and i386 macs)
 ARCH=`uname -m`
+# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -69,4 +70,3 @@ eval "$(rbenv init -)"
 # eval "$(pyenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
-
