@@ -23,7 +23,7 @@ export KUBE_EDITOR=vim
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
 export GOPATH=$HOME/go
 if [[ $ARCH == "arm64" ]]; then
-  export GOROOT=/opt/homebrew/Cellar/go/HEAD-33d72fd/libexec
+  export GOROOT=/opt/homebrew/opt/go/libexec
 else
   export GOROOT=/usr/local/opt/go/libexec
 fi
