@@ -105,11 +105,7 @@ function ed() {
 }
 
 function e() {
-  if [[ $ARCH == "arm64" ]]; then
-    code-insiders $1
-  else
-    code $1
-  fi
+  code $1
 }
 
 function gotest() {
