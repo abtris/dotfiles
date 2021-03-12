@@ -31,12 +31,7 @@ export GOPROXY=https://proxy.golang.org,direct
 export GOPRIVATE=*.oraclecorp.com
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-# Catalina change path for Keybase
-if [[ $ARCH == "arm64" ]]; then
-  source "/Volumes/Keybase (abtris)/private/abtris/env"
-else
-  source /Volumes/Keybase/private/abtris/env
-fi
+source "/Volumes/Keybase (abtris)/private/abtris/env"
 
 # JIRA -  https://github.com/kylef/goji
 export GOJI_BASE_URL=https://jira.oraclecorp.com/jira/
