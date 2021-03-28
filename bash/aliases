@@ -4,6 +4,7 @@ ARCH=`uname -m`
 #alias rake='noglob rake'
 alias python='python3'
 alias pip='pip3'
+alias ls='exa'
 # alias lessc='/usr/local/bin/lessc'
 if [[ $ARCH == "arm64" ]]; then
   # M1 gawk not work, system awk works
@@ -227,7 +228,7 @@ function gmerge() {
 }
 
 function gco() {
-    git checkout $1
+    git checkout $*
 }
 
 function gac() {
