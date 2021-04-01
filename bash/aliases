@@ -178,10 +178,10 @@ function cdc() {
 alias cls='clear; ls'
 alias hi='history'
 alias l.='ls -d .[^.]*'
-alias l='ls -lhGt'  # -l long listing, most recent first
+alias l='ls'  # -l long listing, most recent first
                     # -G color
 alias lh="ls -lh"
-alias ll='ls -lhG'  # -l long listing, human readable, no group info
+alias ll='exa -lgsname'  # -l long listing, human readable, no group info
 alias s='cd ..'   # up one dir
 alias sb='cd -'   # back to last dir
 
