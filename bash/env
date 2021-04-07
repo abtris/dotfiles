@@ -33,7 +33,5 @@ export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 source "/Volumes/Keybase (abtris)/private/abtris/env"
 
-# JIRA -  https://github.com/kylef/goji
-export GOJI_BASE_URL=https://jira.oraclecorp.com/jira/
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
