@@ -37,3 +37,6 @@ source "/Volumes/Keybase (abtris)/private/abtris/env"
 export GOJI_BASE_URL=https://jira.oraclecorp.com/jira/
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
+
+# Git fuzzy git clone https://github.com/bigH/git-fuzzy.git
+export PATH=~/bin/git-fuzzy/bin:$PATH
