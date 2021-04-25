@@ -13,6 +13,3 @@ export NVM_DIR="/Users/abtris/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 complete -C /usr/local/bin/vault vault
-
-[[ -e "/usr/local/lib/python3.6/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/usr/local/lib/python3.6/site-packages/oci_cli/bin/oci_autocomplete.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
