@@ -82,7 +82,11 @@ function ghl() {
 }
 
 function hb() {
-	gh pr view --web
+  gh pr view -w
+}
+
+function hbv() {
+  gh repo view -w
 }
 
 function project_aware_subl {

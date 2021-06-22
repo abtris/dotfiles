@@ -86,6 +86,7 @@
   textconv = ~/bin/dotfiles/bin/odt-to-txt
 [init]
 	templatedir = ~/.gittemplate
+	defaultBranch = master
 [filter "media"]
 	required = true
 	clean = git media clean %f
