@@ -37,6 +37,8 @@ function now() {
 
 # Yubikey handler
 reload-ssh() {
+   pkill -f ssh-agent
+   eval `ssh-agent`
    ssh-add -e /usr/local/lib/opensc-pkcs11_hack.so >> /dev/null
    if [ $? -gt 0 ]; then
        echo "Failed to remove previous card"
