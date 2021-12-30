@@ -1,85 +1,60 @@
 // Place your settings in this file to overwrite the default settings
 {
-      "editor.fontSize": 16,
-      "editor.tabSize": 2,
-      "window.openFilesInNewWindow": false,
-      "window.zoomLevel": 2,
-      "editor.tabCompletion": true,
-      "window.nativeTabs": true,
-      "files.insertFinalNewline": true,
-      "files.trimTrailingWhitespace": true,
-      "files.associations": {
-            "**/bin/dotfiles/bash/*": "shellscript",
-            "**/bin/dotfiles/hosts/*": "shellscript"
-      },
-      "breadcrumbs.enabled": true,
-      "workbench.colorTheme": "Atom One Dark",
-      "extensions.ignoreRecommendations": false,
-      "sublimeTextKeymap.promptV3Features": true,
-      "editor.multiCursorModifier": "ctrlCmd",
-      "editor.snippetSuggestions": "bottom",
-      "editor.formatOnPaste": true,
-      "editor.formatOnSave": true,
-      "editor.renderControlCharacters": true,
-      "formattingToggle.activateFor": [
-            "formatOnSave"
-      ],
-      "go.gocodeAutoBuild": true,
-      "sync.gist": "aa27f88f7c55fe13efb26a6ecc5ed113",
-      "sync.lastUpload": "2018-08-15T09:01:33.678Z",
-      "sync.autoDownload": false,
-      "sync.autoUpload": false,
-      "sync.lastDownload": "",
-      "sync.forceDownload": false,
-      "sync.host": "",
-      "sync.pathPrefix": "",
-      "sync.quietSync": false,
-      "sync.askGistName": false,
-      "sync.removeExtensions": true,
-      "sync.syncExtensions": true,
-      // GitLens
-      "gitlens.advanced.messages": {
-            "suppressShowKeyBindingsNotice": true
-      },
-      "gitlens.keymap": "alternate",
-      "gitlens.views.fileHistory.enabled": true,
-      "gitlens.views.lineHistory.enabled": true,
-      "cSpell.userWords": [
-            "Heroku",
-            "Kubernetes",
-            "Observability",
-            "Wercker",
-            "downsampling",
-            "idempotency",
-            "mentorship",
-            "oncall",
-            "stateful",
-            "timeframe",
-            "webhook"
-      ],
-      "breadcrumbs.enabled": true,
-      "editor.renderControlCharacters": true,
-      "editor.renderWhitespace": "all",
-      "editor.renderLineHighlight": "all",
-      "go.useLanguageServer": true,
-      // Terminal
-      "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-      "terminal.integrated.fontSize": 15,
-      "terminal.external.osxExec": "iTerm.app",
-      // Prettier
-      "prettier.eslintIntegration": true,
-      "prettier.singleQuote": true,
-      "prettier.trailingComma": "es5",
-      // Lang specific settings
-      "[markdown]": {
-            "editor.wordWrap": "wordWrapColumn",
-            "editor.wordWrapColumn": 80,
-            "editor.quickSuggestions": false
-      },
-      "[javascript]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-      },
-      "[json]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-      }
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "window.openFilesInNewWindow": "on",
+  "window.zoomLevel": -2,
+  "editor.tabCompletion": "on",
+  "window.nativeTabs": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "**/bin/dotfiles/bash/*": "shellscript",
+    "**/bin/dotfiles/hosts/*": "shellscript"
+  },
+  "breadcrumbs.enabled": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 5,
+  // https: //swas.io/blog/keep-vscode-tabs-open-by-default/
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "extensions.ignoreRecommendations": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "bottom",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.renderControlCharacters": true,
+  "formattingToggle.activateFor": [
+    "formatOnSave"
+  ],
+  "editor.renderWhitespace": "all",
+  "editor.renderLineHighlight": "all",
+  // Terminal
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "terminal.integrated.fontSize": 15,
+  "terminal.external.osxExec": "iTerm.app",
+  // Prettier
+  "prettier.eslintIntegration": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "python.formatting.provider": "black",
+  // Lang specific settings
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "editor.quickSuggestions": false
+  },
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  // "[javascript]": {
+  //       "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  // "[json]": {
+  //       "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // }
 }

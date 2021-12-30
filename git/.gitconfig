@@ -1,5 +1,9 @@
 [user]
 	useconfigonly = true
+# necessary to handle divergent branches
+[pull]
+	ff = only
+
 [rerere]
   enabled = 1
 [alias]

@@ -1,26 +1,30 @@
-export NPM_TOKEN=""
+### k8s autocompletion https://kubernetes.io/docs/tasks/tools/included/optional-kubectl-configs-zsh/
+autoload -Uz compinit
+compinit
 
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/lib:$PATH
+export PATH=/usr/local/bin:$PATH
 
-export LIBRESSL=/usr/local/opt/libressl/bin
 export GOPATH=$HOME/go
-export IGOR=$HOME/dev/igor
 export DEVTOOLS=~/dev/d-tools
-
-export GT=/usr/local/opt/gettext/bin
-
-export PATH=$GT:$M3:$DEVTOOLS:$LIBRESSL:$PATH:$IGOR:$GOPATH/bin
-# gettext
-export LDFLAGS="-L/usr/local/opt/gettext/lib"
-export CPPFLAGS="-I/usr/local/opt/gettext/include"
+export YARN="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+export GCLI=$HOME/google-cloud-sdk/bin
+export BREW=/opt/homebrew/bin:/opt/homebrew/sbin
+export PATH=$DEVTOOLS:$BREW:$GCLI:$PATH:$GOPATH/bin
 
 export LC_ALL=en_US.UTF-8
 
 # history size
-export HISTFILESIZE=1000000
+export HISTFILESIZE=-1
 export HISTSIZE=1000000
+# https://unix.stackexchange.com/questions/49214/how-to-remove-a-single-line-from-history
+export HISTCONTROL=ignorespace
 
-source ~/.nvm/nvm.sh
+# Pipenv
+export LANG="en_US.UTF-8"
+
+# AWS SAM prevent sending telemetry
+export SAM_CLI_TELEMETRY=0
+
 alias python='python3'
 alias pip='pip3'
 alias gs='git status'
@@ -28,20 +32,38 @@ alias gm='git checkout master'
 alias gp='git pull'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias cm='cd ~/dev/daria/cybermagnolia/cybermagnolia.com'
+alias dev='cd ~/dev'
+alias ll='ls -la'
 alias tf='terraform'
 alias profile='code ~/.profile'
 alias sshconf='code ~/.ssh/config'
 alias venv='source venv/bin/activate'
 
-alias kc='kubectl'
+#### k8s
+alias k='kubectl'
 alias mk='minikube'
+alias kc='cd ~/.kube/configurations'
 
-alias ssh_kill='pkill ssh-agent'
-alias ssh_connect='eval $(ssh-agent -s) && ssh-add -s ssh-add -s /usr/local/lib/opensc-pkcs11_hack.so'
+# autocompletion
+source <(kubectl completion zsh)
+compdef __start_kubectl k
 
-source ~/scripts/anvm.sh
+# google cloud CLI
+source ~/google-cloud-sdk/completion.zsh.inc
+# source ~/google-cloud-sdk/path.zsh.inc
+# enable brew commands
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 function j() {
-  DIR=`find ~/dev -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf -1 -q "$1"`
+  DIR=$(find ~/dev -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf -1 -q "$1")
   cd ~/dev/${DIR}
 }
+
+# NAS docker
+alias rdocker="docker \
+  --tlsverify \
+  -H=bardiel.nerv:2376 \
+  --tlscacert=/Users/dardar/.docker/daemon-certs/ca.pem \
+  --tlscert=/Users/dardar/.docker/daemon-certs/server-cert.pem \
+  --tlskey=/Users/dardar/.docker/daemon-certs/server-key.pem"
