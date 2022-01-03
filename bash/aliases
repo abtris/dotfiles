@@ -60,6 +60,12 @@ function kuc() {
   kubectl config use-context $1
 }
 
+function setalias() {
+  scutil --set ComputerName "$1"
+  scutil --set LocalHostName "$1"
+  scutil --set HostName "$1"
+}
+
 alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias reload='source ~/bin/dotfiles/bash/aliases'

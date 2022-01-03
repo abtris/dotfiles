@@ -70,3 +70,6 @@ eval "$(rbenv init -)"
 # eval "$(pyenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
+autoload -U compinit
+compinit -i
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

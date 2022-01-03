@@ -37,5 +37,8 @@ source "/tmp/env" && rm /tmp/env
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
+# https://github.com/cantino/mcfly 
+eval "$(mcfly init zsh)"
+
 # Git fuzzy git clone https://github.com/bigH/git-fuzzy.git
 export PATH=~/bin/git-fuzzy/bin:$PATH
