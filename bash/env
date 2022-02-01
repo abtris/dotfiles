@@ -9,9 +9,6 @@ then
   export GDK_NATIVE_WINDOWS=true
 else
   export EDITOR='code'
-  if [[ $ARCH == "arm64" ]]; then
-    export EDITOR='code-insiders'
-  fi
 fi
 # PATH
 export PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:$PATH
@@ -37,7 +34,7 @@ source "/tmp/env" && rm /tmp/env
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
-# https://github.com/cantino/mcfly 
+# https://github.com/cantino/mcfly
 eval "$(mcfly init zsh)"
 
 # Git fuzzy git clone https://github.com/bigH/git-fuzzy.git
