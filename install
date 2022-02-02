@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-# INSTALL MacOS X
+# INSTALL MacOS
 if test ! $(which gcc); then
   echo "Installing command line developer tools..."
   xcode-select --install
@@ -13,122 +13,29 @@ fi
 
 echo "Updating Homebrew..."
 brew update
-
-tools=(
-  ansible
-  awscli
-  bash
-  bat
-  cabextract
-  ccat
-  colordiff
-  consul
-  dnsmasq
-  fzf
-  ffmpeg
-  freetype
-  gawk
-  git
-  gh
-  git-extras
-  git-secrets
-  go
-  goreleaser/tap/goreleaser
-  graphviz
-  htop
-  hugo
-  jq
-  jsonnet
-  kompose
-  kubernetes-cli
-  kubernetes-helm
-  lnav
-  mas
-  mc
-  mongodb
-  mosh
-  heroku/brew/heroku
-  mplayer
-  node
-  netcat
-  opencv
-  openssl
-  packer
-  pandoc
-  pipenv
-  protobuf
-  python
-  r
-  rbenv
-  ruby-build
-  redis
-  siege
-  sqlite
-  telnet
-  terraform
-  the_silver_searcher
-  thefuck
-  tig
-  tldr
-  tmux
-  tree
-  vault
-  vcprompt
-  vim
-  wget
-  z
-  zsh
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
-
-echo "Installing tools..."
-brew install ${tools[@]}
-
-apps=(
-  iterm2
-  launchrocket
-  visual-studio-code
-  aerial
-)
-
-echo "Installing apps..."
-brew cask install ${apps[@]}
+# brew bundle - https://github.com/Homebrew/homebrew-bundle
+# Using Brewfile to install all deps
+brew bundle
 
 echo "Cleaning Homebrew..."
 brew cleanup
 
+# dotfiles
+mkdir -p ~/bin
+git clone https://github.com/abtris/dotfiles.git
 
-apps_ids=(
-  453114608 # JSON Helper (1.07)
-  603117688 # CCMenu (14.0)
-  488536386 # Location Helper (1.02)
-  890031187 # Marked 2 (2.5.27)
-  425424353 # The Unarchiver (4.0.0)
-  407963104 # Pixelmator (3.7.5)
-  1290358394 # Cardhop (1.1.6)
-  1289197285 # MindNode (5.2.2)
-  880001334 # Reeder (3.2.1)
-  688211836 # EasyRes (1.1.1)
-  1091189122 # Bear (1.6.6)
-  1179623856 # Pastebot (2.1.4)
-  803453959 # Slack (3.3.3)
-  1384080005 # Tweetbot (3.2)
-  512617038 # Snappy (2.0.1)
-  568494494 # Pocket (1.8.1)
-  457622435 # Yoink (3.5.2)
-)
-
-echo "Installing apps from Mac App Store..."
-mas install ${apps_ids[@]}
-
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mv  ~/.zshrc  ~/.zshrc-bak
+ln -s ~/bin/dotfiles/zshrc-ohmyzsh ~/.zshrc
+mkdir -p ~/.oh-my-zsh/custom/themes/
+ln -s ~/bin/dotfiles/themes/abtris.zsh-theme ~/.oh-my-zsh/custom/themes/abtris.zsh-theme
+ln -s ~/bin/dotfiles/custom/abtris ~/.oh-my-zsh/custom/plugins/abtris
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
-ln -s ~/bin/dotfiles/zshrc-ohmyzsh ~/.zshrc
 # make dir (default not exists)
 mkdir ~/.ssh
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
-ln -s ~/bin/dotfiles/SciTEUser.properties ~/.SciTEUser.properties
 # iterm2 settings
 ln -s ~/bin/dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
@@ -146,10 +53,6 @@ ls -s ~/bin/dotfiles/.ackrc ~/.ackrc
 ls -s ~/bin/dotfiles/.gemrc ~/.gemrc
 # javascript config
 ls -s ~/bin/dotfiles/coffeelint.json ~/coffeelint.json
-# change shell
-csh -s /bin/zsh
-# install vcpprompt
-# sh ~/bin/dotfiles/bin/vcprompt-install
 # reload configuration and run zsh
 source ~/.zshrc
 zsh
