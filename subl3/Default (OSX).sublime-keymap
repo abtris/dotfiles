@@ -1,6 +1,0 @@
-[
-	// Refresh folder list with F5
-	{ "keys": ["f5"], "command": "refresh_folder_list" },
-  { "keys": ["super+alt+a"], "command": "alignment" }
-
-]
