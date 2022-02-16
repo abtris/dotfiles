@@ -11,7 +11,7 @@ else
   export EDITOR='code'
 fi
 # PATH
-export PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:$PATH
+export PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:$PATH
 # export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
