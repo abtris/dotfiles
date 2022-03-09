@@ -238,6 +238,11 @@ function gco() {
     git checkout $*
 }
 
+function gcb() {
+    git checkout -b abtris/$1
+}
+
+
 function gac() {
 	git clone $1
 	DIR=`echo $1 | cut -d'/' -f 2 | cut -d '.' -f 1`
