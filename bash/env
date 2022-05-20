@@ -39,3 +39,7 @@ eval "$(mcfly init zsh)"
 
 # Git fuzzy git clone https://github.com/bigH/git-fuzzy.git
 export PATH=~/bin/git-fuzzy/bin:$PATH
+
+export TELEPORT_AUTH=PB_Okta
+export TELEPORT_PROXY=productboard.teleport.sh
+export TELEPORT_USER=ladislav.prskavec@productboard.com

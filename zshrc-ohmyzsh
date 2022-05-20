@@ -26,7 +26,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws z gitfast ruby brew macos gem abtris bundler redis-cli docker history)
+plugins=(aws z gitfast ruby brew macos gem abtris bundler redis-cli docker history kubectx)
 
 if [[ "$ARCH" == "arm64" ]]; then
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.rbenv/bin:$PATH"
