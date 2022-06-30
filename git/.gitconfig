@@ -1,5 +1,7 @@
 [user]
 	useconfigonly = true
+	email = ladislav.prskavec@productboard.com
+	name = abtris
 [rerere]
   enabled = 1
 [alias]
@@ -44,7 +46,7 @@
   quotepath = false
   autocrlf=input
 	trustctime = false
-	askpass = git-gui--askpass
+	askPass = true
 	editor = code --wait
   pager = delta
 [interactive]
@@ -61,12 +63,9 @@
   httpd=webrick
 [url "git@github.com:abtris/"]
   insteadOf = "gh:"
-[url "ssh://git@git.int.lmc.cz/"]
-  insteadOf = "lmc:"
-[url "ssh://git@bitbucket.oci.oraclecorp.com:7999/"]
-  insteadOf = https://bitbucket.oci.oraclecorp.com/scm/
 [push]
     default = simple
+	autoSetupRemote = true
 [github]
   user = abtris
 [browser "gitscm"]
@@ -75,15 +74,6 @@
   browser = gitscm
 [branch]
   autosetuprebase = always
-[merge]
-	tool = vimdiff
-	conflictstyle = diff3
-[diff "word"]
-  binary = true
-  textconv = strings
-[diff "odt"]
-  binary = true
-  textconv = ~/bin/dotfiles/bin/odt-to-txt
 [init]
 	templatedir = ~/.gittemplate
 	defaultBranch = master
@@ -115,3 +105,5 @@
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [format]
 	signoff = true
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/

@@ -2,6 +2,7 @@
 ARCH=`uname -m`
 
 #alias rake='noglob rake'
+alias tilt=/opt/homebrew/bin/tilt
 alias python='python3'
 alias pip='pip3'
 # alias lessc='/usr/local/bin/lessc'
