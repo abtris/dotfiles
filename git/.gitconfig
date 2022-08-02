@@ -1,7 +1,5 @@
 [user]
 	useconfigonly = true
-	email = ladislav.prskavec@productboard.com
-	name = abtris
 [rerere]
   enabled = 1
 [alias]
