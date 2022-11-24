@@ -4,7 +4,7 @@
       "editor.tabSize": 2,
       "window.openFilesInNewWindow": false,
       "window.zoomLevel": 2,
-      "editor.tabCompletion": true,
+      "editor.tabCompletion": "onlySnippets",
       "window.nativeTabs": true,
       "files.insertFinalNewline": true,
       "files.trimTrailingWhitespace": true,
@@ -74,12 +74,18 @@
       "[markdown]": {
             "editor.wordWrap": "wordWrapColumn",
             "editor.wordWrapColumn": 80,
-            "editor.quickSuggestions": false
+            "editor.quickSuggestions": {
+                  "comments": "off",
+                  "strings": "off",
+                  "other": "off"
+            }
       },
       "[javascript]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "[json]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
-      }
+      },
+      "tabnine.experimentalAutoImports": true,
+      "security.workspace.trust.untrustedFiles": "open"
 }
