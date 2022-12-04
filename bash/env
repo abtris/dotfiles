@@ -25,7 +25,6 @@ else
   export GOROOT=/usr/local/opt/go/libexec
 fi
 export GOPROXY=https://proxy.golang.org,direct
-export GOPRIVATE=*.oraclecorp.com
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 keybase fs read /keybase/private/abtris/env > /tmp/env
@@ -39,10 +38,6 @@ eval "$(mcfly init zsh)"
 
 # Git fuzzy git clone https://github.com/bigH/git-fuzzy.git
 export PATH=~/bin/git-fuzzy/bin:$PATH
-
-export TELEPORT_AUTH=PB_Okta
-export TELEPORT_PROXY=productboard.teleport.sh
-export TELEPORT_USER=ladislav.prskavec@productboard.com
 
 export STARSHIP_CONFIG=~/bin/dotfiles/starship.toml
 eval "$(starship init zsh)"
