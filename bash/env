@@ -43,3 +43,6 @@ export PATH=~/bin/git-fuzzy/bin:$PATH
 export TELEPORT_AUTH=PB_Okta
 export TELEPORT_PROXY=productboard.teleport.sh
 export TELEPORT_USER=ladislav.prskavec@productboard.com
+
+export STARSHIP_CONFIG=~/bin/dotfiles/starship.toml
+eval "$(starship init zsh)"
