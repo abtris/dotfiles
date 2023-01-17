@@ -20,7 +20,7 @@ export PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:~/
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # https://gist.github.com/vsouza/77e6b20520d07652ed7d
-export GOPATH=$HOME/gob
+export GOPATH=$HOME/go
 if [[ $ARCH == "arm64" ]]; then
   export GOROOT=/opt/homebrew/opt/go/libexec
 else
