@@ -109,6 +109,7 @@ function whoseport {
 
 # export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 function j() {
+  # Sites needs structure with account/repo
   DIR=`find ~/Sites -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf -1 -q "$1"`
   cd ~/Sites/${DIR}
 }
@@ -290,6 +291,10 @@ alias lgp='git log --pretty=oneline'
 alias gsf='git svn fetch'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
+alias kubectx='switch'
+alias kctx='switch'
+
+
 
 # alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
 alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)'"
