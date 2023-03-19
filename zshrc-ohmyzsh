@@ -73,3 +73,4 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit
 compinit -i
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+eval "$(atuin init zsh)"

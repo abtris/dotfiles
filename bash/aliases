@@ -26,10 +26,16 @@ alias kgp='kubectl get pods -o wide --all-namespaces=true'
 alias kgn='kubectl get nodes -o wide --all-namespaces=true'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias ks='kube-shell'
+alias dig='dog'
 
 function now() {
   echo "$(date +'%Y-%m-%d')"
   return 0
+}
+
+function fixrenovate() {
+  cp ~/bin/dotfiles/CODEOWNERS .
+  cp ~/bin/dotfiles/renovate.json .
 }
 
 # alias ssh='/usr/local/bin/ssh'
