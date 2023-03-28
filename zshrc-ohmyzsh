@@ -28,11 +28,6 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(aws z gitfast ruby macos gem abtris bundler redis-cli docker history kubectx)
 
-if [[ "$ARCH" == "arm64" ]]; then
-  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.rbenv/bin:$PATH"
-else
-  export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/bin:$PATH"
-fi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # brew install zsh-syntax-highlighting
@@ -47,30 +42,10 @@ if [[ "$ARCH" == "arm64" ]]; then
 else
   source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-# http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it
-#__git_files () {
-#	    _wanted files expl 'local files' _files
-#}
-
-# Customize to your needs...
-export NVM_DIR="$HOME/.nvm"
-if [[ "$ARCH" == "arm64" ]]; then
-  export PATH="/opt/homebrew/opt/openldap/bin:$PATH"
-  export PATH="/opt/homebrew/opt/openldap/sbin:$PATH"
-  export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-  export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
-
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
-else
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-fi
 
 eval "$(rbenv init -)"
-# eval "$(pyenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit
 compinit -i
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 eval "$(atuin init zsh)"

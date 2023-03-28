@@ -14,8 +14,8 @@ else
   export K9S_EDITOR='code -w'
 fi
 # PATH
-export PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:~/.go/bin:$PATH
-# export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:~/.go/bin:$PATH
+
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
@@ -27,7 +27,7 @@ else
   export GOROOT=/usr/local/opt/go/libexec
 fi
 export GOPROXY=https://proxy.golang.org,direct
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+# export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 keybase fs read /keybase/private/abtris/env > /tmp/env
 source "/tmp/env" && rm /tmp/env
@@ -39,7 +39,7 @@ eval $(thefuck --alias)
 eval "$(mcfly init zsh)"
 
 # Git fuzzy git clone https://github.com/bigH/git-fuzzy.git
-export PATH=~/bin/git-fuzzy/bin:$PATH
+PATH=~/bin/git-fuzzy/bin:$PATH
 
 export STARSHIP_CONFIG=~/bin/dotfiles/starship.toml
 eval "$(starship init zsh)"
@@ -48,6 +48,9 @@ INSTALLATION_PATH=$(brew --prefix switch) && source $INSTALLATION_PATH/switch.sh
 # source <( switch list-contexts | grep '^eks_AWS-PDS.*' | awk '{split($0,a,"/"); printf "switch alias %s=%s\n", a[2], $0}' )
 
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # brew install gnu-sed
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# deducplication for path
+export PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
