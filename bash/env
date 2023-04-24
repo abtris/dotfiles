@@ -26,7 +26,9 @@ if [[ $ARCH == "arm64" ]]; then
 else
   export GOROOT=/usr/local/opt/go/libexec
 fi
-export GOPROXY=https://proxy.golang.org,direct
+
+# Skip GOPROXY to don't need using GOPRIVATE
+export GOPROXY=direct
 # export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 keybase fs read /keybase/private/abtris/env > /tmp/env

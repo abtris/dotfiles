@@ -28,6 +28,15 @@ alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias ks='kube-shell'
 alias dig='dog'
 
+# switch command - https://github.com/danielfoehrKn/kubeswitch
+alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history;switch clean'
+
+function prepnamespace() {
+  kubectl create namespace $1
+  kubectl label namespaces $1 pds.portworx.com/available=true --overwrite=true
+}
+
+
 function now() {
   echo "$(date +'%Y-%m-%d')"
   return 0
