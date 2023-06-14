@@ -36,6 +36,11 @@ function prepnamespace() {
   kubectl label namespaces $1 pds.portworx.com/available=true --overwrite=true
 }
 
+function getuuid {
+    uuid=$(uuidgen | tr 'A-Z' 'a-z' | tr -d '\n')
+    (osascript -e "display notification with title \"⌘-V to paste\" subtitle \"$uuid\"" &) >/dev/null 2>&1
+    echo -n "$uuid" | pbcopy
+}
 
 function now() {
   echo "$(date +'%Y-%m-%d')"
