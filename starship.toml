@@ -1,6 +1,19 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+[azure]
+disabled = false
+format = 'on [$symbol($subscription)]($style) '
+symbol = '󰠅 '
+style = 'blue bold'
+
+[golang]
+format = 'via [🏎💨 $version](bold cyan) '
+
+[kubernetes]
+format = 'on [⛵ ($cluster)](bold green) '
+disabled = false
+
 # Inserts a blank line between shell prompts
 add_newline = true
 
