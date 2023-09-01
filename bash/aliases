@@ -31,6 +31,16 @@ alias dig='dog'
 # switch command - https://github.com/danielfoehrKn/kubeswitch
 alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history;switch clean'
 
+# Temporal
+function tw() {
+  kubectl exec -n kds -it deployment/temporal-admin-tools -- tctl workflow list --pjson $1
+}
+
+function tcd() {
+  kubectl exec -n kds -it deployment/temporal-admin-tools -- tctl workflow show  -w $1
+}
+
+
 function prepnamespace() {
   kubectl create namespace $1
   kubectl label namespaces $1 pds.portworx.com/available=true --overwrite=true
@@ -317,7 +327,7 @@ alias kctx='switch'
 
 
 # alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
-alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)'"
+alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10"
 
 
 function deleteGitTag() {
