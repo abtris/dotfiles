@@ -11,8 +11,9 @@ if [[ $ARCH == "arm64" ]]; then
 else
   alias awk='gawk'
 fi
-# https://github.com/ggreer/the_silver_searcher
-alias ack='ag'
+# https://github.com/BurntSushi/ripgrep
+# brew install ripgrep
+alias ack='rg'
 alias cat='bat --paging=never --style=plain'
 # VPN
 alias vpnstop='brew services stop vpnconnect'
