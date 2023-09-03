@@ -1,6 +1,9 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Inserts a blank line between shell prompts
+add_newline = true
+
 [azure]
 disabled = false
 format = 'on [$symbol($subscription)]($style) '
@@ -14,8 +17,6 @@ format = 'via [🏎💨 $version](bold cyan) '
 format = 'on [⛵ ($cluster)](bold green) '
 disabled = false
 
-# Inserts a blank line between shell prompts
-add_newline = true
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
