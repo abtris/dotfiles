@@ -11,7 +11,7 @@ symbol = '󰠅 '
 style = 'blue bold'
 
 [golang]
-format = 'via [🐹  $version](bold cyan) '
+format = 'via [🐹 $version](bold cyan) '
 
 [kubernetes]
 format = 'on [⛵ ($cluster)](bold green) '
