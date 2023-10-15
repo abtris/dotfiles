@@ -22,6 +22,17 @@
   cif = !git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')
   rbi = rebase -i --autosquash
   start = !git init && git commit --allow-empty -m \"Initial commit\"
+	append = town append
+	diff-parent = town diff-parent
+	hack = town hack
+	kill = town kill
+	new-pull-request = town new-pull-request
+	prepend = town prepend
+	prune-branches = town prune-branches
+	rename-branch = town rename-branch
+	repo = town repo
+	ship = town ship
+	sync = town sync
 [color]
   ui = auto
 [color "branch"]
