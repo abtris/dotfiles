@@ -356,3 +356,13 @@ alias dh='dirs -v'
 function showCsv() {
   cat $1 | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S
 }
+
+
+# Azure
+function azdev() {
+  az account set --subscription 17f0aa1f-c47a-4404-9585-81cf47006863
+}
+
+function azqa() {
+  az account set --subscription 0f0ca875-8a78-4d20-a69e-6b26aa2ade74
+}

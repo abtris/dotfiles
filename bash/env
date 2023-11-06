@@ -14,7 +14,7 @@ else
   export K9S_EDITOR='code -w'
 fi
 # PATH
-PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:~/.go/bin:$PATH
+PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:$PATH
 
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
@@ -26,6 +26,8 @@ if [[ $ARCH == "arm64" ]]; then
 else
   export GOROOT=/usr/local/opt/go/libexec
 fi
+
+export GOBIN=$(go env GOPATH)/bin
 
 # Skip GOPROXY to don't need using GOPRIVATE
 export GOPROXY=direct
@@ -65,4 +67,9 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 
+# Teller
+# export KVAULT_NAME="kds-dev-vault"
+export KVAULT_NAME="kv-kds-001-dev-eastus2"
+export AZURE_CLI=1
+# Flux
 
