@@ -209,6 +209,7 @@ starttransfer:  %{time_starttransfer}s\n\
 }
 
 # Common -- Some are from Damian Conway
+# alias ls="exa"
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
 alias ltd="ls -lt" # sort time desc
@@ -221,7 +222,7 @@ function cdc() {
 }
 alias cls='clear; ls'
 alias hi='history'
-alias ll='ls -lhG'  # -l long listing, human readable, no group info
+alias ll='exa -lhG'  # -l long listing, human readable, no group info
 alias s='cd ..'   # up one dir
 alias sb='cd -'   # back to last dir
 
