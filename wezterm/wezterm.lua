@@ -25,7 +25,7 @@ config.keys = {
     mods = 'CMD',
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
-	  {
+	{
     key = 'LeftArrow',
     mods = 'CMD',
     action = act.ActivatePaneDirection 'Left',
@@ -44,6 +44,16 @@ config.keys = {
     key = 'DownArrow',
     mods = 'CMD',
     action = act.ActivatePaneDirection 'Down',
+  },
+	{
+    key = 'LeftArrow',
+    mods = 'CTRL|CMD',
+    action = act.ActivateTabRelative(-1),
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CTRL|CMD',
+    action = act.ActivateTabRelative(1),
   },
 }
 
