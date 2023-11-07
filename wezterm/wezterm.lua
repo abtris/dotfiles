@@ -74,8 +74,8 @@ local process_icons = {
 	},
 }
 
-config.font_size = 12.0
-config.color_scheme = "Catppuccin Macchiato", -- or Macchiato, Frappe, Latte
+config.font_size = 18.0
+config.color_scheme = "Catppuccin Macchiato" -- or Macchiato, Frappe, Latte
 
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
