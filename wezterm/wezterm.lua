@@ -9,52 +9,53 @@ if wezterm.config_builder then
 	config:set_strict_mode(false)
 end
 
+-- print all: wezterm show-keys --lua
 config.keys = {
-  {
-    key = 'd',
-    mods = 'CMD',
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-  },
-	  {
-    key = 'd',
-    mods = 'SHIFT|CMD',
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
-  },
-  {
-    key = 'w',
-    mods = 'CMD',
-    action = wezterm.action.CloseCurrentPane { confirm = true },
-  },
 	{
-    key = 'LeftArrow',
-    mods = 'CMD',
-    action = act.ActivatePaneDirection 'Left',
-  },
-  {
-    key = 'RightArrow',
-    mods = 'CMD',
-    action = act.ActivatePaneDirection 'Right',
-  },
-  {
-    key = 'UpArrow',
-    mods = 'CMD',
-    action = act.ActivatePaneDirection 'Up',
-  },
-  {
-    key = 'DownArrow',
-    mods = 'CMD',
-    action = act.ActivatePaneDirection 'Down',
-  },
+		key = 'd',
+		mods = 'CMD',
+		action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+	},
 	{
-    key = 'LeftArrow',
-    mods = 'CTRL|CMD',
-    action = act.ActivateTabRelative(-1),
-  },
-  {
-    key = 'RightArrow',
-    mods = 'CTRL|CMD',
-    action = act.ActivateTabRelative(1),
-  },
+		key = 'd',
+		mods = 'SHIFT|CMD',
+		action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+	},
+	{
+		key = 'w',
+		mods = 'CMD',
+		action = wezterm.action.CloseCurrentPane { confirm = true },
+	},
+	{
+		key = 'LeftArrow',
+		mods = 'CMD',
+		action = act.ActivatePaneDirection 'Left',
+	},
+	{
+		key = 'RightArrow',
+		mods = 'CMD',
+		action = act.ActivatePaneDirection 'Right',
+	},
+	{
+		key = 'UpArrow',
+		mods = 'CMD',
+		action = act.ActivatePaneDirection 'Up',
+	},
+	{
+		key = 'DownArrow',
+		mods = 'CMD',
+		action = act.ActivatePaneDirection 'Down',
+	},
+	{
+		key = 'LeftArrow',
+		mods = 'CTRL|CMD',
+		action = act.ActivateTabRelative(-1),
+	},
+	{
+		key = 'RightArrow',
+		mods = 'CTRL|CMD',
+		action = act.ActivateTabRelative(1),
+	},
 }
 
 local process_icons = {
@@ -122,7 +123,12 @@ local process_icons = {
 	},
 }
 
+local function get_proc_title(pane)
+	return (pane:get_foreground_process_name())
+end
+
 wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, hover, _max_width)
+	local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
 	local has_unseen_output = false
 	for _, pane in ipairs(tab.panes) do
 		if pane.has_unseen_output then
@@ -145,27 +151,18 @@ wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, hover, _max
 		})
 	end
 	return {
-		hover and {
-			Background = { Color = "#2a2e36" },
-		} or "ResetAttributes",
-		{
-			Foreground = {
-				Color = has_unseen_output and palette.lemon_chiffon
-					or (tab.is_active and palette.turquoise or "#9196c2"),
-			},
-		},
+		hover or "ResetAttributes",
 		{ Text = icon },
-		{ Foreground = { Color = "#9196c2" } },
 		{ Text = tab.tab_title == "" and title or tab.tab_title },
 	}
 end)
 
 config.font_size = 18.0
-config.color_scheme = "Catppuccin Macchiato" -- or Macchiato, Frappe, Latte
+config.color_scheme = "Catppuccin Mocha"
 
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
-config.tab_max_width = 30
+config.tab_max_width = 50
 
 return config
