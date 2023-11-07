@@ -138,12 +138,13 @@ function whoseport {
   lsof -i tcp:$1
 }
 
+# Replace by zoxide https://github.com/ajeetdsouza/zoxide
 # export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-function j() {
-  # Sites needs structure with account/repo
-  DIR=`find ~/Sites -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf -1 -q "$1"`
-  cd ~/Sites/${DIR}
-}
+# function j() {
+#   # Sites needs structure with account/repo
+#   DIR=`find ~/Sites -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf -1 -q "$1"`
+#   cd ~/Sites/${DIR}
+# }
 
 function ed() {
   code `git rev-parse --show-toplevel`
