@@ -30,6 +30,30 @@ sh install
 
 - All trying install via brew and find list [Brewfile](Brewfile)
 - Password management - [1password](https://1password.com/)
+- [PKM](https://en.wikipedia.org/wiki/Personal_knowledge_management) - [LogSeq](https://logseq.com/)
+  - sync over private repo
+  - plugins:
+    - own fork
+      - [logseq-plugin-automatic-url-title](https://github.com/abtris/logseq-plugin-automatic-url-title)
+    - Marketplace
+      - Diagrams as Code
+      - Todo list
+      - Journals calendar
+      - Markdown table editor
+      - Copy Code
+      - logseq-mergepages-plugin
+      - Bullet Threading
+      - Page-tags nad Hierarchy (UI)
+      - Banners
+      - logseq-datalp-plugin
+      - Citation Manger
+      - Awesome links
+      - Tabs
+      - Helium
+      - Tags
+      - logseq-mermaid-plugin
+  - Citations/papers - [Zotero](https://www.zotero.org/) - Your personal research assistant
+  - ReadIt-later - [Omnivore](https://omnivore.app/) - Save articles, newsletters, and documents and read them later 
 - Color Schema - https://github.com/catppuccin/catppuccin (used everywhere)
 - Desktop search/launcher
   - [LaunchBar](https://www.obdev.at/products/launchbar/index.html)
