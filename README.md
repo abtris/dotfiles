@@ -58,7 +58,7 @@ sh install
 - Desktop search/launcher
   - [LaunchBar](https://www.obdev.at/products/launchbar/index.html)
   - I think there are [better alternatives](https://www.raycast.com/) but I'm don't see big advantage in change
-- VSCode - nothing extra Go plugin for development, maybe mention [FindItFaster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) for fzf integration there
+- IDE - [VSCode](https://code.visualstudio.com/) - nothing extra Go plugin for development, maybe mention [FindItFaster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) for fzf integration there
 - Terminal - currently switch from [iTerm2](https://iterm2.com/) to [WezTerm](https://wezfurlong.org/wezterm/index.html) 
     - WezTerm is multiplatform
     - I like lua for [configuration](./wezterm/wezterm.lua)
@@ -70,10 +70,13 @@ sh install
   - any Nerd fonts - no extra preference
 - Shell
   - Still on Zsh using [oh-my-zsh](https://ohmyz.sh/)
+  - Is any real benefit using Fish? Maybe go with [nushell](https://www.nushell.sh/) make more sense.
 - Prompt
   - switched from custom PS1 config to [Starship](https://starship.rs/), my config [startship.toml](./startship.toml)
+  - like great plugin for integration with azure, k8s etc.
 - Source code
   - still git [aliases](./bash/aliases) and [config](./git/.gitconfig)
+  - I want try anything else but Github killing reasons to switch to something better.
 - Utils
   - [exa instead ls](https://the.exa.website/)
   - [bat instead cat](https://github.com/sharkdp/bat)
@@ -83,3 +86,4 @@ sh install
   - [dog instead dig](https://github.com/ogham/dog) - dig alternative
   - [k9s](https://k9scli.io/) - [color schema](https://github.com/catppuccin/k9s) - ui client for k8s
   - [mc](https://github.com/MidnightCommander/mc) - [color schema](https://github.com/catppuccin/mc) file manager in console
+  - [delta](https://github.com/dandavison/delta) - A syntax-highlighting pager for git, diff, and grep output
