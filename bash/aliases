@@ -14,14 +14,7 @@ fi
 # https://github.com/BurntSushi/ripgrep
 # brew install ripgrep
 alias ack='rg'
-alias cat='bat --paging=never --style=plain'
-# VPN
-alias vpnstop='brew services stop vpnconnect'
-alias vpnstart='brew services start vpnconnect'
-alias vpnls='brew services list'
-alias vpn='brew services restart vpnconnect'
-alias stop-scan="sudo /usr/local/McAfee/AntiMalware/VSControl stopoas"
-# k8s section
+alias cat='bat --paging=never --style=plain'# k8s section
 alias k='kubectl'
 alias kgp='kubectl get pods -o wide --all-namespaces=true'
 alias kgn='kubectl get nodes -o wide --all-namespaces=true'
@@ -283,10 +276,6 @@ function gac() {
 	DIR=`echo $1 | cut -d'/' -f 2 | cut -d '.' -f 1`
 	echo "cd $DIR"
 	cd $DIR
-	if [[ $1 =~ git@github.com:apiaryio ]]; then
-		git config user.name "Ladislav Prskavec"
-		git config user.email "ladislav@apiary.io"
-	fi
 }
 
 alias ghp='git checkout gh-pages'
