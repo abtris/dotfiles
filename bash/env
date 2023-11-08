@@ -33,9 +33,6 @@ export GOBIN=$(go env GOPATH)/bin
 export GOPROXY=direct
 # export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-keybase fs read /keybase/private/abtris/env > /tmp/env
-source "/tmp/env" && rm /tmp/env
-
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
