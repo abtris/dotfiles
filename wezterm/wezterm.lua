@@ -9,6 +9,9 @@ if wezterm.config_builder then
 	config:set_strict_mode(false)
 end
 
+-- https://wezfurlong.org/wezterm/hyperlinks.html#implicit-hyperlinks
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+
 -- print all: wezterm show-keys --lua
 config.keys = {
 	{
