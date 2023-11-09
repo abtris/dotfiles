@@ -80,8 +80,8 @@ sh install
 - Utils
   - [exa instead ls](https://the.exa.website/)
   - [bat instead cat](https://github.com/sharkdp/bat)
-  - [fzf](https://github.com/junegunn/fzf) - using with j() function that have [custom rule](./bash/aliases?plain=1#L135)
-  - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter cd command ()
+  - [fzf](https://github.com/junegunn/fzf) - using with `j()` function that using `find` and `fzf` - [custom rule](./bash/aliases?plain=1#L135)
+  - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter cd command, missing more enhance by my needs
   - [atuin](https://github.com/atuinsh/atuin) - shell history
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - rg instead [ack](https://linux.die.net/man/1/ack), grep
   - [dog instead dig](https://github.com/ogham/dog) - dig alternative
