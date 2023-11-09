@@ -15,6 +15,7 @@
   myworklog = log --author=prskavecl --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
   worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
   worklogexport = log --pretty='%h|%at|%an|%s'
+  root = "rev-parse --show-toplevel"
   up = pull --rebase
   wu = log --stat origin..@{0}
   wup = log -p origin..@{0}
