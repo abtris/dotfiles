@@ -14,7 +14,7 @@ fi
 # https://github.com/BurntSushi/ripgrep
 # brew install ripgrep
 alias ack='rg'
-alias cat='bat --paging=never --style=plain'# k8s section
+alias cat='bat --paging=never --style=plain'
 alias k='kubectl'
 alias kgp='kubectl get pods -o wide --all-namespaces=true'
 alias kgn='kubectl get nodes -o wide --all-namespaces=true'
