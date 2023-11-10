@@ -363,3 +363,16 @@ function azdev() {
 function azqa() {
   az account set --subscription 0f0ca875-8a78-4d20-a69e-6b26aa2ade74
 }
+
+function azswitch() {
+  selected=`printf "dev\nqa" | fzf`
+  echo "selected $selected";
+  case $selected in
+      "dev")
+        azdev
+        ;;
+      "qa")
+        azqa
+        ;;
+  esac
+}
