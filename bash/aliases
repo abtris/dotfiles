@@ -319,7 +319,13 @@ alias kctx='switch'
 
 
 # alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
-alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10"
+# alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10"
+
+function last() {
+  last=`git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10 | fzf`
+  branch=`echo "$last" | cut -d ' ' -f 3 | tr -d '()'`
+  git checkout $branch
+}
 
 
 function deleteGitTag() {
