@@ -25,6 +25,11 @@ config.keys = {
 		action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
 	},
 	{
+    key = 'Enter',
+    mods = 'CMD',
+    action = wezterm.action.TogglePaneZoomState,
+  },
+	{
 		key = 'w',
 		mods = 'CMD',
 		action = wezterm.action.CloseCurrentPane { confirm = true },
