@@ -64,6 +64,7 @@ sh install
     - I like lua for [configuration](./wezterm/wezterm.lua)
     - Should be faster
     - I tried Warp that doesn't work for me, problem with my prompt and another strange behavior
+- Tmux replacement - [zellij](https://zellij.dev/) - A terminal workspace with batteries included
 - Window manager - https://magnet.crowdcafe.com/
   - I was thinking about [yabai](https://github.com/koekeishiya/yabai) but doesn't have time to test it
 - Fonts
