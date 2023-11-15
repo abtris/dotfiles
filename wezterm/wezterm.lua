@@ -74,4 +74,6 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.tab_max_width = 50
 
+config.window_close_confirmation = 'NeverPrompt'
+
 return config
