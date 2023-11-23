@@ -254,7 +254,7 @@ alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
 
 # Switch to master/main
 function m() {
-  DEFAULT_BRANCH=`git branch --no-color | grep -e "^. ma" | tr -d ' *'`
+  DEFAULT_BRANCH=`git branch -l master main | tr -d ' *'`
   git checkout $DEFAULT_BRANCH
 }
 
