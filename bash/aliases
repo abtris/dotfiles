@@ -27,6 +27,12 @@ alias dig='dog'
 # switch command - https://github.com/danielfoehrKn/kubeswitch
 alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history;switch clean'
 
+# Terraform
+alias tp='terraform plan'
+alias ti='terraform init'
+alias tip='terraform init && terraform plan'
+alias ta='terraform apply --auto-approve'
+
 # Temporal
 function tw() {
   kubectl exec -n kds -it deployment/temporal-admin-tools -- tctl workflow list --pjson $1
