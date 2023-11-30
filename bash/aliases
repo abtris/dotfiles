@@ -27,6 +27,20 @@ alias dig='dog'
 # switch command - https://github.com/danielfoehrKn/kubeswitch
 alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history;switch clean'
 
+# Flux
+function fflux() {
+  selected=`printf "system\nall" | fzf`
+  echo "selected $selected";
+  case $selected in
+      "system")
+        flux events --for Kustomization/flux-system
+        ;;
+      "all")
+        flux events --all-namespaces --watch
+        ;;
+  esac
+}
+
 # Terraform
 alias tp='terraform plan'
 alias ti='terraform init'
