@@ -29,7 +29,7 @@ alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history
 
 # Flux
 function fflux() {
-  selected=`printf "system\nall" | fzf`
+  selected=`printf "system\nall\nlogs" | fzf`
   echo "selected $selected";
   case $selected in
       "system")
@@ -37,6 +37,9 @@ function fflux() {
         ;;
       "all")
         flux events --all-namespaces --watch
+        ;;
+      "logs")
+        flux logs --all-namespaces --level=error --since=10m
         ;;
   esac
 }
