@@ -4,6 +4,10 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
+[directory]
+truncation_length = 9
+truncate_to_repo = true
+truncation_symbol = ''
 
 [azure]
 disabled = false
