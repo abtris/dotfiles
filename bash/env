@@ -68,5 +68,8 @@ eval "$(zoxide init zsh)"
 
 # Teller
 # export KVAULT_NAME="kds-dev-vault"
-export KVAULT_NAME="kv-kds-001-dev-eastus2"
+export KVAULT_NAME="kv-kds-001-dev-eastus"
 export AZURE_CLI=1
+
+export GOPROXY="https://goproxy.pstg-inf.net"
+export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
