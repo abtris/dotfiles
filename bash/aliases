@@ -23,7 +23,7 @@ alias kgn='kubectl get nodes -o wide --all-namespaces=true'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias ks='kube-shell'
 alias dig='dog'
-alias ju='git commit -am "Update journal" && git push'
+alias ju='git add . && git commit -am "Update journal" && git push'
 
 # switch command - https://github.com/danielfoehrKn/kubeswitch
 alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history;switch clean'
