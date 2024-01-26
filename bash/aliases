@@ -5,6 +5,7 @@ ARCH=`uname -m`
 alias tilt=/opt/homebrew/bin/tilt
 alias python='python3'
 alias pip='pip3'
+alias tm='terramate'
 alias tmux='zellij'
 alias cdroot='cd $(git root)'
 # alias lessc='/usr/local/bin/lessc'
@@ -54,9 +55,11 @@ function killnamespace() {
 
 
 # Terraform
+
 alias tp='terraform plan'
-alias ti='terraform init'
-alias tip='terraform init && terraform plan'
+alias tioidc="terraform init -backend-config='resource_group_name=rg-terraform-state' -backend-config='storage_account_name=tfstatestgactstore' -backend-config='container_name=tfstate' -backend-config='subscription_id=caea5b7a-c6db-41e0-b2dc-f7e9b3381398'"
+alias ti="terraform init"
+alias tip="rm -rf .terraform && terraform init && terraform plan"
 alias ta='terraform apply --auto-approve'
 
 # Temporal
@@ -276,7 +279,7 @@ function genpass() {
 
 # Processes
 alias tu='top -o cpu' # cpu
-alias tm='top -o vsize' # memory
+alias tmem='top -o vsize' # memory
 
 # SVN
 alias unsvn="find . -name '.svn' -exec rm -rf {} \;"
