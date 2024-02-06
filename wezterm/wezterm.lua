@@ -154,5 +154,6 @@ config.tab_bar_at_bottom = true
 config.tab_max_width = 100
 
 config.window_close_confirmation = 'NeverPrompt'
+config.check_for_updates = false
 
 return config
