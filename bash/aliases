@@ -28,6 +28,7 @@ alias dig='dog'
 alias ju='git add . && git commit -am "Update journal"'
 
 function jup() {
+  git add .
   commitUpdate=`git show --name-only --oneline HEAD | tail -n +2`
   echo "Update \n$commitUpdate" | tr -d '\n' |  git commit -F -
   git push
