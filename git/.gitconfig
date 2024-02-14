@@ -82,6 +82,7 @@
   browser = gitscm
 [branch]
   autosetuprebase = always
+	sort = -committerdate
 [init]
 	templatedir = ~/.gittemplate
 	defaultBranch = master
@@ -105,6 +106,7 @@
   cleanup = strip
 [gpg]
 	program = gpg
+	format = ssh
 [diff]
   tool = icdiff
 [difftool]
