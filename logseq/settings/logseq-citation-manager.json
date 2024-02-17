@@ -1,0 +1,16 @@
+{
+  "openAsPage": "mod+shift+o",
+  "inlineLitNoteLink": "mod+shift+i",
+  "insertInline": "mod+shift+l",
+  "citationReferenceDB": "zoteroExport.bib",
+  "smartsearch": false,
+  "indexAbstracts": false,
+  "templatePage": "citation_manager_template",
+  "templateBlock": "",
+  "linkAlias": "",
+  "pageTitle": "{citekey}",
+  "reindexOnStartup": true,
+  "fileTemplate": "![{title}](file://{fileLink})",
+  "resultsCount": 50,
+  "disabled": false
+}
