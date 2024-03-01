@@ -117,3 +117,5 @@
 	signoff = true
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
+[maintenance]
+	repo = /Users/lprskavec/Sites/lprskavec/krypton-kds

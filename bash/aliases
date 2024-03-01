@@ -365,7 +365,7 @@ alias kctx='switch'
 # alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10"
 
 function last() {
-  last=`git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10 | fzf`
+  last=`git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 20 | fzf`
   branch=`echo "$last" | cut -d ' ' -f 3 | tr -d '()'`
   git checkout $branch
 }
@@ -407,8 +407,16 @@ function azqa() {
   az account set --subscription 0f0ca875-8a78-4d20-a69e-6b26aa2ade74
 }
 
+function azint() {
+  az account set --subscription 207440d1-681b-4bb5-a7ba-a319cbae9168
+}
+
+function azpre() {
+  az account set --subscription 0d05e6ca-16e7-4f82-892d-e0f5ccc37f47
+}
+
 function azswitch() {
-  selected=`printf "dev\nqa" | fzf`
+  selected=`printf "dev\nqa\ninteg\npreprod" | fzf`
   echo "selected $selected";
   case $selected in
       "dev")
@@ -416,6 +424,12 @@ function azswitch() {
         ;;
       "qa")
         azqa
+        ;;
+      "integ")
+        azint
+        ;;
+      "preprod")
+        azpre
         ;;
   esac
 }
