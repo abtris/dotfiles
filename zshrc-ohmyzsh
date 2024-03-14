@@ -51,3 +51,4 @@ compinit -i
 eval "$(atuin init zsh)"
 
 complete -o nospace -C /opt/homebrew/bin/terramate terramate
+

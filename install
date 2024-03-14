@@ -30,7 +30,7 @@ mv  ~/.zshrc  ~/.zshrc-bak
 ln -s ~/bin/dotfiles/zshrc-ohmyzsh ~/.zshrc
 mkdir -p ~/.oh-my-zsh/custom/themes/
 ln -s ~/bin/dotfiles/themes/abtris.zsh-theme ~/.oh-my-zsh/custom/themes/abtris.zsh-theme
-ln -s ~/bin/dotfiles/custom/abtris ~/.oh-my-zsh/custom/plugins/abtris
+ln -s ~/bin/dotfiles/custom/plugins/abtris ~/.oh-my-zsh/custom/plugins/abtris
 # make symlinks
 ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 # make dir (default not exists)
