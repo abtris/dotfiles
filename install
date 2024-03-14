@@ -54,6 +54,8 @@ mkdir -p "$(bat --config-dir)/themes"
 wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 bat cache --build
 ln -s ~/bin/dotfiles/.config/bat/config ~/.config/bat/config 
+# mc
+mkdir -p $HOME/.local/share/mc/skins && cd $HOME/.local/share/mc/skins && git clone https://github.com/catppuccin/mc.git && ln -s -f ./mc/catppuccin.ini .
 # javascript config
 ls -s ~/bin/dotfiles/coffeelint.json ~/coffeelint.json
 # reload configuration and run zsh
