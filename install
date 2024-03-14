@@ -36,8 +36,6 @@ ln -s ~/bin/dotfiles/bashrc ~/.bashrc
 # make dir (default not exists)
 mkdir ~/.ssh
 ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
-# iterm2 settings
-ln -s ~/bin/dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
 ln -s ~/bin/dotfiles/git/.gitignore ~/.gitignore
 ln -s ~/bin/dotfiles/git/.gittemplate ~/.gittemplate
