@@ -49,6 +49,11 @@ ls -s ~/bin/dotfiles/.tldrrc ~/.tldrrc
 ls -s ~/bin/dotfiles/.screenrc ~/.screenrc
 ls -s ~/bin/dotfiles/.ackrc ~/.ackrc
 ls -s ~/bin/dotfiles/.gemrc ~/.gemrc
+# themes
+mkdir -p "$(bat --config-dir)/themes"
+wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+bat cache --build
+ln -s ~/bin/dotfiles/.config/bat/config ~/.config/bat/config 
 # javascript config
 ls -s ~/bin/dotfiles/coffeelint.json ~/coffeelint.json
 # reload configuration and run zsh
