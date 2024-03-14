@@ -14,7 +14,7 @@ else
   export K9S_EDITOR='code -w'
 fi
 # PATH
-PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:$PATH
+PATH=~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'

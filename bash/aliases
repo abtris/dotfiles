@@ -415,8 +415,12 @@ function azpre() {
   az account set --subscription 0d05e6ca-16e7-4f82-892d-e0f5ccc37f47
 }
 
+function azprod() {
+  az account set --subscription a3c04758-e98b-45dc-8061-815c74618a44
+}
+
 function azswitch() {
-  selected=`printf "dev\nqa\ninteg\npreprod" | fzf`
+  selected=`printf "dev\nqa\ninteg\npreprod\nprod" | fzf`
   echo "selected $selected";
   case $selected in
       "dev")
@@ -431,5 +435,8 @@ function azswitch() {
       "preprod")
         azpre
         ;;
+      "prod")
+        azprod
+        ;;        
   esac
 }
