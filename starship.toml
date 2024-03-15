@@ -63,3 +63,9 @@ mantle = "#1e2030"
 crust = "#181926"
 
 palette = "catppuccin_flavor"
+
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = '%T'

@@ -74,4 +74,3 @@ export AZURE_CLI=1
 export GOPROXY="https://goproxy.pstg-inf.net"
 export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
 
-
