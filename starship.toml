@@ -82,6 +82,7 @@ $sudo\
 $cmd_duration\
 $jobs\
 $battery\
+${custom.proxy}\
 $time\
 $line_break\
 $status\
@@ -158,3 +159,10 @@ palette = "catppuccin_flavor"
 disabled = false
 format = '🕙[\[ $time \]]($style) '
 time_format = '%T'
+
+
+[custom.proxy]
+command = "echo $HTTPS_PROXY"
+when = ''' test $HTTPS_PROXY != "" '''
+style = 'bold fg:red'
+format = ' P:[$output]($style)'
