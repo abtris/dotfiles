@@ -57,6 +57,14 @@
 	askPass = true
 	editor = code --wait
   pager = delta
+[diff]
+        tool = difftastic
+[difftool]
+        prompt = false
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+        difftool = true  
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -107,12 +115,6 @@
 [gpg]
 	program = gpg
 	format = ssh
-[diff]
-  tool = icdiff
-[difftool]
-  prompt = false
-[difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [format]
 	signoff = true
 [url "ssh://git@github.com/"]
