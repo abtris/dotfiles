@@ -454,3 +454,8 @@ function tshSocks() {
   export HTTPS_PROXY=socks5://localhost:9001
   export NO_PROXY=".com,.net,.org,.local"
 }
+
+function removeSocks() {
+  unset HTTPS_PROXY
+  unset NO_PROXY
+}
