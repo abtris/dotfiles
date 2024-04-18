@@ -450,6 +450,11 @@ function preprodTunnel() {
   tsh ssh -D 9001 -N adminuser@jumphost-preprod-eus
 }
 
+function prodTunnel() {
+  tsh ssh -D 9001 -N adminuser@jumphost-prod-eus
+}
+
+
 function tshSocks() {
   export HTTPS_PROXY=socks5://localhost:9001
   export NO_PROXY=".com,.net,.org,.local"
