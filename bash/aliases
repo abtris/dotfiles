@@ -419,8 +419,12 @@ function azprod() {
   az account set --subscription a3c04758-e98b-45dc-8061-815c74618a44
 }
 
+function azrelease() {
+  az account set --subscription eb9ba9c4-d4be-4d67-8fce-fba389b13722
+}
+
 function azswitch() {
-  selected=`printf "dev\nqa\ninteg\npreprod\nprod" | fzf`
+  selected=`printf "dev\nqa\ninteg\nrelease\npreprod\nprod" | fzf`
   echo "selected $selected";
   case $selected in
       "dev")
@@ -431,6 +435,9 @@ function azswitch() {
         ;;
       "integ")
         azint
+        ;;
+      "release")
+        azrelease
         ;;
       "preprod")
         azpre
@@ -455,7 +462,7 @@ function prodTunnel() {
 }
 
 
-function tshSocks() {
+function addSocks() {
   export HTTPS_PROXY=socks5://localhost:9001
   export NO_PROXY=".com,.net,.org,.local"
 }
