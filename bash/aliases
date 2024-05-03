@@ -453,6 +453,10 @@ function integTunnel() {
   tsh ssh -D 9001 -N adminuser@jumphost-integ-uks
 }
 
+function integEus2Tunnel() {
+  tsh ssh -D 9001 -N adminuser@jumphost-integ-eus2
+}
+
 function preprodTunnel() {
   tsh ssh -D 9001 -N adminuser@jumphost-preprod-eus
 }

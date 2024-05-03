@@ -71,6 +71,7 @@ eval "$(zoxide init zsh)"
 export KVAULT_NAME="kv-kds-001-dev-eastus"
 export AZURE_CLI=1
 
-export GOPROXY="https://goproxy.pstg-inf.net"
-export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
+export GOPROXY=https://goproxy.io,direct
+# export GOPROXY="https://goproxy.pstg-inf.net,direct"
+# export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
 
