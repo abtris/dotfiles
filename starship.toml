@@ -108,10 +108,6 @@ style = 'blue bold'
 [golang]
 format = 'via [🐹 $version](bold cyan) '
 
-[kubernetes]
-format = 'on [⛵ ($cluster)](bold green) '
-disabled = false
-
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character] # The name of the module we are configuring is "character"
@@ -166,3 +162,8 @@ command = "echo $HTTPS_PROXY"
 when = ''' test $HTTPS_PROXY != "" '''
 style = 'bold fg:red'
 format = ' P:[$output]($style)'
+
+[kubernetes]
+format = 'on ⛵ $context '
+disabled = false
+style = "red"
