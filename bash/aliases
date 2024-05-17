@@ -22,12 +22,15 @@ alias cat='bat --paging=never --style=plain'
 alias k='kubectl'
 alias kgp='kubectl get pods -o wide --all-namespaces=true'
 alias kgn='kubectl get nodes -o wide --all-namespaces=true'
+alias ke="kubectl get events --all-namespaces --sort-by='.metadata.creationTimestamp\'"
+alias kep='kubectl get events --all-namespaces --field-selector involvedObject.kind=Pod'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias ks='kube-shell'
 alias dig='dog'
-alias ju='git add . && git commit -am "Update journal"'
+alias ju='cd ~/Sites/abtris/cml && git add . && git commit -am "Update journal"'
 
 function jup() {
+  cd ~/Sites/abtris/cml
   git add .
   commitUpdate=`git show --name-only --oneline HEAD | tail -n +2`
   echo "Update \n$commitUpdate" | git commit -n -F -
@@ -68,6 +71,9 @@ alias tioidc="terraform init -backend-config='resource_group_name=rg-terraform-s
 alias ti="terraform init"
 alias tip="rm -rf .terraform && terraform init && terraform plan"
 alias ta='terraform apply --auto-approve'
+
+# Teleport
+alias tshk='tsh kube login --set-context-name "{{.KubeName}}"'
 
 # Temporal
 function tw() {
@@ -188,6 +194,11 @@ function ed() {
 
 function e() {
   code $1
+}
+
+
+function et() {
+  find ~/Sites -type d -maxdepth 2 -depth 2 -print | cut -d '/' -f5,6 | fzf --bind "enter:become(code ~/Sites/{1})" 
 }
 
 function gotest() {
