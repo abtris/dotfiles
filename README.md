@@ -75,6 +75,9 @@ sh install
 - Prompt
   - switched from custom PS1 config to [Starship](https://starship.rs/), my config [startship.toml](./startship.toml)
   - like great plugin for integration with azure, k8s etc.
+- Tools switcher
+  - [mise](https://mise.jdx.dev/) former rtx - The front-end to your dev env
+    - fix my problem with autoswitch venv for Python similar what working for Ruby using rbenv, nvm etc., this is more universal
 - Source code
   - still git [aliases](./bash/aliases) and [config](./git/.gitconfig)
   - I want try anything else but Github killing reasons to switch to something better.
