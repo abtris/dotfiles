@@ -74,4 +74,6 @@ export AZURE_CLI=1
 export GOPROXY=https://goproxy.io,direct
 # export GOPROXY="https://goproxy.pstg-inf.net,direct"
 # export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
-
+# Mise https://mise.jdx.dev/
+export PATH="/Users/lprskavec/.local/share/mise/shims:$PATH"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
