@@ -11,3 +11,4 @@ node_modules
 *.bakA
 .wercker
 .mise.toml
+.mise.local.toml

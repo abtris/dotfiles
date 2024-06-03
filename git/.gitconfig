@@ -50,7 +50,7 @@
   changed = green
   untracked = cyan
 [core]
-	excludesfile = /Users/abtris/.gitignore
+	excludesFile = ~/.gitignore
   quotepath = false
   autocrlf=input
 	trustctime = false
