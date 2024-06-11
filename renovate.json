@@ -3,4 +3,7 @@
   "extends": [
     "github>abtris/renovate-config"
   ]
+  "ignorePaths": [
+    "logseq/"
+  ],
 }
