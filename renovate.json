@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>abtris/renovate-config"
-  ]
+  ],
   "ignorePaths": [
     "logseq/"
   ],
