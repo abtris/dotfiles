@@ -357,7 +357,7 @@ alias gnp="git-notpushed"
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gs='git show'
-alias b='git branch -avv'
+alias b='git branch -avv --sort=-committerdate'
 alias bl='git branch -v'
 alias g='git status -sb'
 alias gf='git fuzzy status'
@@ -434,8 +434,12 @@ function azrelease() {
   az account set --subscription eb9ba9c4-d4be-4d67-8fce-fba389b13722
 }
 
+function azpentest() {
+  az account set --subscription 6304a8ce-9c7f-4bb7-913d-1f2de708eac0
+}
+
 function azswitch() {
-  selected=`printf "dev\nqa\ninteg\nrelease\npreprod\nprod" | fzf`
+  selected=`printf "dev\nqa\ninteg\nrelease\npentest\npreprod\nprod" | fzf`
   echo "selected $selected";
   case $selected in
       "dev")
@@ -449,6 +453,9 @@ function azswitch() {
         ;;
       "release")
         azrelease
+        ;;
+      "pentest")
+        azpentest
         ;;
       "preprod")
         azpre

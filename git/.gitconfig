@@ -80,8 +80,7 @@
 [url "git@github.com:abtris/"]
   insteadOf = "gh:"
 [push]
-    default = simple
-	autoSetupRemote = true
+	  autoSetupRemote = true
 [github]
   user = abtris
 [browser "gitscm"]
