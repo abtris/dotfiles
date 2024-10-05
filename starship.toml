@@ -2,81 +2,22 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
 $directory\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
 $git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
 $git_status\
-$hg_branch\
-$pijul_channel\
+$fill\
 $docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
 $deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
 $golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
-$java\
-$julia\
-$kotlin\
-$gradle\
-$lua\
-$nim\
 $nodejs\
-$ocaml\
 $opa\
-$perl\
-$php\
-$pulumi\
-$purescript\
 $python\
-$raku\
-$rlang\
-$red\
 $ruby\
-$rust\
-$scala\
-$solidity\
-$swift\
 $terraform\
-$typst\
-$vlang\
-$vagrant\
-$zig\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
 $aws\
-$gcloud\
-$openstack\
 $azure\
 $direnv\
 $env_var\
-$crystal\
 $custom\
 $sudo\
 $cmd_duration\
@@ -119,6 +60,9 @@ disabled = true
 
 [battery]
 disabled = true
+
+[fill]
+symbol = ' '
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
@@ -167,3 +111,13 @@ format = ' P:[$output]($style)'
 format = 'on ⛵ $context '
 disabled = false
 style = "red"
+
+
+[git_branch]
+style = 'fg:green'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
+
+[git_status]
+style = 'fg:red'
+format = '([$all_status$ahead_behind]($style) )'
