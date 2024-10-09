@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Usage: ./kryptu-via.sh [options] <ssh-connection-string> <command>
+
+port_spec=0
+
+while getopts ":p" opt; do
+  case $opt in
+    p)
+      port_spec="$OPTARG"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+tsh ssh -D "$port_spec" -N "$1" &
+export PROXY_PID=$!
+trap 'kill $PROXY_PID >/dev/null 2>&1' ERR EXIT
+function ensure_port () {
+  local port
+  while :; do
+    port="$(lsof -Pan -p $PROXY_PID -iTCP -sTCP:LISTEN | awk '{print $9}' | tail -n +2 | awk -F ':' '{print $2}')"
+    if [ -n "$port" ]; then
+      echo "$port"
+      return
+    fi
+    sleep 1
+  done
+};
+PROXY_PORT=$(ensure_port)
+export PROXY_PORT
+export NO_PROXY=".com,.org,.local,windows.net"
+export HTTPS_PROXY="socks5://localhost:$PROXY_PORT"
+exec "${@:2}"
