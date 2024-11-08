@@ -1,0 +1,2 @@
+export VAULT_ADDR=https://vault.purestorage.com:443
+export VAULT_TOKEN=$(vault login -field=token -method=oidc username=lprskavec@purestorage.com)
