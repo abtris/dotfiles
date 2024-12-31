@@ -82,7 +82,7 @@ sh install
   - still git [aliases](./bash/aliases) and [config](./git/.gitconfig)
   - I want try anything else but Github killing reasons to switch to something better.
 - Utils
-  - [exa instead ls](https://the.exa.website/)
+  - [lsd instead ls](https://github.com/lsd-rs/lsd)
   - [bat instead cat](https://github.com/sharkdp/bat)
   - [fzf](https://github.com/junegunn/fzf) - using with `j()` function that using `find` and `fzf` - [custom rule](./bash/aliases?plain=1#L135)
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter cd command, missing matching settings to fix my needs as I easy done with find, but combined with smart cd
