@@ -53,17 +53,15 @@ sh install
       - Tags
       - logseq-mermaid-plugin
   - Citations/papers - [Zotero](https://www.zotero.org/) - Your personal research assistant
-  - ReadIt-later - [Omnivore](https://omnivore.app/) - Save articles, newsletters, and documents and read them later 
 - Color Schema - https://github.com/catppuccin/catppuccin (used everywhere)
 - Desktop search/launcher
   - [LaunchBar](https://www.obdev.at/products/launchbar/index.html)
   - I think there are [better alternatives](https://www.raycast.com/) but I'm don't see big advantage in change
 - IDE - [VSCode](https://code.visualstudio.com/) - nothing extra Go plugin for development, maybe mention [FindItFaster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) for fzf integration there
-- Terminal - currently switch from [iTerm2](https://iterm2.com/) to [WezTerm](https://wezfurlong.org/wezterm/index.html) 
+- Terminal - [WezTerm](https://wezfurlong.org/wezterm/index.html) and testing [Ghostty](https://ghostty.org/)
     - WezTerm is multiplatform
-    - I like lua for [configuration](./wezterm/wezterm.lua)
-    - Should be faster
-    - I tried Warp that doesn't work for me, problem with my prompt and another strange behavior
+      - I like lua for [configuration](./wezterm/wezterm.lua)
+    - Ghostty is new written in [Zig](https://ziglang.org/) multi-platform terminal from [Mitchell Hashimoto](https://mitchellh.com/ghostty)
 - Tmux replacement - [zellij](https://zellij.dev/) - A terminal workspace with batteries included
 - Window manager - https://magnet.crowdcafe.com/
   - I was thinking about [yabai](https://github.com/koekeishiya/yabai) but doesn't have time to test it
