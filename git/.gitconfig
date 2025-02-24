@@ -1,3 +1,4 @@
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
 [alias]
 	append = town append
 	br = branch
@@ -52,8 +53,11 @@
 	untracked = cyan
 [color]
 	ui = auto
+[column]
+    ui = auto	
 [commit]
 	cleanup = strip
+    verbose = true	
 	gpgsign = false
 	template = ~/.git-commit-template.txt
 [core]
@@ -73,11 +77,14 @@
 	side-by-side = true
 	whitespace-error-style = 22 reverse
 [diff]
-	tool = difftastic
-[difftool "difftastic"]
-	cmd = difft "$LOCAL" "$REMOTE"
-[difftool]
-	prompt = false
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true	
 [filter "hawser"]
 	clean = git hawser clean %f
 	required = true
@@ -100,7 +107,7 @@
 	format = ssh
 	program = gpg
 [help]
-	browser = gitscm
+    autocorrect = prompt
 [init]
 	defaultBranch = master
 	templatedir = ~/.gittemplate
@@ -110,12 +117,26 @@
 	diffFilter = delta --color-only
 [maintenance]
 	repo = /Users/lprskavec/Sites/lprskavec/krypton-kds
+[merge]
+    # (just 'diff3' if git version < 2.3)
+    conflictstyle = zdiff3 
 [pager]
 	difftool = true  
 [push]
+	default = simple
 	autoSetupRemote = true
+	followTags = true	
+[pull]
+	rebase = true	
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true	
 [rerere]
-	enabled = 1
+	enabled = true
+	autoupdate = true
+[tag]
+	sort = version:refname	
 [url "git@github.com:abtris/"]
 	insteadOf = "gh:"
 [url "ssh://git@github.com/"]
