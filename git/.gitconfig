@@ -1,122 +1,122 @@
-[rerere]
-	enabled = 1
 [alias]
-	st = status
-	ci = commit
+	append = town append
 	br = branch
+	changes=diff --name-status -r
+	ci = commit
+	cif = !git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')
 	co = checkout
 	df = diff
-	lg = log -p
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	changes=diff --name-status -r
-	diffstat=diff --stat -r
-	upstream = log --oneline master --not origin/master
-	pending = log --oneline origin/master --not master
-	myworklog = log --author=prskavecl --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
-	worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
-	worklogexport = log --pretty='%h|%at|%an|%s'
-	root = "rev-parse --show-toplevel"
-	up = pull --rebase
-	wu = log --stat origin..@{0}
-	wup = log -p origin..@{0}
-	showtrackedignored = ls-files -i --exclude-standard
-	cif = !git commit --fixup=$(git-log-vgrep-most-recent-commit 'fixup!')
-	rbi = rebase -i --autosquash
-	start = !git init && git commit --allow-empty -m \"Initial commit\"
-	append = town append
 	diff-parent = town diff-parent
+	diffstat=diff --stat -r
 	hack = town hack
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	kill = town kill
+	lg = log -p
+	myworklog = log --author=prskavecl --since=1.month --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
 	new-pull-request = town new-pull-request
+	pending = log --oneline origin/master --not master
 	prepend = town prepend
 	prune-branches = town prune-branches
+	rbi = rebase -i --autosquash
 	rename-branch = town rename-branch
 	repo = town repo
+	root = "rev-parse --show-toplevel"
 	ship = town ship
+	showtrackedignored = ls-files -i --exclude-standard
+	st = status
+	start = !git init && git commit --allow-empty -m \"Initial commit\"
 	sync = town sync
-[color]
-	ui = auto
+	up = pull --rebase
+	upstream = log --oneline master --not origin/master
+	worklog = log --pretty='%h %Cgreen%ad %Cred%an %Cblue%s%Creset'
+	worklogexport = log --pretty='%h|%at|%an|%s'
+	wu = log --stat origin..@{0}
+	wup = log -p origin..@{0}
+[branch]
+	autosetuprebase = always
+	sort = -committerdate
+[browser "gitscm"]
+	cmd = /bin/sh -c 'open http://git-scm.com/docs/$(basename $1 .html)' --
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
 [color "diff"]
-	meta = yellow bold
 	frag = magenta bold
-	old = red bold
+	meta = yellow bold
 	new = green bold
+	old = red bold
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
-[core]
-	excludesFile = ~/.gitignore
-	quotepath = false
-	autocrlf=input
-	trustctime = false
-	askPass = true
-	editor = code --wait
-	pager = delta
-[diff]
-	tool = difftastic
-[difftool]
-	prompt = false
-[difftool "difftastic"]
-	cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-	difftool = true  
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	side-by-side = true
-	features = side-by-side line-numbers decorations
-	whitespace-error-style = 22 reverse
-[delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
-[instaweb]
-	httpd=webrick
-[url "git@github.com:abtris/"]
-	insteadOf = "gh:"
-[push]
-	autoSetupRemote = true
-[github]
-	user = abtris
-[browser "gitscm"]
-	cmd = /bin/sh -c 'open http://git-scm.com/docs/$(basename $1 .html)' --
-[help]
-	browser = gitscm
-[branch]
-	autosetuprebase = always
-	sort = -committerdate
-[init]
-	templatedir = ~/.gittemplate
-	defaultBranch = master
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
-[gc]
-	auto = 0
+[color]
+	ui = auto
 [commit]
+	cleanup = strip
 	gpgsign = false
 	template = ~/.git-commit-template.txt
-	cleanup = strip
-[gpg]
-	program = gpg
-	format = ssh
+[core]
+	askPass = true
+	autocrlf=input
+	editor = code --wait
+	excludesFile = ~/.gitignore
+	pager = delta
+	quotepath = false
+	trustctime = false
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-decoration-style = none
+	file-style = bold yellow ul
+[delta]
+	features = side-by-side line-numbers decorations
+	side-by-side = true
+	whitespace-error-style = 22 reverse
+[diff]
+	tool = difftastic
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[difftool]
+	prompt = false
+[filter "hawser"]
+	clean = git hawser clean %f
+	required = true
+	smudge = git hawser smudge %f
+[filter "lfs"]
+	clean = git lfs clean %f
+	required = true
+	smudge = git lfs smudge %f
+[filter "media"]
+	clean = git media clean %f
+	required = true
+	smudge = git media smudge %f
 [format]
 	signoff = true
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+[gc]
+	auto = 0
+[github]
+	user = abtris
+[gpg]
+	format = ssh
+	program = gpg
+[help]
+	browser = gitscm
+[init]
+	defaultBranch = master
+	templatedir = ~/.gittemplate
+[instaweb]
+	httpd=webrick
+[interactive]
+	diffFilter = delta --color-only
 [maintenance]
 	repo = /Users/lprskavec/Sites/lprskavec/krypton-kds
+[pager]
+	difftool = true  
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = 1
+[url "git@github.com:abtris/"]
+	insteadOf = "gh:"
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
