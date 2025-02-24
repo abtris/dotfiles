@@ -391,7 +391,7 @@ function deleteGitTag() {
 
 # Git clone from GitHub
 function gch() {
-  git clone git://github.com/abtris/$1.git
+  git clone ssh://github.com/abtris/$1.git
 }
 
 # Setup a tracking branch from [remote] [branch_name]
