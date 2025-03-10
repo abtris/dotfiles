@@ -19,20 +19,6 @@ PATH=~/go/bin:~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
-# https://gist.github.com/vsouza/77e6b20520d07652ed7d
-export GOPATH=$HOME/go
-if [[ $ARCH == "arm64" ]]; then
-  export GOROOT=/opt/homebrew/opt/go/libexec
-else
-  export GOROOT=/usr/local/opt/go/libexec
-fi
-
-export GOBIN=$(go env GOPATH)/bin
-
-# Skip GOPROXY to don't need using GOPRIVATE
-export GOPROXY=direct
-# export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
-
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
@@ -66,14 +52,16 @@ export FZF_DEFAULT_OPTS=" \
 
 eval "$(zoxide init zsh)"
 
-# Teller
-# export KVAULT_NAME="kds-dev-vault"
-export KVAULT_NAME="kv-kds-001-dev-eastus"
-export AZURE_CLI=1
-
-export GOPROXY=https://goproxy.io,direct
+# Pure Go Proxy
 export GOPROXY="https://goproxy.pstg-inf.net,direct"
 export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
+
 # Mise https://mise.jdx.dev/
 export PATH="/Users/lprskavec/.local/share/mise/shims:$PATH"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Gobrew https://github.com/kevincobain2000/gobrew
+export PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
+export GOROOT="$HOME/.gobrew/current/go"
+export GOPATH=$HOME/go
+export GOBIN=$(go env GOPATH)/bin
