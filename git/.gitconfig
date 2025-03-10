@@ -47,12 +47,6 @@
 	meta = yellow bold
 	new = green bold
 	old = red bold
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-[color]
-	ui = auto
 [column]
     ui = auto	
 [commit]
