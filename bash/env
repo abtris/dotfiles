@@ -65,3 +65,4 @@ export PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
 export GOROOT="$HOME/.gobrew/current/go"
 export GOPATH=$HOME/go
 export GOBIN=$(go env GOPATH)/bin
+export CGO_LDFLAGS="-w"
