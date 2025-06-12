@@ -33,6 +33,7 @@
 	worklogexport = log --pretty='%h|%at|%an|%s'
 	wu = log --stat origin..@{0}
 	wup = log -p origin..@{0}
+	stack-branches = log --decorate-refs=refs/heads --simplify-by-decoration --pretty=format:\"%(decorate:prefix=,suffix=,tag=,separator=%n)\" ^origin/HEAD HEAD
 [branch]
 	autosetuprebase = always
 	sort = -committerdate

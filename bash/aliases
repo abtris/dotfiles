@@ -37,6 +37,8 @@ function jup() {
   echo "Update \n$commitUpdate" | git commit -n -F -
   git push
 }
+# Git stack - https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+alias git-stack-push="git stack-branches | xargs -I {} git push --force-with-lease origin {}"
 
 # switch command - https://github.com/danielfoehrKn/kubeswitch
 alias swiref='rm -fr ~/.kube/switch-state/ ~/.kube/cache/ ~/.kube/switch_history;switch clean'
