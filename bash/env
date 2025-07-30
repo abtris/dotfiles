@@ -66,3 +66,9 @@ export GOROOT="$HOME/.gobrew/current/go"
 export GOPATH=$HOME/go
 export GOBIN=$(go env GOPATH)/bin
 export CGO_LDFLAGS="-w"
+
+export VAULT_ADDR=https://vault.purestorage.com
+export PURELOGIN_VAULT=1
+export PURELOGIN_USE_OIDC=1
+export PURELOGIN_VAULT_STORE_TOKEN=1
+export PURELOGIN_OVERWRITE_VAULT_CERT=1

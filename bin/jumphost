@@ -1,0 +1,4 @@
+export SUFFIX=$1
+echo "tsh kube login aks-cp-${SUFFIX}" | eval
+export PG_HOST=$(kubectl get configmap cluster-vars -n flux-system -o jsonpath='{.data.postgresql_host}')
+tsh ssh -L 63333:${PG_HOST}:5432 "adminuser@jumphost-${SUFFIX}"

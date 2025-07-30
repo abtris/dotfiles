@@ -1,0 +1,10 @@
+export SUFFIX=$1
+echo "tsh kube login aks-cp-${SUFFIX}" | eval
+export PG_HOST=$(kubectl get configmap cluster-vars -n flux-system -o jsonpath='{.data.postgresql_host}')
+export PGSSLMODE=require
+export KAG_USER="kag_db_user_privileged" 
+export PGPASSWORD=`kubectl get secrets/bootstrap-db-raw-kag-db-pw-store -n krypton-bootstrap-db --template={{.data.kagmigrations}} | base64 -d`
+export DB_HOST="localhost"
+export DB_PORT="63333"
+export KAG_DSN="postgres://${KAG_USER}:${KAG_PASS}@${DB_HOST}:${DB_PORT}/kag?sslmode=${PGSSLMODE}"
+psql -h localhost -p 63333 kag -U kag_db_user_privileged -L psql-client.log
