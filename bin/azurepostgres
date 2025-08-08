@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 set -e
-SUFFIX=`printf "preprod-eus\nprod-ae\nprod-cus\nprod-eus" | fzf`
-echo "tsh kube login aks-cp-${SUFFIX}" | eval
+SUFFIX=`printf "integ\npreprod-eus\nprod-ae\nprod-cus\nprod-eus" | fzf`
+if [[ "$SUFFIX" == "integ" ]]; then
+    echo "Integ selected. Use tshdev to connect dev teleport first."
+    export PGPASSWORD=`kubectl get secrets/bootstrap-db-raw-kag-db-pw-store -n krypton-bootstrap-db --template={{.data.kagmigrations}} | base64 -d`
+    psql -h localhost kag -U kag_db_user_privileged -L psql-client.log
+    exit 0
+fi
+tsh kube login "aks-cp-${SUFFIX}"
 export PG_HOST=$(kubectl get configmap cluster-vars -n flux-system -o jsonpath='{.data.postgresql_host}')
 export PGSSLMODE=require
 export PGPASSWORD=`kubectl get secrets/bootstrap-db-raw-kag-db-pw-store -n krypton-bootstrap-db --template={{.data.kagmigrations}} | base64 -d`
-export DB_HOST="localhost"
-export DB_PORT="63333"
 psql -h localhost -p 63333 kag -U kag_db_user_privileged -L psql-client.log

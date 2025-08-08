@@ -72,3 +72,6 @@ export PURELOGIN_VAULT=1
 export PURELOGIN_USE_OIDC=1
 export PURELOGIN_VAULT_STORE_TOKEN=1
 export PURELOGIN_OVERWRITE_VAULT_CERT=1
+
+# make
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
