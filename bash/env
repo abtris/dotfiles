@@ -75,3 +75,5 @@ export PURELOGIN_OVERWRITE_VAULT_CERT=1
 
 # make
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
