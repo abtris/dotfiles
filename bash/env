@@ -77,3 +77,7 @@ export PURELOGIN_OVERWRITE_VAULT_CERT=1
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+# kshell
+export PATH="$HOME/Sites/krypton/kshell:$PATH"
+source "$HOME/Sites/krypton/kshell/activate.zsh"
+
