@@ -346,7 +346,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 #
 #   - macOS: titlebar tabs style is not updated when switching themes.
 #
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 
 # Background color for the window.
 # background = #282c34
@@ -1307,7 +1307,7 @@ window-decoration = true
 # The font that will be used for the application's window and tab titles.
 #
 # This is currently only supported on macOS.
-window-title-font-family =
+window-title-font-family = 
 
 # The theme to use for the windows. Valid values:
 #

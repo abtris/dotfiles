@@ -25,7 +25,6 @@ alias kgn='kubectl get nodes -o wide --all-namespaces=true'
 alias ke="kubectl get events --all-namespaces --sort-by='.metadata.creationTimestamp\'"
 alias kep='kubectl get events --all-namespaces --field-selector involvedObject.kind=Pod'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
-alias ks='kube-shell'
 alias dig='dog'
 alias ju='cd ~/Sites/abtris/cml && git add . && git commit -am "Update journal"'
 alias vdev='source setvdev'

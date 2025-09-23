@@ -2,6 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -15,6 +16,7 @@ $python\
 $ruby\
 $terraform\
 $aws\
+${custom.kshell}\
 $azure\
 $direnv\
 $env_var\
@@ -23,7 +25,7 @@ $sudo\
 $cmd_duration\
 $jobs\
 $battery\
-${custom.proxy}\
+${custom.https_proxy}\
 $time\
 $line_break\
 $status\
@@ -121,3 +123,17 @@ format = '[on](white) [$symbol$branch ]($style)'
 [git_status]
 style = 'fg:red'
 format = '([$all_status$ahead_behind]($style) )'
+
+
+[custom.kshell]
+when = 'test -v KS_DEPLOYMENT'
+command = "echo -n $KS_DEPLOYMENT"
+style = 'fg:#eb34e8'
+symbol = '◈ '
+format = '[$symbol$output ]($style)'
+
+[custom.https_proxy]
+when = 'test -v HTTPS_PROXY'
+style = 'fg:#eb34e8'
+symbol = '⇄ '
+format = '[$symbol$output ]($style)'
