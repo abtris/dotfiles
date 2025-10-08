@@ -1307,7 +1307,7 @@ window-decoration = true
 # The font that will be used for the application's window and tab titles.
 #
 # This is currently only supported on macOS.
-window-title-font-family = 
+window-title-font-family =
 
 # The theme to use for the windows. Valid values:
 #
@@ -2148,9 +2148,6 @@ gtk-wide-tabs = true
 # with GTK3 should not cause any problems, but it may not work exactly as
 # expected.
 #
-# This configuration only has an effect if Ghostty was built with
-# Adwaita support.
-gtk-adwaita = true
 
 # If `true` (default), applications running in the terminal can show desktop
 # notifications using certain escape sequences such as OSC 9 or OSC 777.

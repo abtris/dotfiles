@@ -78,6 +78,8 @@ export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 # kshell
-export PATH="$HOME/Sites/krypton/kshell:$PATH"
-source "$HOME/Sites/krypton/kshell/activate.zsh"
+if [ -d "$HOME/Sites/krypton/kshell" ]; then
+  export PATH="$HOME/Sites/krypton/kshell:$PATH"
+  source "$HOME/Sites/krypton/kshell/activate.zsh"
+fi
 
