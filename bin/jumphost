@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 CLUSTER_NAME=`tsh kube ls -f json | jq '.[]|.kube_cluster_name' -r | fzf-tmux -p`
-SUFFIX=`printf "integ\npreprod-eus\nprod-ae\nprod-cus\nprod-eus" | fzf`
+SUFFIX=`printf "integ\npreprod-eus\nprod-ae\nprod-cus\nprod-eus\nprod-eus2\nprod-wus\nprod-wus2" | fzf`
 if [[ "$SUFFIX" == "integ" ]]; then
     echo "Integ selected. Use tshdev to connect dev teleport first."
     tsh ssh -L 5432:db-pgsql-kds-integ-eastus.postgres.database.azure.com:5432 --insecure -N adminuser@jumphost-dev-eus

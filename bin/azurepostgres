@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-SUFFIX=`printf "integ\npreprod-eus\nprod-ae\nprod-cus\nprod-eus" | fzf`
+SUFFIX=`printf "integ\npreprod-eus\nprod-ae\nprod-cus\nprod-eus\nprod-eus2\nprod-wus\nprod-wus2" | fzf`
 if [[ "$SUFFIX" == "integ" ]]; then
     echo "Integ selected. Use tshdev to connect dev teleport first."
     export PGPASSWORD=`kubectl get secrets/bootstrap-db-raw-kag-db-pw-store -n krypton-bootstrap-db --template={{.data.kagmigrations}} | base64 -d`
