@@ -67,7 +67,7 @@ function _makefile_targets {
     targets=''
     if [[ -e "$(pwd)/Makefile" ]]; then
         targets=$( \
-            grep -oE '^[a-zA-Z0-9_-]+:' Makefile \
+            grep -oE '^[a-zA-Z0-9_/-]+:' Makefile \
             | sed 's/://' \
             | tr '\n' ' ' \
         )
