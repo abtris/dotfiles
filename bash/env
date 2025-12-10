@@ -9,7 +9,7 @@ then
   export KUBE_EDITOR='vim'
   export GDK_NATIVE_WINDOWS=true
 else
-  export EDITOR='code'
+  export EDITOR='code -w'
   export KUBE_EDITOR='code -w'
   export K9S_EDITOR='code -w'
 fi
@@ -72,6 +72,12 @@ export PURELOGIN_VAULT=1
 export PURELOGIN_USE_OIDC=1
 export PURELOGIN_VAULT_STORE_TOKEN=1
 export PURELOGIN_OVERWRITE_VAULT_CERT=1
+
+# inline-edit-line https://www.stefanjudis.com/today-i-learned/edit-long-shell-commands-in-your-usdeditor/ ($EDITOR=code -w)
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^XE" edit-command-line
+bindkey "^X^E" edit-command-line
 
 # make
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
