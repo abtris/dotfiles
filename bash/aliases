@@ -392,7 +392,12 @@ alias gsd='git svn dcommit'
 alias kubectx='switch'
 alias kctx='switch'
 
-
+function wt() {
+  directory=$(git worktree list --porcelain |
+		awk '/worktree/ {wt=$2} /branch/ {sub("refs/heads/", "", $2); print wt " [" $2 "]"}' |
+		fzf --query "" --no-multi --exit-0 | awk '{print $1}')
+  cd $directory
+}
 
 # alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
 # alias last="git branch --sort=-committerdate --format='%(color:green)%(objectname:short)%(color:reset) %(authordate:short) %(color:red)(%(refname:short))%(color:reset) %(color:blue)[%(committerdate:relative)]%(color:reset) %(color:reset)%(subject)%(color:reset)' | head -n 10"
