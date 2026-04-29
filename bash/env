@@ -89,3 +89,6 @@ if [ -d "$HOME/Sites/krypton/kshell" ]; then
   source "$HOME/Sites/krypton/kshell/activate.zsh"
 fi
 
+# gitbutler
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(but completions zsh)"

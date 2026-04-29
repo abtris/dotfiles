@@ -58,6 +58,12 @@ ln -s ~/bin/dotfiles/.config/bat/config ~/.config/bat/config
 mkdir -p $HOME/.local/share/mc/skins && cd $HOME/.local/share/mc/skins && git clone https://github.com/catppuccin/mc.git && ln -s -f ./mc/catppuccin.ini .
 # javascript config
 ls -s ~/bin/dotfiles/coffeelint.json ~/coffeelint.json
+# augment
+mkdir -p ~/.augment
+ln -s ~/bin/dotfiles/augment/skills ~/.augment/skills
+ln -s ~/bin/dotfiles/augment/rules ~/.augment/rules
+ln -s ~/bin/dotfiles/augment/hooks ~/.augment/hooks
+
 # reload configuration and run zsh
 source ~/.zshrc
 zsh

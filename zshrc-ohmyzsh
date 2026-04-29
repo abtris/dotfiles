@@ -58,3 +58,8 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/lprskavec/.lmstudio/bin"
+# End of LM Studio CLI section
+

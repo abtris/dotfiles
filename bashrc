@@ -16,3 +16,8 @@ complete -C /usr/local/bin/vault vault
 
 [[ -e "/usr/local/lib/python3.6/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/usr/local/lib/python3.6/site-packages/oci_cli/bin/oci_autocomplete.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/lprskavec/.lmstudio/bin"
+# End of LM Studio CLI section
+
