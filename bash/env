@@ -2,6 +2,8 @@
 SYSTEM=`uname`
 # Detect arch (using m1 apple and i386 macs)
 ARCH=`uname -m`
+# User local, work
+USER=`whoami`
 
 if [[ $SYSTEM == *Linux* ]]
 then
@@ -42,8 +44,6 @@ PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 # deducplication for path
 export PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 
-export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
-
 # https://github.com/catppuccin/fzf
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
@@ -52,12 +52,8 @@ export FZF_DEFAULT_OPTS=" \
 
 eval "$(zoxide init zsh)"
 
-# Pure Go Proxy
-export GOPROXY="https://goproxy.pstg-inf.net,direct"
-export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
-
 # Mise https://mise.jdx.dev/
-export PATH="/Users/lprskavec/.local/share/mise/shims:$PATH"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # Gobrew https://github.com/kevincobain2000/gobrew
@@ -67,11 +63,23 @@ export GOPATH=$HOME/go
 export GOBIN=$(go env GOPATH)/bin
 export CGO_LDFLAGS="-w"
 
-export VAULT_ADDR=https://vault.purestorage.com
-export PURELOGIN_VAULT=1
-export PURELOGIN_USE_OIDC=1
-export PURELOGIN_VAULT_STORE_TOKEN=1
-export PURELOGIN_OVERWRITE_VAULT_CERT=1
+if [[ $USER != "abtris" ]]
+then
+  # Pure Go Proxy
+  export GOPROXY="https://goproxy.pstg-inf.net,direct"
+  export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
+  # Pure Vault
+  export VAULT_ADDR=https://vault.purestorage.com
+  export PURELOGIN_VAULT=1
+  export PURELOGIN_USE_OIDC=1
+  export PURELOGIN_VAULT_STORE_TOKEN=1
+  export PURELOGIN_OVERWRITE_VAULT_CERT=1
+  # kshell
+  if [ -d "$HOME/Sites/krypton/kshell" ]; then
+    export PATH="$HOME/Sites/krypton/kshell:$PATH"
+    source "$HOME/Sites/krypton/kshell/activate.zsh"
+  fi
+fi
 
 # inline-edit-line https://www.stefanjudis.com/today-i-learned/edit-long-shell-commands-in-your-usdeditor/ ($EDITOR=code -w)
 autoload -z edit-command-line
@@ -83,11 +91,6 @@ bindkey "^X^E" edit-command-line
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
-# kshell
-if [ -d "$HOME/Sites/krypton/kshell" ]; then
-  export PATH="$HOME/Sites/krypton/kshell:$PATH"
-  source "$HOME/Sites/krypton/kshell/activate.zsh"
-fi
 
 # gitbutler
 export PATH="$HOME/.local/bin:$PATH"
