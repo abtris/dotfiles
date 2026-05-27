@@ -12,3 +12,4 @@ node_modules
 .wercker
 .mise.toml
 .mise.local.toml
+.claude/settings.local.json

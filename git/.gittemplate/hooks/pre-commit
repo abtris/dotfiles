@@ -65,6 +65,12 @@ git diff-index --cached --full-index --diff-filter=ACM $against |while read -r l
   pth="$(echo ${line} |cut -d' ' -f6-)"
   ext="${pth##*.}"
 
+  # Skip binary files (git reports "-" in numstat for binary blobs)
+  if [ "$(git diff --cached --numstat -- "${pth}" | cut -f1 | head -n1)" = "-" ]; then
+    paint "gray" "red" echo "--> Skipping binary file ${pth}"
+    continue
+  fi
+
   she=""
   # only check shebang on normal and executable files
   if [ "${mod}" = "100644" ] || [ "${mod}" = "100664" ] || [ "${mod}" = "100455" ]; then

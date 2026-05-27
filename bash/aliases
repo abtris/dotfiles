@@ -526,3 +526,37 @@ function wt() {
       fi
   fi
 }
+
+# Claude code
+alias dc="claude --dangerously-skip-permissions"
+
+klod() {
+    local workspaces=(
+      ~/Sites/krypton/krypton-kim
+      ~/Sites/krypton/krypton-kag
+      ~/Sites/krypton/krypton-kds
+      ~/Sites/krypton/krypton-gitops-infra
+      ~/Sites/krypton/krypton-iac
+      ~/Sites/krypton/krypton-common
+      ~/Sites/krypton/github-actions
+      ~/Sites/krypton/krypton-skills
+      ~/Sites/krypton/krypton-observability
+      ~/Sites/krypton/krypton-runbooks
+      ~/Sites/krypton/krypton-mission-control
+      ~/Sites/krypton/krypton-test
+      ~/Sites/krypton/kshell
+      ~/Sites/krypton/kryptonctl
+    )
+    local args=()
+    local ws ws_abs pwd_abs
+    pwd_abs="${PWD:A}"   # absolute, symlink-resolved
+    for ws in $workspaces; do
+      ws_abs="${ws:A}"
+      # Skip if PWD == ws OR PWD is inside ws
+      if [[ "$pwd_abs" == "$ws_abs" || "$pwd_abs" == "$ws_abs"/* ]]; then
+        continue
+      fi
+      args+=(--add-dir "$ws")
+    done
+    CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 claude "${args[@]}" "$@"
+}

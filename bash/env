@@ -65,6 +65,7 @@ export CGO_LDFLAGS="-w"
 
 if [[ $USER != "abtris" ]]
 then
+  export OP_ACCOUNT="purestorage.1password.com"
   # Pure Go Proxy
   export GOPROXY="https://goproxy.pstg-inf.net,direct"
   export GONOSUMDB="github.com/pure-*,github.dev.purestorage.com"
