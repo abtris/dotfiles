@@ -1,11 +1,22 @@
 ---
 name: create-pr
-description: Prepare Github PR for review
+description: Create Github PR for review
 ---
 
 ## Creating a New Pull Request
 
-1. First check if project use PR template .github/pull_request_template.md if not exists use this:
+1. Ensure a Feature Branch
+
+Check the current branch first. If already on a feature branch (not main), use it. Only create a new branch if on main.
+
+Convention: $USER/<JIRA-TICKET>-human-readable-simple-name
+
+```
+# Only if on main:
+git checkout -b $USER/KR-XXXXX-short-description
+```
+
+2. First check if project use PR template .github/pull_request_template.md if not exists use this:
 
 ```markdown
 ### Motivation and Context
@@ -20,11 +31,11 @@ description: Prepare Github PR for review
 - [ ] Has KR-XXX in title
 ```
 
-2. Prepare your PR description following the template in @.github/pull_request_template.md
+3. Prepare your PR description following the template in @.github/pull_request_template.md
 
-3. Check if gh pr exists, if not create it, if yes update it.
+4. Check if gh pr exists, if not create it, if yes update it.
 
-4. Create PR title
+5. Create PR title
 
 - The general idea is straightforward: adopt the well-known Conventional Commits framework, modify the parts that don't fit our needs, and add what we require—all while leveraging as much existing open-source tooling as possible.
 - Example: 
@@ -49,7 +60,7 @@ description: Prepare Github PR for review
 
 - If PR title MUST HAVE Jira Ref, ask user if you missing it. If user doesn't provide it we have to choose different type as chore instead of feat/fix.
 
-5. Use the `gh pr create --draft` command to create a new pull request:
+6. Use the `gh pr create --draft` command to create a new pull request:
 
    ```bash
    # Basic command structure
@@ -63,7 +74,7 @@ description: Prepare Github PR for review
    gh pr create --draft --title "chore(scope): Your descriptive title" --body-file .github/pull_request_template.md --base main
    ```
 
-6. **Template Accuracy**: Ensure your PR description precisely follows the template structure:
+7. **Template Accuracy**: Ensure your PR description precisely follows the template structure:
 
    - Don't modify or rename the PR-Agent sections (`pr_agent:summary` and `pr_agent:walkthrough`)
    - Keep all section headers exactly as they appear in the template
