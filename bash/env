@@ -96,3 +96,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # gitbutler
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(but completions zsh)"
+## bun
+export PATH="/Users/lprskavec/.bun/bin:$PATH"
+
