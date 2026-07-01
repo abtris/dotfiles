@@ -1,6 +1,6 @@
 # Dotfiles
 
-My dotfiles for configure zsh and alises for mac
+My dotfiles to configure zsh and aliases for macOS
 
 Look at [dotfiles](https://dotfiles.github.io/) to get your inspiration.
 
@@ -43,10 +43,10 @@ sh install
       - Copy Code
       - logseq-mergepages-plugin
       - Bullet Threading
-      - Page-tags nad Hierarchy (UI)
+      - Page-tags and Hierarchy (UI)
       - Banners
       - logseq-datalp-plugin
-      - Citation Manger
+      - Citation Manager
       - Awesome links
       - Tabs
       - Helium
@@ -56,11 +56,10 @@ sh install
 - Color Schema - https://github.com/catppuccin/catppuccin (used everywhere)
 - Desktop search/launcher
   - [LaunchBar](https://www.obdev.at/products/launchbar/index.html)
-  - I think there are [better alternatives](https://www.raycast.com/) but I'm don't see big advantage in change
+  - I think there are [better alternatives](https://www.raycast.com/) but I don't see a big advantage in changing
 - IDE - [VSCode](https://code.visualstudio.com/) - nothing extra Go plugin for development, maybe mention [FindItFaster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) for fzf integration there
-- Terminal - [WezTerm](https://wezfurlong.org/wezterm/index.html) and testing [Ghostty](https://ghostty.org/)
-    - WezTerm is multiplatform
-      - I like lua for [configuration](./wezterm/wezterm.lua)
+- Terminal - [cmux](https://cmux.com/) and [Ghostty](https://ghostty.org/)
+    - cmux is based on Ghostty
     - Ghostty is new written in [Zig](https://ziglang.org/) multi-platform terminal from [Mitchell Hashimoto](https://mitchellh.com/ghostty)
 - Tmux replacement - [zellij](https://zellij.dev/) - A terminal workspace with batteries included
 - Window manager - https://magnet.crowdcafe.com/
@@ -71,18 +70,20 @@ sh install
   - Still on Zsh using [oh-my-zsh](https://ohmyz.sh/)
   - Is any real benefit using Fish? Maybe go with [nushell](https://www.nushell.sh/) make more sense.
 - Prompt
-  - switched from custom PS1 config to [Starship](https://starship.rs/), my config [startship.toml](./startship.toml)
+  - switched from custom PS1 config to [Starship](https://starship.rs/), my config [starship.toml](./starship.toml)
   - like great plugin for integration with azure, k8s etc.
 - Tools switcher
   - [mise](https://mise.jdx.dev/) former rtx - The front-end to your dev env
-    - fix my problem with autoswitch venv for Python similar what working for Ruby using rbenv, nvm etc., this is more universal
+    - fixes my problem with autoswitching the venv for Python, similar to what rbenv, nvm etc. do for Ruby — this is more universal
 - Source code
   - still git [aliases](./bash/aliases) and [config](./git/.gitconfig)
   - I want try anything else but Github killing reasons to switch to something better.
+- Harness
+  - [Pi](https://pi.dev/) and [Claude Code](https://www.anthropic.com/claude-code)
 - Utils
   - [lsd instead ls](https://github.com/lsd-rs/lsd) -  [color schema](https://github.com/catppuccin/lsd)
   - [bat instead cat](https://github.com/sharkdp/bat)
-  - [fzf](https://github.com/junegunn/fzf) - using with `j()` function that using `find` and `fzf` - [custom rule](./bash/aliases?plain=1#L135)
+  - [fzf](https://github.com/junegunn/fzf) - using with `j()` function that using `find` and `fzf` - [custom rule](./bash/aliases?plain=1#L207)
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter cd command, missing matching settings to fix my needs as I easy done with find, but combined with smart cd
   - [atuin](https://github.com/atuinsh/atuin) - shell history
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - rg instead [ack](https://linux.die.net/man/1/ack), grep
