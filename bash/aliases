@@ -529,6 +529,8 @@ function wt() {
 
 # Claude code
 alias dc="claude --dangerously-skip-permissions"
+alias dca="claude agents"
+
 
 klod() {
     local workspaces=(

@@ -99,3 +99,21 @@ eval "$(but completions zsh)"
 ## bun
 export PATH="/Users/lprskavec/.bun/bin:$PATH"
 
+
+# Claude
+# Set these environment variables before running Claude Code.
+# Telemetry is off by default — CLAUDE_CODE_ENABLE_TELEMETRY=1 is required.
+export CLAUDE_CODE_ENABLE_TELEMETRY=1
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
+export OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+export OTEL_SERVICE_NAME=claude-code
+export OTEL_LOGS_EXPORTER=otlp
+export OTEL_METRICS_EXPORTER=otlp
+
+# Optional: distributed traces (beta) — interaction / llm_request / tool spans
+export CLAUDE_CODE_ENHANCED_TELEMETRY_BETA=1
+export OTEL_TRACES_EXPORTER=otlp
+
+# Optional: include prompt / tool input content in events (off by default)
+export OTEL_LOG_USER_PROMPTS=1
+export OTEL_LOG_TOOL_DETAILS=1
