@@ -142,16 +142,25 @@ git diff-index --cached --full-index --diff-filter=ACM $against |while read -r l
     exit 1
   fi
 
-  # execute on staged buffer
-  [ -n "${tmp}" ] && git cat-file -p ${sha} > "${tmp}"
-
-  if ! git cat-file -p ${sha} |paint ${out} ${err} ${cmd}; then
-    paint "red" "red" echo "Please fix ${tool} syntax errors and type 'git add ${pth}'"
-    [ -n "${tmp}" ] && rm -f "${tmp}"
-    exit 1
+  # Execute on staged buffer.
+  # When ${tmp} is set, the command reads the file directly — piping git
+  # cat-file into it causes SIGPIPE on blobs larger than the OS pipe
+  # buffer (~64 KB on macOS) because the command never drains stdin, and
+  # `set -o pipefail` then fails the hook on otherwise-valid files.
+  if [ -n "${tmp}" ]; then
+    git cat-file -p ${sha} > "${tmp}"
+    if ! paint ${out} ${err} ${cmd} </dev/null; then
+      paint "red" "red" echo "Please fix ${tool} syntax errors and type 'git add ${pth}'"
+      rm -f "${tmp}"
+      exit 1
+    fi
+    rm -f "${tmp}"
+  else
+    if ! git cat-file -p ${sha} | paint ${out} ${err} ${cmd}; then
+      paint "red" "red" echo "Please fix ${tool} syntax errors and type 'git add ${pth}'"
+      exit 1
+    fi
   fi
-
-  [ -n "${tmp}" ] && rm -f "${tmp}"
 
   paint "green" "red" echo "No ${tool} syntax errors detected in '${pth}'"
 done
