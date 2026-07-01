@@ -1,2 +1,3 @@
 git config user.name "Ladislav Prskavec"
 git config user.email "lprskavec@purestorage.com"
+git config core.sshCommand "ssh -i ~/.ssh/id_ed25519_vault -o CertificateFile=~/.ssh/id_ed25519_vault-cert.pub -o IdentitiesOnly=yes"
