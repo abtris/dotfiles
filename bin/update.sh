@@ -28,6 +28,9 @@ for name in */ ; do
       elif [ "$email" != "$PURE_EMAIL" ]; then
         printf 'Skipping (foreign user.email=%s): %s\n' "$email" "$name"
         exit
+      elif [ -z "$(git config --get core.sshCommand)" ]; then
+        printf 'Fixing missing core.sshCommand: %s\n' "$name"
+        purerepo
       fi
     fi
 
