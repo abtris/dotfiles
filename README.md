@@ -58,10 +58,9 @@ sh install
   - [LaunchBar](https://www.obdev.at/products/launchbar/index.html)
   - I think there are [better alternatives](https://www.raycast.com/) but I don't see a big advantage in changing
 - IDE - [VSCode](https://code.visualstudio.com/) - nothing extra Go plugin for development, maybe mention [FindItFaster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) for fzf integration there
-- Terminal - [cmux](https://cmux.com/) and [Ghostty](https://ghostty.org/)
-    - cmux is based on Ghostty
+- Terminal - [Ghostty](https://ghostty.org/)
     - Ghostty is new written in [Zig](https://ziglang.org/) multi-platform terminal from [Mitchell Hashimoto](https://mitchellh.com/ghostty)
-- Tmux replacement - [zellij](https://zellij.dev/) - A terminal workspace with batteries included
+- Multiplexer - [Herdr](https://herdr.dev/)
 - Window manager - https://magnet.crowdcafe.com/
   - I was thinking about [yabai](https://github.com/koekeishiya/yabai) but doesn't have time to test it
 - Fonts
