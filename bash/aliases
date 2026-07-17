@@ -562,3 +562,19 @@ klod() {
     done
     CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 claude "${args[@]}" "$@"
 }
+
+# Herdr: new workspace with two tabs - agent + terminal
+# Usage: hnew [label] [agent]    e.g.  hnew review claude
+hnew() {
+  if [ "${HERDR_ENV:-}" != 1 ]; then
+    echo "hnew: not running inside Herdr" >&2
+    return 1
+  fi
+  local label="${1:-work}" agent="${2:-claude}" ws agent_pane
+  agent_pane=$(herdr workspace create --label "$label" --focus | jq -r '.result.root_pane.pane_id')
+  ws=${agent_pane%%:*}
+  herdr tab create --workspace "$ws" --label "terminal" --no-focus >/dev/null
+  herdr tab rename "${ws}:t1" "agent" >/dev/null
+  herdr pane run "$agent_pane" "$agent"
+  echo "workspace=$ws  agent-tab=${ws}:t1  terminal-tab=${ws}:t2"
+}
