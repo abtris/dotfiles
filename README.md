@@ -79,6 +79,9 @@ sh install
   - I want try anything else but Github killing reasons to switch to something better.
 - Harness
   - [Pi](https://pi.dev/) and [Claude Code](https://www.anthropic.com/claude-code)
+- Agent skills
+  - reusable skills I add to the agent harness via `npx skills add`
+  - [Herdr](https://herdr.dev/) - `npx skills add ogulcancelik/herdr --skill herdr -g`
 - Utils
   - [lsd instead ls](https://github.com/lsd-rs/lsd) -  [color schema](https://github.com/catppuccin/lsd)
   - [bat instead cat](https://github.com/sharkdp/bat)
