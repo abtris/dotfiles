@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+[ "$(id -un)" = abtris ] && file=Brewfile || file=Brewfile.work
+
+command -v brew >/dev/null || { echo 'Homebrew is not installed' >&2; exit 1; }
+brew bundle dump --force --no-describe --file="$root/$file"
+# Homebrew still dumps the removed formula alongside its replacement cask.
+/usr/bin/sed -i '' '/^brew "warrensbox\/tap\/tfswitch"/d' "$root/$file"
+git -C "$root" status --short -- "$file"

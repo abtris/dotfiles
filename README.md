@@ -8,12 +8,34 @@ All [macOS](https://github.com/mathiasbynens/dotfiles/blob/master/.macos)
 
 ## Setup
 
-```
+Install [Homebrew](https://brew.sh/) and
+[Oh My Zsh](https://ohmyz.sh/) first. Connect the work Mac to the company VPN,
+then run:
+
+```sh
 mkdir -p ~/bin
 cd ~/bin
 git clone https://github.com/abtris/dotfiles.git
 cd dotfiles
-sh install
+[ "$(id -un)" = abtris ] && brewfile=Brewfile || brewfile=Brewfile.work
+brew bundle --file "./$brewfile"
+./install
+```
+
+The installer creates missing symlinks and copies the initial Midnight
+Commander configuration. It reports existing files as conflicts instead of
+overwriting them; move those files aside and rerun it.
+
+## Update Brewfiles
+
+Each file is a complete machine snapshot. `update-brewfile` selects `Brewfile`
+when the username is `abtris`; every other username selects `Brewfile.work`.
+Run it on the matching Mac and review the diff (connect the work Mac to the VPN
+first):
+
+```sh
+./update-brewfile
+git diff -- Brewfile Brewfile.work
 ```
 
 ## I use this
@@ -28,7 +50,7 @@ sh install
 
 ### Software
 
-- All trying install via brew and find list [Brewfile](Brewfile)
+- Packages are tracked in [home](Brewfile) and [work](Brewfile.work) Homebrew snapshots.
 - Password management - [1password](https://1password.com/)
 - [PKM](https://en.wikipedia.org/wiki/Personal_knowledge_management) - [LogSeq](https://logseq.com/)
   - sync over private repo
