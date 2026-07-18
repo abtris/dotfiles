@@ -1,0 +1,25 @@
+theme = "custom"
+mode = "auto"        # auto, split, stack
+vcs = "git"          # git, jj, sl
+watch = false
+exclude_untracked = false
+line_numbers = true
+wrap_lines = false
+menu_bar = true
+agent_notes = false
+prompt_save_view_preferences = true
+transparent_background = false
+
+[custom_theme]
+base = "catppuccin-mocha"
+label = "My Theme"
+accent = "#7fd1ff"
+panel = "#10161d"
+noteBorder = "#c49bff"
+
+[custom_theme.syntax]
+keyword = "#8ed4ff"
+string = "#c7b4ff"
+comment = "#6e85a7"
+operator = "#7fd1ff"
+variable = "#eef4ff"
