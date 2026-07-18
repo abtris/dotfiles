@@ -1,69 +1,84 @@
-#!/bin/bash
-set -e
-# INSTALL MacOS
-if test ! $(which gcc); then
-  echo "Installing command line developer tools..."
-  xcode-select --install
-fi
+#!/bin/sh
+set -u
 
-if test ! $(which brew); then
-  echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+status=0
 
-echo "Updating Homebrew..."
-brew update
-# brew bundle - https://github.com/Homebrew/homebrew-bundle
-# Using Brewfile to install all deps
-brew bundle
+link() {
+  source=$root/$1
+  target=$HOME/$2
 
-echo "Cleaning Homebrew..."
-brew cleanup
+  if [ ! -e "$source" ]; then
+    printf 'missing  %s\n' "$source" >&2
+    status=1
+  elif [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
+    printf 'ok       %s\n' "$target"
+  elif [ -e "$target" ] || [ -L "$target" ]; then
+    printf 'conflict %s (move it aside and rerun)\n' "$target" >&2
+    status=1
+  else
+    if mkdir -p "$(dirname -- "$target")" && ln -s "$source" "$target"; then
+      printf 'linked   %s\n' "$target"
+    else
+      status=1
+    fi
+  fi
+}
 
-# dotfiles
-mkdir -p ~/bin
-git clone https://github.com/abtris/dotfiles.git
+seed() {
+  source=$root/$1
+  target=$HOME/$2
 
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv  ~/.zshrc  ~/.zshrc-bak
-ln -s ~/bin/dotfiles/zshrc-ohmyzsh ~/.zshrc
-mkdir -p ~/.oh-my-zsh/custom/themes/
-ln -s ~/bin/dotfiles/themes/abtris.zsh-theme ~/.oh-my-zsh/custom/themes/abtris.zsh-theme
-ln -s ~/bin/dotfiles/custom/plugins/abtris ~/.oh-my-zsh/custom/plugins/abtris
-# make symlinks
-ln -s ~/bin/dotfiles/bashrc ~/.bashrc
-# make dir (default not exists)
-mkdir ~/.ssh
-ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
-ln -s ~/bin/dotfiles/git/.gitconfig ~/.gitconfig
-ln -s ~/bin/dotfiles/git/.gitignore ~/.gitignore
-ln -s ~/bin/dotfiles/git/.gittemplate ~/.gittemplate
-ln -s ~/bin/dotfiles/git/.git-commit-template.txt ~/.git-commit-template.txt
-ls -s ~/bin/dotfiles/.hgignore ~/.hgignore
-ls -s ~/bin/dotfiles/.vim ~/.vim
-ls -s ~/bin/dotfiles/.vimrc ~/.vimrc
-ls -s ~/bin/dotfiles/.vimpluginrc ~/.vimpluginrc
-ls -s ~/bin/dotfiles/.tmux ~/.tmux
-ls -s ~/bin/dotfiles/.tldrrc ~/.tldrrc
-ls -s ~/bin/dotfiles/.screenrc ~/.screenrc
-ls -s ~/bin/dotfiles/.ackrc ~/.ackrc
-ls -s ~/bin/dotfiles/.gemrc ~/.gemrc
-# themes
-mkdir -p "$(bat --config-dir)/themes"
-wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
-bat cache --build
-ln -s ~/bin/dotfiles/.config/bat/config ~/.config/bat/config 
-# mc
-mkdir -p $HOME/.local/share/mc/skins && cd $HOME/.local/share/mc/skins && git clone https://github.com/catppuccin/mc.git && ln -s -f ./mc/catppuccin.ini .
-# javascript config
-ls -s ~/bin/dotfiles/coffeelint.json ~/coffeelint.json
-# augment
-mkdir -p ~/.augment
-ln -s ~/bin/dotfiles/augment/skills ~/.augment/skills
-ln -s ~/bin/dotfiles/augment/rules ~/.augment/rules
-ln -s ~/bin/dotfiles/augment/hooks ~/.augment/hooks
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    printf 'ok       %s\n' "$target"
+  elif mkdir -p "$(dirname -- "$target")" && cp "$source" "$target"; then
+    printf 'copied   %s\n' "$target"
+  else
+    status=1
+  fi
+}
 
-# reload configuration and run zsh
-source ~/.zshrc
-zsh
+while IFS='|' read -r source target; do
+  link "$source" "$target"
+done <<'EOF'
+zshrc-ohmyzsh|.zshrc
+bashrc|.bashrc
+zlogout|.zlogout
+git/.gitconfig|.gitconfig
+git/.gitignore|.gitignore
+git/.gittemplate|.gittemplate
+git/.git-commit-template.txt|.git-commit-template.txt
+.ackrc|.ackrc
+.cobra.yaml|.cobra.yaml
+.curlrc|.curlrc
+.gemrc|.gemrc
+.hgignore|.hgignore
+.nanorc|.nanorc
+.prettierrc|.prettierrc
+.screenrc|.screenrc
+.tldrrc|.tldrrc
+.tmux.conf|.tmux.conf
+.vim|.vim
+vimrc|.vimrc
+vimpluginrc|.vimpluginrc
+coffeelint.json|coffeelint.json
+atuin/config.toml|.config/atuin/config.toml
+.config/bat/config|.config/bat/config
+ghostty/config|.config/ghostty/config
+ghostty/themes/catppuccin-mocha.conf|.config/ghostty/themes/catppuccin-mocha.conf
+helix/config.toml|.config/helix/config.toml
+hunk/config.toml|.config/hunk/config.toml
+lsd/colors.yaml|.config/lsd/colors.yaml
+lsd/config.yaml|.config/lsd/config.yaml
+mise/config.toml|.config/mise/config.toml
+zellij/config.kdl|.config/zellij/config.kdl
+wezterm/wezterm.lua|.wezterm.lua
+k9s/plugins.yaml|Library/Application Support/k9s/plugins.yaml
+vscode/settings.json|Library/Application Support/Code/User/settings.json
+themes/abtris.zsh-theme|.oh-my-zsh/custom/themes/abtris.zsh-theme
+custom/plugins/abtris|.oh-my-zsh/custom/plugins/abtris
+EOF
+
+seed mc/ini .config/mc/ini
+
+exit "$status"

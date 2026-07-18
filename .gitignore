@@ -6,3 +6,5 @@
 .vim/.netrwhist
 .DS_Store
 *.sublime-project
+hunk/state.json
+mc/panels.ini
