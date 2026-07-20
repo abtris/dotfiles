@@ -36,6 +36,7 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/h
 source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
+source ~/bin/dotfiles/zsh/gh-account
 # brew install zsh-autosuggestions
 if [[ "$ARCH" == "arm64" ]]; then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
