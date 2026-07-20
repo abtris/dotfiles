@@ -1,0 +1,18 @@
+# Per-repo gh account selection.
+#
+# gh has no native per-repository account binding: cli/cli treats
+# pwd/remote-based switching as out of scope, and `gh auth switch` only
+# flips one global active account (which reverts to the work EMU default
+# in fresh shells). This wrapper sets GH_TOKEN for a single gh invocation,
+# picking the account whose token matches the current repo's git
+# user.email — the same identity git+ssh already resolve per repo.
+gh() {
+  local email account
+  email=$(git config user.email 2>/dev/null)
+  case "$email" in
+    ladislav@prskavec.net)     account=abtris ;;
+    lprskavec@purestorage.com) account=lprskavec_pure ;;
+    *) command gh "$@"; return ;;
+  esac
+  GH_TOKEN=$(command gh auth token --user "$account" 2>/dev/null) command gh "$@"
+}
