@@ -1,5 +1,10 @@
 onboarding = false
 
+[theme.custom]
+# surface_dim colors the sidebar/main divider line; the catppuccin default
+# (#1e1e2e) matches the terminal background, making the divider invisible.
+surface_dim = "#313244"
+
 [keys]
 previous_workspace = "prefix+up"
 next_workspace = "prefix+down"
