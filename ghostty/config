@@ -1121,7 +1121,7 @@ working-directory =
 keybind = super+page_up=scroll_page_up
 keybind = super+ctrl+equal=equalize_splits
 keybind = super+physical:four=goto_tab:4
-keybind = super+shift+down=jump_to_prompt:1
+keybind = super+shift+down=text:\x02\x1b[B
 keybind = super+shift+w=close_window
 keybind = super+shift+left_bracket=text:\x02p
 keybind = super+alt+i=inspector:toggle
@@ -1151,7 +1151,7 @@ keybind = super+ctrl+left=resize_split:left,10
 keybind = alt+left=esc:b
 keybind = super+ctrl+up=resize_split:up,10
 keybind = super+left=text:\x01
-keybind = super+shift+up=jump_to_prompt:-1
+keybind = super+shift+up=text:\x02\x1b[A
 keybind = shift+right=adjust_selection:right
 keybind = super+comma=open_config
 keybind = super+shift+comma=reload_config

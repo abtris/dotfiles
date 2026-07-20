@@ -1,0 +1,10 @@
+onboarding = false
+
+[keys]
+previous_workspace = "prefix+up"
+next_workspace = "prefix+down"
+
+[[keys.command]]
+key = "cmd+p"
+type = "shell"
+command = "herdr plugin action invoke cloudmanic.herdr-plus.projects"

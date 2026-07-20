@@ -67,6 +67,7 @@ atuin/config.toml|.config/atuin/config.toml
 ghostty/config|.config/ghostty/config
 ghostty/themes/catppuccin-mocha.conf|.config/ghostty/themes/catppuccin-mocha.conf
 helix/config.toml|.config/helix/config.toml
+herdr/config.toml|.config/herdr/config.toml
 hunk/config.toml|.config/hunk/config.toml
 lsd/colors.yaml|.config/lsd/colors.yaml
 lsd/config.yaml|.config/lsd/config.yaml
