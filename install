@@ -13,6 +13,10 @@ link() {
     status=1
   elif [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
     printf 'ok       %s\n' "$target"
+  elif [ -e "$target" ] && [ "$(stat -Lf '%d:%i' "$target")" = "$(stat -Lf '%d:%i' "$source")" ]; then
+    # Target already resolves to the source (e.g. via a parent directory
+    # symlink). Treat as linked rather than a conflict.
+    printf 'ok       %s (resolves to source)\n' "$target"
   elif [ -e "$target" ] || [ -L "$target" ]; then
     printf 'conflict %s (move it aside and rerun)\n' "$target" >&2
     status=1
