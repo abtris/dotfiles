@@ -528,7 +528,7 @@ function wt() {
 }
 
 # Claude code
-alias dc="claude --dangerously-skip-permissions"
+alias dc="claude --dangerously-skip-permissions --chrome"
 alias dca="claude agents"
 
 
