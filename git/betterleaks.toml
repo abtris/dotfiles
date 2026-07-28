@@ -1,0 +1,38 @@
+# Secret-scanning rules for betterleaks, used by the pre-push hook in
+# .gittemplate/hooks/pre-push. Linked to ~/.config/betterleaks/betterleaks.toml
+# by ./install.
+#
+# betterleaks (https://github.com/betterleaks/betterleaks) is MIT-licensed and
+# written by the original gitleaks author. It filters implausible-looking
+# matches, so synthetic values such as "npm_aBcDeF...XYZ0123456789" are ignored
+# while real high-entropy tokens are reported. Keep that in mind when testing:
+# a sequential-alphabet token will not trip these rules.
+
+title = "abtris dotfiles secret rules"
+
+[extend]
+useDefault = true
+
+# The default azure-ad-client-secret rule requires an azure-tenant-id within 8
+# lines to corroborate. That misses a secret committed on its own, which is the
+# common accident, so match the distinctive Azure AD secret shape standalone.
+[[rules]]
+id = "azure-ad-client-secret-standalone"
+description = "Azure AD client secret without tenant-id corroboration"
+regex = '''([a-zA-Z0-9_~.]{3}[0-9A-Za-z]Q~[a-zA-Z0-9_~.-]{31,34})'''
+keywords = ["Q~"]
+
+# Azure Storage shared access signatures grant direct blob access and are not
+# covered by the default rule set.
+[[rules]]
+id = "azure-sas-signature"
+description = "Azure Storage SAS token signature"
+regex = '''[?&]sig=([A-Za-z0-9%+/=]{40,})'''
+keywords = ["sig="]
+
+# npm registry auth tokens: publish rights, and no default rule matches them.
+[[rules]]
+id = "npm-auth-token"
+description = "npm registry auth token"
+regex = '''(?i)_authtoken\s*=\s*(npm_[A-Za-z0-9]{36})'''
+keywords = ["_authtoken"]
