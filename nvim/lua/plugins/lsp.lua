@@ -93,6 +93,7 @@ return {
         "gofumpt",
         "golangci-lint",
         "delve",
+        "markdownlint-cli2",
       },
     })
   end,
