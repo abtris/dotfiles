@@ -11,9 +11,9 @@ then
   export KUBE_EDITOR='vim'
   export GDK_NATIVE_WINDOWS=true
 else
-  export EDITOR='code -w'
-  export KUBE_EDITOR='code -w'
-  export K9S_EDITOR='code -w'
+  export EDITOR='nvim'
+  export KUBE_EDITOR='nvim'
+  export K9S_EDITOR='nvim'
 fi
 # PATH
 PATH=~/go/bin:~/.local/bin:~/bin/dotfiles/bin:~/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
