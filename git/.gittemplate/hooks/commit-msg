@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
+# Skip rather than fail when git-secrets is absent: this hook is installed
+# globally via init.templatedir, so a bare `git secrets ...` made every commit
+# on a machine without it fail with "'secrets' is not a git command".
+if ! command -v git-secrets >/dev/null 2>&1; then
+  echo "WARNING: git-secrets is not installed, commit-msg scanning SKIPPED." >&2
+  exit 0
+fi
 git secrets --commit_msg_hook -- "$@"
