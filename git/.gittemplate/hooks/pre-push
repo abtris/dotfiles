@@ -1,12 +1,84 @@
 #!/usr/bin/env bash
+#
+# Two jobs: scan the commits being pushed for secrets, and confirm pushes to a
+# protected branch.
+#
+# Scanning here rather than only at commit time is the point. pre-commit sees
+# one staged diff and can be skipped with --no-verify; pre-push sees every
+# commit about to leave the machine, including ones made with --no-verify,
+# pulled in from elsewhere, or created before these hooks existed.
+set -u
 
 protected_branch='master'
-current_branch=$(git symbolic-ref --short HEAD)
+zero='0000000000000000000000000000000000000000'
+hookdir="$(cd "$(dirname "$0")" && pwd)"
+config="${HOME}/.config/betterleaks/betterleaks.toml"
 
-if [ "$protected_branch" != "$current_branch" ]
-then
-    exit 0 # push will execute
+# git feeds the hook one line per ref:
+#   <local ref> <local sha> <remote ref> <remote sha>
+# Reading it also fixes an old bug: this hook used to test `symbolic-ref HEAD`,
+# the branch you happen to be on, so `git push origin master` from a feature
+# branch never prompted and pushing a feature branch while on master did.
+pushing_protected=0
+ranges=()
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ -n "${local_ref:-}" ] || continue
+  # Deleting a remote branch pushes no commits.
+  [ "${local_sha}" = "${zero}" ] && continue
+
+  if [ "${remote_ref##*/}" = "${protected_branch}" ]; then
+    pushing_protected=1
+  fi
+
+  if [ "${remote_sha}" = "${zero}" ]; then
+    # New remote branch: scan only what is not already on some remote, so the
+    # first push of a long-lived branch does not rescan all of history.
+    ranges+=("${local_sha} --not --remotes")
+  else
+    ranges+=("${remote_sha}..${local_sha}")
+  fi
+done
+
+fail() {
+  echo "" >&2
+  echo "pre-push: $1" >&2
+  echo "pre-push: nothing was pushed. Remove the secret and rewrite the commits," >&2
+  echo "pre-push: or set GIT_ALLOW_SECRETS=1 to override a false positive." >&2
+  exit 1
+}
+
+if [ "${#ranges[@]}" -gt 0 ] && [ -z "${GIT_ALLOW_SECRETS:-}" ]; then
+  repo="$(git rev-parse --show-toplevel)"
+
+  for range in "${ranges[@]}"; do
+    # Filenames first: cheap, and it catches the .env class that no content
+    # scanner can see. Word splitting on ${range} is deliberate -- the
+    # new-branch form is three separate arguments.
+    if [ -x "${hookdir}/secret-paths" ]; then
+      # shellcheck disable=SC2086
+      offenders="$(git log --format= --name-only --diff-filter=ACM ${range} \
+                     | sort -u | "${hookdir}/secret-paths")" || true
+      if [ -n "${offenders}" ]; then
+        echo "pre-push: these files should never be committed:" >&2
+        echo "${offenders}" >&2
+        fail "refusing to push files that typically hold secrets."
+      fi
+    fi
+
+    if command -v betterleaks >/dev/null 2>&1; then
+      args=(git "${repo}" --no-banner)
+      [ -f "${config}" ] && args+=(--config "${config}")
+      if ! betterleaks "${args[@]}" --log-opts="${range}"; then
+        fail "betterleaks found secrets in the commits being pushed."
+      fi
+    else
+      echo "WARNING: betterleaks is not installed, push scanning SKIPPED." >&2
+      echo "WARNING: install it with 'brew install betterleaks'." >&2
+    fi
+  done
 fi
+
+[ "${pushing_protected}" = "1" ] || exit 0
 
 # git gives the hook the ref list on stdin, so [ -t 0 ] is never true here;
 # probing /dev/tty is the only way to tell an interactive shell from an
@@ -14,7 +86,7 @@ fi
 # "Device not configured" and block the push with no explanation.
 if ! { true < /dev/tty; } 2>/dev/null
 then
-    if [ -n "$GIT_ALLOW_PROTECTED_PUSH" ]
+    if [ -n "${GIT_ALLOW_PROTECTED_PUSH:-}" ]
     then
         exit 0 # push will execute
     fi
@@ -24,7 +96,7 @@ then
 fi
 
 RANDOM_CHAR=$(( ( RANDOM % 10 )  + 1 ))
-read -p "You're about to push master, is that what you intended? [$RANDOM_CHAR|n] " -n 1 -r < /dev/tty
+read -p "You're about to push $protected_branch, is that what you intended? [$RANDOM_CHAR|n] " -n 1 -r < /dev/tty
 echo
 if echo "$REPLY" | grep -E "^[$RANDOM_CHAR]$" > /dev/null
 then

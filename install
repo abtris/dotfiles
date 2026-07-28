@@ -67,6 +67,7 @@ vimrc|.vimrc
 vimpluginrc|.vimpluginrc
 coffeelint.json|coffeelint.json
 atuin/config.toml|.config/atuin/config.toml
+git/betterleaks.toml|.config/betterleaks/betterleaks.toml
 .config/bat/config|.config/bat/config
 ghostty/config|.config/ghostty/config
 ghostty/themes/catppuccin-mocha.conf|.config/ghostty/themes/catppuccin-mocha.conf
