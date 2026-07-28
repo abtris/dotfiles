@@ -80,7 +80,6 @@ mise/config.toml|.config/mise/config.toml
 zellij/config.kdl|.config/zellij/config.kdl
 wezterm/wezterm.lua|.wezterm.lua
 k9s/plugins.yaml|Library/Application Support/k9s/plugins.yaml
-vscode/settings.json|Library/Application Support/Code/User/settings.json
 themes/abtris.zsh-theme|.oh-my-zsh/custom/themes/abtris.zsh-theme
 custom/plugins/abtris|.oh-my-zsh/custom/plugins/abtris
 EOF
