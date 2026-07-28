@@ -38,6 +38,80 @@ first):
 git diff -- Brewfile Brewfile.work
 ```
 
+## Secret scanning
+
+Two layers run from the git template hooks:
+[betterleaks](https://github.com/betterleaks/betterleaks) scans commit content,
+and `secret-paths` blocks files by name. Both matter, because neither catches
+what the other does.
+
+`brew bundle` installs betterleaks and `./install` links `git/betterleaks.toml`
+into `~/.config/betterleaks/`, so the Setup section above covers a new machine.
+
+`init.templatedir` copies hooks only on `git init` and `git clone`, so repos that
+already exist keep whatever copy they were created with. Sync one repo:
+
+```sh
+cp git/.gittemplate/hooks/{pre-commit,pre-push,secret-paths,commit-msg,prepare-commit-msg} <repo>/.git/hooks/
+```
+
+`secret-paths` has to travel with `pre-push`; the hook silently skips the name
+check when it is missing.
+
+### What runs when
+
+`pre-commit` runs git-secrets over the staged diff, alongside the syntax checks.
+`pre-push` runs betterleaks over the commits being pushed and `secret-paths` over
+the files those commits add.
+
+Push time is the one that matters. `pre-commit` only ever sees one staged diff
+and `--no-verify` skips it, while `pre-push` sees every commit about to leave the
+machine, including commits pulled in from elsewhere or made before the hooks
+existed.
+
+### Why two layers
+
+Content scanning cannot catch a `.env`. A file holding `DB_PASSWORD=hunter2` and
+`SMTP_PASS=letmein` has no token shape and no entropy, so gitleaks and
+betterleaks both report it clean. The filename is the only usable signal, so
+`secret-paths` denies `.env*`, SSH private keys, `*.pem`, keystores, `*.tfstate`,
+`.npmrc`, `kubeconfig` and GCP service account keys. It allows `.example`,
+`.sample`, `.template` and encrypted blobs, so templates and sops output still
+commit.
+
+git-secrets stays on the commit message hooks, but it was never enough alone: it
+ships three AWS regexes and nothing else. Worse, you have to register the
+patterns or it matches nothing at all, silently. Mine were empty for years.
+Check with:
+
+```sh
+git config --global --get-all secrets.patterns
+git secrets --register-aws --global   # if that printed nothing
+```
+
+### Overrides
+
+`GIT_ALLOW_SECRETS=1 git push` for a false positive in either check, and
+`GIT_ALLOW_PROTECTED_PUSH=1 git push` to push a protected branch from a
+non-interactive shell such as an agent.
+
+### Custom rules
+
+`git/betterleaks.toml` extends the default rules with three they miss: Azure AD
+client secrets standing on their own (the shipped rule wants a tenant id within
+eight lines to corroborate), Azure Storage SAS signatures, and npm auth tokens.
+
+Use a realistic random token when testing a rule. betterleaks filters
+implausible matches, so it ignores `npm_aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789`
+and catches a genuine high-entropy one. Obviously fake test data looks exactly
+like a missing rule, which cost me an hour.
+
+### Limits
+
+Hooks are a safety net, not a control. `git push --no-verify` skips all of this,
+and a fresh clone has no hooks at all until the template runs. Server-side push
+protection is the only thing that actually enforces.
+
 ## I use this
 
 ### Hardware
