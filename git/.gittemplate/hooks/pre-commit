@@ -7,7 +7,6 @@
 #
 # Copyright 2013, kvz (http://twitter.com/kvz)
 # Adding https://github.com/awslabs/git-secrets
-git secrets --pre_commit_hook -- "$@"
 
 set -o pipefail
 set -o errexit
@@ -16,6 +15,18 @@ set -o nounset
 __DIR__="$(cd "$(dirname "${0}")"; echo $(pwd))"
 __BASE__="$(basename "${0}")"
 __FILE__="${__DIR__}/${__BASE__}"
+
+# Scan for secrets before the syntax checks. This used to run above the
+# `set -o` lines with its exit status untested, so a matched secret printed
+# git-secrets' error block and the commit still succeeded.
+if command -v git-secrets >/dev/null 2>&1; then
+  if ! git secrets --pre_commit_hook -- "$@"; then
+    exit 1
+  fi
+else
+  echo "WARNING: git-secrets is not installed, secret scanning SKIPPED." >&2
+  echo "WARNING: install it with 'brew install git-secrets' to re-enable." >&2
+fi
 
 if [ -x "${__DIR__}/pre-ochtra" ]; then
   echo "Running pre-ochtra"
@@ -72,10 +83,21 @@ git diff-index --cached --full-index --diff-filter=ACM $against |while read -r l
   fi
 
   she=""
-  # only check shebang on normal and executable files
-  if [ "${mod}" = "100644" ] || [ "${mod}" = "100664" ] || [ "${mod}" = "100455" ]; then
-    she="$(head -n1 ${pth} |awk -F/ '/^#\!/ {print $NF}' |sed 's/^env //g')"
-  fi
+  # Only check the shebang on regular files: 100644 and 100755. Git's other
+  # modes are symlinks (120000) and submodules (160000). The old test listed
+  # 100455 (a typo) and 100664 (not a git mode) and omitted 100755, so
+  # executable scripts were skipped entirely -- and those are usually
+  # extensionless, making the shebang their only signal.
+  #
+  # Read the staged blob, not the working tree, to stay consistent with the
+  # checks below. awk must drain stdin: `head -n1` closes the pipe early and
+  # SIGPIPEs git cat-file on blobs over the pipe buffer, which `set -o
+  # pipefail` then turns into a hook failure (exit 141).
+  case "${mod}" in
+    100*)
+      she="$(git cat-file -p "${sha}" |awk -F/ 'NR==1 && /^#\!/ {print $NF}' |sed 's/^env //g')"
+      ;;
+  esac
   out="purge"
   err="red"
   cmd=""
@@ -84,17 +106,21 @@ git diff-index --cached --full-index --diff-filter=ACM $against |while read -r l
   # Select linting tool based on extension or shebang
   if [ "${ext}" = "rb" ] || [ "${ext}" = "erb" ] || [ "${she}" = "ruby" ]; then
     cmd="ruby -c -"
-  elif [ "${ext}" = "js" ] || [ "${she}" = "node" ]; then
-    # jshint unfortunately uses STDOUT for errors, so paint all red
-    cmd="jshint -"
-    out="red"
-  elif [ "${ext}" = "es6" ] || [ "${she}" = "node" ]; then
-    # eslint need to be in localfolder, for example using npm install peasant
-    # if use global installed eslint not works with .eslintrc
-    # cmd="node_modules/.bin/eslint --stdin"
-    # or use global without .eslintrc
-    cmd="eslint --stdin --no-eslintrc"
-    out="red"
+  elif [ "${ext}" = "js" ] || [ "${ext}" = "mjs" ] || [ "${ext}" = "cjs" ] \
+       || [ "${ext}" = "es6" ] || [ "${she}" = "node" ]; then
+    # node --check parses with V8 itself, so it tracks current syntax (ESM,
+    # class fields, optional chaining) with no configuration. jshint read the
+    # blob from stdin, could not resolve a .jshintrc from there, defaulted to
+    # ES5, and so rejected valid modern JavaScript. Note this checks syntax
+    # only -- it makes no style judgements, which is what this hook is for.
+    # node rejects unknown extensions, so .es6 becomes .js for the temp file;
+    # .mjs and .cjs keep theirs because the extension carries module semantics.
+    if [ "${ext}" = "mjs" ] || [ "${ext}" = "cjs" ]; then
+      tmp="${TMPDIR:-/tmp}/${$}.${ext}"
+    else
+      tmp="${TMPDIR:-/tmp}/${$}.js"
+    fi
+    cmd="node --check ${tmp}"
   elif [ "${ext}" = "ts" ] ; then
     tmp="${TMPDIR:-/tmp}/${$}.${ext}"
     cmd="tslint ${tmp}"
