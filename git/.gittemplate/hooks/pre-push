@@ -1,18 +1,33 @@
 #!/usr/bin/env bash
 
 protected_branch='master'
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-RANDOM_CHAR=$(( ( RANDOM % 10 )  + 1 ))
+current_branch=$(git symbolic-ref --short HEAD)
 
-if [ $protected_branch = $current_branch ]
+if [ "$protected_branch" != "$current_branch" ]
 then
-    read -p "You're about to push master, is that what you intended? [$RANDOM_CHAR|n] " -n 1 -r < /dev/tty
-    echo
-    if echo $REPLY | grep -E "^[$RANDOM_CHAR]$" > /dev/null
+    exit 0 # push will execute
+fi
+
+# git gives the hook the ref list on stdin, so [ -t 0 ] is never true here;
+# probing /dev/tty is the only way to tell an interactive shell from an
+# agent/CI one. Without it, `read < /dev/tty` used to die with
+# "Device not configured" and block the push with no explanation.
+if ! { true < /dev/tty; } 2>/dev/null
+then
+    if [ -n "$GIT_ALLOW_PROTECTED_PUSH" ]
     then
         exit 0 # push will execute
     fi
+    echo "pre-push: refusing to push '$protected_branch' from a non-interactive shell." >&2
+    echo "pre-push: branch and open a PR instead, or set GIT_ALLOW_PROTECTED_PUSH=1 to override." >&2
     exit 1 # push will not execute
-else
+fi
+
+RANDOM_CHAR=$(( ( RANDOM % 10 )  + 1 ))
+read -p "You're about to push master, is that what you intended? [$RANDOM_CHAR|n] " -n 1 -r < /dev/tty
+echo
+if echo "$REPLY" | grep -E "^[$RANDOM_CHAR]$" > /dev/null
+then
     exit 0 # push will execute
 fi
+exit 1 # push will not execute
