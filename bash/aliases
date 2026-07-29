@@ -215,7 +215,7 @@ function ed() {
 }
 
 function e() {
-  code $1
+  nvim $1
 }
 
 
@@ -391,6 +391,7 @@ alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias kubectx='switch'
 alias kctx='switch'
+alias vim='nvim'
 
 
 # alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
