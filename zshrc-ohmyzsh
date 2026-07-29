@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
 source ~/bin/dotfiles/zsh/gh-account
+source ~/bin/dotfiles/zsh/pureclone
 # brew install zsh-autosuggestions
 if [[ "$ARCH" == "arm64" ]]; then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
