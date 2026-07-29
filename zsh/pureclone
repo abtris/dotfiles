@@ -1,0 +1,34 @@
+# Clone a Pure GitHub repo through the `github-pure` ssh alias.
+#
+# The bare `org-144335849@github.com:org/repo.git` URL connects to host
+# `github.com`, so it matches the `Host github.com` block in ~/.ssh/config —
+# which pins IdentityAgent to the 1Password agent. That agent does not hold
+# the short-lived keymaster certs `purelogin` mints, and IdentityAgent
+# replaces the agent rather than adding to it, so the org rejects the
+# connection with `Permission denied (publickey)`. The `github-pure` alias
+# has no IdentityAgent override, falls back to the default agent, and works.
+#
+#   pureclone github-double            -> pure-prod-krypton/github-double
+#   pureclone some-org/some-repo
+#   pureclone https://github.com/pure-prod-krypton/github-double.git
+pureclone() {
+  local repo=$1
+  if [ -z "$repo" ]; then
+    echo "usage: pureclone <repo|org/repo|url> [git clone args...]" >&2
+    return 2
+  fi
+  shift
+  repo=${repo#https://github.com/}
+  repo=${repo#*@github.com:}
+  repo=${repo%.git}
+  case "$repo" in
+    */*) ;;
+    *) repo=pure-prod-krypton/$repo ;;
+  esac
+  git clone "github-pure:$repo.git" "$@" || {
+    local rc=$?
+    ssh-add -l >/dev/null 2>&1 ||
+      echo "pureclone: ssh agent holds no identities — run \`purelogin\` to mint fresh GitHub certs" >&2
+    return $rc
+  }
+}
