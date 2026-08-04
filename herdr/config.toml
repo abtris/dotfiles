@@ -14,11 +14,16 @@ key = "cmd+p"
 type = "shell"
 command = "herdr plugin action invoke cloudmanic.herdr-plus.projects"
 
+# Opens the Jira/PR popup: open the PR or issue in a browser, assign a ticket by
+# hand, refresh. A direct cmd+ chord on purpose — Herdr binds no cmd+ keys, while
+# most prefix+ letters are taken, and a custom binding that collides with a
+# built-in is silently disabled (prefix+j is focus_pane_down, prefix+o is
+# open_notification_target).
 [[keys.command]]
-key = "prefix+j"
-type = "plugin_action"
-command = "abtris.jira-pr.refresh-forced"
-description = "refresh Jira/PR line"
+key = "cmd+j"
+type = "shell"
+command = "herdr plugin pane open --plugin abtris.jira-pr --entrypoint menu"
+description = "Jira/PR popup"
 
 # $jira comes from the abtris.jira-pr plugin: the Jira issue behind the current
 # branch's PR, or a warning when the branch and the PR name different issues.
