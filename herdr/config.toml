@@ -13,3 +13,19 @@ next_workspace = "prefix+down"
 key = "cmd+p"
 type = "shell"
 command = "herdr plugin action invoke cloudmanic.herdr-plus.projects"
+
+[[keys.command]]
+key = "prefix+j"
+type = "plugin_action"
+command = "abtris.jira-pr.refresh-forced"
+description = "refresh Jira/PR line"
+
+# $jira comes from the abtris.jira-pr plugin: the Jira issue behind the current
+# branch's PR, or a warning when the branch and the PR name different issues.
+# Declaring rows replaces the defaults, so the first two lines repeat them.
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "workspace", "tab"],
+  ["agent"],
+  ["$jira"],
+]
