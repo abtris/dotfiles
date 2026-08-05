@@ -118,7 +118,7 @@ protection is the only thing that actually enforces.
 - m1 macbook pro 2021 (work)
 - m1 mini (home)
 
-- Apple Mac Keyboard wired with numpad with USB-A (2007 model)  + mouse Logitech MX Anywhere 3 (home)
+- Apple Mac Keyboard wired with numpad with USB-A (2007 model) + mouse Logitech MX Anywhere 3 (home)
 - Apple Magic Keyboard with Touch ID + Apple Magic TouchPad (work)
 
 ### Software
@@ -178,7 +178,7 @@ protection is the only thing that actually enforces.
   - reusable skills I add to the agent harness via `npx skills add`
   - [Herdr](https://herdr.dev/) - `npx skills add ogulcancelik/herdr --skill herdr -g`
 - Utils
-  - [lsd instead ls](https://github.com/lsd-rs/lsd) -  [color schema](https://github.com/catppuccin/lsd)
+  - [lsd instead ls](https://github.com/lsd-rs/lsd) - [color schema](https://github.com/catppuccin/lsd)
   - [bat instead cat](https://github.com/sharkdp/bat)
   - [fzf](https://github.com/junegunn/fzf) - using with `j()` function that using `find` and `fzf` - [custom rule](./bash/aliases?plain=1#L207)
   - [zoxide](https://github.com/ajeetdsouza/zoxide) - smarter cd command, missing matching settings to fix my needs as I easy done with find, but combined with smart cd
