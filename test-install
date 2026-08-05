@@ -8,8 +8,6 @@ trap 'rm -rf "$test_home"' EXIT
 HOME=$test_home "$root/install" >/dev/null
 HOME=$test_home "$root/install" >/dev/null
 test "$(readlink "$test_home/.zshrc")" = "$root/zshrc-ohmyzsh"
-test ! -L "$test_home/.config/mc/ini"
-cmp "$root/mc/ini" "$test_home/.config/mc/ini"
 
 rm "$test_home/.zshrc"
 : >"$test_home/.zshrc"

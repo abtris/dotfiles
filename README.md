@@ -22,9 +22,8 @@ brew bundle --file "./$brewfile"
 ./install
 ```
 
-The installer creates missing symlinks and copies the initial Midnight
-Commander configuration. It reports existing files as conflicts instead of
-overwriting them; move those files aside and rerun it.
+The installer creates missing symlinks. It reports existing files as conflicts
+instead of overwriting them; move those files aside and rerun it.
 
 ## Update Brewfiles
 
@@ -149,15 +148,15 @@ protection is the only thing that actually enforces.
       - Tags
       - logseq-mermaid-plugin
   - Citations/papers - [Zotero](https://www.zotero.org/) - Your personal research assistant
-- Color Schema - https://github.com/catppuccin/catppuccin (used everywhere)
+- Color Schema - <https://github.com/catppuccin/catppuccin> (used everywhere)
 - Desktop search/launcher
   - [LaunchBar](https://www.obdev.at/products/launchbar/index.html)
   - I think there are [better alternatives](https://www.raycast.com/) but I don't see a big advantage in changing
 - IDE - [VSCode](https://code.visualstudio.com/) - nothing extra Go plugin for development, maybe mention [FindItFaster](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster) for fzf integration there
 - Terminal - [Ghostty](https://ghostty.org/)
-    - Ghostty is new written in [Zig](https://ziglang.org/) multi-platform terminal from [Mitchell Hashimoto](https://mitchellh.com/ghostty)
+  - Ghostty is new written in [Zig](https://ziglang.org/) multi-platform terminal from [Mitchell Hashimoto](https://mitchellh.com/ghostty)
 - Multiplexer - [Herdr](https://herdr.dev/)
-- Window manager - https://magnet.crowdcafe.com/
+- Window manager - <https://magnet.crowdcafe.com/>
   - I was thinking about [yabai](https://github.com/koekeishiya/yabai) but doesn't have time to test it
 - Fonts
   - any Nerd fonts - no extra preference

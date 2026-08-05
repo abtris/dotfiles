@@ -29,19 +29,6 @@ link() {
   fi
 }
 
-seed() {
-  source=$root/$1
-  target=$HOME/$2
-
-  if [ -e "$target" ] || [ -L "$target" ]; then
-    printf 'ok       %s\n' "$target"
-  elif mkdir -p "$(dirname -- "$target")" && cp "$source" "$target"; then
-    printf 'copied   %s\n' "$target"
-  else
-    status=1
-  fi
-}
-
 while IFS='|' read -r source target; do
   link "$source" "$target"
 done <<'EOF'
@@ -84,7 +71,5 @@ k9s/plugins.yaml|Library/Application Support/k9s/plugins.yaml
 themes/abtris.zsh-theme|.oh-my-zsh/custom/themes/abtris.zsh-theme
 custom/plugins/abtris|.oh-my-zsh/custom/plugins/abtris
 EOF
-
-seed mc/ini .config/mc/ini
 
 exit "$status"
