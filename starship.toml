@@ -37,6 +37,10 @@ $character"""
 # Inserts a blank line between shell prompts
 add_newline = false
 
+# Default (500ms) is occasionally too tight for the python module's
+# `python`/`python3 --version` probe under transient load.
+command_timeout = 1000
+
 [directory]
 truncation_length = 9
 truncate_to_repo = true
