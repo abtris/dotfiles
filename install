@@ -103,6 +103,7 @@ else
 abtris/herdr-plugin-jira-pr
 cloudmanic/herdr-plus
 nytafar/herdr-cache-ttl
+smarzban/herdr-file-viewer
 EOF
 fi
 
