@@ -72,4 +72,39 @@ themes/abtris.zsh-theme|.oh-my-zsh/custom/themes/abtris.zsh-theme
 custom/plugins/abtris|.oh-my-zsh/custom/plugins/abtris
 EOF
 
+# herdr plugins are fetched from GitHub and built on the machine, so they are
+# installed rather than symlinked. Reinstalling the same source is also how
+# herdr upgrades a plugin in place, which keeps this idempotent. Set
+# DOTFILES_SKIP_HERDR_PLUGINS=1 to skip the network and build work; test-install
+# does that so the symlink checks stay fast and offline.
+# herdr prints a multi-line install preview even on success, which would bury
+# the one-line-per-item output above. Buffer it and replay it only on failure,
+# so real errors still reach the terminal.
+herdr_plugin() {
+  if herdr plugin install "$1" --yes >"$plugin_log" 2>&1; then
+    printf 'plugin   %s\n' "$1"
+  else
+    printf 'failed   %s\n' "$1" >&2
+    cat "$plugin_log" >&2
+    status=1
+  fi
+}
+
+if [ "${DOTFILES_SKIP_HERDR_PLUGINS:-0}" = 1 ]; then
+  printf 'skipped  herdr plugins (DOTFILES_SKIP_HERDR_PLUGINS)\n'
+elif ! command -v herdr >/dev/null; then
+  printf 'skipped  herdr plugins (herdr not installed)\n'
+else
+  plugin_log=$(mktemp)
+  trap 'rm -f "$plugin_log"' EXIT
+  while read -r plugin; do
+    herdr_plugin "$plugin"
+  done <<'EOF'
+abtris/herdr-plugin-jira-pr
+cloudmanic/herdr-plus
+nytafar/herdr-cache-ttl
+smarzban/herdr-file-viewer
+EOF
+fi
+
 exit "$status"
