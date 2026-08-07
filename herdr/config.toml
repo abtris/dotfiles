@@ -28,5 +28,19 @@ description = "Jira/PR popup"
 # $jira comes from the abtris.jira-pr plugin: the Jira issue behind the current
 # branch's PR, or a warning when the branch and the PR name different issues.
 # Declaring rows replaces the defaults, so the first two lines repeat them.
+#
+# The three $cache_* tokens come from the cache-ttl plugin and are mutually
+# exclusive — exactly one renders, picked by the prompt cache's remaining TTL
+# (green, amber under 10 minutes, red under 5 or expired). All three go on the
+# agent row so the countdown sits beside the agent it belongs to.
 [ui.sidebar.agents]
-rows = [["state_icon", "workspace", "tab"], ["agent"], ["$jira"]]
+rows = [
+  ["state_icon", "workspace", "tab"],
+  [
+    "agent",
+    { token = "$cache_ok", fg = "#4ade80" },
+    { token = "$cache_warn", fg = "#f59e0b" },
+    { token = "$cache_crit", fg = "#ef4444" },
+  ],
+  ["$jira"],
+]
