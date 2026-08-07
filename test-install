@@ -5,13 +5,13 @@ root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 test_home=$(mktemp -d)
 trap 'rm -rf "$test_home"' EXIT
 
-HOME=$test_home "$root/install" >/dev/null
-HOME=$test_home "$root/install" >/dev/null
+HOME=$test_home DOTFILES_SKIP_HERDR_PLUGINS=1 "$root/install" >/dev/null
+HOME=$test_home DOTFILES_SKIP_HERDR_PLUGINS=1 "$root/install" >/dev/null
 test "$(readlink "$test_home/.zshrc")" = "$root/zshrc-ohmyzsh"
 
 rm "$test_home/.zshrc"
 : >"$test_home/.zshrc"
-if HOME=$test_home "$root/install" >/dev/null 2>&1; then
+if HOME=$test_home DOTFILES_SKIP_HERDR_PLUGINS=1 "$root/install" >/dev/null 2>&1; then
   echo 'install did not report a conflict' >&2
   exit 1
 fi
