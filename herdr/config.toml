@@ -25,6 +25,24 @@ type = "shell"
 command = "herdr plugin pane open --plugin abtris.jira-pr --entrypoint menu"
 description = "Jira/PR popup"
 
+# The file viewer opens only from these keys — its manifest declares no event
+# hooks, so nothing spawns it unasked. cmd+ chords again, for the reason above.
+# Not the README's prefix+f (silent-collision trap), and not cmd+f/cmd+shift+f
+# either: Ghostty takes those for start_search / end_search and consumes them
+# before herdr sees them. `ghostty +list-keybinds` is the way to check — the
+# keybind lines in ghostty/config are overrides and do not list the defaults.
+[[keys.command]]
+key = "cmd+o"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer"
+description = "File viewer (split)"
+
+[[keys.command]]
+key = "cmd+shift+o"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer-tab"
+description = "File viewer (tab)"
+
 # $jira comes from the abtris.jira-pr plugin: the Jira issue behind the current
 # branch's PR, or a warning when the branch and the PR name different issues.
 # Declaring rows replaces the defaults, so the first two lines repeat them.
