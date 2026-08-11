@@ -145,6 +145,14 @@ label. The guard checks every plain pattern before any `ask:` pattern, so a
 command that trips both gets denied rather than offered. The prompt is a local
 addition to the upstream hook, using the Claude Code `permissionDecision` field.
 
+On an `ask:` line, ` ::: ` ends the regex and starts a note, which the prompt
+shows above the approve and deny guidance. Write the note as the thing that is
+hard to undo, since that is the decision:
+
+```
+ask:<regex> ::: Deletes a label you can recreate, or a secret you cannot.
+```
+
 Edit the denylist to tune it; changes apply to the next command, no restart.
 Then run the tests, which cover both payload shapes and all three verdicts:
 

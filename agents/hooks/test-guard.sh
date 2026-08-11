@@ -143,6 +143,17 @@ check allow 'git gc'
 check allow 'git gc --aggressive'
 check allow 'git gc --prune=2.weeks.ago'
 
+# ---- the ask prompt shows the command and the pattern's note ----
+reason=$(jq -cn '{tool_input:{command:"gh api -X DELETE /repos/example-org/example-repo"},cwd:"/tmp"}' \
+  | "$GUARD" | jq -r '.hookSpecificOutput.permissionDecisionReason')
+case "$reason" in
+  *"gh api -X DELETE /repos/example-org/example-repo"*"do not come back"*)
+    pass=$((pass+1)) ;;
+  *)
+    fail=$((fail+1))
+    echo "FAIL [ask reason] missing command or note: $reason" ;;
+esac
+
 echo ""
 echo "passed: $pass, failed: $fail"
 [ "$fail" -eq 0 ] || exit 1
