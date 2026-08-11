@@ -111,6 +111,55 @@ Hooks are a safety net, not a control. `git push --no-verify` skips all of this,
 and a fresh clone has no hooks at all until the template runs. Server-side push
 protection is the only thing that actually enforces.
 
+## Agent command guard
+
+`agents/hooks/deny-dangerous.sh` blocks catastrophic shell commands before a
+coding agent runs them. `./install` links it and its denylist into
+`~/.agents/hooks/`, shared across agents rather than owned by one of them.
+Vendored from [davidondrej/skills](https://github.com/davidondrej/skills/tree/main/hooks).
+
+Register it in `~/.claude/settings.json`, which this repo does not manage:
+
+```json
+"hooks": {
+  "PreToolUse": [
+    {
+      "matcher": "Bash",
+      "hooks": [
+        { "type": "command", "command": "bash '~/.agents/hooks/deny-dangerous.sh'", "timeout": 5 }
+      ]
+    }
+  ]
+}
+```
+
+The hook reads the command off stdin as JSON and greps it against
+`dangerous-patterns.txt`, one extended regex per line. A match exits 2, which
+Claude Code treats as a block. It fails open when `jq` or the denylist is
+missing, so a broken install cannot wedge every agent.
+
+A line prefixed `ask:` prompts for confirmation instead of blocking, for commands
+that are usually destructive but sometimes routine. `gh api -X DELETE` is the one
+that ships that way: it deletes repos and releases, and it also deletes a stale
+label. The guard checks every plain pattern before any `ask:` pattern, so a
+command that trips both gets denied rather than offered. The prompt is a local
+addition to the upstream hook, using the Claude Code `permissionDecision` field.
+
+Edit the denylist to tune it; changes apply to the next command, no restart.
+Then run the tests, which cover both payload shapes and all three verdicts:
+
+```sh
+agents/hooks/test-guard.sh
+```
+
+This does not duplicate `permissions.deny` in settings.json. Those rules match
+on a command prefix, so `Bash(rm -rf:*)` never sees the `rm` in
+`cd /tmp && rm -rf ~`. The guard greps the whole command string, which also gets
+`dd of=/dev/disk0`, `mkfs`, `curl | sh` and a fork bomb.
+
+One legitimate move costs: `git push --force` is denied, so a rebased branch
+goes out with `--force-with-lease`, which the denylist allows on purpose.
+
 ## I use this
 
 ### Hardware
