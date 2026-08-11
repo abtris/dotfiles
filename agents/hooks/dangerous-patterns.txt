@@ -2,6 +2,7 @@
 # Vendored from https://github.com/davidondrej/skills/tree/main/hooks
 # One POSIX-ERE regex (grep -E) per line. Blank lines and # comments are ignored.
 # A line prefixed "ask:" prompts for confirmation instead of blocking outright.
+# On an ask: line, " ::: " ends the regex and starts a note shown in the prompt.
 # Shared by ALL agents: Cursor, Claude Code, Codex, OpenCode, Pi, Hermes.
 # Edit this file to tune; changes apply immediately (no restarts needed).
 # Adapters for Pi/OpenCode/Hermes convert [:space:] to \s automatically.
@@ -49,6 +50,6 @@
 (^|[;&|[:space:]])gh[[:space:]]+repo[[:space:]]+delete([[:space:]]|$)
 (^|[;&|[:space:]])gh[[:space:]]+release[[:space:]]+delete([[:space:]]|$)
 (^|[;&|[:space:]])gh[[:space:]]+(secret|ssh-key|gpg-key)[[:space:]]+delete([[:space:]]|$)
-ask:(^|[;&|[:space:]])gh[[:space:]]+api[[:space:]][^;&|]*(-X|--method)(=|[[:space:]]+)(DELETE|delete)
+ask:(^|[;&|[:space:]])gh[[:space:]]+api[[:space:]][^;&|]*(-X|--method)(=|[[:space:]]+)(DELETE|delete) ::: Deletes something on GitHub through the API. A label, comment or workflow run you can recreate — but the same call deletes a repo, release, secret or deploy key, and those do not come back.
 (^|[;&|[:space:]])gh[[:space:]]+repo[[:space:]]+edit[^;&|]*--visibility(=|[[:space:]]+)public
 (^|[;&|[:space:]])gh[[:space:]]+auth[[:space:]]+token([[:space:]]|$)

@@ -42,30 +42,44 @@ CMD=$(printf '%s' "$INPUT" | jq -r '.tool_input.command // .toolInput.command //
 [ -z "$CMD" ] && allow
 [ -f "$PATTERNS_FILE" ] || allow
 
-# Prints the first pattern of the requested kind that matches, and returns 0.
-# $1 is "ask" to read only ask: lines, anything else to read only plain ones.
+# Sets MATCHED and MATCHED_NOTE to the first pattern of the requested kind that
+# matches, and returns 0. $1 is "ask" to read only ask: lines, anything else to
+# read only plain ones. Not called in a subshell, so the globals survive.
 first_match() {
+  MATCHED=
+  MATCHED_NOTE=
   while IFS= read -r line; do
     case "$line" in ''|\#*) continue ;; esac
     case "$line" in
       ask:*)
         [ "$1" = ask ] || continue
-        pattern=${line#ask:}
+        line=${line#ask:}
         ;;
       *)
         [ "$1" = ask ] && continue
+        ;;
+    esac
+    # " ::: " ends the regex and starts a human note. No ERE contains it.
+    case "$line" in
+      *" ::: "*)
+        pattern=${line%% ::: *}
+        note=${line#* ::: }
+        ;;
+      *)
         pattern=$line
+        note=
         ;;
     esac
     if printf '%s\n' "$CMD" | grep -qE -- "$pattern" 2>/dev/null; then
-      printf '%s' "$pattern"
+      MATCHED=$pattern
+      MATCHED_NOTE=$note
       return 0
     fi
   done < "$PATTERNS_FILE"
   return 1
 }
 
-if MATCHED=$(first_match deny); then
+if first_match deny; then
   if [ "$MODE" = "cursor" ]; then
     jq -cn --arg p "$MATCHED" '{
       permission: "deny",
@@ -78,20 +92,33 @@ if MATCHED=$(first_match deny); then
   exit 2
 fi
 
-if MATCHED=$(first_match ask); then
+if first_match ask; then
+  # Laid out for someone deciding in a hurry: what runs, what it costs, where the
+  # rule lives. No ANSI colour, because a prompt that renders escapes literally
+  # would show the bytes instead of the emphasis.
+  REASON=$(printf '%s\n' \
+    "**Command guard — this needs your decision.**" \
+    "" \
+    "- **Running:** \`$CMD\`" \
+    "${MATCHED_NOTE:+- **Risk:** $MATCHED_NOTE}" \
+    "- **Approve** if you recognise that target and can recreate it." \
+    "- **Deny** if a delete was not what you asked for. Nothing is retried behind your back." \
+    "" \
+    "Rule: \`ask:\` line in \`~/.agents/hooks/dangerous-patterns.txt\`")
+
   if [ "$MODE" = "cursor" ]; then
-    jq -cn --arg p "$MATCHED" '{
+    jq -cn --arg r "$REASON" '{
       permission: "ask",
-      user_message: "Command guard wants confirmation for a destructive command.",
-      agent_message: ("The global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt) asks before running this. Matched pattern: " + $p + ".")
+      user_message: $r,
+      agent_message: $r
     }'
     exit 0
   fi
-  jq -cn --arg p "$MATCHED" '{
+  jq -cn --arg r "$REASON" '{
     hookSpecificOutput: {
       hookEventName: "PreToolUse",
       permissionDecision: "ask",
-      permissionDecisionReason: ("The global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt) asks before running this. Matched pattern: " + $p + ".")
+      permissionDecisionReason: $r
     }
   }'
   exit 0
