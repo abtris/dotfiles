@@ -14,6 +14,12 @@
 # Block:  default mode -> exit 2 + reason on stderr (Claude/Codex contract).
 #         "cursor" mode -> {"permission":"deny",...} JSON on stdout, exit 0.
 # Allow:  default mode -> exit 0, silent. cursor mode -> {"permission":"allow"}.
+# Ask:    a denylist line prefixed "ask:" prompts instead of blocking, for
+#         commands that are usually destructive but sometimes routine.
+#         default mode -> permissionDecision "ask" JSON on stdout, exit 0.
+#         "cursor" mode -> {"permission":"ask",...}. This is a local addition;
+#         Codex has no ask contract, so it reads those lines as allow.
+# Deny wins over ask: every plain pattern is checked before any ask: pattern.
 
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 # Denylist sits next to this script, so the repo copy and the installed symlink
@@ -36,20 +42,59 @@ CMD=$(printf '%s' "$INPUT" | jq -r '.tool_input.command // .toolInput.command //
 [ -z "$CMD" ] && allow
 [ -f "$PATTERNS_FILE" ] || allow
 
-while IFS= read -r pattern; do
-  case "$pattern" in ''|\#*) continue ;; esac
-  if printf '%s\n' "$CMD" | grep -qE -- "$pattern" 2>/dev/null; then
-    if [ "$MODE" = "cursor" ]; then
-      jq -cn --arg p "$pattern" '{
-        permission: "deny",
-        user_message: "Command guard blocked a dangerous command.",
-        agent_message: ("This command was blocked by the global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt). Matched pattern: " + $p + ". Do not retry it or try to work around the guard; explain the block to the user instead.")
-      }'
-      exit 0
+# Prints the first pattern of the requested kind that matches, and returns 0.
+# $1 is "ask" to read only ask: lines, anything else to read only plain ones.
+first_match() {
+  while IFS= read -r line; do
+    case "$line" in ''|\#*) continue ;; esac
+    case "$line" in
+      ask:*)
+        [ "$1" = ask ] || continue
+        pattern=${line#ask:}
+        ;;
+      *)
+        [ "$1" = ask ] && continue
+        pattern=$line
+        ;;
+    esac
+    if printf '%s\n' "$CMD" | grep -qE -- "$pattern" 2>/dev/null; then
+      printf '%s' "$pattern"
+      return 0
     fi
-    echo "Blocked by the global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt). Matched pattern: $pattern. Do not retry it or try to work around the guard; explain the block to the user instead." >&2
-    exit 2
+  done < "$PATTERNS_FILE"
+  return 1
+}
+
+if MATCHED=$(first_match deny); then
+  if [ "$MODE" = "cursor" ]; then
+    jq -cn --arg p "$MATCHED" '{
+      permission: "deny",
+      user_message: "Command guard blocked a dangerous command.",
+      agent_message: ("This command was blocked by the global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt). Matched pattern: " + $p + ". Do not retry it or try to work around the guard; explain the block to the user instead.")
+    }'
+    exit 0
   fi
-done < "$PATTERNS_FILE"
+  echo "Blocked by the global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt). Matched pattern: $MATCHED. Do not retry it or try to work around the guard; explain the block to the user instead." >&2
+  exit 2
+fi
+
+if MATCHED=$(first_match ask); then
+  if [ "$MODE" = "cursor" ]; then
+    jq -cn --arg p "$MATCHED" '{
+      permission: "ask",
+      user_message: "Command guard wants confirmation for a destructive command.",
+      agent_message: ("The global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt) asks before running this. Matched pattern: " + $p + ".")
+    }'
+    exit 0
+  fi
+  jq -cn --arg p "$MATCHED" '{
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "ask",
+      permissionDecisionReason: ("The global dangerous-command guard (~/.agents/hooks/dangerous-patterns.txt) asks before running this. Matched pattern: " + $p + ".")
+    }
+  }'
+  exit 0
+fi
 
 allow

@@ -138,8 +138,15 @@ The hook reads the command off stdin as JSON and greps it against
 Claude Code treats as a block. It fails open when `jq` or the denylist is
 missing, so a broken install cannot wedge every agent.
 
+A line prefixed `ask:` prompts for confirmation instead of blocking, for commands
+that are usually destructive but sometimes routine. `gh api -X DELETE` is the one
+that ships that way: it deletes repos and releases, and it also deletes a stale
+label. The guard checks every plain pattern before any `ask:` pattern, so a
+command that trips both gets denied rather than offered. The prompt is a local
+addition to the upstream hook, using the Claude Code `permissionDecision` field.
+
 Edit the denylist to tune it; changes apply to the next command, no restart.
-Then run the tests, which cover both payload shapes and both verdicts:
+Then run the tests, which cover both payload shapes and all three verdicts:
 
 ```sh
 agents/hooks/test-guard.sh
