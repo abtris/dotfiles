@@ -68,3 +68,7 @@ export PATH="$PATH:/Users/lprskavec/.lmstudio/bin"
 
 # Everpure Azure AI Foundry (opencode + pi + codex + claude-foundry)
 [ -f /Users/lprskavec/.config/everpure-foundry/foundry.env ] && . /Users/lprskavec/.config/everpure-foundry/foundry.env
+
+# Added by GitButler installer
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(but completions zsh)"

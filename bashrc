@@ -21,3 +21,7 @@ complete -C /usr/local/bin/vault vault
 export PATH="$PATH:/Users/lprskavec/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# Added by GitButler installer
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(but completions bash)"
