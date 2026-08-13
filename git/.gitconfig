@@ -137,8 +137,10 @@
 	sort = version:refname	
 [url "git@github.com:abtris/"]
 	insteadOf = "gh:"
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+[url "ssh://git@github.com/abtris/"]
+	insteadOf = https://github.com/abtris/
+[url "github-pure:pure-prod-krypton/"]
+	insteadOf = https://github.com/pure-prod-krypton/
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
