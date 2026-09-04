@@ -28,6 +28,7 @@ alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
 alias dig='dog'
 alias ju='cd ~/Sites/abtris/cml && git add . && git commit -am "Update journal"'
 alias vdev='source setvdev'
+alias jsontidy="pbpaste | jq '.' | pbcopy"
 
 function jup() {
   cd ~/Sites/abtris/cml
