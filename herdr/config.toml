@@ -8,6 +8,11 @@ surface_dim = "#313244"
 [keys]
 previous_workspace = "prefix+up"
 next_workspace = "prefix+down"
+# Bound to a plain, easy-to-remember prefix chord so the Ghostty key mapping
+# for cmd+shift+[ / cmd+shift+] just has to send prefix + this literal char.
+# Tab switching, not pane cycling — tabs are the thing usually being switched.
+previous_tab = "prefix+["
+next_tab = "prefix+]"
 
 [[keys.command]]
 key = "cmd+p"
@@ -42,6 +47,17 @@ key = "cmd+shift+o"
 type = "plugin_action"
 command = "herdr-file-viewer.open-file-viewer-tab"
 description = "File viewer (tab)"
+
+# Ghostty has no way to make bare file paths clickable (its custom `link`
+# regex config is an unshipped TODO upstream, only real URI schemes work).
+# Workaround: copy_on_select already puts the mouse selection on the
+# clipboard, so this just opens whatever's on it — select a "path:line"
+# string with the mouse, then press cmd+u.
+[[keys.command]]
+key = "cmd+u"
+type = "shell"
+command = "/opt/homebrew/bin/code -g \"$(pbpaste | xargs)\""
+description = "Open clipboard path in VS Code"
 
 # $jira comes from the abtris.jira-pr plugin: the Jira issue behind the current
 # branch's PR, or a warning when the branch and the PR name different issues.
