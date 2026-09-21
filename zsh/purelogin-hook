@@ -1,0 +1,36 @@
+# Proactively renews the keymaster/vault SSH cert (~16h lifetime) before it
+# expires, so devvm/GitHub SSH and Herdr's devvm endpoint don't go stale with
+# "Permission denied (publickey)" mid-session. Runs plain `purelogin`, which
+# skips the interactive Okta step on its own when the underlying SSO session
+# is still fresh — this hook doesn't force a full login, just triggers the
+# check at the right time instead of waiting for something to fail first.
+#
+# Checked once per prompt, throttled so a stuck/declined Okta prompt doesn't
+# get retried every single prompt.
+
+_PURELOGIN_HOOK_CERT="$HOME/.ssh/id_ed25519_vault-cert.pub"
+_PURELOGIN_HOOK_STAMP="$HOME/.cache/purelogin-hook-last-attempt"
+_PURELOGIN_HOOK_THROTTLE=600   # seconds between renewal attempts
+_PURELOGIN_HOOK_BUFFER=1800    # renew when less than this much validity remains
+
+_purelogin_hook_check() {
+  [ -f "$_PURELOGIN_HOOK_CERT" ] || return
+  local valid_to expiry_epoch now last_attempt
+  valid_to=$(ssh-keygen -L -f "$_PURELOGIN_HOOK_CERT" 2>/dev/null | awk -F' to ' '/Valid:/{print $2}')
+  [ -n "$valid_to" ] || return
+  expiry_epoch=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$valid_to" +%s 2>/dev/null) || return
+  now=$(date +%s)
+  (( expiry_epoch - now > _PURELOGIN_HOOK_BUFFER )) && return
+
+  mkdir -p "$HOME/.cache"
+  last_attempt=$(cat "$_PURELOGIN_HOOK_STAMP" 2>/dev/null)
+  [ -z "$last_attempt" ] && last_attempt=0
+  (( now - last_attempt < _PURELOGIN_HOOK_THROTTLE )) && return
+  echo "$now" > "$_PURELOGIN_HOOK_STAMP"
+
+  echo "purelogin-hook: vault SSH cert expires soon, renewing..."
+  purelogin
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _purelogin_hook_check

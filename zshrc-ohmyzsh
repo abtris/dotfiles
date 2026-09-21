@@ -38,6 +38,7 @@ source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
 source ~/bin/dotfiles/zsh/gh-account
 source ~/bin/dotfiles/zsh/pureclone
+source ~/bin/dotfiles/zsh/purelogin-hook
 # brew install zsh-autosuggestions
 if [[ "$ARCH" == "arm64" ]]; then
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -72,3 +73,6 @@ export PATH="$PATH:/Users/lprskavec/.lmstudio/bin"
 # Added by GitButler installer
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(but completions zsh)"
+
+# opencode
+export PATH=/Users/lprskavec/.opencode/bin:$PATH

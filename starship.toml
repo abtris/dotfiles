@@ -16,7 +16,8 @@ $python\
 $ruby\
 $terraform\
 $aws\
-${custom.kshell}\
+${custom.kshell_site}\
+${custom.postgres}\
 $azure\
 $direnv\
 $env_var\
@@ -31,6 +32,7 @@ $line_break\
 $status\
 $os\
 $container\
+${custom.kshell_active}\
 $shell\
 $character"""
 
@@ -129,11 +131,24 @@ style = 'fg:red'
 format = '([$all_status$ahead_behind]($style) )'
 
 
-[custom.kshell]
-when = 'test -v KS_DEPLOYMENT'
-command = "echo -n $KS_DEPLOYMENT"
+[custom.kshell_site]
+when = 'test -v KS_SITE'
+command = "echo -n $KS_SITE"
 style = 'fg:#eb34e8'
 symbol = '◈ '
+format = '[$symbol$output ]($style)'
+
+[custom.kshell_active]
+when = 'test -v KS_DIR && ! test -v KS_SITE'
+style = 'fg:#eb34e8'
+symbol = 'κ'
+format = '[$symbol$output]($style)'
+
+[custom.postgres]
+when = 'test -v PGDATABASE'
+command = "echo -n $PGDATABASE"
+style = 'fg:#eeeeee'
+symbol = '🐘 '
 format = '[$symbol$output ]($style)'
 
 [custom.https_proxy]
