@@ -73,3 +73,6 @@ export PATH="$PATH:/Users/lprskavec/.lmstudio/bin"
 # Added by GitButler installer
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(but completions zsh)"
+
+# opencode
+export PATH=/Users/lprskavec/.opencode/bin:$PATH
