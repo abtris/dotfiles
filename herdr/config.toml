@@ -59,6 +59,12 @@ type = "shell"
 command = "/opt/homebrew/bin/code -g \"$(pbpaste | xargs)\""
 description = "Open clipboard path in VS Code"
 
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "herdr-projects.open"
+description = "Work board"
+
 # $jira comes from the abtris.jira-pr plugin: the Jira issue behind the current
 # branch's PR, or a warning when the branch and the PR name different issues.
 # Declaring rows replaces the defaults, so the first two lines repeat them.
