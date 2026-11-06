@@ -1,6 +1,5 @@
 tap "abtris/tap", "git@github.com:abtris/homebrew-tap.git", trusted: true
 tap "adoptopenjdk/openjdk", trusted: true
-tap "anomalyco/tap", trusted: true
 tap "bufbuild/buf", trusted: true
 tap "buo/cask-upgrade", trusted: true
 tap "ctrlspice/otel-desktop-viewer", "https://github.com/CtrlSpice/homebrew-otel-desktop-viewer", trusted: true
@@ -14,11 +13,7 @@ tap "equinix-labs/otel-cli", trusted: true
 tap "goreleaser/tap", trusted: true
 tap "hashicorp/tap", trusted: true
 tap "heroku/brew", trusted: true
-tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/core"
-tap "homebrew/services"
-tap "k8sgpt-ai/k8sgpt", trusted: true
 tap "kylef/formulae", trusted: true
 tap "mingrammer/flog", trusted: true
 tap "reviewdog/tap", trusted: true
@@ -95,8 +90,8 @@ brew "pandoc"
 brew "pi-coding-agent"
 brew "pipenv"
 brew "pkgconf"
-brew "postgresql@12", restart_service: :changed
-brew "python@3.9"
+brew "postgresql@16", restart_service: :changed
+brew "python@3.14"
 brew "rbenv"
 brew "ripgrep"
 brew "smartmontools"
@@ -123,7 +118,6 @@ brew "zoxide"
 brew "zsh-autosuggestions"
 brew "abtris/tap/gab"
 brew "abtris/tap/zotero-mcp-go-server"
-brew "anomalyco/tap/opencode"
 brew "bufbuild/buf/buf"
 brew "dagger/tap/dagger"
 brew "danielfoehrkn/switch/switch"
@@ -131,7 +125,7 @@ brew "equinix-labs/otel-cli/otel-cli"
 brew "hashicorp/tap/packer"
 brew "hashicorp/tap/terraform"
 brew "hashicorp/tap/waypoint"
-brew "k8sgpt-ai/k8sgpt/k8sgpt"
+brew "k8sgpt"
 brew "mingrammer/flog/flog"
 brew "reviewdog/tap/reviewdog"
 brew "withgraphite/tap/graphite"
@@ -163,7 +157,7 @@ go "github.com/air-verse/air"
 go "github.com/spf13/cobra-cli"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/ramya-rao-a/go-outline"
-go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
 go "golang.org/x/lint/golint"
 go "github.com/fatih/gomodifytags"
 go "github.com/uudashr/gopkgs/v2/cmd/gopkgs"
@@ -172,9 +166,8 @@ go "golang.org/x/tools/gopls"
 go "github.com/cweill/gotests/gotests"
 go "github.com/koron/iferr"
 go "github.com/josharian/impl"
-go "github.com/deepmap/oapi-codegen/cmd/oapi-codegen"
+go "github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/google/wire/cmd/wire"
 go "github.com/hybridgroup/yzma"
-npm "@google/gemini-cli"
 npm "tailwindcss"
