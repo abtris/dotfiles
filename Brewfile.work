@@ -14,7 +14,6 @@ tap "danielfoehrkn/switch", trusted: true
 tap "datawire/blackbird", trusted: true
 tap "daveshanley/vacuum"
 tap "dgunzy/tap", trusted: true
-tap "dopplerhq/doppler", "https://github.com/DopplerHQ/homebrew-doppler.git", trusted: true
 tap "encoredev/tap", trusted: true
 tap "equinix-labs/otel-cli", trusted: true
 tap "fluxcd/tap", trusted: true
@@ -22,21 +21,17 @@ tap "goreleaser/tap", trusted: true
 tap "grafana/grafana", trusted: true
 tap "hashicorp/tap", trusted: true
 tap "homebrew/core"
-tap "humanlayer/humanlayer", trusted: true
 tap "incident-io/tap"
 tap "jorgerojas26/lazysql", trusted: true
 tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
 tap "kylef/formulae", trusted: true
 tap "loft-sh/tap", trusted: true
 tap "lprskavec/local"
-tap "manaflow-ai/cmux", trusted: true
 tap "mingrammer/flog", trusted: true
-tap "oven-sh/bun", trusted: true
 tap "planetf1/tap", trusted: true
 tap "pure-prod-krypton/tap", "git@github.com:pure-prod-krypton/homebrew-tap.git", trusted: true
 tap "purestorage/brew", "https://product-security-iam-git-server-main.dxsec-prd.purestorage.com/brew.git", trusted: true
 tap "reviewdog/tap", trusted: true
-tap "robusta-dev/krr", trusted: true
 tap "temporalio/brew", trusted: true
 tap "warrensbox/tap", trusted: true
 tap "withgraphite/tap", trusted: true
