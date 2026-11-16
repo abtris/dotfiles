@@ -1,0 +1,18 @@
+# incident.io desktop → forward new incident sessions into herdr.
+# The app can only open Ghostty/iTerm/Terminal tabs and types
+# `cd <dir> && unset CLAUDECODE && claude -n <name> "<prompt>"`.
+# Outside herdr, in the triage folder, re-run that claude in a new herdr tab
+# and close the throwaway terminal tab.
+claude() {
+  if [[ -z $HERDR_ENV && $PWD == $HOME/Sites/krypton/incidents-io-triage* ]] \
+     && herdr status server >/dev/null 2>&1; then
+    local name=incident
+    [[ $1 == -n ]] && name=$2
+    local f=$(mktemp -t herdr-claude)
+    print -r -- "command claude ${(q)@}; rm -f ${(q)f}" > $f
+    local pane=$(herdr tab create --cwd "$PWD" --label "$name" --focus \
+                 | jq -r .result.root_pane.pane_id)
+    [[ -n $pane && $pane != null ]] && herdr pane run "$pane" "source $f" && exit
+  fi
+  command claude "$@"
+}
