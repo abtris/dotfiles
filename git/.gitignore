@@ -14,6 +14,7 @@ node_modules
 .mise.local.toml
 .claude/settings.local.json
 **/.claude/settings.local.json
+.mcp.json
 
 # mqw per-repository config: personal, may name a gh account
 .mqw.toml

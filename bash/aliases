@@ -9,6 +9,7 @@ alias pip='pip3'
 alias tm='terramate'
 alias tmux='zellij'
 alias cdroot='cd $(git root)'
+alias k9s='sofka'
 # alias lessc='/usr/local/bin/lessc'
 if [[ $ARCH == "arm64" ]]; then
   # M1 gawk not work, system awk works

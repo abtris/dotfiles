@@ -30,13 +30,15 @@ plugins=(aws z gitfast ruby macos gem abtris bundler redis-cli docker history ku
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+# fix path for zsh autocomplete
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 # brew install zsh-syntax-highlighting
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-
 source $ZSH/oh-my-zsh.sh
 source ~/bin/dotfiles/zsh/aliases
 source ~/bin/dotfiles/zsh/env
 source ~/bin/dotfiles/zsh/gh-account
+source ~/bin/dotfiles/zsh/incident-herdr
 source ~/bin/dotfiles/zsh/pureclone
 source ~/bin/dotfiles/zsh/purelogin-hook
 # brew install zsh-autosuggestions
