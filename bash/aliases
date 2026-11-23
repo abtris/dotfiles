@@ -2,31 +2,36 @@
 ARCH=`uname -m`
 
 #alias rake='noglob rake'
-alias tilt=/opt/homebrew/bin/tilt
-alias git=/opt/homebrew/bin/git
+[ -x /opt/homebrew/bin/tilt ] && alias tilt=/opt/homebrew/bin/tilt
+[ -x /opt/homebrew/bin/git ] && alias git=/opt/homebrew/bin/git
 alias python='python3'
 alias pip='pip3'
 alias tm='terramate'
-alias tmux='zellij'
+command -v zellij >/dev/null && alias tmux='zellij'
 alias cdroot='cd $(git root)'
 alias k9s='sofka'
 # alias lessc='/usr/local/bin/lessc'
 if [[ $ARCH == "arm64" ]]; then
-  # M1 gawk not work, system awk works
+  : # M1 gawk not work, system awk works
 else
   alias awk='gawk'
 fi
 # https://github.com/BurntSushi/ripgrep
 # brew install ripgrep
 alias ack='rg'
-alias cat='bat --paging=never --style=plain'
+if command -v bat >/dev/null; then
+  alias cat='bat --paging=never --style=plain'
+elif command -v batcat >/dev/null; then
+  alias bat='batcat'
+  alias cat='batcat --paging=never --style=plain'
+fi
 alias k='kubectl'
 alias kgp='kubectl get pods -o wide --all-namespaces=true'
 alias kgn='kubectl get nodes -o wide --all-namespaces=true'
 alias ke="kubectl get events --all-namespaces --sort-by='.metadata.creationTimestamp\'"
 alias kep='kubectl get events --all-namespaces --field-selector involvedObject.kind=Pod'
 alias knodenames='kubectl get node -o jsonpath={.items[*].metadata.name}'
-alias dig='dog'
+command -v dog >/dev/null && alias dig='dog'
 alias ju='cd ~/Sites/abtris/cml && git add . && git commit -am "Update journal"'
 alias vdev='source setvdev'
 alias jsontidy="pbpaste | jq '.' | pbcopy"
@@ -165,7 +170,7 @@ function setalias() {
   scutil --set HostName "$1"
 }
 
-alias diff='colordiff'
+command -v colordiff >/dev/null && alias diff='colordiff'
 alias pwdc='pwd | pbcopy'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='e ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
@@ -281,7 +286,7 @@ starttransfer:  %{time_starttransfer}s\n\
 }
 
 # Common -- Some are from Damian Conway
-alias ls="lsd"
+command -v lsd >/dev/null && alias ls="lsd"
 alias a='ls -A' # -A all except literal . ..
 alias la="ls -A -l -G"
 alias ltd="ls -lt" # sort time desc
@@ -294,7 +299,11 @@ function cdc() {
 }
 alias cls='clear; ls'
 alias hi='history'
-alias ll='lsd -lhG'  # -l long listing, human readable, no group info
+if command -v lsd >/dev/null; then
+  alias ll='lsd -lhG'  # -l long listing, human readable, no group info
+else
+  alias ll='ls -lh'
+fi
 alias s='cd ..'   # up one dir
 alias sb='cd -'   # back to last dir
 
@@ -393,7 +402,7 @@ alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias kubectx='switch'
 alias kctx='switch'
-alias vim='nvim'
+command -v nvim >/dev/null && alias vim='nvim'
 
 
 # alias last="git for-each-ref --sort=-committerdate refs/heads/ | head -n 40 | cut -d ' ' -f 2 | cut -c 19-"
