@@ -50,3 +50,13 @@ autostart = true
 enabled = true
 ## height of the `atuin resume` picker; 0 = fullscreen
 inline_height = 0
+
+## resume Claude threads with the same flags as the `dc` alias, not plain `claude`
+[threads.resume]
+claude = "claude --dangerously-skip-permissions --chrome --resume {id}"
+
+[theme]
+name = "marine"
+
+[ui]
+syntax_highlight = true
