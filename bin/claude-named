@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Run claude with the usual flags, naming the session after the current directory.
+# Used by the `dc` alias and by atuin's [threads.resume] (`claude-named --resume {id}`).
+name="$(basename "$PWD")"
+# In Rex, also name the current tab so tabs group by project
+if [ -n "$REX_BLOCK" ]; then
+    rex="$(command -v rex || echo "$REX_BIN_DIR/rex")"
+    win="$("$rex" block inspect "$REX_BLOCK" --json 2>/dev/null | jq -r '.block.window_id')"
+    [ -n "$win" ] && [ "$win" != null ] && "$rex" window rename "$win" "$name" >/dev/null 2>&1
+fi
+exec claude --dangerously-skip-permissions --chrome --name "$name" "$@"

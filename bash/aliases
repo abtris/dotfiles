@@ -540,7 +540,11 @@ function wt() {
 }
 
 # Claude code
-alias dc="claude --dangerously-skip-permissions --chrome"
+# dc: name the session after the current directory
+unalias dc 2>/dev/null
+function dc {
+    claude-named "$@"
+}
 alias dca="claude agents"
 
 
