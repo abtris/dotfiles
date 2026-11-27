@@ -543,14 +543,7 @@ function wt() {
 # dc: name the session after the current directory
 unalias dc 2>/dev/null
 function dc {
-    local name="$(basename "$PWD")"
-    # In Rex, also name the current tab so tabs group by project
-    if [ -n "$REX_BLOCK" ]; then
-        local rex="$(command -v rex || echo "$REX_BIN_DIR/rex")"
-        local win="$("$rex" block inspect "$REX_BLOCK" --json 2>/dev/null | jq -r '.block.window_id')"
-        [ -n "$win" ] && [ "$win" != null ] && "$rex" window rename "$win" "$name" >/dev/null 2>&1
-    fi
-    claude --dangerously-skip-permissions --chrome --name "$name" "$@"
+    claude-named "$@"
 }
 alias dca="claude agents"
 
