@@ -542,6 +542,8 @@ function wt() {
 # Claude code
 alias dc="claude --dangerously-skip-permissions --chrome"
 alias dca="claude agents"
+# ar: resume a captured coding-agent thread (shadows /usr/bin/ar in interactive shells only)
+alias ar="atuin resume"
 
 
 klod() {
