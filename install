@@ -56,6 +56,7 @@ vimrc|.vimrc
 vimpluginrc|.vimpluginrc
 coffeelint.json|coffeelint.json
 atuin/config.toml|.config/atuin/config.toml
+atuin/themes/vivid.toml|.config/atuin/themes/vivid.toml
 git/betterleaks.toml|.config/betterleaks/betterleaks.toml
 .config/bat/config|.config/bat/config
 ghostty/config|.config/ghostty/config

@@ -28,7 +28,7 @@
 
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy
-# search_mode = "prefix"
+search_mode = "daemon-fuzzy"
 
 ## which style to use
 ## possible values: auto, full, compact
@@ -41,3 +41,22 @@
 # filter_mode_shell_up_key_binding = "session"
 
 filter_mode = "workspace"
+
+[daemon]
+enabled = true
+autostart = true
+
+[threads]
+enabled = true
+## height of the `atuin resume` picker; 0 = fullscreen
+inline_height = 0
+
+## resume Claude threads like the `dc` alias: same flags, session + Rex tab named after the dir
+[threads.resume]
+claude = "claude-named --resume {id}"
+
+[theme]
+name = "vivid"
+
+[ui]
+syntax_highlight = true

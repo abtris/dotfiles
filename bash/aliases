@@ -546,6 +546,8 @@ function dc {
     claude-named "$@"
 }
 alias dca="claude agents"
+# ar: resume a captured coding-agent thread (shadows /usr/bin/ar in interactive shells only)
+alias ar="atuin resume"
 
 
 klod() {

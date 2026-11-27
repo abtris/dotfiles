@@ -1,0 +1,16 @@
+## Brighter variant of the built-in autumn theme (catppuccin-mocha-ish palette),
+## mainly to give the `atuin resume` session list more contrast.
+[theme]
+name = "vivid"
+parent = "autumn"
+
+[colors]
+Base = "#cdd6f4"
+Title = "#89b4fa"
+Important = "#f38ba8"
+Annotation = "#94e2d5"
+Guidance = "#f9e2af"
+Muted = "#7f849c"
+AlertInfo = "#a6e3a1"
+AlertWarn = "#f9e2af"
+AlertError = "#f38ba8"
